@@ -1,0 +1,151 @@
+/*
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#three-col {
+  display: flex;
+  flex: 1;
+}
+
+#content {
+  flex: 1;
+}
+
+#empty-col, #info {
+  flex: 0 0 12em;
+}
+*/
+
+body, #three-col {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  font-family: "Candara", "Gill Sans", "Helvetica", "Arial", "sans-serif";
+  background-color: #333;
+}
+
+#content {
+  background-color: #F5F5F5;
+  color: #212121;
+  padding: 2em;
+  margin-top: 1.5em;
+
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#content img {
+  width: 100%;
+}
+
+#empty-col {
+  /* put this on the left */
+  order: -1;
+}
+
+#desktop-nav ul, #mobile-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #8BC34A; 
+}
+
+
+#desktop-nav ul li a:hover, #mobile-nav ul li a:hover {
+    background-color: #689F38;
+}
+
+h1 {
+}
+
+h2 {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+header {
+  text-align: center;
+  font-family: "Lucida Bright", "Palatino", "Times New Roman", "serif";
+  font-weight: bolder;
+  background-color: #616161;
+  color: #F5F5F5;
+  padding: 40px 0 15px 0; /* top, right, bottom, left */
+  font-size: 3.5em;
+ }
+
+ #info {
+  margin: 1.5em 1em 0em 1em;
+  background-color: #9E9E9E;
+  padding: 0.4em;
+  color: #F5F5F5;
+  border-radius: 2px;
+ }
+
+@media (max-width: 767px) {
+  #desktop-nav{
+    display: none;
+  }
+  #mobile-nav {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  #mobile-nav ul li a {
+   /* display: inline-block;*/
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;  
+  }
+
+  #content {
+  /*  background-color: #F5F5F5;
+    color: #212121;
+    padding: 2em;*/
+    margin-top: 0em;
+  }
+
+  #info {
+    margin: 1.5em 0em 0.5em 0em;
+  }
+}
+
+@media (min-width: 768px) {
+  #three-col {
+    flex-direction: row;
+    flex: 1;
+  }
+  #content {
+    flex: 1;
+  }
+  #empty-col, #info {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+  #mobile-nav {
+    display: none;
+  }
+  #desktop-nav {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  #desktop-nav ul li {
+    float: left;
+  }
+  #desktop-nav ul li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;  
+    width: 90px;
+  }
+}
