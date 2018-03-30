@@ -1,0 +1,65 @@
+recipe: Crème Suisse
+
+description: A light and fluffy cream created by mixing together custard and whipped cream.
+source: ""
+date: 2018-03-25
+image: waffles
+
+ingredients:
+  - {name: whole milk,
+  amount: 480, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'}
+  - {name: vanilla bean, amount: 1, unit: '', comment: "Vanilla bean gives a much better taste than other vanilla products. If you really can't use it, consider using vanilla essence."}
+  - {name: sugar, amount: 80, unit: 'gram', comment: ''}
+  - {name: cornstarch, amount: 40, unit: 'gram', comment: ''}
+  - {name: vanilla essence, amount: 2, unit: 'tsp', comment: ''}
+  - {name: egg yolks, amount: 4, unit: '', comment: ''}
+  - {name: sugar, amount: 20, unit: 'gram', comment: ''}
+  - {name: gelatin, amount: 5, unit: 'sheets', comment: ''}
+  - {name: heavy cream, amount: 200, unit: 'ml', comment: ''}
+
+# types: cut, pour, decorate, whip, shape, knead, fry, oven, fridge, freezer, leave, spread
+# types: work, rest, warm, cold
+# colors: normal, warm, hot, cold, freeze
+steps:
+  - {id: 0, short: mix cornstarch and milk, time: , type: , image: '',
+     long:  In a small bowl, stir together the cornstarch with a little splash of milk. It should turn into a smooth paste. Add a little more milk to make it fairly liquid.}
+  - {id: 1, short: add vanilla essence, yolks and sugar, time: , type: , image: '',
+     long: Add the vanilla essence, yolks and 20g of sugar and whisk until frothy and well combined.}
+  - {id: 2, short: warm milk, vanilla bean and sugar, time: , type: , image: '',
+     long: Combine the milk, the vanilla bean and 80g of sugar in a small saucepan. Over low heat, gently heat the milk mixture until scalding.}
+  - {id: 3, short: combine the milk mixtures, heat to thicken, time: , type: , image: '',
+     long: Take the milk off the heat and drizzle it into the cornstarch and egg mixture, whisking constantly. Pour the mixture back into the saucepan and gently heat over medium-high heat, stirring continuously with a rubber spatula, until the mixture thickens into pastry cream.}
+  - {id: 4, short: cool mixture in bowl, time: , type: , image: '',
+     long: Transfer the hot pastry cream to a heatproof bowl, press a piece of plastic wrap directly onto the surface of the pastry cream to prevent a skin from forming and leave to cool to room temperature.}
+  - {id: 5, short: soak gelatin, time: , type: , image: '',
+     long: Soak the gelatin sheets in cold water for 10 minutes.}
+  - {id: 6, short: heat a little cream, time: , type: , image: '',
+     long: Use a little of the heavy cream to cover the bottom of a small saucepan.
+     Gently heat the splash of cream until it is hot to the touch.}
+  - {id: 7, short: mix cream and gelatin, time: , type: , image: '',
+     long: Take it off the heat. Squeeze water out of the gelatin. Add the gelatin to the cream.
+     Put the mixture on low heat and stir until the gelatin is completely dissolved.
+     Take it off the heat.}
+  - {id: 8, short: whip heavy cream, time: , type: , image: '',
+     long: Pour the remaining cream into a bowl. Add a little bit of sugar, and
+     whip the mixture to form soft peaks.}
+  - {id: 9, short: mix everything, time: , type: , image: '',
+     long: Mix together the pastry cream and the gelatin-cream mixture.
+     Gently fold in the whipped cream using a rubber spatula.}
+  - {id: 10, short: cool, time: , type: , image: '',
+     long: Place the mixture into the fridge and let it cool for at least 2 hours.}
+
+
+order:
+  0: []
+  1: [0]
+  2: []
+  3: [1,2]
+  4: [3]
+  5: []
+  6: []
+  7: [5,6]
+  8: [6]
+  9: [4,7,8]
+  10: [9]
+
