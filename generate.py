@@ -1,3 +1,4 @@
+import os
 from jinja2 import Template, Environment, FileSystemLoader
 import yaml
 
@@ -12,5 +13,7 @@ yaml_result = yaml.load(recipe)
 print(yaml_result.keys())
 
 output = template.render(r=yaml_result)
-with open('generated_recipe.html', 'w') as f:
-     print(output, file=f)
+if not os.path.isdir("publish"):
+	os.makedirs("publish")
+with open('publish/generated_recipe.html', 'w') as f:
+	print(output, file=f)
