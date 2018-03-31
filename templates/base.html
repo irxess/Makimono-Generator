@@ -14,8 +14,13 @@
   </header>
   {% include 'nav.html' %}
 
+  <div id="three-col">
+  <div id="empty-col-left"></div>
+
   {% block content %}
   {% endblock %}
+
+  <div id="empty-col-right"></div>
 
   {% include 'footer.html' %}
 </body>
