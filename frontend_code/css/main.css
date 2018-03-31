@@ -73,6 +73,11 @@ h2 {
   margin-bottom: 0em;
 }
 
+h3 {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
 #ingredients li, .steps li {
   text-align: left;
 }
@@ -118,12 +123,6 @@ h2 {
   padding-right: 0.5em;
 }
 
-
-h3 {
-  margin-top: 0em;
-  margin-bottom: 0em;
-}
-
 #info {
   margin: 1em 0em 0.5em 0em;
   background-color: #9E9E9E;
@@ -148,7 +147,7 @@ h3 {
     flex-direction: column;
     color: white;
     padding: 14px 16px;
-    text-decoration: none;  
+    text-decoration: none;
   }
 
   #content {
@@ -184,7 +183,7 @@ h3 {
     color: white;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;  
+    text-decoration: none;
     width: 90px;
   }
   #info-col {
