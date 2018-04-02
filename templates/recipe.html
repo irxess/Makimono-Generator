@@ -4,10 +4,15 @@
 
 {% block content %}
 <main id="content">
+
   <section id="intro">
     <h1>{{ r.recipe }}</h1>
     <img src="images/{{ r.image }}.png">
   </section>
+
+  <p id="flavor-text">
+    {{ r.description }}
+  </p>
 
   <section id="ingredients">
     <h2>Shopping list</h2>
@@ -47,34 +52,7 @@
       </div>
     </div>
     {% endfor %}
-
-
-    <div class="step">
-      <div class="ingredient-container">
-        <div class="step-ingredient-list">
-          <ul>
-            <li><b>2 tsp</b> vanilla essence</li>
-            <li><b>4</b> egg yolks</li>
-            <li><b>20 g</b> sugar</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="description-container">
-        <div class="step-icon">
-          <img src="images/hot.svg">
-        </div>
-        <div class="step-description">
-          <b>Add vanilla essence, yolks and sugar: </b>
-          Add the vanilla essence, yolks and 20g of sugar and whisk until frothy and well combined.
-        </div>
-      </div>
-    </div>
-
   </section>
 
-  <p id="flavor-text">
-    {{ r.description }}
-  </p>
 </main>
 {% endblock %}
