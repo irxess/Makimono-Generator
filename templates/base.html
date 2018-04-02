@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>{% block title %}{% endblock %} - Makimono</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+  {% endblock %}
+</head>
+<body>
+  <header>
+    Makimono
+  </header>
+  {% include 'nav.html' %}
+
+  <div id="three-col">
+  <div id="empty-col-left"></div>
+
+  {% block content %}
+  {% endblock %}
+
+  <div id="empty-col-right"></div>
+
+  {% include 'footer.html' %}
+</body>
+</html>

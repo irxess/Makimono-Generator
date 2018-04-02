@@ -1,129 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ r.recipe }} Recipe - Makimono</title>
-  <meta name="description" content="{{ r.recipe }}">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}{{ r.recipe }} Recipe{% endblock %}
+{% block meta_description %}{{ r.recipe }}{% endblock %}
 
-<header>
-  Makimono
-</header>
+{% block content %}
+<main id="content">
+  <section id="intro">
+    <h1>{{ r.recipe }}</h1>
+    <img src="images/{{ r.image }}.png">
+  </section>
 
-<nav id="desktop-nav">
-  <ul>
-    <li><a href="">ALL RECIPES</a></li>
-    <li><a href="">BREAKFAST</a></li>
-    <li><a href="">DINNER</a></li>
-    <li><a href="">CAKE</a></li>
-    <li><a href="">ABOUT</a></li>
-  </ul>
-</nav>
+  <section id="ingredients">
+    <h2>Shopping list</h2>
+    <ul>
+      {% for i in r.ingredients %}
+        <li><b>{{i.amount}} {{i.unit}}</b> {{ i.name }}</li>
+      {% endfor %}
+    </ul>
+  </section>
 
-<div id="three-col">
+  <section id="steps">
+    <h2>Directions</h2>
+    <img id="map" src="images/fish-bone.svg">
 
-  <div id="empty-col-left"></div>
-
-  <main id="content">
-    <section id="intro">
-      <h1>{{ r['recipe'] }}</h1>
-      <img src="images/{{ r.image }}.png">
-    </section>
-
-    <section id="ingredients">
-      <h2>Shopping list</h2>
-      <ul>
-        {% for i in r["ingredients"] %}
-          <li><b>{{i['amount']}} {{i['unit']}}</b> {{ i['name'] }}</li>
-        {% endfor %}
-      </ul>
-    </section>
-
-    <section id="steps">
-      <h2>Directions</h2>
-      <img id="map" src="images/fish-bone.svg">
-      <img id="placeholder" src="images/fish-bone.svg">
-
-      {% for s in r['steps'] %}
-      <div class="step">
-        <div class="ingredient-container">
-          <div class="step-ingredient-list">
+    {% for s in r.steps %}
+    <div class="step">
+      {% if (s.ingredients is defined) and s.ingredients %}
+      <div class="ingredient-container">
+        <div class="step-ingredient-list">
             <ul>
               {% for i in s['ingredients'] %}
                 <li><b>{{ i['amount'] }} {{r.ingredients[i.id].unit}}</b>
                     {{ r.ingredients[i.id].name }}</li>
               {% endfor %}
             </ul>
-          </div>
-        </div>
-
-        <div class="description-container">
-          <div class="step-icon">
-            <img src="images/hot.svg">
-          </div>
-          <div class="step-description">
-              <b>{{ s.short }}: </b>
-              {{ s.long }}
-          </div>
         </div>
       </div>
-      {% endfor %}
-
-
-      <div class="step">
-        <div class="ingredient-container">
-          <div class="step-ingredient-list">
-            <ul>
-              <li><b>2 tsp</b> vanilla essence</li>
-              <li><b>4</b> egg yolks</li>
-              <li><b>20 g</b> sugar</li>
-            </ul>
-          </div>
+      {% endif %}
+      <div class="description-container">
+        <div class="step-icon">
+          <img src="images/hot.svg">
         </div>
+        <div class="step-description">
+            <b>{{ s.short }}: </b>
+            {{ s.long }}
+        </div>
+      </div>
+    </div>
+    <hr>
+    {% endfor %}
 
-        <div class="description-container">
-          <div class="step-icon">
-            <img src="images/hot.svg">
-          </div>
-          <div class="step-description">
-            <b>Add vanilla essence, yolks and sugar: </b>
-            Add the vanilla essence, yolks and 20g of sugar and whisk until frothy and well combined.
-          </div>
+
+    <div class="step">
+      <div class="ingredient-container">
+        <div class="step-ingredient-list">
+          <ul>
+            <li><b>2 tsp</b> vanilla essence</li>
+            <li><b>4</b> egg yolks</li>
+            <li><b>20 g</b> sugar</li>
+          </ul>
         </div>
       </div>
 
-    </section>
+      <div class="description-container">
+        <div class="step-icon">
+          <img src="images/hot.svg">
+        </div>
+        <div class="step-description">
+          <b>Add vanilla essence, yolks and sugar: </b>
+          Add the vanilla essence, yolks and 20g of sugar and whisk until frothy and well combined.
+        </div>
+      </div>
+    </div>
 
-    <p id="flavor-text">
-      {{ r.description }}
-    </p>
+  </section>
 
-  </main>
-
-  <div id="empty-col-right"></div>
-
-  <nav id="mobile-nav">
-    <ul>
-      <li><a href="">All recipes</a></li>
-      <li><a href="">Breakfast</a></li>
-      <li><a href="">Dinner</a></li>
-      <li><a href="">Cake</a></li>
-      <li><a href="">About</a></li>
-    </ul>
-  </nav>
-
-  <div id="info-col">
-    <aside id="info">
-      <h3>Tags</h3>
-      <ul>
-        <li>About site</li>
-        <li>Some keywords</li>
-      </ul>
-    </aside>
-  </div>
-</div>
-
-</body>
-</html>
+  <p id="flavor-text">
+    {{ r.description }}
+  </p>
+</main>
+{% endblock %}
