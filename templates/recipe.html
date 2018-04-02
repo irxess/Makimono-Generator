@@ -28,15 +28,15 @@
 
   <main id="content">
     <section id="intro">
-      <h1>{{ r.recipe }}</h1>
+      <h1>{{ r['recipe'] }}</h1>
       <img src="images/{{ r.image }}.png">
     </section>
 
     <section id="ingredients">
       <h2>Shopping list</h2>
       <ul>
-        {% for i in r.ingredients %}
-          <li><b>{{i.amount}} {{i.unit}}</b> {{ i.name }}</li>
+        {% for i in r["ingredients"] %}
+          <li><b>{{i['amount']}} {{i['unit']}}</b> {{ i['name'] }}</li>
         {% endfor %}
       </ul>
     </section>
@@ -46,13 +46,14 @@
       <img id="map" src="images/fish-bone.svg">
       <img id="placeholder" src="images/fish-bone.svg">
 
-      {% for s in r.steps %}
+      {% for s in r['steps'] %}
       <div class="step">
         <div class="ingredient-container">
           <div class="step-ingredient-list">
             <ul>
-              {% for i in s.ingredients %}
-                <li><b>{{r.ingredients[i].amount}} {{r.ingredients[i].unit}}</b> {{ r.ingredients[i].name }}</li>
+              {% for i in s['ingredients'] %}
+                <li><b>{{ i['amount'] }} {{r.ingredients[i.id].unit}}</b>
+                    {{ r.ingredients[i.id].name }}</li>
               {% endfor %}
             </ul>
           </div>
@@ -64,7 +65,7 @@
           </div>
           <div class="step-description">
               <b>{{ s.short }}: </b>
-              {{ s.description }}
+              {{ s.long }}
           </div>
         </div>
       </div>
