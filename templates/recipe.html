@@ -21,8 +21,8 @@
   <section id="steps">
     <h2>Directions</h2>
     <img id="map" src="images/fish-bone.svg">
-
     {% for s in r.steps %}
+    <hr>
     <div class="step">
       {% if (s.ingredients is defined) and s.ingredients %}
       <div class="ingredient-container">
@@ -46,7 +46,6 @@
         </div>
       </div>
     </div>
-    <hr>
     {% endfor %}
 
 
