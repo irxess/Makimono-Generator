@@ -1,0 +1,43 @@
+recipe: Greek Yoghurt American Pancakes
+
+description: These American pancakes are not too sweet, and filling enough with the greek yoghurt.
+date: 2018-04-24
+image: greek_yoghurt_pancakes
+
+ingredients:
+  - {id: 0, name: greek yoghurt, amount: 300, unit: 'g', comment: ''}
+  - {id: 1, name: flour, amount: 100, unit: 'g', comment: ''}
+  - {id: 2, name: salt, amount: 1, unit: 'tsp', comment: ''}
+  - {id: 3, name: baking powder, amount: 3, unit: 'tsp', comment: ''}
+  - {id: 4, name: vanilla sugar, amount: 1, unit: 'tsp', comment: ''}
+  - {id: 5, name: honey, amount: 10, unit: 'g', comment: ''}
+  - {id: 6, name: eggs, amount: 2, unit: '', comment: ''}
+  - {id: 7, name: lemon juice, amount: 1, unit: 'tsp', comment: 'Optional'}
+  - {id: 8, name: milk, amount: 22, unit: 'g', comment: ''}
+  - {id: 9, name: coconut oil, amount: , unit: '', comment: 'Or any other oil or butter'}
+
+# types: bowl, frying pan, saucepan, cast-iron pan, piping bag/siphon (decorate), oven, kitchen machine, 
+#        chopping knife, spreading knife, shape (hands, braid, cookie cutter?), spoon
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {id: 0, short: Mix together, time: 1, type: 'bowl', temp: 'room',
+     ingredients: [ {id: 0}, {id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5} ],
+     long: "Mix together the first 6 ingredients to a smooth batter."}
+  - {id: 1, short: Add eggs, time: 1, type: 'bowl', temp: 'room',
+     ingredients: [ {id: 6} ],
+     long: "Add egg to the batter, and mix until smooth."}
+  - {id: 2, short: Add lemon juice and milk, time: 1, type: 'bowl', temp: 'room',
+     ingredients: [ {id: 7}, {id: 8} ],
+     long: "Mix the lemon juice and milk into the batter."}
+  - {id: 3, short: Fry in oil in pan, time: 15, type: 'frying pan', temp: 'room',
+     ingredients: [ {id: 9} ],
+     long: "Add a little oil to a frying pan. Add about one tbsp of batter per pancake to the pan,
+     and fry on medium heat. Flip the pancakes when they are golden brown underneath.
+     "}
+
+order:
+  0: []
+  1: [0]
+  2: [1]
+  3: [2]
+

@@ -1,0 +1,49 @@
+recipe: Scones
+
+description: 
+source: "https://www.fifteenspatulas.com/english-style-scones/"
+date: 2018-04-02
+image: scones
+
+ingredients:
+  - {id: 0, name: all-purpose flour, amount: 280, unit: 'g', comment: ''}
+  - {id: 1, name: baking powder, amount: 16, unit: 'g', comment: ''}
+  - {id: 2, name: salt, amount: 6, unit: 'g', comment: ''}
+  - {id: 3, name: sugar, amount: 50, unit: 'g', comment: ''}
+  - {id: 4, name: butter, amount: 90, unit: 'g', comment: ''}
+  - {id: 5, name: whole milk, amount: 155, unit: 'g', comment: 'Can be swapped for buttermilk'}
+  - {id: 6, name: egg, amount: 1, unit: '', comment: ''}
+
+# types: bowl, frying pan, saucepan, cast-iron pan, piping bag/siphon (decorate), oven, kitchen machine, 
+#        chopping knife, spreading knife, shape (hands, braid, cookie cutter?), spoon
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {id: 0, short: Preheat oven, time: 0, type: 'oven', temp: 'room',
+     long: "Preheat the oven to 200 degrees Celsius."}
+  - {id: 1, short: Mix dry ingredients, time: 1, type: 'bowl', temp: 'room',
+     ingredients: [ {id: 0}, {id: 1}, {id: 2}, {id: 3} ],
+     long: "Mix together the flour, baking powder, salt and sugar in a bowl."}
+  - {id: 2, short: Add butter, time: 5, type: 'bowl', temp: 'room',
+     ingredients: [ {id: 4} ],
+     long: "Add the butter with your fingers until the mixture has a sandy texture without chunks."}
+  - {id: 3, short: Mix milk and egg, time: 1, type: 'bowl', temp: 'room',
+     ingredients: [ {id: 5}, {id: 6} ],
+     long: "In a different bowl, mix the milk and egg together. If desired, save a bit of the egg for an egg wash later."}
+  - {id: 4, short: Mix everything, time: 2, type: 'bowl', temp: 'room',
+     long: "Add the milk mixture to the bowl with flour. Mix until it becomes a relatively smooth ball, but try to
+     avoid kneading the dough too much."}
+  - {id: 5, short: Shape, time: 6, type: 'shape', temp: 'room',
+     long: "Roll the dough until it is about 1-2 cm thick. Cut out circles of the desired size and transfer them onto a baking sheet."}
+  - {id: 6, short: Bake, time: , type: , temp: ,
+     long: "Put the scones into the oven, and bake at 200 degrees C with convection on. The scones
+     should be done in about 14 minutes, until they have a nice, golden color on top."}
+
+order:
+  0: []
+  1: [0]
+  2: [1]
+  3: []
+  4: [2,3]
+  5: [4]
+  6: [5]
+
