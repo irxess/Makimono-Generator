@@ -4,17 +4,21 @@ import lesscpy
 import yaml
 
 class Ingredient:
-     def __init__(self, amount):
-          self.amount = amount
-          self.rest_id = -1
+    def __init__(self, amount):
+        self.amount = amount
+        self.rest_id = -1
+
+class Thumbnail:
+    def __init__(self, name, img, date):
+        self.name = name
+        self.image = img
+        self.date = date
 
 def add_ingredient_amounts_to_steps(yaml):
     ingredients = dict()
     for ingr in yaml['ingredients']:
-        print("Amount:", ingr['amount'])
         if ingr['amount'] == None:
             ingr['amount'] = ''
-            print("Amount:", ingr['amount'])
         ingredients[ ingr['id'] ] = Ingredient( ingr['amount'] )
     for s in yaml['steps']:
         if 'ingredients' in s:
@@ -31,11 +35,25 @@ def add_ingredient_amounts_to_steps(yaml):
         if i.rest_id != -1:
             i.rest_id['amount'] = i.amount
 
+def prepare_image(yaml):
+    img_name = yaml['image']
+    if os.path.isfile( "publish/images/" + img_name + ".png"):
+        yaml['image'] = img_name + '.png'
+    elif os.path.isfile( "publish/images/" + img_name + ".jpg"):
+        yaml['image'] = img_name + '.jpg'
+    elif os.path.isfile( "publish/images/" + img_name + ".jpeg"):
+        yaml['image'] = img_name + '.jpeg'
+    else:
+        print("Warning: No image found for", yaml['recipe'], "\nExpecting", img_name + ".{png,jpg,jpeg}")
+    # generate thumbnail, if not exists
+    return yaml['image']
+
+
 def generate_files_for_recipe(name):
-    #recipe = open('recipes/scones.yaml', 'r')
     recipe = open(os.path.join('recipes', name + '.yaml'), 'r')
     yaml_result = yaml.load(recipe)
     add_ingredient_amounts_to_steps(yaml_result)
+    prepare_image(yaml_result)
 
     if not os.path.isdir('publish'):
         os.makedirs('publish')
@@ -43,18 +61,25 @@ def generate_files_for_recipe(name):
     env = Environment(loader=file_loader)
     template = env.get_template('recipe.html')
     output = template.render(r=yaml_result)
-    print(name)
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
+    return Thumbnail(yaml_result['recipe'], yaml_result['image'], yaml_result['date'])
 
+
+def generate_browse_page(thumbnails):
+    for t in thumbnails:
+        pass
+        #print(t.name, t.image, t.date)
 
 if __name__ == "__main__":
+    thumbnails = []
     for filename in os.listdir('recipes'):
         name = filename.split('.')[0]
         if name != 'template':
             print("Generating files for", filename)
-            generate_files_for_recipe(name)
-    #recipe = open('recipes/creme_suisse.yaml', 'r')
+            t = generate_files_for_recipe(name)
+            thumbnails.append(t)
+    generate_browse_page(thumbnails)
 
     if not os.path.isdir('publish/css'):
         os.makedirs('publish/css')
