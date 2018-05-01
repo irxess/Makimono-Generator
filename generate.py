@@ -9,8 +9,9 @@ class Ingredient:
         self.rest_id = -1
 
 class Thumbnail:
-    def __init__(self, name, img, date):
+    def __init__(self, name, url, img, date):
         self.name = name
+        self.url = url
         self.image = img
         self.date = date
 
@@ -63,13 +64,13 @@ def generate_files_for_recipe(name):
     output = template.render(r=yaml_result)
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
-    return Thumbnail(yaml_result['recipe'], yaml_result['image'], yaml_result['date'])
+    return Thumbnail(yaml_result['recipe'], './'+name+'.html', yaml_result['image'], yaml_result['date'])
 
 
 def generate_browse_page(thumbnails):
+    thumbnails.sort(key=lambda t: t.date)
     for t in thumbnails:
-        pass
-        #print(t.name, t.image, t.date)
+        print(t.name, "has date", t.date)
 
 if __name__ == "__main__":
     thumbnails = []
