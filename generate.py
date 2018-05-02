@@ -2,6 +2,7 @@ import os
 from jinja2 import Template, Environment, FileSystemLoader
 import lesscpy
 import yaml
+from PIL import Image
 
 class Ingredient:
     def __init__(self, amount):
@@ -39,15 +40,40 @@ def add_ingredient_amounts_to_steps(yaml):
 def prepare_image(yaml):
     img_name = yaml['image']
     if os.path.isfile( "publish/images/" + img_name + ".png"):
-        yaml['image'] = img_name + '.png'
+        file_name = img_name + '.png'
     elif os.path.isfile( "publish/images/" + img_name + ".jpg"):
-        yaml['image'] = img_name + '.jpg'
+        file_name = img_name + '.jpg'
     elif os.path.isfile( "publish/images/" + img_name + ".jpeg"):
-        yaml['image'] = img_name + '.jpeg'
+        file_name = img_name + '.jpeg'
     else:
         print("Warning: No image found for", yaml['recipe'], "\nExpecting", img_name + ".{png,jpg,jpeg}")
+        yaml['image'] = ""
+        return ""
+    yaml['image'] = file_name
     # generate thumbnail, if not exists
-    return yaml['image']
+    img = Image.open("publish/images/" + file_name)
+
+    # make image square
+    center_x = img.size[0] / 2
+    center_y = img.size[1] / 2
+    if center_x < center_y:
+        offset = center_x
+    else:
+        offset = center_y
+    img_thumbnail = img.crop(
+         (
+              center_x - offset,
+              center_y - offset,
+              center_x + offset,
+              center_y + offset
+         )
+    )
+
+    # resize the square image
+    img_thumbnail = img_thumbnail.resize((200,200), Image.ANTIALIAS)
+    img_thumbnail.save("publish/images/thumbnails/" + file_name)
+
+    return file_name
 
 
 def generate_files_for_recipe(name):
