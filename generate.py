@@ -12,9 +12,15 @@ class Ingredient:
 class Thumbnail:
     def __init__(self, name, url, img, date):
         self.name = name
-        self.url = url
-        self.image = img
+        self.url = '../'+url
+        self.image = '../images/thumbnails/'+img
         self.date = date
+
+class PaginationElement:
+    def __init__(self, page_url, number):
+        self.url = page_url
+        self.current = False
+        self.name = number
 
 def add_ingredient_amounts_to_steps(yaml):
     ingredients = dict()
@@ -93,10 +99,50 @@ def generate_files_for_recipe(name):
     return Thumbnail(yaml_result['recipe'], './'+name+'.html', yaml_result['image'], yaml_result['date'])
 
 
+def split_thumbnail_list_into_pages(thumbnails):
+    chunk_size = 4
+    list_of_thumbnail_chunks = []
+    pagination_list = []
+    chunk_number = 1
+    for i in range(0, len(thumbnails), chunk_size):
+        list_of_thumbnail_chunks.append( thumbnails[i:i+chunk_size] )
+        pagination_list.append( PaginationElement('page'+str(chunk_number)+'.html', chunk_number) )
+        chunk_number += 1
+    return list_of_thumbnail_chunks, pagination_list
+
+
 def generate_browse_page(thumbnails):
     thumbnails.sort(key=lambda t: t.date)
     for t in thumbnails:
         print(t.name, "has date", t.date)
+    thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+    template = env.get_template('list_of_all_recipes.html')
+    if not os.path.isdir('publish/all'):
+        os.makedirs('publish/all')
+
+    thumbnail_chunks, pagination_list = split_thumbnail_list_into_pages(thumbnails)
+    prev_page = PaginationElement('#', 1)
+    for i in range(0,len(pagination_list)):
+        thumbnails = thumbnail_chunks[i]
+        current_page = pagination_list[i]
+        current_page.current = True
+        if (i<len(pagination_list)-1):
+            next_page = pagination_list[i+1]
+        else:
+            next_page = PaginationElement('#', len(pagination_list))
+        output = template.render(
+            chunk_of_thumbnails = thumbnails,
+            paginated_pages = pagination_list,
+            previous_page = prev_page,
+            next_page = next_page
+        )
+        with open('publish/all/page'+str(i+1)+'.html', 'w') as f:
+            print(output, file=f)
+        current_page.current = False
+        prev_page = current_page
+
 
 if __name__ == "__main__":
     thumbnails = []
