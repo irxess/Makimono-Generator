@@ -9,11 +9,11 @@ Make sure python (at least v 3.4) and the neccessary python packages are install
 
 (Might have to run from shell started as admin due to lack of suitable sudo functionality.)
 
-> python -m pip install pyyaml jinja2 lesscpy
+> python -m pip install pyyaml jinja2 lesscpy pillow
 
 ##Other OSs
 
-> pip install pyyaml jinja2 lesscpy
+> pip install pyyaml jinja2 lesscpy pillow
 
 #Compiling
 
