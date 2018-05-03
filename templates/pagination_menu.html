@@ -1,11 +1,13 @@
-<div class="pagination-menu">
-  <a class="previous-page" href="{{previous_page.url}}">&laquo;</a>
-  {% for page in paginated_pages %}
-  <a
-    {% if (page.current is defined) and page.current %}
-      class="current-page"
-    {% endif %}
-   href="{{ page.url }}">{{ page.name }}</a>
-  {% endfor %}
-  <a class="previous-page" href="{{next_page.url}}">&raquo;</a>
+<div class="pagination-menu-wrapper">
+  <div class="pagination-menu">
+    <a class="previous-page" href="{{previous_page.url}}">&laquo;</a>
+    {% for page in paginated_pages %}
+    <a
+      {% if (page.current is defined) and page.current %}
+        class="current-page"
+      {% endif %}
+     href="{{ page.url }}">{{ page.name }}</a>
+    {% endfor %}
+    <a class="previous-page" href="{{next_page.url}}">&raquo;</a>
+  </div>
 </div>
