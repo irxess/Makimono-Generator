@@ -4,7 +4,9 @@
 
 {% block content %}
 <main id="content">
-  {% include 'pagination_menu.html' %}
+  {% if (paginated_pages is defined) and paginated_pages|length > 1 %}
+    {% include 'pagination_menu.html' %}
+  {% endif %}
   <ol id="list-of-recipes">
     {% for thumbnail in chunk_of_thumbnails %}
       <li class="recipe-in-list">
@@ -18,6 +20,8 @@
       </li>
     {% endfor %}
   </ol>
-  {% include 'pagination_menu.html' %}
+  {% if (paginated_pages is defined) and paginated_pages|length > 1 %}
+    {% include 'pagination_menu.html' %}
+  {% endif %}
 </main>
 {% endblock %}
