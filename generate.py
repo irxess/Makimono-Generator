@@ -93,7 +93,7 @@ def generate_files_for_recipe(name):
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
     template = env.get_template('recipe.html')
-    output = template.render(r=yaml_result, path_to_base='.')
+    output = template.render(r=yaml_result, path_to_base='.', all_recipes_path='all/page1.html')
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
     return Thumbnail(yaml_result['recipe'], './'+name+'.html', yaml_result['image'], yaml_result['date'])
@@ -136,6 +136,7 @@ def generate_browse_page(thumbnails):
             previous_page = prev_page,
             next_page = next_page,
             path_to_base='..',
+            all_recipes_path='all/page1.html',
         )
         with open('publish/all/page'+str(i+1)+'.html', 'w') as f:
             print(output, file=f)
