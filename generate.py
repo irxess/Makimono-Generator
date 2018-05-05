@@ -52,7 +52,7 @@ def prepare_image(yaml):
     elif os.path.isfile( "publish/images/" + img_name + ".jpeg"):
         file_name = img_name + '.jpeg'
     else:
-        print("Warning: No image found for", yaml['recipe'], "\nExpecting", img_name + ".{png,jpg,jpeg}")
+        print("*** Warning *** No image found for", yaml['recipe'], "\n  * Expecting", img_name + ".{png,jpg,jpeg}")
         yaml['image'] = ""
         return ""
     yaml['image'] = file_name
@@ -113,8 +113,6 @@ def split_thumbnail_list_into_pages(thumbnails):
 
 def generate_browse_page(thumbnails):
     thumbnails.sort(key=lambda t: t.date)
-    for t in thumbnails:
-        print(t.name, "has date", t.date)
     thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
@@ -147,14 +145,20 @@ def generate_browse_page(thumbnails):
 
 if __name__ == "__main__":
     thumbnails = []
+    if not os.path.isdir('publish/images/thumbnails'):
+        os.makedirs('publish/images/thumbnails')
     for filename in os.listdir('recipes'):
         name = filename.split('.')[0]
         if name != 'template':
             print("Generating files for", filename)
             t = generate_files_for_recipe(name)
             thumbnails.append(t)
+    print("Generating browse pages")
+    if not os.path.isdir('publish/all'):
+        os.makedirs('publish/all')
     generate_browse_page(thumbnails)
 
+    print("Generating CSS")
     if not os.path.isdir('publish/css'):
         os.makedirs('publish/css')
     compiled_css = lesscpy.compile(open('templates/main.less', 'r'))
