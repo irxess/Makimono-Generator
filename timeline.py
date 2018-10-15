@@ -33,7 +33,7 @@ def find_positions(yaml):
             node.y = lowest_y
 
         node.svg_x = str(round(node.x * (90.0/amount_of_steps)) +5) + '%'
-        node.svg_y = y_offset + (y_spacing * node.y)
+        node.svg_y = y_offset + (y_spacing * (node.y-1))
         nodes.append(node)
 
     # Iterate through all nodes?
@@ -49,8 +49,14 @@ def find_positions(yaml):
     # Later: While looping: find the highest and total amount of time
 
     done_node = StepNode(amount_of_steps, [amount_of_steps - 1], 'done')
-    done_node.svg_x = 95 # assuming the 5% offset
+    done_node.svg_x = '95%' # assuming the 5% offset
     done_node.svg_y = y_offset
+    nodes.append(done_node)
+
+    yaml['timeline'] = {}
+    amount_of_nodes = len(nodes)
+    yaml['timeline']['height'] = y_offset*2 + y_spacing*(next_y-2)
+
     return nodes
 
 def print_nodes(nodes):
@@ -61,12 +67,6 @@ def add_timeline_to_yaml(yaml, nodes):
     lines = []
     circles = []
 
-    yaml['timeline'] = {}
-
-    y_offset = 20
-    y_spacing = 30
-    amount_of_nodes = len(nodes)
-    yaml['timeline']['height'] = y_offset*2 + y_spacing*(amount_of_nodes-1)
 
     yaml['timeline']['lines'] = []
     yaml['timeline']['circles'] = []
