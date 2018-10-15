@@ -57,22 +57,6 @@ def print_nodes(nodes):
     for n in nodes:
         print('Node ', n.x, '\ty: ', n.y, '\tsvg_x: ', n.svg_x, '%')
 
-class Point:
-    def __init__(self, x,y):
-        self.x = x
-        self.y = y
-
-class Line:
-    def __init__(self, color, x1, y1, x2, y2):
-        self.color = color
-        self.start = Point(x1,y1)
-        self.end = Point(x2,y2)
-
-class Circle:
-    def __init__(self, color, x, y):
-        self.color = color
-        self.center = Point(x,y)
-
 def add_timeline_to_yaml(yaml, nodes):
     lines = []
     circles = []
@@ -87,13 +71,15 @@ def add_timeline_to_yaml(yaml, nodes):
     yaml['timeline']['lines'] = []
     yaml['timeline']['circles'] = []
     for n in nodes:
-        #circle = Circle(n.temp, n.svg_x, n.svg_y)
         circle = {}
         circle['color'] = n.temp
         circle['center'] = {'x': n.svg_x, 'y': n.svg_y}
         yaml['timeline']['circles'].append(circle)
         for d in n.depends_on:
-            line = Line(nodes[d].temp, nodes[d].svg_x, nodes[d].svg_y, n.svg_x, n.svg_y)
+            line = {}
+            line['color'] = nodes[d].temp
+            line['start'] = {'x': nodes[d].svg_x, 'y': nodes[d].svg_y}
+            line['end'] = {'x': n.svg_y, 'y': n.svg_x}
             yaml['timeline']['lines'].append(line)
 
 
