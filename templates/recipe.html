@@ -24,7 +24,9 @@
   </section>
 
   <section id="timeline">
-    {% block timeline %}{{ r.timeline }}{% endblock %}
+    {% if (r.timeline is defined) %}
+      {% include 'timeline.html' %}
+    {% endif %}
   </section>
 
   <section id="steps">

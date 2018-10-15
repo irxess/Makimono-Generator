@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100% {{ timeline.height }}">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100% {{ r.timeline.height }}">
 
-  <rect x="0" y="0" width="100%" height="{{ timeline.height }}" fill="#eee" />
+  <rect x="0" y="0" width="100%" height="{{ r.timeline.height }}" fill="#eee" />
 
-  {% for line in timeline.lines %}
+  {% for line in r.timeline.lines %}
   <!-- there is at least one outgoing line from each node, with that nodes color -->
     <line class="{{ line.color }}"
       x1="{{ line.start.x }}"
@@ -11,7 +11,7 @@
       y2="{{ line.end.y }}" /> <!-- 0 -->
   {% endfor %}
 
-  {% for circle in timeline.circles %}
+  {% for circle in r.timeline.circles %}
     <circle class="circle.color"
       cx="{{ circle.x }}"
       cy="{{ circle.center.y }}"
