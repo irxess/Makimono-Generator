@@ -3,6 +3,9 @@ from jinja2 import Template, Environment, FileSystemLoader
 import lesscpy
 import yaml
 from PIL import Image
+import timeline
+
+# TODO add the description
 
 class Ingredient:
     def __init__(self, amount):
@@ -87,12 +90,14 @@ def generate_files_for_recipe(name):
     yaml_result = yaml.load(recipe)
     add_ingredient_amounts_to_steps(yaml_result)
     prepare_image(yaml_result)
+    svg = timeline.generate_svg(yaml_result)
 
     if not os.path.isdir('publish'):
         os.makedirs('publish')
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
     template = env.get_template('recipe.html')
+    # TODO Website will display "None" if description for a recipe is empty.
     output = template.render(r=yaml_result, path_to_base='.', all_recipes_path='all/page1.html')
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
@@ -112,6 +117,7 @@ def split_thumbnail_list_into_pages(thumbnails):
 
 
 def generate_browse_page(thumbnails):
+    # TODO Add description on hover?
     thumbnails.sort(key=lambda t: t.date)
     thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails
     file_loader = FileSystemLoader('templates')
