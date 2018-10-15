@@ -198,26 +198,26 @@ hr {
     margin: 0 auto;
     display: flex;
     align-items: center;
-  }
-  circle {
-    stroke-width: 1;
-    stroke: #AAA;
-      .hot      {fill:#f1473b;}
-      .warm     {fill:rgb(237,112, 14);}
-      .room     {fill:#F7C210;}
-      .cold     {fill:#14DAF1;}
-      .freezing {fill:rgb( 20,114,241);}
-      .done     {fill:#AF3;}
-  }
-  line {
-    stroke-width: 3px;
-    stroke: #AF3;
-    .hot      {stroke:#f1473b;}
-    .warm     {stroke:rgb(237,112, 14);}
-    .room     {stroke:#F7C210;}
-    .cold     {stroke:#14DAF1;}
-    .freezing {stroke:rgb( 20,114,241);}
-    .done     {stroke:green;}
+    circle {
+      stroke-width: 1;
+      stroke: #AAA;
+      &.hot      {fill:#f1473b;}
+      &.warm     {fill:rgb(237,112, 14);}
+      &.room     {fill:#F7C210;}
+      &.cold     {fill:#14DAF1;}
+      &.freezing {fill:rgb( 20,114,241);}
+      &.done     {fill:#AF3;}
+    }
+    line {
+      stroke-width: 3px;
+      stroke: #AF3;
+      &.hot      {stroke:#f1473b;}
+      &.warm     {stroke:rgb(237,112, 14);}
+      &.room     {stroke:#F7C210;}
+      &.cold     {stroke:#14DAF1;}
+      &.freezing {stroke:rgb( 20,114,241);}
+      &.done     {stroke:green;}
+    }
   }
 }
 
