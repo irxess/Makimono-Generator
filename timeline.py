@@ -87,7 +87,10 @@ def add_timeline_to_yaml(yaml, nodes):
     yaml['timeline']['lines'] = []
     yaml['timeline']['circles'] = []
     for n in nodes:
-        circle = Circle(n.temp, n.svg_x, n.svg_y)
+        #circle = Circle(n.temp, n.svg_x, n.svg_y)
+        circle = {}
+        circle['color'] = n.temp
+        circle['center'] = {'x': n.svg_x, 'y': n.svg_y}
         yaml['timeline']['circles'].append(circle)
         for d in n.depends_on:
             line = Line(nodes[d].temp, nodes[d].svg_x, nodes[d].svg_y, n.svg_x, n.svg_y)
