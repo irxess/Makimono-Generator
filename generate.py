@@ -90,7 +90,7 @@ def generate_files_for_recipe(name):
     yaml_result = yaml.load(recipe)
     add_ingredient_amounts_to_steps(yaml_result)
     prepare_image(yaml_result)
-    svg = timeline.generate_svg(yaml_result)
+    timeline.generate_svg(yaml_result)
 
     if not os.path.isdir('publish'):
         os.makedirs('publish')

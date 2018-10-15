@@ -15,6 +15,8 @@ class StepNode:
         self.depends_on = depends_list
 
 def find_positions(yaml):
+    y_offset = 20
+    y_spacing = 30
     nodes = []
     next_y = 1
     amount_of_steps = len(yaml['steps'])
@@ -29,10 +31,11 @@ def find_positions(yaml):
                 if nodes[d].y < lowest_y:
                     lowest_y = nodes[d].y
             node.y = lowest_y
+
         node.svg_x = round(node.x * (90.0/amount_of_steps)) +5 # 5% offset on each side?
+        node.svg_y = y_offset + (y_spacing * node.y)
         nodes.append(node)
-    # Add a "done" node, with svg_x = 95
-    return nodes
+
     # Iterate through all nodes?
     # Is the initial y good enough, or do I need to reorder them?
     # I think I need to reorder based on first merge into the "main" branch on top
@@ -45,11 +48,54 @@ def find_positions(yaml):
     # For now: x * (1/amount_of_steps) = position in %
     # Later: While looping: find the highest and total amount of time
 
+    done_node = StepNode(amount_of_steps, [amount_of_steps - 1], 'done')
+    done_node.svg_x = 95 # assuming the 5% offset
+    done_node.svg_y = y_offset
+    return nodes
+
 def print_nodes(nodes):
     for n in nodes:
         print('Node ', n.x, '\ty: ', n.y, '\tsvg_x: ', n.svg_x, '%')
+
+class Point:
+    def __init__(self, x,y):
+        self.x = x
+        self.y = y
+
+class Line:
+    def __init__(self, color, x1, y1, x2, y2):
+        self.color = color
+        self.start = Point(x1,y1)
+        self.end = Point(x2,y2)
+
+class Circle:
+    def __init__(self, color, x, y):
+        self.color = color
+        self.center = Point(x,y)
+
+def add_timeline_to_yaml(yaml, nodes):
+    lines = []
+    circles = []
+
+    yaml['timeline'] = {}
+
+    y_offset = 20
+    y_spacing = 30
+    amount_of_nodes = len(nodes)
+    yaml['timeline']['height'] = y_offset*2 + y_spacing*(amount_of_nodes-1)
+
+    yaml['timeline']['lines'] = []
+    yaml['timeline']['circles'] = []
+    for n in nodes:
+        circle = Circle(n.temp, n.svg_x, n.svg_y)
+        yaml['timeline']['circles'].append(circle)
+        for d in n.depends_on:
+            line = Line(nodes[d].temp, nodes[d].svg_x, nodes[d].svg_y, n.svg_x, n.svg_y)
+            yaml['timeline']['lines'].append(line)
 
 
 def generate_svg(yaml):
     nodes = find_positions(yaml)
     print_nodes(nodes)
+    # TODO improve positioning here?
+    add_timeline_to_yaml(yaml, nodes)
