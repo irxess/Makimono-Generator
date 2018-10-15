@@ -32,7 +32,7 @@ def find_positions(yaml):
                     lowest_y = nodes[d].y
             node.y = lowest_y
 
-        node.svg_x = round(node.x * (90.0/amount_of_steps)) +5 # 5% offset on each side?
+        node.svg_x = str(round(node.x * (90.0/amount_of_steps)) +5) + '%'
         node.svg_y = y_offset + (y_spacing * node.y)
         nodes.append(node)
 
@@ -79,7 +79,7 @@ def add_timeline_to_yaml(yaml, nodes):
             line = {}
             line['color'] = nodes[d].temp
             line['start'] = {'x': nodes[d].svg_x, 'y': nodes[d].svg_y}
-            line['end'] = {'x': n.svg_y, 'y': n.svg_x}
+            line['end'] = {'x': n.svg_x, 'y': n.svg_y}
             yaml['timeline']['lines'].append(line)
 
 
