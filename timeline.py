@@ -85,6 +85,5 @@ def add_timeline_to_yaml(yaml, nodes):
 
 def generate_svg(yaml):
     nodes = find_positions(yaml)
-    print_nodes(nodes)
     # TODO improve positioning here?
     add_timeline_to_yaml(yaml, nodes)
