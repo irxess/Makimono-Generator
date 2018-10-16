@@ -212,16 +212,6 @@ hr {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    circle {
-      stroke-width: 0.15em; /* 0.1em */
-      stroke: @grey;
-      &.hot      {fill: @red;}
-      &.warm     {fill: @orange;}
-      &.room     {fill: @yellow;}
-      &.cold     {fill: @lightblue;}
-      &.freezing {fill: @blue;}
-      &.done     {fill: @green;}
-    }
     line {
       stroke-width: 0.35em; /* 0.5em */
       stroke: #AF3;
@@ -237,6 +227,19 @@ hr {
         stroke: @grey;
     }
   }
+}
+
+svg {
+    circle {
+        stroke-width: 0.15em; /* 0.1em */
+        stroke: @grey;
+        &.hot      {fill: @red;}
+        &.warm     {fill: @orange;}
+        &.room     {fill: @yellow;}
+        &.cold     {fill: @lightblue;}
+        &.freezing {fill: @blue;}
+        &.done     {fill: @green;}
+    }
 }
 
 #ingredients {
@@ -269,6 +272,10 @@ hr {
 
 .step-icon {
   align: right;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
   img {
     width: 30px;
     padding: 3px;
