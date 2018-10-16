@@ -9,6 +9,13 @@
       x2="{{ line.end.x }}"
       y2="{{ line.end.y }}" />
   {% endfor %}
+  {% for line in r.timeline.lines %}
+    <line class="thin-line"
+      x1="{{ line.start.x }}"
+      y1="{{ line.start.y }}"
+      x2="{{ line.end.x }}"
+      y2="{{ line.end.y }}" />
+  {% endfor %}
 
   {% for circle in r.timeline.circles %}
     <circle class="{{ circle.color }}"
