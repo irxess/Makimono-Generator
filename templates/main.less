@@ -346,14 +346,14 @@ svg {
       border: 1px solid @super-light-grey;
       margin-top: 0.5em;
       margin-bottom: 0.1em;
+      &:hover:not(.current-page) {
+        background-color: @super-light-grey;
+      }
     }
     .current-page {
       background-color: @green;
       color: @text-color-light;
       border: 1px solid @green;
-    }
-    a:hover:not(.current-page) {
-      background-color: @super-light-grey;
     }
   }
 }
