@@ -6,22 +6,23 @@ import yaml
 class StepNode:
     # Each node has a timeline step (its x position)
     # and a height (its y position)
-    def __init__(self, id, depends_list, temp):
+    def __init__(self, id, depends_list, temp, step_type):
         self.x = id
         self.y = 0
         self.svg_x = 0
         self.svg_y = 0
         self.temp = temp
+        self.step_type = step_type
         self.depends_on = depends_list
 
 def find_positions(yaml):
-    y_offset = 20
+    y_offset = 25
     y_spacing = 30
     nodes = []
     next_y = 1
     amount_of_steps = len(yaml['steps'])
     for step in yaml['steps']:
-        node = StepNode(step['id'], step['depends_on'], step['temp'])
+        node = StepNode(step['id'], step['depends_on'], step['temp'], step['type'])
         if node.depends_on == []:
             node.y = next_y
             next_y += 1
@@ -48,7 +49,7 @@ def find_positions(yaml):
     # For now: x * (1/amount_of_steps) = position in %
     # Later: While looping: find the highest and total amount of time
 
-    done_node = StepNode(amount_of_steps, [amount_of_steps - 1], 'done')
+    done_node = StepNode(amount_of_steps, [amount_of_steps - 1], 'done', 'done')
     done_node.svg_x = '95%' # assuming the 5% offset
     done_node.svg_y = y_offset
     nodes.append(done_node)
@@ -74,6 +75,7 @@ def add_timeline_to_yaml(yaml, nodes):
         circle = {}
         circle['color'] = n.temp
         circle['center'] = {'x': n.svg_x, 'y': n.svg_y}
+        circle['type'] = n.step_type
         yaml['timeline']['circles'].append(circle)
         for d in n.depends_on:
             line = {}

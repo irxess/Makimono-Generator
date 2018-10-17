@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100% {{ r.timeline.height }}">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="1.1"
+    viewBox="0 0 100% {{ r.timeline.height }}">
 
   <rect x="0" y="0" width="100%" height="{{ r.timeline.height }}" fill="#f5f5f5" />
 
@@ -21,7 +25,11 @@
     <circle class="{{ circle.color }}"
       cx="{{ circle.center.x }}"
       cy="{{ circle.center.y }}"
-      r="1em" />
+      r="1.25em" />
+    <image class="svg-icon" xlink:href="images/icons/{{ circle.type }}.svg"
+           x="{{ circle.center.x }}"
+           y="{{ circle.center.y }}"
+           width="2em" height="2em" />
   {% endfor %}
 
 </svg>

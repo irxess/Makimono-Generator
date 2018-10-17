@@ -16,9 +16,8 @@ ingredients:
   - {id: 6, name: gelatin, amount: 5, unit: 'sheets', comment: ''}
   - {id: 7, name: heavy cream, amount: 200, unit: 'ml', comment: ''}
 
-# types: bowl, frying pan, saucepan, cast-iron pan, piping bag/siphon (decorate), oven, kitchen machine, 
-#        chopping knife, spreading knife, shape (hands, braid?), spoon,
-#        bake (box with heat above), add (pour from bowl)
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), knife, shape, bake, add
+#        spreading knife, shape (hands, braid?), spoon
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
   - {id: 0, short: mix cornstarch and milk, time: , type: 'bowl', temp: 'room',

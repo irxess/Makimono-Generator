@@ -1,2 +1,6 @@
-publish
 __pycache__
+publish/*
+!publish/images/
+publish/images/*
+!publish/images/icons/
+publish/images/icons/all_icons.svg
