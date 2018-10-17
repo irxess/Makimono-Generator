@@ -17,7 +17,7 @@ class StepNode:
 
 def find_positions(yaml):
     y_offset = 25
-    y_spacing = 30
+    y_spacing = 40
     nodes = []
     next_y = 1
     amount_of_steps = len(yaml['steps'])
