@@ -56,7 +56,7 @@ steps:
      Put the mixture on low heat and stir until the gelatin is completely dissolved.
      Take it off the heat."}
   - {id: 8, short: whip heavy cream, time: , type: 'bowl', temp: 'room',
-     depends_on: [6],
+     depends_on: [],
      ingredients: [ {id: 7}],
      long: "Pour the remaining cream into a bowl. Add a little bit of sugar, and
      whip the mixture to form soft peaks."}

@@ -20,29 +20,29 @@ ingredients:
 #        bake (box with heat above), add (pour from bowl)
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
-  - {id: 0, short: Preheat oven, time: 0, type: 'oven', temp: 'room',
+  - {id: 0, short: Mix dry ingredients, time: 1, type: 'bowl', temp: 'room',
      depends_on: [],
-     long: "Preheat the oven to 200 degrees Celsius."}
-  - {id: 1, short: Mix dry ingredients, time: 1, type: 'bowl', temp: 'room',
-     depends_on: [0],
      ingredients: [ {id: 0}, {id: 1}, {id: 2}, {id: 3} ],
      long: "Mix together the flour, baking powder, salt and sugar in a bowl."}
-  - {id: 2, short: Add butter, time: 5, type: 'bowl', temp: 'room',
-     depends_on: [1],
+  - {id: 1, short: Add butter, time: 5, type: 'bowl', temp: 'room',
+     depends_on: [0],
      ingredients: [ {id: 4} ],
      long: "Add the butter with your fingers until the mixture has a sandy texture without chunks."}
-  - {id: 3, short: Mix milk and egg, time: 1, type: 'bowl', temp: 'room',
+  - {id: 2, short: Mix milk and egg, time: 1, type: 'bowl', temp: 'room',
      depends_on: [],
      ingredients: [ {id: 5}, {id: 6} ],
      long: "In a different bowl, mix the milk and egg together. If desired, save a bit of the egg for an egg wash later."}
-  - {id: 4, short: Mix everything, time: 2, type: 'bowl', temp: 'room',
-     depends_on: [2,3],
+  - {id: 3, short: Mix everything, time: 2, type: 'bowl', temp: 'room',
+     depends_on: [1,2],
      long: "Add the milk mixture to the bowl with flour. Mix until it becomes a relatively smooth ball, but try to
      avoid kneading the dough too much."}
+  - {id: 4, short: Preheat oven, time: 0, type: 'oven', temp: 'room',
+     depends_on: [],
+     long: "Preheat the oven to 200 degrees Celsius."}
   - {id: 5, short: Shape, time: 6, type: 'shape', temp: 'room',
-     depends_on: [4],
+     depends_on: [3],
      long: "Roll the dough until it is about 1-2 cm thick. Cut out circles of the desired size and transfer them onto a baking sheet."}
   - {id: 6, short: Bake, time: 14, type: 'oven', temp: 'hot',
-     depends_on: [5],
+     depends_on: [4, 5],
      long: "Put the scones into the oven, and bake at 200 degrees C with convection on. The scones
      should be done in about 14 minutes, until they have a nice, golden color on top."}
