@@ -7,19 +7,19 @@
 @grey: #616161;
 
 @red: #FF5722;
-@red-dark: #F4511E;
+@red-dark: #d84315; // #F4511E;
 @orange: #FF9800;
-@orange-dark: #FB8C00;
+@orange-dark: #ef6c00;// #FB8C00;
 @yellow: #FFEB3B;
-@yellow-dark: #FDD835;
+@yellow-dark: #558b2f;//#FDD835;
 @green: #8BC34A; /* navbar background */
-@green-dark: #689F38; /* navbar shadows? */
+@green-dark: #558b2f; // #689F38; /* navbar shadows? */
 //@lightblue: #04BEF2;
 //@lightblue-dark: #04AFE2;
 @lightblue: #00bcd4;
-@lightblue-dark: #00acc1;
+@lightblue-dark: #00838f; // #00acc1;
 @blue: #2196F3;
-@blue-dark: #1E88E5;
+@blue-dark: #1565c0; //#1E88E5;
 
 header {
   text-align: center;
@@ -213,7 +213,7 @@ hr {
     display: flex;
     align-items: center;
     line {
-      stroke-width: 0.35em; /* 0.5em */
+      stroke-width: 0.3em; /* 0.5em */
       stroke: #AF3;
       &.hot      {stroke: @red-dark;}
       &.warm     {stroke: @orange-dark;}
@@ -222,8 +222,8 @@ hr {
       &.freezing {stroke: @blue-dark;}
       &.done     {stroke: @green-dark;}
     }
-    .thin-line {
-      stroke-width: 0.1em;
+    .dark-line {
+      stroke-width: 0em;
       stroke: @grey;
     }
     .svg-icon { transform: translate(-1em,-1em);}
@@ -232,14 +232,14 @@ hr {
 
 svg {
   circle {
-    stroke-width: 0.15em; /* 0.1em */
-    stroke: @grey;
-    &.hot      {fill: @red;}
-    &.warm     {fill: @orange;}
-    &.room     {fill: @yellow;}
-    &.cold     {fill: @lightblue;}
-    &.freezing {fill: @blue;}
-    &.done     {fill: @green;}
+    stroke-width: 0em; /* 0.1em */
+    //fill: @grey;
+    &.hot      {fill: @red-dark;}
+    &.warm     {fill: @orange-dark;}
+    &.room     {fill: @yellow-dark;}
+    &.cold     {fill: @lightblue-dark;}
+    &.freezing {fill: @blue-dark;}
+    &.done     {fill: @green-dark;}
   }
 }
 
