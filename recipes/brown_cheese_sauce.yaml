@@ -1,0 +1,152 @@
+recipe: Brown cheese sauce
+
+description: A savory sayce with tones of juniper and sweetness, making it good for dishes based on game meat. Or simply when you'd use a gravy.
+source: "Simons dad"
+date: 2018-10-20
+image: brown_cheese_sauce
+
+ingredients:
+  - {
+      id: 0,
+      name: cream,
+      amount: 300,
+      unit: 'g',
+      comment: 'Variants with less fat will make it harder to bind the cheese.'
+    }
+  - {
+      id: 1,
+      name: beef bouillon cubes,
+      amount: 1,
+      unit: '',
+      comment: ''
+    }
+  - {
+      id: 2,
+      name: game stock,
+      amount: 3,
+      unit: 'tbsp',
+      comment: ''
+    }
+  - {
+      id: 3,
+      name: Gudbrandsdalsost,
+      amount: 100,
+      unit: 'g',
+      comment: ''
+    }
+  - {
+    id: 4,
+    name: juniper berries,
+    amount: 1,
+    unit: 'tbsp',
+    comment: ''
+  }
+  - {
+    id: 5,
+    name: black pepper,
+    amount: 1,
+    unit: 'tbsp',
+    comment: ''
+  }
+  - {
+    id: 6,
+    name: corn starch,
+    amount: 1,
+    unit: 'tsp',
+    comment: 'Optional'
+  }
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), knife, shape, bake, add
+#        spreading knife, shape (hands, braid?), spoon, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    id: 0,
+    short: mix cream and beef bouillon in saucepan,
+    time: 1,
+    type: 'add',
+    temp: 'room',
+    depends_on: [],
+    ingredients: [ {id: 0 }, {id: 1} ],
+    long: "Add the cream and the beef buillion to the saucepan."
+  }
+  - {
+    id: 1,
+    short: heat the cream over medium heat untill boiling,
+    time: 10,
+    type: 'saucepan',
+    temp: 'warm',
+    depends_on: [0],
+    ingredients: [],
+    long: "Do you like the taste of burnt milk? No? Stir that sauce!"
+  }
+  - {
+    id: 2,
+    short: slice the cheese,
+    time: 2,
+    type: 'knife',
+    temp: 'room',
+    depends_on: [],
+    ingredients: [ {id: 3 }],
+    long: "Prepare the cheese in thin slices so that melting it into the sauce goes smoother."
+  }
+  - {
+    id: 3,
+    short: grind the pepper and juniper,
+    time: 1,
+    type: 'mortar',
+    temp: 'room',
+    depends_on: [],
+    ingredients: [ {id: 4 }, {id: 5 }],
+    long: "If you use whole peppercorns and juniper beries (as I think you should given the slightly better better taste comparet to the little effort it is to do), now is the time. Otherwise just make sure you have them at hand."
+  }
+  - {
+    id: 4,
+    short: Stir in the cheese,
+    time: 5,
+    type: 'saucepan',
+    temp: 'warm',
+    depends_on: [1,2],
+    ingredients: [],
+    long: "A slice at a time, add the cheese to the now simmering cream untill you have dissolved it all. (Remember that it takes less heat to keep somehting warm than it takes to heat it up. At this point you probably want to turn the heat down a bit.)"
+  }
+  - {
+    id: 5,
+    short: Add the pepper and juniper,
+    time: 1,
+    type: 'saucepan',
+    temp: 'warm',
+    depends_on: [3,4],
+    ingredients: [],
+    long: "Add the pepper and juniper to the sauce. Stir well."
+  }
+  - {
+    id: 6,
+    short: Add the game stock,
+    time: 1,
+    type: 'saucepan',
+    temp: 'warm',
+    depends_on: [5],
+    ingredients: [{id: 2 }],
+    long: "Add the game stock."
+  }
+  - {
+    id: 7,
+    short: Stir in the corn starch,
+    time: 2,
+    type: 'saucepan',
+    temp: 'warm',
+    depends_on: [6],
+    ingredients: [{id: 6 }],
+    long: "Stir in the cornstarch. Make sure there are no lumps"
+  }
+  - {
+    id: 8,
+    short: Simmer while stirring,
+    time: 5,
+    type: 'saucepan',
+    temp: 'warm',
+    depends_on: [7],
+    ingredients: [],
+    long: "Stir the sauce untill it has thickened as much as you want."
+  }
