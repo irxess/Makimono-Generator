@@ -56,7 +56,7 @@ ingredients:
     comment: 'Optional'
   }
 
-# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), knife, shape, bake, add
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add
 #        spreading knife, shape (hands, braid?), spoon, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
@@ -64,7 +64,7 @@ steps:
     id: 0,
     short: mix cream and beef bouillon in saucepan,
     time: 1,
-    type: 'add',
+    type: 'saucepan',
     temp: 'room',
     depends_on: [],
     ingredients: [ {id: 0 }, {id: 1} ],
@@ -84,7 +84,7 @@ steps:
     id: 2,
     short: slice the cheese,
     time: 2,
-    type: 'knife',
+    type: 'cut',
     temp: 'room',
     depends_on: [],
     ingredients: [ {id: 3 }],
@@ -138,7 +138,8 @@ steps:
     temp: 'warm',
     depends_on: [6],
     ingredients: [{id: 6 }],
-    long: "Stir in the cornstarch. Make sure there are no lumps"
+    long: "Stir in the cornstarch. Make sure there are no lumps",
+    optional: true
   }
   - {
     id: 8,
@@ -148,5 +149,6 @@ steps:
     temp: 'warm',
     depends_on: [7],
     ingredients: [],
-    long: "Stir the sauce untill it has thickened as much as you want."
+    long: "Stir the sauce untill it has thickened as much as you want.",
+    optional: true
   }
