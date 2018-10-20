@@ -24,6 +24,8 @@
 @size-cutoff: 70em;
 @size-cutoff-almost: 69.99em;
 
+@non-mobile-empty-side-space-size: 10%;
+
 header {
   text-align: center;
   font-family: "Lucida Bright", "Palatino", "Times New Roman", "serif";
@@ -163,13 +165,13 @@ hr {
   /* put this on the left */
   order: -1;
   @media (min-width: @size-cutoff) {
-    flex: 0 0 10%;
+    flex: 0 0 @non-mobile-empty-side-space-size;
   }
 }
 
 #empty-col-right {
   @media (min-width: @size-cutoff) {
-    flex: 0 0 10%;
+    flex: 0 0 @non-mobile-empty-side-space-size;
   }
 }
 
@@ -302,8 +304,8 @@ svg {
 
 #info-col {
   @media (min-width: @size-cutoff) {
-    margin-left: 12em;
-    margin-right: 12em;
+    margin-left: @non-mobile-empty-side-space-size;
+    margin-right: @non-mobile-empty-side-space-size;
     flex-basis: 100%;
   }
 }
