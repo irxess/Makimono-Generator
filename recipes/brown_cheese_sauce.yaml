@@ -7,33 +7,33 @@ image: brown_cheese_sauce
 
 ingredients:
   - {
-      id: 0,
-      name: cream,
-      amount: 300,
-      unit: 'g',
-      comment: 'Variants with less fat will make it harder to bind the cheese.'
-    }
+    id: 0,
+    name: cream,
+    amount: 300,
+    unit: 'g',
+    comment: 'Variants with less fat will make it harder to bind the cheese.'
+  }
   - {
-      id: 1,
-      name: beef bouillon cubes,
-      amount: 1,
-      unit: '',
-      comment: ''
-    }
+    id: 1,
+    name: beef bouillon cubes,
+    amount: 1,
+    unit: '',
+    comment: ''
+  }
   - {
-      id: 2,
-      name: game stock,
-      amount: 3,
-      unit: 'tbsp',
-      comment: ''
-    }
+    id: 2,
+    name: game stock,
+    amount: 3,
+    unit: 'tbsp',
+    comment: ''
+  }
   - {
-      id: 3,
-      name: Gudbrandsdalsost,
-      amount: 100,
-      unit: 'g',
-      comment: ''
-    }
+    id: 3,
+    name: Gudbrandsdalsost,
+    amount: 100,
+    unit: 'g',
+    comment: ''
+  }
   - {
     id: 4,
     name: juniper berries,
