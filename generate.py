@@ -115,7 +115,7 @@ def generate_files_for_recipe(name):
 
 
 def split_thumbnail_list_into_pages(thumbnails):
-    chunk_size = 4
+    chunk_size = 4 # This is the number of recipes that will be shown on the "All recipes"-page
     list_of_thumbnail_chunks = []
     pagination_list = []
     chunk_number = 1
@@ -129,7 +129,8 @@ def split_thumbnail_list_into_pages(thumbnails):
 def generate_browse_page(thumbnails):
     # TODO Add description on hover?
     thumbnails.sort(key=lambda t: t.date)
-    thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails
+    # Uncomment the following line to get more items in the "All recipes"-page. Usefull when debugging the pagination.
+    # thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails # Pagination debugging
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
     template = env.get_template('list_of_all_recipes.html')
