@@ -98,10 +98,19 @@ def generate_files_for_recipe(name):
     env = Environment(loader=file_loader)
     template = env.get_template('recipe.html')
     # TODO Website will display "None" if description for a recipe is empty.
-    output = template.render(r=yaml_result, path_to_base='.', all_recipes_path='all/page1.html')
+    output = template.render(
+        r=yaml_result,
+        path_to_base='.',
+        all_recipes_path='all/page1.html'
+    )
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
-    return Thumbnail(yaml_result['recipe'], './'+name+'.html', yaml_result['image'], yaml_result['date'])
+    return Thumbnail(
+        yaml_result['recipe'],
+        './'+name+'.html',
+        yaml_result['image'],
+        yaml_result['date']
+    )
 
 
 def split_thumbnail_list_into_pages(thumbnails):
