@@ -101,7 +101,8 @@ def generate_files_for_recipe(name):
     output = template.render(
         r=yaml_result,
         path_to_base='.',
-        all_recipes_path='all/page1.html'
+        all_recipes_path='all/page1.html',
+        about_path='about.html'
     )
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
@@ -152,11 +153,29 @@ def generate_browse_page(thumbnails):
             next_page = next_page,
             path_to_base='..',
             all_recipes_path='all/page1.html',
+            about_path='about.html'
         )
         with open('publish/all/page'+str(i+1)+'.html', 'w') as f:
             print(output, file=f)
         current_page.current = False
         prev_page = current_page
+
+
+def generate_about_page():
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+    template = env.get_template('about.html')
+    if not os.path.isdir('publish'):
+        os.makedirs('publish')
+
+    output = template.render(
+        path_to_base='.',
+        all_recipes_path='all/page1.html',
+        about_path='about.html'
+    )
+
+    with open('publish/about.html', 'w') as f:
+        print(output, file=f)
 
 
 if __name__ == "__main__":
@@ -174,10 +193,11 @@ if __name__ == "__main__":
         os.makedirs('publish/all')
     generate_browse_page(thumbnails)
 
+    generate_about_page()
+
     print("Generating CSS")
     if not os.path.isdir('publish/css'):
         os.makedirs('publish/css')
     compiled_css = lesscpy.compile(open('templates/main.less', 'r'))
     with open('publish/css/main.css', 'w') as f:
         print(compiled_css, file=f)
-
