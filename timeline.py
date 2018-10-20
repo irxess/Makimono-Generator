@@ -20,18 +20,22 @@ def find_positions(yaml):
     y_spacing = 40
     nodes = []
     next_y = 1
+    deepest_y = 1
     amount_of_steps = len(yaml['steps'])
     for step in yaml['steps']:
         node = StepNode(step['id'], step['depends_on'], step['temp'], step['type'])
         if node.depends_on == []:
             node.y = next_y
             next_y += 1
+            if(next_y > deepest_y):
+                deepest_y = next_y
         else:
             lowest_y = 1024
             for d in node.depends_on:
                 if nodes[d].y < lowest_y:
                     lowest_y = nodes[d].y
             node.y = lowest_y
+            next_y = 2
 
         node.svg_x = str(round(node.x * (90.0/amount_of_steps)) +5) + '%'
         node.svg_y = y_offset + (y_spacing * (node.y-1))
@@ -56,7 +60,7 @@ def find_positions(yaml):
 
     yaml['timeline'] = {}
     amount_of_nodes = len(nodes)
-    yaml['timeline']['height'] = y_offset*2 + y_spacing*(next_y-2)
+    yaml['timeline']['height'] = y_offset*2 + y_spacing*(deepest_y-2)
 
     return nodes
 
