@@ -21,6 +21,9 @@
 @blue: #2196F3;
 @blue-dark: #1565c0; //#1E88E5;
 
+@size-cutoff: 80em;
+@size-cutoff-almost: 79.99em;
+
 header {
   text-align: center;
   font-family: "Lucida Bright", "Palatino", "Times New Roman", "serif";
@@ -47,7 +50,7 @@ body {
 
 #three-col {
   .three-col;
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     flex-direction: row;
     flex: 1;
     flex-wrap: wrap;
@@ -112,7 +115,7 @@ hr {
 
 #desktop-nav {
   .nav;
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.23);
     ul {
       li {
@@ -128,17 +131,17 @@ hr {
       }
     }
   }
-  @media (max-width: 720px) {
+  @media (max-width: @size-cutoff-almost) {
     display: none;
   }
 }
 
 #mobile-nav {
   .nav;
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     display: none;
   }
-  @media (max-width: 720px) {
+  @media (max-width: @size-cutoff-almost) {
     box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.23);
     ul {
       li {
@@ -157,13 +160,13 @@ hr {
 #empty-col-left {
   /* put this on the left */
   order: -1;
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     flex: 0 0 10%;
   }
 }
 
 #empty-col-right {
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     flex: 0 0 10%;
   }
 }
@@ -175,10 +178,10 @@ hr {
   position: relative;
   border-radius: 2px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     flex: 1;
   }
-  @media (max-width: 720px) {
+  @media (max-width: @size-cutoff-almost) {
     margin-top: 0em;
   }
 }
@@ -296,7 +299,7 @@ svg {
 }
 
 #info-col {
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     margin-left: 12em;
     margin-right: 12em;
     flex-basis: 100%;
