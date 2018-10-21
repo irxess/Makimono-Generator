@@ -1,61 +1,115 @@
-recipe: Onion Pizza
+recipe: Name
 
-description: This pizza is great when you crave onion!
+description: ""
+source: ""
+date:
+image: 
 
 ingredients:
-  - {name: onion, amount: 2, unit: '', comment: ''}
-  - {name: butter, amount: 50, unit: 'gram', comment: ''}
-  - {name: sugar, amount: 15, unit: 'gram', comment: ''}
-  - {name: salt, amount: to taste, unit: '', comment: ''}
-  - {name: pepper, amount: to taste, unit: '', comment: ''}
-  - {name: shallot onion, amount: 2, unit: '', comment: ''}
-  - {name: red onion, amount: 2 small, unit: '', comment: ''}
-  - {name: leek, amount: a third, unit: '', comment: ''}
-  - {name: garlic, amount: 5, unit: 'cloves', comment: ''}
-  - {name: spring onion, amount: 2, unit: '', comment: ''}
-  - {name: pizza dough, amount: 'one large', unit: '', comment: ''}
-  - {name: red wine vinegar, amount: 50, unit: 'gram', comment: ''}
-  - {name: sesame oil, amount: 'some', unit: '', comment: ''}
-  - {name: cheese, amount: 12, unit: 'slices', comment: ''}
+  - {id: 0, name: , amount: , unit: 'g', comment: ''}
+  - {id: 1, name: , amount: , unit: 'g', comment: ''}
+  - {id: 2, name: , amount: , unit: 'g', comment: ''}
+  - {id: 3, name: , amount: , unit: 'g', comment: ''}
+  - {id: 4, name: , amount: , unit: 'g', comment: ''}
+  - {id: 5, name: , amount: , unit: 'g', comment: ''}
+  - {id: 6, name: , amount: , unit: 'g', comment: ''}
+  - {id: 7, name: , amount: , unit: 'g', comment: ''}
+  - {id: 8, name: , amount: , unit: 'g', comment: ''}
+  - {id: 9, name: , amount: , unit: 'g', comment: ''}
+  - {id: 10, name: , amount: , unit: 'g', comment: ''}
+  - {id: 11, name: , amount: , unit: 'g', comment: ''}
+  - {id: 12, name: , amount: , unit: 'g', comment: ''}
+  - {id: 13, name: , amount: , unit: 'g', comment: ''}
+  - {id: 14, name: , amount: , unit: 'g', comment: ''}
+  - {id: 15, name: , amount: , unit: 'g', comment: ''}
+  - {id: 16, name: , amount: , unit: 'g', comment: ''}
+  - {id: 17, name: , amount: , unit: 'g', comment: ''}
+  - {id: 18, name: , amount: , unit: 'g', comment: ''}
+  - {id: 19, name: , amount: , unit: 'g', comment: ''}
+  - {id: 20, name: , amount: , unit: 'g', comment: ''}
+  - {id: 21, name: , amount: , unit: 'g', comment: ''}
 
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), 
+#        knife, shape, bake, add
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
-  - {id: 0, short: preheat the oven, time: 10, type: work, image: '',
-  long: Preheat the oven to 220 degrees celsius.}
-  - {id: 1, short: cut onions, time: 1, type: work, image: '',
-  long: Start by cutting the onions into very thin slices.}
-  - {id: 2, short: caramelize onions, time: 20, type: fry, image: '',
-  long: Melt the butter in a pan on medium heat, 
-  and add the onion. Add 10 grams of sugar. Season with salt and pepper.
-  Change to medium low heat. Stir occasionally between the other steps.}
-  - {id: 3, short: pickle the shallots, type: work, image: '',
-  long: Cut the shallot onions into small chunks. Put them in a container
-  and add the red wine vinegar and 5 gram of sugar.}
-  - {id: 4, short: cut more onions, time: 6, type: work, image: '',
-  long: Cut the red onions into chunks, the leek into rings and the garlic 
-  into thin slices. Cut the spring onion into thin rings.}
-  - {id: 5, short: assemble the pizza, time: 6, type: work, image: '',
-  long: Put some baking paper on a baking tray. Pour on a generous layer of sesame oil.
-  Lay the pizza dough on top of the oil. Press the spring onions into the dough.
-  Spread the caramelized onions out on top. Add the pickled shallots and the garlic.
-  Sprinkle the red onion and leek over.}
-  - {id: 6, short: bake the pizza, time: 8, type: oven, image: '',
-  long: Set the oven to lower heat, and put the baking tray with the pizza into the oven.}
-  - {id: 7, short: add cheese, time: 1, type: work, image: '',
-  long: Take the pizza out of the oven. Put the cheese on top. By waiting with adding
-  the cheese, it will not be brown by the time the crust is done.}
-  - {id: 8, short: bake more, time: 15, type: oven, image: '',
-  long: Put the pizza back into the oven. After about 5 minutes, check on the pizza
-  every once it a while. Take the pizza out of the oven when the crust is crispy 
-  and the cheese has melted.}
-
-order:
-  0: []
-  1: []
-  2: [1]
-  3: []
-  4: []
-  5: [2,3,4]
-  6: [0,5]
-  7: [6]
-  8: [7]
-
+  - {id: 0, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 1, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 2, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 3, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 4, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 5, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 6, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 7, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 8, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 9, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 10, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 11, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 12, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 13, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 14, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 15, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 16, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 17, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 18, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}
+  - {id: 19, short: , time: 1, type: '', temp: 'room',
+     depends_on: [0],
+     ingredients: [ {id: 0} ],
+     long: ""}

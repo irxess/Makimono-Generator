@@ -32,7 +32,7 @@ steps:
      depends_on: [1],
      ingredients: [ {id: 7}, {id: 8} ],
      long: "Mix the lemon juice and milk into the batter."}
-  - {id: 3, short: Fry in oil in pan, time: 15, type: 'frying pan', temp: 'room',
+  - {id: 3, short: Fry in oil in pan, time: 15, type: 'fry', temp: 'warm',
      depends_on: [2],
      ingredients: [ {id: 9} ],
      long: "Add a little oil to a frying pan. Add about one tbsp of batter per pancake to the pan,
