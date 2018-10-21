@@ -21,6 +21,11 @@
 @blue: #2196F3;
 @blue-dark: #1565c0; //#1E88E5;
 
+@size-cutoff: 70em;
+@size-cutoff-almost: 69.99em;
+
+@non-mobile-empty-side-space-size: 10%;
+
 header {
   text-align: center;
   font-family: "Lucida Bright", "Palatino", "Times New Roman", "serif";
@@ -47,7 +52,7 @@ body {
 
 #three-col {
   .three-col;
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     flex-direction: row;
     flex: 1;
     flex-wrap: wrap;
@@ -110,10 +115,12 @@ hr {
   }
 }
 
+@nav-box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.23);
+
 #desktop-nav {
   .nav;
-  @media (min-width: 721px) {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.23);
+  @media (min-width: @size-cutoff) {
+    box-shadow: @nav-box-shadow;
     ul {
       li {
         float: left;
@@ -128,18 +135,18 @@ hr {
       }
     }
   }
-  @media (max-width: 720px) {
+  @media (max-width: @size-cutoff-almost) {
     display: none;
   }
 }
 
 #mobile-nav {
   .nav;
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     display: none;
   }
-  @media (max-width: 720px) {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.23);
+  @media (max-width: @size-cutoff-almost) {
+    box-shadow: @nav-box-shadow;
     ul {
       li {
         a {
@@ -157,14 +164,14 @@ hr {
 #empty-col-left {
   /* put this on the left */
   order: -1;
-  @media (min-width: 721px) {
-    flex: 0 0 12em;
+  @media (min-width: @size-cutoff) {
+    flex: 0 0 @non-mobile-empty-side-space-size;
   }
 }
 
 #empty-col-right {
-  @media (min-width: 721px) {
-    flex: 0 0 12em;
+  @media (min-width: @size-cutoff) {
+    flex: 0 0 @non-mobile-empty-side-space-size;
   }
 }
 
@@ -175,10 +182,10 @@ hr {
   position: relative;
   border-radius: 2px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  @media (min-width: 721px) {
+  @media (min-width: @size-cutoff) {
     flex: 1;
   }
-  @media (max-width: 720px) {
+  @media (max-width: @size-cutoff-almost) {
     margin-top: 0em;
   }
 }
@@ -296,9 +303,9 @@ svg {
 }
 
 #info-col {
-  @media (min-width: 721px) {
-    margin-left: 12em;
-    margin-right: 12em;
+  @media (min-width: @size-cutoff) {
+    margin-left: @non-mobile-empty-side-space-size;
+    margin-right: @non-mobile-empty-side-space-size;
     flex-basis: 100%;
   }
 }
@@ -354,5 +361,14 @@ svg {
       color: @text-color-light;
       border: 1px solid @green;
     }
+  }
+}
+
+#about-page-main-section{
+  padding-left: 1em;
+  h2 {
+    font-size: medium;
+    margin-left: 0;
+    margin-bottom: 0;
   }
 }

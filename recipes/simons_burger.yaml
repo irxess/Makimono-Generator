@@ -1,0 +1,112 @@
+recipe: Simons burger
+
+description: A burger with a lot of taste
+source: "Simons dad"
+date: 2018-10-20
+image: simons_burger
+
+ingredients:
+  - {
+    id: 0,
+    name: minced meat,
+    amount: 400,
+    unit: 'g',
+    comment: ''
+  }
+  - {
+    id: 1,
+    name: garlic,
+    amount: 3,
+    unit: 'cloves',
+    comment: ''
+  }
+  - {
+    id: 2,
+    name: capers,
+    amount: 1,
+    unit: 'tbsp',
+    comment: ''
+  }
+  - {
+    id: 3,
+    name: pickled beetroot,
+    amount: 2,
+    unit: 'slices',
+    comment: ''
+  }
+  - {
+    id: 4,
+    name: chilli pepper,
+    amount: 1,
+    unit: 'piece',
+    comment: ''
+  }
+  - {
+    id: 5,
+    name: balck pepper,
+    amount: 1,
+    unit: 'tbsp',
+    comment: ''
+  }
+  - {
+    id: 6,
+    name: salt,
+    amount: 2,
+    unit: 'tsp',
+    comment: ''
+  }
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add
+#        spreading knife, shape (hands, braid?), spoon, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    id: 0,
+    short: "chop all the choppables",
+    time: 10,
+    type: 'cut',
+    temp: 'room',
+    depends_on: [],
+    ingredients: [ {id: 1 }, {id: 2 }, {id: 3 }, {id: 4 } ],
+    long: "Chop (and peel) the garlic, capers, pickled beetroot, and pickled beetroot"
+  }
+  - {
+    id: 1,
+    short: "grind the salt and pepper",
+    time: 1,
+    type: 'mortar',
+    temp: 'room',
+    depends_on: [],
+    ingredients: [ {id: 5 }, {id: 6 } ],
+    long: "Prepare the salt and pepper. In my experience using a mortar for the peppercorns yields the best resutls."
+  }
+  - {
+    id: 2,
+    short: "mix everything into a paste/dough",
+    time: 2,
+    type: 'add',
+    temp: 'room',
+    depends_on: [0, 1],
+    ingredients: [ {id: 0 } ],
+    long: "Take the spices, vegetables(?), and meat, and mix it all together. You can use a bowl if you're most comfortable with that, I just to it on the cutting board I used previously because I find it easier to mix with my hands on the open surface, and you'll need something to shape the burgers on later anyways."
+  }
+  - {
+    id: 3,
+    short: "shape the burgers",
+    time: 10,
+    type: 'shape',
+    temp: 'room',
+    depends_on: [2],
+    ingredients: [],
+    long: "Shape burgers out of the dough/paste you've just made. Try to make them as thin as you can so that you don't end up with ginormous meatballs. Note that this is a bit hard because of all the filling. I find it easyest to go for about 70 grams per burger and try to make them about as thich as a finger."
+  }
+  - {
+    id: 4,
+    short: "fry the burgers",
+    time: 15,
+    type: 'fry',
+    temp: 'hot',
+    depends_on: [3],
+    ingredients: [],
+    long: "It's time to fry the burgers! I like my burgers fried swiftly over high heat to get a nice crust while preserving a juicy inside. Make sure to prepare somewhere to place the burgers as they come out of the pan and you want to put new ones in. If you are making really many you can consider placing the finished ones in the oven under some aluminum foil at about 50 C. Optionally, add cheese after turning them to maximize melting time."
+  }

@@ -98,14 +98,24 @@ def generate_files_for_recipe(name):
     env = Environment(loader=file_loader)
     template = env.get_template('recipe.html')
     # TODO Website will display "None" if description for a recipe is empty.
-    output = template.render(r=yaml_result, path_to_base='.', all_recipes_path='all/page1.html')
+    output = template.render(
+        r=yaml_result,
+        path_to_base='.',
+        all_recipes_path='all/page1.html',
+        about_path='about.html'
+    )
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
-    return Thumbnail(yaml_result['recipe'], './'+name+'.html', yaml_result['image'], yaml_result['date'])
+    return Thumbnail(
+        yaml_result['recipe'],
+        './'+name+'.html',
+        yaml_result['image'],
+        yaml_result['date']
+    )
 
 
 def split_thumbnail_list_into_pages(thumbnails):
-    chunk_size = 4
+    chunk_size = 4 # This is the number of recipes that will be shown on the "All recipes"-page
     list_of_thumbnail_chunks = []
     pagination_list = []
     chunk_number = 1
@@ -119,7 +129,8 @@ def split_thumbnail_list_into_pages(thumbnails):
 def generate_browse_page(thumbnails):
     # TODO Add description on hover?
     thumbnails.sort(key=lambda t: t.date)
-    thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails
+    # Uncomment the following line to get more items in the "All recipes"-page. Usefull when debugging the pagination.
+    # thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails # Pagination debugging
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
     template = env.get_template('list_of_all_recipes.html')
@@ -143,11 +154,29 @@ def generate_browse_page(thumbnails):
             next_page = next_page,
             path_to_base='..',
             all_recipes_path='all/page1.html',
+            about_path='about.html'
         )
         with open('publish/all/page'+str(i+1)+'.html', 'w') as f:
             print(output, file=f)
         current_page.current = False
         prev_page = current_page
+
+
+def generate_about_page():
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+    template = env.get_template('about.html')
+    if not os.path.isdir('publish'):
+        os.makedirs('publish')
+
+    output = template.render(
+        path_to_base='.',
+        all_recipes_path='all/page1.html',
+        about_path='about.html'
+    )
+
+    with open('publish/about.html', 'w') as f:
+        print(output, file=f)
 
 
 if __name__ == "__main__":
@@ -165,10 +194,11 @@ if __name__ == "__main__":
         os.makedirs('publish/all')
     generate_browse_page(thumbnails)
 
+    generate_about_page()
+
     print("Generating CSS")
     if not os.path.isdir('publish/css'):
         os.makedirs('publish/css')
     compiled_css = lesscpy.compile(open('templates/main.less', 'r'))
     with open('publish/css/main.css', 'w') as f:
         print(compiled_css, file=f)
-

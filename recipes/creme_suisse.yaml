@@ -6,11 +6,10 @@ date: 2018-03-25
 image: waffles
 
 ingredients:
-  - {id: 0, name: whole milk,
-  amount: 480, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'}
+  - {id: 0, name: whole milk, amount: 480, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'}
   - {id: 1, name: vanilla bean, amount: 1, unit: '', comment: "Vanilla bean gives a much better taste than other vanilla products. If you really can't use it, consider using vanilla essence."}
-  - {id: 2, name: sugar, amount: 100, unit: 'gram', comment: ''}
-  - {id: 3, name: cornstarch, amount: 40, unit: 'gram', comment: ''}
+  - {id: 2, name: sugar, amount: 100, unit: 'g', comment: ''}
+  - {id: 3, name: cornstarch, amount: 40, unit: 'g', comment: ''}
   - {id: 4, name: vanilla essence, amount: 2, unit: 'tsp', comment: ''}
   - {id: 5, name: egg yolks, amount: 4, unit: '', comment: ''}
   - {id: 6, name: gelatin, amount: 5, unit: 'sheets', comment: ''}
