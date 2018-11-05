@@ -1,0 +1,58 @@
+recipe: Gluten-free Pear Cake
+
+description: "This cake is moist and full of air, just like a normal cake, thanks to the eggs."
+source: ""
+date: 2018-10-08
+image: gluten_free_pear_cake
+
+ingredients:
+  - {id: 0, name: gluten-free flour, amount: 440, unit: 'g', comment: 'Almond flour gives the best taste, but any gluten-free flour will work.'}
+  - {id: 1, name: sugar, amount: 300, unit: 'g', comment: ''}
+  - {id: 2, name: butter, amount: 250, unit: 'g', comment: ''}
+  - {id: 3, name: eggs, amount: 8, unit: '', comment: ''}
+  - {id: 4, name: baking powder, amount: 15, unit: 'g', comment: ''}
+  - {id: 5, name: baking soda, amount: 5, unit: 'g', comment: ''}
+  - {id: 6, name: pears, amount: 750, unit: 'g', comment: ''}
+  - {id: 7, name: vanilla extract, amount: 2, unit: 'tbsp', comment: ''}
+  - {id: 8, name: other spices, amount: , unit: '', comment: 'You can use anything that goes well with the pears. Some examples are brown sugar, cinnamon, cardamon or ginger.'}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), 
+#        cut, shape, bake, add
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {id: 0, short: Dice the pears, time: 10, type: 'cut', temp: 'room',
+     depends_on: [],
+     ingredients: [ {id: 6} ],
+     long: "Peel the pears and chop them into small cubes."}
+  - {id: 1, short: Warm the pears, time: 10, type: 'fry', temp: 'warm',
+     depends_on: [0],
+     ingredients: [ {id: 7}, {id: 8} ],
+     long: "Put the pears into a frying pan, adding vanilla extract and the optional other spices. Warm on medium-low heat until the pears are soft, but not falling apart yet. Set aside to cool"}
+  - {id: 2, short: Soften butter, time: 1, type: 'saucepan', temp: 'warm',
+     depends_on: [],
+     ingredients: [ {id: 2} ],
+     long: "Soften the butter in a microwave oven or a small saucepan."}
+  - {id: 3, short: Split eggs, time: 3, type: 'bowl', temp: 'room',
+     depends_on: [],
+     ingredients: [ {id: 3}, {id: 1, amount: 150} ],
+     long: "Split the eggs. Egg whites should go into a kitchen machine bowl, and the yolks in another bowl. Add half of the sugar to the yolks."}
+  - {id: 4, short: Beat egg white and sugar, time: 2, type: 'km', temp: 'room',
+     depends_on: [3],
+     ingredients: [ {id: 1} ],
+     long: "Add the rest of the sugar to the egg whites. Beat the egg whites and sugar stiff."}
+  - {id: 5, short: Mix everything else, time: 3, type: 'bowl', temp: 'room',
+     depends_on: [1, 2, 3],
+     ingredients: [ {id: 0}, {id: 4}, {id: 5} ],
+     long: "Add the dry ingredients to the egg yolks. Also add the water from the pears. Mix together. You can add ab bit more water if it is hard to mix. When the batter is smooth, add the pears."}
+  - {id: 6, short: Preheat the oven, time: 1, type: 'oven', temp: 'room',
+     depends_on: [],
+     ingredients: [],
+     long: "Preheat the oven to 160 degrees Celsius."}
+  - {id: 7, short: Fold in pears, time: 2, type: 'bowl', temp: 'room',
+     depends_on: [4, 5],
+     ingredients: [ ],
+     long: "Carefully fold the two mixture's together. Try to stop mixing as soon as the batter is an even color. Pour the batter into a deep baking tray."}
+  - {id: 8, short: Bake, time: 45, type: 'oven', temp: 'hot',
+     depends_on: [6, 7],
+     ingredients: [ ],
+     long: "Bake the cake for about 45 minutes, until golden-brown on top and a cake skewer comes out clean."}
