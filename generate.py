@@ -4,6 +4,7 @@ import lesscpy
 import yaml
 from PIL import Image
 import timeline
+import shutil
 
 # TODO:
 # Create mortar icon
@@ -215,3 +216,9 @@ if __name__ == "__main__":
     compiled_css = lesscpy.compile(open('templates/main.less', 'r'))
     with open('publish/css/main.css', 'w') as f:
         print(compiled_css, file=f)
+
+    print("Copying icons")
+    if not os.path.isdir('publish/images/icons'):
+        os.makedirs('publish/images/icons')
+    for icon in os.listdir('templates/icons'):
+        shutil.copy('templates/icons/'+icon, 'publish/images/icons/'+icon)
