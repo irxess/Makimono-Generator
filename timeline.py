@@ -80,7 +80,6 @@ def add_svg_positions(nodes):
     for node in nodes:
         node.svg_x = (node.x * x_spacing) + x_offset
         node.svg_y = y_offset + (y_spacing * (node.y-1))
-
     return nodes
 
 def print_nodes(nodes):
