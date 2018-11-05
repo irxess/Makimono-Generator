@@ -8,11 +8,12 @@ x_offset = 5    # percent
 x_spacing = 0   # percent, set in find_positions
 
 class StepNode:
-    # Each node has a timeline step (its x position)
-    # and a height (its y position)
+    # Each node has a timeline step (its x position) and a height (its y position)
+    # All nodes in a line on the same height belong to the same group
     def __init__(self, id, depends_list, temp, step_type):
         self.x = id
         self.y = 0
+        self.group = 0
         self.svg_x = 0
         self.svg_y = 0
         self.temp = temp
@@ -20,11 +21,12 @@ class StepNode:
         self.depends_on = depends_list
 
 def find_positions(yaml):
+    global x_spacing
     global y_offset
     global y_spacing
-    global x_spacing
+
     nodes = []
-    next_y = 1
+    next_group = 1
     deepest_y = 1
     amount_of_steps = len(yaml['steps'])
     x_spacing = (90.0/amount_of_steps)
@@ -32,17 +34,14 @@ def find_positions(yaml):
     for step in yaml['steps']:
         node = StepNode(step['id'], step['depends_on'], step['temp'], step['type'])
         if node.depends_on == []:
-            node.y = next_y
-            next_y += 1
-            if(next_y > deepest_y):
-                deepest_y = next_y
+            node.group = next_group
+            next_group += 1
         else:
-            lowest_y = 1024
+            lowest_group = 1024
             for d in node.depends_on:
-                if nodes[d].y < lowest_y:
-                    lowest_y = nodes[d].y
-            node.y = lowest_y
-            next_y = 2
+                if nodes[d].group < lowest_group:
+                    lowest_group = nodes[d].group
+            node.group = lowest_group
         nodes.append(node)
 
 
@@ -55,21 +54,55 @@ def find_positions(yaml):
 
     return nodes
 
-def improve_positions(nodes):
-    global x_offset
-    global x_spacing
+def start_improve_positions(nodes):
+    y_pos = 1
+    current_group = 1
+    safe_ys = [1]*len(nodes)
 
-    # Iterate through all nodes?
-    # Is the initial y good enough, or do I need to reorder them?
-    # I think I need to reorder based on first merge into the "main" branch on top
-    # Do I create a mapping table?
-    # Remember to also account for merges in other branches
-    # Create a function that updates values based on a "main branch" parameter?
-    # Can create a recursive function that updates one branch at a time
-    # It should "understand" when a certain y becomes available again, and can be used
+    for i,node in enumerate(nodes):
+        if node.group == current_group:
+            node.y = y_pos
+            safe_ys[i] = y_pos+1
+            safe_y = y_pos + 1
+            if len(node.depends_on) > 1:
+                for dep in node.depends_on:
+                    dep_group = nodes[dep].group
+                    if dep_group != current_group:
+                        dep_y = improve_positions(nodes[:dep+1], dep_group, dep, safe_y, safe_ys[:i+1])
+                        safe_y = dep_y + 1
+                        safe_ys[i] = max(safe_ys[i], safe_y)
 
-    # For now: x * (1/amount_of_steps) = position in %
-    # Later: While looping: find the highest and total amount of time
+def improve_positions(nodes, current_group, cur_index, start_y, safe_ys):
+    cur_node = nodes[cur_index]
+    if cur_node.y > 0:
+        return cur_node.y
+
+    y_levels_taken = []
+    first_in_group = 0
+    for n in nodes:
+        if n.group == current_group:
+            break
+        first_in_group += 1
+
+    y_used = start_y
+    for y in safe_ys[first_in_group:]:
+        if y > y_used:
+            y_used = y
+
+    connected = len(cur_node.depends_on)
+    if connected > 1:
+        cur_node.y = y_used
+        safe_y = y_used
+        for dep in cur_node.depends_on:
+            dep_group = nodes[dep].group
+            dep_y = improve_positions(nodes[:cur_index], dep_group, dep, safe_y, safe_ys[:cur_index+1])
+            safe_y = dep_y + 1
+        safe_ys[cur_index] = max(safe_ys[cur_index], safe_y)
+    elif connected == 1:
+        y_used = improve_positions(nodes[:cur_index], current_group, cur_node.depends_on[0], y_used, safe_ys[:cur_index+1])
+    cur_node.y = y_used
+    safe_ys[cur_index] = max(safe_ys[cur_index], y_used+1)
+    return y_used
 
 def add_svg_positions(nodes):
     global y_offset
@@ -122,7 +155,17 @@ def add_timeline_to_yaml(yaml, nodes):
 
 
 def generate_svg(yaml):
+    global y_offset
+    global y_spacing
     nodes = find_positions(yaml)
-    improve_positions(nodes)
+    start_improve_positions(nodes)
+
+    deepest_y = 0
+    for n in nodes:
+        if n.y > deepest_y:
+            deepest_y = n.y
+    yaml['timeline'] = {}
+    yaml['timeline']['height'] = y_offset*2 + y_spacing*(deepest_y-1)
+
     add_svg_positions(nodes)
     add_timeline_to_yaml(yaml, nodes)
