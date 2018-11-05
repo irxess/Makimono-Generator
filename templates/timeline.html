@@ -9,26 +9,26 @@
 
   {% for line in r.timeline.lines %}
     <line class="dark-line"
-      x1="{{ line.start.x }}"
+      x1="{{ line.start.x }}%"
       y1="{{ line.start.y }}"
-      x2="{{ line.end.x }}"
+      x2="{{ line.end.x }}%"
       y2="{{ line.end.y }}" />
   {% endfor %}
   {% for line in r.timeline.lines %}
     <line class="{{ line.color }}"
-      x1="{{ line.start.x }}"
+      x1="{{ line.start.x }}%"
       y1="{{ line.start.y }}"
-      x2="{{ line.end.x }}"
+      x2="{{ line.end.x }}%"
       y2="{{ line.end.y }}" />
   {% endfor %}
 
   {% for circle in r.timeline.circles %}
     <circle class="{{ circle.color }}"
-      cx="{{ circle.center.x }}"
+      cx="{{ circle.center.x }}%"
       cy="{{ circle.center.y }}"
       r="1.25em" />
     <image class="svg-icon" xlink:href="images/icons/{{ circle.type }}-light.svg"
-           x="{{ circle.center.x }}"
+           x="{{ circle.center.x }}%"
            y="{{ circle.center.y }}"
            width="2em" height="2em" />
   {% endfor %}

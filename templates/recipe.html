@@ -7,12 +7,16 @@
 
   <section id="intro">
     <h1>{{ r.recipe }}</h1>
-    <img src="images/{{ r.image }}">
+    {% if (r.image is defined) and r.image %}
+        <img src="images/{{ r.image }}">
+    {% endif %}
   </section>
 
+  {% if (r.description is defined) and r.description %}
   <p id="flavor-text">
     {{ r.description }}
   </p>
+  {% endif %}
 
   <section id="ingredients">
     <h2>Ingredients</h2>

@@ -1,4 +1,4 @@
-recipe: Name
+recipe: Honeydew Melon Cheesecake
 
 description: "A very mild and creamy cheesecake, with a slight sweetness coming from honeydew melon. This is a Europian-style cheesecake, which is not baked."
 source: ""
@@ -18,11 +18,10 @@ ingredients:
   - {id: 9, name: mint extract, amount: 2, unit: 'drops', comment: 'Optional'}
   - {id: 10, name: honey, amount: 1, unit: 'tbsp', comment: 'Optional'}
 
-# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), 
-#        knife, shape, bake, add
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
-  - {id: 0, short: prepare the melon, time: 5, type: 'knife', temp: 'room',
+  - {id: 0, short: prepare the melon, time: 5, type: 'cut', temp: 'room',
      depends_on: [],
      ingredients: [ {id: 0} ],
      long: "Cut the honeydew melon in half. Scrape out the seeds. Then use a spoon to cut out the flesh of the melon in chunks. Put that into a saucepan."}
@@ -58,7 +57,7 @@ steps:
      depends_on: [3, 7],
      ingredients: [],
      long: "Take the crust out of the fridge, and pour the cheesecake filling into it."}
-  - {id: 9, short: cool, time: 240, type: 'bowl', temp: 'cool',
+  - {id: 9, short: cool, time: 240, type: 'bowl', temp: 'cold',
      depends_on: [8],
      ingredients: [],
      long: "Place the cheesecake into the fridge and let it set for at least 4 hours before serving. If in a hurry, place into the freezer instead, for about 40 minutes."}

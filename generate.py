@@ -16,7 +16,10 @@ class Thumbnail:
     def __init__(self, name, url, img, date):
         self.name = name
         self.url = '../'+url
-        self.image = '../images/thumbnails/'+img
+        if img != '':
+            self.image = '../images/thumbnails/'+img
+        else:
+            self.image = ''
         self.date = date
 
 class PaginationElement:
@@ -41,21 +44,19 @@ def add_ingredient_amounts_to_steps(yaml):
                         ingredients[i['id']].rest_id = i
                     else:
                         print("Ingredient ", i['id'], " in ", yaml.recipe, " has multiple unspecified steps")
-                        # TODO: throw error to be caught in the going through recipes loop
     for _,i in ingredients.items():
         if i.rest_id != -1:
             i.rest_id['amount'] = i.amount
 
 def prepare_image(yaml):
     img_name = yaml['image']
-    if os.path.isfile( "publish/images/" + img_name + ".png"):
-        file_name = img_name + '.png'
-    elif os.path.isfile( "publish/images/" + img_name + ".jpg"):
+    if os.path.isfile( "publish/images/" + img_name + ".jpg"):
         file_name = img_name + '.jpg'
+    elif os.path.isfile( "publish/images/" + img_name + ".png"):
+        file_name = img_name + '.png'
     elif os.path.isfile( "publish/images/" + img_name + ".jpeg"):
         file_name = img_name + '.jpeg'
     else:
-        print("*** Warning *** No image found for", yaml['recipe'], "\n  * Expecting", img_name + ".{png,jpg,jpeg}")
         yaml['image'] = ""
         return ""
     yaml['image'] = file_name
@@ -97,7 +98,7 @@ def generate_files_for_recipe(name):
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
     template = env.get_template('recipe.html')
-    # TODO Website will display "None" if description for a recipe is empty.
+
     output = template.render(
         r=yaml_result,
         path_to_base='.',
@@ -127,7 +128,6 @@ def split_thumbnail_list_into_pages(thumbnails):
 
 
 def generate_browse_page(thumbnails):
-    # TODO Add description on hover?
     thumbnails.sort(key=lambda t: t.date)
     # Uncomment the following line to get more items in the "All recipes"-page. Usefull when debugging the pagination.
     # thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails # Pagination debugging
@@ -184,11 +184,12 @@ if __name__ == "__main__":
     if not os.path.isdir('publish/images/thumbnails'):
         os.makedirs('publish/images/thumbnails')
     for filename in os.listdir('recipes'):
-        name = filename.split('.')[0]
-        if name != 'template':
-            print("Generating files for", filename)
-            t = generate_files_for_recipe(name)
-            thumbnails.append(t)
+        if filename[0] != '.':
+            name,extension = filename.split('.')
+            if name != 'template' and extension == 'yaml':
+                print("Generating files for", filename)
+                t = generate_files_for_recipe(name)
+                thumbnails.append(t)
     print("Generating browse pages")
     if not os.path.isdir('publish/all'):
         os.makedirs('publish/all')
