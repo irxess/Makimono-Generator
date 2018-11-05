@@ -1,7 +1,11 @@
 import yaml
 
-# Generate an image (svg?) which shows the timeline of a recipe
-# Should use the for now non-existing timeline.svg template
+# Generate an svg image which shows the timeline of a recipe
+
+y_offset = 25   # pixels
+y_spacing = 40  # pixels
+x_offset = 5    # percent
+x_spacing = 0   # percent, set in find_positions
 
 class StepNode:
     # Each node has a timeline step (its x position)
@@ -16,12 +20,15 @@ class StepNode:
         self.depends_on = depends_list
 
 def find_positions(yaml):
-    y_offset = 25
-    y_spacing = 40
+    global y_offset
+    global y_spacing
+    global x_spacing
     nodes = []
     next_y = 1
     deepest_y = 1
     amount_of_steps = len(yaml['steps'])
+    x_spacing = (90.0/amount_of_steps)
+
     for step in yaml['steps']:
         node = StepNode(step['id'], step['depends_on'], step['temp'], step['type'])
         if node.depends_on == []:
@@ -36,10 +43,21 @@ def find_positions(yaml):
                     lowest_y = nodes[d].y
             node.y = lowest_y
             next_y = 2
-
-        node.svg_x = str(round(node.x * (90.0/amount_of_steps)) +5) + '%'
-        node.svg_y = y_offset + (y_spacing * (node.y-1))
         nodes.append(node)
+
+
+    done_node = StepNode(amount_of_steps, [amount_of_steps - 1], 'done', 'done')
+    done_node.y = 1
+    nodes.append(done_node)
+
+    yaml['timeline'] = {}
+    yaml['timeline']['height'] = y_offset*2 + y_spacing*(deepest_y-2)
+
+    return nodes
+
+def improve_positions(nodes):
+    global x_offset
+    global x_spacing
 
     # Iterate through all nodes?
     # Is the initial y good enough, or do I need to reorder them?
@@ -53,14 +71,15 @@ def find_positions(yaml):
     # For now: x * (1/amount_of_steps) = position in %
     # Later: While looping: find the highest and total amount of time
 
-    done_node = StepNode(amount_of_steps, [amount_of_steps - 1], 'done', 'done')
-    done_node.svg_x = '95%' # assuming the 5% offset
-    done_node.svg_y = y_offset
-    nodes.append(done_node)
+def add_svg_positions(nodes):
+    global y_offset
+    global y_spacing
+    global x_offset
+    global x_spacing
 
-    yaml['timeline'] = {}
-    amount_of_nodes = len(nodes)
-    yaml['timeline']['height'] = y_offset*2 + y_spacing*(deepest_y-2)
+    for node in nodes:
+        node.svg_x = (node.x * x_spacing) + x_offset
+        node.svg_y = y_offset + (y_spacing * (node.y-1))
 
     return nodes
 
@@ -69,9 +88,9 @@ def print_nodes(nodes):
         print('Node ', n.x, '\ty: ', n.y, '\tsvg_x: ', n.svg_x, '%')
 
 def add_timeline_to_yaml(yaml, nodes):
+    global y_spacing
     lines = []
     circles = []
-
 
     yaml['timeline']['lines'] = []
     yaml['timeline']['circles'] = []
@@ -82,14 +101,29 @@ def add_timeline_to_yaml(yaml, nodes):
         circle['type'] = n.step_type
         yaml['timeline']['circles'].append(circle)
         for d in n.depends_on:
-            line = {}
-            line['color'] = nodes[d].temp
-            line['start'] = {'x': nodes[d].svg_x, 'y': nodes[d].svg_y}
-            line['end'] = {'x': n.svg_x, 'y': n.svg_y}
-            yaml['timeline']['lines'].append(line)
+            split_x = n.svg_x - x_spacing
+            m = nodes[d]
+            if m.svg_x >= split_x:
+                line = {}
+                line['color'] = m.temp
+                line['start'] = {'x': m.svg_x, 'y': m.svg_y}
+                line['end'] = {'x': n.svg_x, 'y': n.svg_y}
+                yaml['timeline']['lines'].append(line)
+            else:
+                line1 = {}
+                line1['color'] = m.temp
+                line1['start'] = {'x': m.svg_x, 'y': m.svg_y}
+                line1['end'] = {'x': split_x, 'y': m.svg_y}
+                yaml['timeline']['lines'].append(line1)
+                line2 = {}
+                line2['color'] = m.temp
+                line2['start'] = {'x': split_x, 'y': m.svg_y}
+                line2['end'] = {'x': n.svg_x, 'y': n.svg_y}
+                yaml['timeline']['lines'].append(line2)
 
 
 def generate_svg(yaml):
     nodes = find_positions(yaml)
-    # TODO improve positioning here?
+    improve_positions(nodes)
+    add_svg_positions(nodes)
     add_timeline_to_yaml(yaml, nodes)
