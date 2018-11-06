@@ -2,8 +2,8 @@ import yaml
 
 # Generate an svg image which shows the timeline of a recipe
 
-y_offset = 25   # pixels
-y_spacing = 40  # pixels
+y_offset = 1.5  # em
+y_spacing = 2.2 # em
 x_offset = 5    # percent
 x_spacing = 0   # percent, set in find_positions
 
@@ -27,7 +27,6 @@ def find_positions(yaml):
 
     nodes = []
     next_group = 1
-    deepest_y = 1
     amount_of_steps = len(yaml['steps'])
     x_spacing = (90.0/amount_of_steps)
 
@@ -48,9 +47,6 @@ def find_positions(yaml):
     done_node = StepNode(amount_of_steps, [amount_of_steps - 1], 'done', 'done')
     done_node.y = 1
     nodes.append(done_node)
-
-    yaml['timeline'] = {}
-    yaml['timeline']['height'] = y_offset*2 + y_spacing*(deepest_y-2)
 
     return nodes
 
