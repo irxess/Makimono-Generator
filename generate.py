@@ -203,12 +203,15 @@ if __name__ == "__main__":
                 print("Generating files for", filename)
                 t = generate_files_for_recipe(name)
                 thumbnails.append(t)
+
     print("Generating browse pages")
     if not os.path.isdir('publish/all'):
         os.makedirs('publish/all')
     generate_browse_page(thumbnails)
 
+    print("Generating about-page")
     generate_about_page()
+    shutil.copy('publish/about.html', 'publish/index.html')
 
     print("Generating CSS")
     if not os.path.isdir('publish/css'):
@@ -217,7 +220,7 @@ if __name__ == "__main__":
     with open('publish/css/main.css', 'w') as f:
         print(compiled_css, file=f)
 
-    print("Copying icons")
+    print("Copying svg icons")
     if not os.path.isdir('publish/images/icons'):
         os.makedirs('publish/images/icons')
     for icon in os.listdir('templates/icons'):
