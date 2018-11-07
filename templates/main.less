@@ -31,6 +31,9 @@ header {
   font-family: "Lucida Bright", "Palatino", "Times New Roman", "serif";
   font-weight: bolder;
   background-color: @grey;
+  @media (max-width: @size-cutoff-almost) {
+      background-color: @green;
+  }
   color: @grey-light;
   padding: 16px 0 5px 0; /* top, right, bottom, left */
   font-size: 3.5em;
@@ -301,6 +304,7 @@ svg {
   background-color: #9E9E9E;
   padding: 0.4em;
   color: @grey-light;
+  display: none;
 }
 
 #info-col {
@@ -309,6 +313,7 @@ svg {
     margin-right: @non-mobile-empty-side-space-size;
     flex-basis: 100%;
   }
+  display: none;
 }
 
 #flavor-text {
