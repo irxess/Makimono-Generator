@@ -67,7 +67,7 @@ def prepare_image(yaml):
         file_name = img_name + '.jpg'
     elif os.path.isfile("publish/images/" + img_name + ".png") or os.path.isfile("publish/images/" + img_name + ".PNG"):
         file_name = img_name + '.png'
-    elif os.path.isfile("publish/images/" + img_name + ".jpeg") or os.path.isfile("publish/images" + img_name + ".JPEG":
+    elif os.path.isfile("publish/images/" + img_name + ".jpeg") or os.path.isfile("publish/images" + img_name + ".JPEG"):
         file_name = img_name + '.jpeg'
     else:
         yaml['image'] = ""
