@@ -63,11 +63,11 @@ def add_ingredient_amounts_to_steps(yaml):
 
 def prepare_image(yaml):
     img_name = yaml['image']
-    if os.path.isfile( "publish/images/" + img_name + ".jpg"):
+    if os.path.isfile("publish/images/" + img_name + ".jpg") or os.path.isfile("publish/images/" + img_name + ".JPG"):
         file_name = img_name + '.jpg'
-    elif os.path.isfile( "publish/images/" + img_name + ".png"):
+    elif os.path.isfile("publish/images/" + img_name + ".png") or os.path.isfile("publish/images/" + img_name + ".PNG"):
         file_name = img_name + '.png'
-    elif os.path.isfile( "publish/images/" + img_name + ".jpeg"):
+    elif os.path.isfile("publish/images/" + img_name + ".jpeg") or os.path.isfile("publish/images" + img_name + ".JPEG":
         file_name = img_name + '.jpeg'
     else:
         yaml['image'] = ""
