@@ -63,7 +63,7 @@ def add_ingredient_amounts_to_steps(yaml):
 
 def prepare_image(yaml):
     img_name = yaml['image']
-    known_image_extensions = ['jpg', 'JPG', 'png', 'PNG', '.jpeg', 'JPEG']
+    known_image_extensions = ['jpg', 'png', 'jpeg']
     file_name = ""
     for extension in known_image_extensions:
         if os.path.isfile("publish/images/" + img_name + '.' + extension):
