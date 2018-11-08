@@ -62,7 +62,7 @@ def add_ingredient_amounts_to_steps(yaml):
             i.rest_id['amount'] = i.amount
 
 def prepare_image(yaml):
-    img_name = yaml['image']
+    img_name = yaml['image'].casefold()
     known_image_extensions = ['jpg', 'png', 'jpeg']
     file_name = ""
     for extension in known_image_extensions:
