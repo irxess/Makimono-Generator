@@ -196,6 +196,10 @@ if __name__ == "__main__":
     thumbnails = []
     if not os.path.isdir('publish/images/thumbnails'):
         os.makedirs('publish/images/thumbnails')
+
+    from rename_files_in_folder_to_lower_case import rename_files_in_folder_to_lower_case
+    rename_files_in_folder_to_lower_case('publish/images')
+
     for filename in os.listdir('recipes'):
         if filename[0] != '.':
             name,extension = filename.split('.')
