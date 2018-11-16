@@ -3,7 +3,8 @@
 @text-color-light: #FFFFFF; /* nav text color */
 
 @grey-light: #F5F5F5;
-@super-light-grey: #d9d9d9;
+@super-light-grey: #e0e0e0;
+@info-background: #9E9E9E;
 @grey: #616161;
 
 @red: #FF5722;
@@ -14,6 +15,8 @@
 @yellow-dark: #558b2f;//#FDD835;
 @green: #8BC34A; /* navbar background */
 @green-dark: #558b2f; // #689F38; /* navbar shadows? */
+@green-light: #aed581;
+@svg-bright-green: #76ff03;//AF3
 //@lightblue: #04BEF2;
 //@lightblue-dark: #04AFE2;
 @lightblue: #00bcd4;
@@ -26,15 +29,19 @@
 
 @non-mobile-empty-side-space-size: 10%;
 
+@serif-fonts: "Lucida Bright", "Palatino", "Times New Roman", "serif";
+@sans-serif-fonts: "Candara", "Gill Sans", "Helvetica", "Arial", "sans-serif";
+
 header {
   text-align: center;
-  font-family: "Lucida Bright", "Palatino", "Times New Roman", "serif";
+  font-family: @serif-fonts;
   font-weight: bolder;
   background-color: @grey;
   @media (max-width: @size-cutoff-almost) {
       background-color: @green;
+      color: @text-color-dark;
   }
-  color: @grey-light;
+  color: @text-color-light;
   padding: 16px 0 5px 0; /* top, right, bottom, left */
   font-size: 3.5em;
 }
@@ -49,7 +56,7 @@ header {
 
 body {
   font-size: 18pt;
-  font-family: "Candara", "Gill Sans", "Helvetica", "Arial", "sans-serif";
+  font-family: @sans-serif-fonts;
   background-color: @background-dark;
   .three-col;
 }
@@ -90,7 +97,7 @@ hr {
 
 .step-ingredient-list {
   ul {
-    background: #ddd;
+    background: @super-light-grey;
     padding-top: 0;
     flex-direction: row;
     flex: 1;
@@ -103,6 +110,8 @@ hr {
 }
 
 .nav {
+  font-weight: bold;
+  font-size: 1.2em;
   ul {
     list-style-type: none;
     margin: 0;
@@ -113,7 +122,7 @@ hr {
   li {
     a {
       &:hover {
-        background-color: @green-dark;
+        background-color: @green-light;
       }
     }
   }
@@ -131,9 +140,10 @@ hr {
       }
       a {
         display: inline-block;
-        color: white;
+        color: @text-color-dark;
         text-align: center;
-        padding: 14px 16px;
+        // padding: 14px 16px;
+        padding: 0.2em;
         text-decoration: none;
         width: 12em;
       }
@@ -146,6 +156,7 @@ hr {
 
 #mobile-nav {
   .nav;
+  font-family: @serif-fonts;
   @media (min-width: @size-cutoff) {
     display: none;
   }
@@ -156,7 +167,7 @@ hr {
         a {
           display: flex;
           flex-direction: column;
-          color: white;
+          color: @text-color-dark;
           padding: 14px 16px;
           text-decoration: none;
           font-size: 1.5em;
@@ -205,6 +216,10 @@ hr {
   }
 }
 
+#steps{
+  padding-bottom: 0.5em; // Ensures that there is a bit of breathing room after the last step, which helps the icons not overflow.
+}
+
 .steps {
   li {
     text-align: left;
@@ -224,7 +239,7 @@ hr {
     margin: 0 auto;
     line {
       stroke-width: 0.3em; /* 0.5em */
-      stroke: #AF3;
+      stroke: @svg-bright-green;
       &.hot      {stroke: @red-dark;}
       &.warm     {stroke: @orange-dark;}
       &.room     {stroke: @yellow-dark;}
@@ -256,7 +271,7 @@ svg {
 #ingredients {
   .steps;
   ul {
-    background: #ddd;
+    background: @super-light-grey;
     padding-top: 0;
   }
 }
@@ -302,7 +317,7 @@ svg {
 
 #info {
   margin: 1em 0em 0.5em 0em;
-  background-color: #9E9E9E;
+  background-color: @info-background;
   padding: 0.4em;
   color: @grey-light;
   display: none;
@@ -365,7 +380,7 @@ svg {
     }
     .current-page {
       background-color: @green;
-      color: @text-color-light;
+      color: @text-color-dark;
       border: 1px solid @green;
     }
   }
