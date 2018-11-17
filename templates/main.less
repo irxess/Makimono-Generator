@@ -26,6 +26,7 @@
 
 @size-cutoff: 70em;
 @size-cutoff-almost: 69.99em;
+@size-tiny: 45em;
 
 @non-mobile-empty-side-space-size: 10%;
 
@@ -33,17 +34,21 @@
 @sans-serif-fonts: "Candara", "Gill Sans", "Helvetica", "Arial", "sans-serif";
 
 header {
-  text-align: center;
-  font-family: @serif-fonts;
-  font-weight: bolder;
   background-color: @grey;
-  @media (max-width: @size-cutoff-almost) {
-      background-color: @green;
-      color: @text-color-dark;
-  }
   color: @text-color-light;
-  padding: 16px 0 5px 0; /* top, right, bottom, left */
+  font-family: @serif-fonts;
   font-size: 3.5em;
+  font-weight: bolder;
+  padding: 16px 0 5px 0; /* top, right, bottom, left */
+  text-align: center;
+  @media (max-width: @size-cutoff-almost) {
+    background-color: @green;
+    color: @text-color-dark;
+    font-size: 3em;
+  }
+  @media (max-width: @size-tiny){
+    font-size: 2.5em;
+  }
 }
 
 .three-col {
