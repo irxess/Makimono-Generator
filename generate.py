@@ -8,7 +8,7 @@ import shutil
 
 # TODO:
 # Create mortar icon
-# Image resizing: 70$ progressive jpg
+# Image resizing: 70% progressive jpg
 # Add source "adapted from" if exists and not empty in yaml and if url
 # Show the optional ingredient notes
 # Check that each ingredient is used at least once
@@ -18,7 +18,6 @@ import shutil
 # Show the time each step takes, and the total time (rounded to hours?)
 
 # Add description on hover in browse all?
-# Generic thumbnail if no image?
 
 class Ingredient:
     def __init__(self, amount):
@@ -141,9 +140,7 @@ def split_thumbnail_list_into_pages(thumbnails):
 
 
 def generate_browse_page(thumbnails):
-    thumbnails.sort(key=lambda t: t.date)
-    # Uncomment the following line to get more items in the "All recipes"-page. Usefull when debugging the pagination.
-    # thumbnails = thumbnails + thumbnails + thumbnails + thumbnails + thumbnails # Pagination debugging
+    thumbnails.sort(key=lambda t: t.date, reverse=True) # Newest first
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
     template = env.get_template('list_of_all_recipes.html')

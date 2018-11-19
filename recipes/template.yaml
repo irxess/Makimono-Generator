@@ -29,7 +29,7 @@ ingredients:
   - {id: 20, name: , amount: , unit: 'g', comment: ''}
   - {id: 21, name: , amount: , unit: 'g', comment: ''}
 
-# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
   - {id: 0, short: , time: 1, type: '', temp: 'room',
