@@ -1,0 +1,85 @@
+TODOs
+
+* Recipe Card (Google)
+** Generating JSON-LD
+*** Decouple YAML from internal representation
+*** Generate JSON from internal representation
+** Update recipe information
+*** Prep time, cook time, total time
+*** Nutritial information
+**** Create ingredients with info about allergies and content
+Check the suitableForDiet section of the spec
+**** Allow recipes to override the ingredient allergies
+Example: Soy milk can be used instead of milk, without problems, in this recipe
+**** Allow recipes to override the amount of an ingredient
+Example: Deep-frying. Some oil will be left in the doughnuts, but most will remain in the pan
+**** Read in ingredients-YAML to memory before recipes - internal representation?
+**** Scan through ingredients when reading a recipe
+*** Category
+**** Dessert
+*** Cuisine
+**** What can I use here?
+*** Keywords
+*** Servings
+*** isBasedOn
+This already exists, but I should show it on the website
+*** User rating - ignore this?
+* Photo's added to steps
+** Path to the photo
+** Add to YAML template
+** Find a way to show it on the site
+* Alt-tags on images
+** Update the YAML+template
+** Add to the code
+* Image aspect ratio's
+Recipe cards need 16x9, 4x3 and 1x1
+Pinterest needs "phone images" - possibly with text
+Pinterest also uses alt-text as description
+* Recipes consisting of multiple partial recipes
+Dropdown box to select which recipes to use
+This is not relevant until we have more recipes
+* virtualenv
+Since this in a python project, we should look into using virtualenv to manage our dependencies.
+* Small changes
+*** Use dashes, not underscores
+*** fridge icon, freezer icon
+*** favicon - should be visible with black and white background
+16x16, 32x32 or something else
+Historically .ico, but .png seems also fine
+Should be placed in website root
+rel="icon" sizes="..." within a link tag
+Apple feels special, using apple-touch-icon
+
+
+<!-- For IE 9 and below. ICO should be 32x32 pixels in size -->
+<!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+
+<!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. --> 
+<link rel="apple-touch-icon-precomposed" href="favicon-apple.png">
+
+<!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
+<link rel="icon" href="favicon.png">
+
+Should I add type="image/x-icon" or png to the link tag?
+
+Something transparent with a black border
+
+*** Site description
+For search engines; metric recipes with simple ingredients, realistic times and a personal touch
+*** Tags/description for every recipe
+*** Site-map for robots?
+*** Contact email
+*** More detailed recipes
+Add "last modified date" first
+*** Step numbers in alt-text/description
+*** Add credits to the recipes "adapted from"
+*** Create a proper front page
+*** Sort recipes by newest-first
+*** AMP?
+*** Research what goes into making "carousel structured data"
+*** Hover/click on a timeline step shows the short description
+*** Add functionality to "check for step done" on a recipe page
+*** Research if I can optimize for "featured snippets"
+*** Create a front page
+*** Update the text on the About-page
+*** Fill up the "Tags" section - or delete from the site
