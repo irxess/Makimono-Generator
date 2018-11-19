@@ -8,9 +8,13 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{% block meta_description %}{% endblock %}">
 
-    <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
-    <link rel="apple-touch-icon-precomposed" href="favicon-apple.png">
-    <link rel="icon" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{path_to_base}}/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{path_to_base}}/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{path_to_base}}/favicon-16x16.png">
+    <link rel="manifest" href="{{path_to_base}}/site.webmanifest">
+    <link rel="mask-icon" href="{{path_to_base}}/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#558b2f">
   {% endblock %}
 </head>
 <body>

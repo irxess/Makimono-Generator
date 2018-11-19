@@ -226,7 +226,3 @@ if __name__ == "__main__":
         os.makedirs('publish/images/icons')
     for icon in os.listdir('templates/icons'):
         shutil.copy('templates/icons/'+icon, 'publish/images/icons/'+icon)
-
-    print("Copying favicons")
-    for favicon in os.listdir('templates/favicons'):
-        shutil.copy('templates/favicons/'+favicon, 'publish/'+favicon)
