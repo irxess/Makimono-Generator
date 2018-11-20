@@ -32,7 +32,7 @@ steps:
       ingredients: [ {id: 6}, {id: 12} ],
       long: "Chop and set aside the paprika and the mushrooms. Do these first, because they survive laying around the longes amount of time (should you get distracted)."}
   - {id: 1,
-      short: ,
+      short: 'Chop garlic and chilli',
       time: 4,
       type: 'cut',
       temp: 'room',
