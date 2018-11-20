@@ -45,6 +45,12 @@ Since this in a python project, we should look into using virtualenv to manage o
 
 * Recipe steps: remove need to always add `{id: }`, when most recipes only need the numbers. The parser should be able to pick up on the special cases where amount has to be addittionally specifies.
 
+* Error output form recipe compiling is daunting.
+
+* Recipe steps with only short description show a `:` at the end of the line, even though there is nothing to put after.
+
+* Recipe steps show the text `none:` in bold if there is no no short description.
+
 * Small changes
 *** Use dashes, not underscores
 *** fridge icon, freezer icon
