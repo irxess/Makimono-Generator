@@ -55,7 +55,7 @@ def add_ingredient_amounts_to_steps(yaml):
                     if ingredients[i['id']].rest_id == -1:
                         ingredients[i['id']].rest_id = i
                     else:
-                        print("Ingredient ", i['id'], " in ", yaml.recipe, " has multiple unspecified steps")
+                        print(f"Ingredient {i['id']} in {yaml['recipe']} has multiple unspecified steps")
     for _,i in ingredients.items():
         if i.rest_id != -1:
             i.rest_id['amount'] = i.amount
