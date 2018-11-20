@@ -114,7 +114,7 @@ def generate_files_for_recipe(name):
     output = template.render(
         r=yaml_result,
         path_to_base='.',
-        all_recipes_path='all/page1.html',
+        all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
     with open('publish/' + name + '.html', 'w') as f:
@@ -134,7 +134,7 @@ def split_thumbnail_list_into_pages(thumbnails):
     chunk_number = 1
     for i in range(0, len(thumbnails), chunk_size):
         list_of_thumbnail_chunks.append( thumbnails[i:i+chunk_size] )
-        pagination_list.append( PaginationElement('page'+str(chunk_number)+'.html', chunk_number) )
+        pagination_list.append( PaginationElement('page-'+str(chunk_number)+'.html', chunk_number) )
         chunk_number += 1
     return list_of_thumbnail_chunks, pagination_list
 
@@ -163,10 +163,10 @@ def generate_browse_page(thumbnails):
             previous_page = prev_page,
             next_page = next_page,
             path_to_base='..',
-            all_recipes_path='all/page1.html',
+            all_recipes_path='all/page-1.html',
             about_path='about.html'
         )
-        with open('publish/all/page'+str(i+1)+'.html', 'w') as f:
+        with open('publish/all/page-'+str(i+1)+'.html', 'w') as f:
             print(output, file=f)
         current_page.current = False
         prev_page = current_page
@@ -181,7 +181,7 @@ def generate_about_page():
 
     output = template.render(
         path_to_base='.',
-        all_recipes_path='all/page1.html',
+        all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
 
