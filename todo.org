@@ -51,6 +51,14 @@ Since this in a python project, we should look into using virtualenv to manage o
 
 * Recipe steps show the text `none:` in bold if there is no no short description.
 
+* Recipe scaling
+** By volume
+Try to change cooking time based on heat equation
+Need to add volume used to recipes
+** By ingredient
+I ended up with 472 g pumpkin - scale recipe after that
+** By servings
+Need to add a concept of servings first
 * Small changes
 *** Use dashes, not underscores
 *** fridge icon, freezer icon
@@ -64,7 +72,6 @@ Add "last modified date" first
 *** Step numbers in alt-text/description
 *** Add credits to the recipes "adapted from"
 *** Create a proper front page
-*** Sort recipes by newest-first
 *** AMP?
 *** Research what goes into making "carousel structured data"
 *** Hover/click on a timeline step shows the short description
