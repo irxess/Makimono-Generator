@@ -40,30 +40,14 @@ Dropdown box to select which recipes to use
 This is not relevant until we have more recipes
 * virtualenv
 Since this in a python project, we should look into using virtualenv to manage our dependencies.
+
+* Support for multiple distinct paragraphs in long description field
+
+* Recipe steps: remove need to always add `{id: }`, when most recipes only need the numbers. The parser should be able to pick up on the special cases where amount has to be addittionally specifies.
+
 * Small changes
 *** Use dashes, not underscores
 *** fridge icon, freezer icon
-*** favicon - should be visible with black and white background
-16x16, 32x32 or something else
-Historically .ico, but .png seems also fine
-Should be placed in website root
-rel="icon" sizes="..." within a link tag
-Apple feels special, using apple-touch-icon
-
-
-<!-- For IE 9 and below. ICO should be 32x32 pixels in size -->
-<!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
-
-<!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. --> 
-<link rel="apple-touch-icon-precomposed" href="favicon-apple.png">
-
-<!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
-<link rel="icon" href="favicon.png">
-
-Should I add type="image/x-icon" or png to the link tag?
-
-Something transparent with a black border
-
 *** Site description
 For search engines; metric recipes with simple ingredients, realistic times and a personal touch
 *** Tags/description for every recipe
