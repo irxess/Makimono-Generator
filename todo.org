@@ -54,6 +54,9 @@ Since this in a python project, we should look into using virtualenv to manage o
 * Fields that can be empty should be optional altogether.
 Examples: the 'image' field in recipes, the 'depends_on' field in recipe steps
 
+* When writing a recipe, it's weird to work with ingredients id.
+When authoring the text one thinks about the ingredient in terms of the name, but the ingredient is defined by it's id. This makes for many roundtrips to the ingredient list to check what the number for the ingredient you're currently thinking of is, and then perform the check again when you remember that you have to double check that it hasn't been used in another step already. And then you ponder why we even bother with having the id in a recipe when in most cases the name is just as unique as the id.
+
 * Recipe scaling
 ** By volume
 Try to change cooking time based on heat equation
