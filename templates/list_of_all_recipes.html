@@ -18,7 +18,12 @@
         <a href="{{ thumbnail.url }}">
           <h1 class="recipe-name-in-list">{{ thumbnail.name }}</h1>
         </a>
-        <p class="recipe-updated-date">Updated on {{ thumbnail.date }}</p>
+
+        {% if (thumbnail.created is defined) and thumbnail.created %}
+        <p class="recipe-updated-date">Updated on {{ thumbnail.updated }}</p>
+        {% else %}
+        <p class="recipe-updated-date">Created on {{ thumbnail.updated }}</p>
+        {% endif %}
       </li>
     {% endfor %}
   </ol>

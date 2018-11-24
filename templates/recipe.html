@@ -7,16 +7,27 @@
 
   <section id="intro">
     <h1>{{ r.recipe }}</h1>
+
+   {% if (r.description is defined) and r.description %}
+    <p id="flavor-text">
+      {{ r.description }}
+    </p>
+    {% endif %}
+
     {% if (r.image is defined) and r.image %}
         <img src="images/{{ r.image }}">
     {% endif %}
   </section>
 
-  {% if (r.description is defined) and r.description %}
-  <p id="flavor-text">
-    {{ r.description }}
+  {% if (r.date_created is defined) and r.date_created %}
+  <p class="recipe-date">
+      Created on {{ r.date_created }}</br>
+      Last updated on {{ r.last_updated }}
   </p>
+  {% else %}
+  <p class="recipe-date">Created on {{ r.last_updated }}</p>
   {% endif %}
+
 
   <section id="ingredients">
     <h2>Ingredients</h2>

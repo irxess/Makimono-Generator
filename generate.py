@@ -25,14 +25,15 @@ class Ingredient:
         self.rest_id = -1
 
 class Thumbnail:
-    def __init__(self, name, url, img, date):
+    def __init__(self, name, url, img, updated, created):
         self.name = name
         self.url = '../'+url
         if img != '':
             self.image = '../images/thumbnails/'+img
         else:
             self.image = ''
-        self.date = date
+        self.updated = updated
+        self.created = created
 
 class PaginationElement:
     def __init__(self, page_url, number):
@@ -119,11 +120,14 @@ def generate_files_for_recipe(name):
     )
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
+    if yaml_result['date_created'] == yaml_result['last_updated']:
+        yaml_result['date_created'] = ''
     return Thumbnail(
         yaml_result['recipe'],
         './'+name+'.html',
         yaml_result['image'],
-        yaml_result['date']
+        yaml_result['last_updated'],
+        yaml_result['date_created'],
     )
 
 
@@ -140,7 +144,7 @@ def split_thumbnail_list_into_pages(thumbnails):
 
 
 def generate_browse_page(thumbnails):
-    thumbnails.sort(key=lambda t: t.date, reverse=True) # Newest first
+    thumbnails.sort(key=lambda t: t.updated, reverse=True) # Newest first
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
     template = env.get_template('list_of_all_recipes.html')

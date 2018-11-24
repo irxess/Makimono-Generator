@@ -2,7 +2,8 @@ recipe: Name
 
 description: ""
 source: ""
-date:
+date-created: 2018-mm-dd
+last-updated: 2018-mm-dd
 image: 
 
 ingredients:

@@ -1,7 +1,8 @@
 recipe: Greek Yoghurt American Pancakes
 
 description: These American pancakes are not too sweet, and filling enough with the greek yoghurt.
-date: 2018-04-24
+date_created: 2018-04-24
+last_updated: 2018-04-24
 image: greek_yoghurt_pancakes
 
 ingredients:
