@@ -51,7 +51,8 @@ Since this in a python project, we should look into using virtualenv to manage o
 
 * Recipe steps show the text `none:` in bold if there is no no short description.
 
-* Fields that can be empty should be optional altogether. For instance, the 'image' field in recipes.
+* Fields that can be empty should be optional altogether.
+Examples: the 'image' field in recipes, the 'depends_on' field in recipe steps
 
 * Recipe scaling
 ** By volume
