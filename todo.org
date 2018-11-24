@@ -60,17 +60,12 @@ I ended up with 472 g pumpkin - scale recipe after that
 ** By servings
 Need to add a concept of servings first
 * Small changes
-*** Use dashes, not underscores
 *** fridge icon, freezer icon
 *** Site description
 For search engines; metric recipes with simple ingredients, realistic times and a personal touch
 *** Tags/description for every recipe
 *** Site-map for robots?
 *** Contact email
-*** More detailed recipes
-Add "last modified date" first
-*** Step numbers in alt-text/description
-*** Add credits to the recipes "adapted from"
 *** Create a proper front page
 *** AMP?
 *** Research what goes into making "carousel structured data"
@@ -78,5 +73,10 @@ Add "last modified date" first
 *** Add functionality to "check for step done" on a recipe page
 *** Research if I can optimize for "featured snippets"
 *** Create a front page
-*** Update the text on the About-page
+*** Show the optional ingredient notes
+
+*** Add credits to the recipes "adapted from"
 *** Fill up the "Tags" section - or delete from the site
+*** More detailed recipes
+*** Step numbers in alt-text/description
+*** Update the text on the About-page

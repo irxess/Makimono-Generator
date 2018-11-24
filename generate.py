@@ -7,14 +7,9 @@ import timeline
 import shutil
 
 # TODO:
-# Create mortar icon
-# Image resizing: 70% progressive jpg
-# Add source "adapted from" if exists and not empty in yaml and if url
-# Show the optional ingredient notes
 # Check that each ingredient is used at least once
 # Check that each step (exept the last one) is dependent on
 # Check that the duration is filled for each step
-# Ingredient scaling for non-gram units
 # Show the time each step takes, and the total time (rounded to hours?)
 
 # Add description on hover in browse all?
