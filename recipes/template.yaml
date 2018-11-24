@@ -2,114 +2,63 @@ recipe: Name
 
 description: ""
 source: ""
-date-created: 2018-mm-dd
-last-updated: 2018-mm-dd
-image: 
+date_created: 20YY-mm-dd
+last_updated: 20YY-mm-dd
+image: ''
 
 ingredients:
-  - {id: 0, name: , amount: , unit: 'g', comment: ''}
-  - {id: 1, name: , amount: , unit: 'g', comment: ''}
-  - {id: 2, name: , amount: , unit: 'g', comment: ''}
-  - {id: 3, name: , amount: , unit: 'g', comment: ''}
-  - {id: 4, name: , amount: , unit: 'g', comment: ''}
-  - {id: 5, name: , amount: , unit: 'g', comment: ''}
-  - {id: 6, name: , amount: , unit: 'g', comment: ''}
-  - {id: 7, name: , amount: , unit: 'g', comment: ''}
-  - {id: 8, name: , amount: , unit: 'g', comment: ''}
-  - {id: 9, name: , amount: , unit: 'g', comment: ''}
-  - {id: 10, name: , amount: , unit: 'g', comment: ''}
-  - {id: 11, name: , amount: , unit: 'g', comment: ''}
-  - {id: 12, name: , amount: , unit: 'g', comment: ''}
-  - {id: 13, name: , amount: , unit: 'g', comment: ''}
-  - {id: 14, name: , amount: , unit: 'g', comment: ''}
-  - {id: 15, name: , amount: , unit: 'g', comment: ''}
-  - {id: 16, name: , amount: , unit: 'g', comment: ''}
-  - {id: 17, name: , amount: , unit: 'g', comment: ''}
-  - {id: 18, name: , amount: , unit: 'g', comment: ''}
-  - {id: 19, name: , amount: , unit: 'g', comment: ''}
-  - {id: 20, name: , amount: , unit: 'g', comment: ''}
-  - {id: 21, name: , amount: , unit: 'g', comment: ''}
+  - {
+    id: 0,
+    amount: ,
+    unit: 'g',
+    name: "",
+    comment: ""
+  }
+  - {
+    id: 1,
+    amount: ,
+    unit: 'g',
+    name: "",
+    comment: ""
+  }
+  - {
+    id: 2,
+    amount: ,
+    unit: 'g',
+    name: "",
+    comment: ""
+  }
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
-  - {id: 0, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 1, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 2, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 3, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 4, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 5, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 6, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 7, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 8, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 9, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 10, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 11, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 12, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 13, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 14, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 15, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 16, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 17, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 18, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
-  - {id: 19, short: , time: 1, type: '', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 0} ],
-     long: ""}
+  - {
+    id: 0,
+    time: 1,
+    type: 'bowl',
+    temp: 'room',
+    depends_on: [],
+    ingredients: [ {id: 0} ],
+    short: "",
+    long: ""
+  }
+  - {
+    id: 1,
+    time: 1,
+    type: 'bowl',
+    temp: 'room',
+    depends_on: [0],
+    ingredients: [ {id: 1}, {id: 2} ],
+    short: "",
+    long: ""
+  }
+  - {
+    id: 2,
+    time: 1,
+    type: 'bowl',
+    temp: 'room',
+    depends_on: [1],
+    ingredients: [],
+    short: "",
+    long: ""
+  }
