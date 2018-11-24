@@ -34,31 +34,31 @@ ingredients:
 steps:
   - {
     id: 0,
-    time: 1,
-    type: 'bowl',
-    temp: 'room',
     depends_on: [],
     ingredients: [ {id: 0} ],
     short: "",
-    long: ""
+    long: "",
+    time: 1,
+    type: 'bowl',
+    temp: 'room',
   }
   - {
     id: 1,
-    time: 1,
-    type: 'bowl',
-    temp: 'room',
     depends_on: [0],
     ingredients: [ {id: 1}, {id: 2} ],
     short: "",
-    long: ""
-  }
-  - {
-    id: 2,
+    long: "",
     time: 1,
     type: 'bowl',
     temp: 'room',
+  }
+  - {
+    id: 2,
     depends_on: [1],
     ingredients: [],
     short: "",
-    long: ""
+    long: "",
+    time: 1,
+    type: 'bowl',
+    temp: 'room',
   }
