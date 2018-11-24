@@ -2,7 +2,8 @@ recipe: Red Pasta Sauce
 
 description: "Student's Milanese"
 source: "Simon's dad"
-date: 2018-11-19
+date_created: 2018-11-19
+last_updated: 2018-11-19
 image: ''
 
 ingredients:
