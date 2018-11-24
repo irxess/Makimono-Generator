@@ -12,49 +12,42 @@ ingredients:
     name: minced meat,
     amount: 400,
     unit: 'g',
-    comment: ''
   }
   - {
     id: 1,
     name: garlic,
     amount: 3,
-    unit: 'cloves',
-    comment: ''
+    unit: 'cloves'
   }
   - {
     id: 2,
     name: capers,
     amount: 1,
-    unit: 'tbsp',
-    comment: ''
+    unit: 'tbsp'
   }
   - {
     id: 3,
     name: pickled beetroot,
     amount: 2,
-    unit: 'slices',
-    comment: ''
+    unit: 'slices'
   }
   - {
     id: 4,
     name: chilli pepper,
     amount: 1,
-    unit: 'piece',
-    comment: ''
+    unit: 'piece'
   }
   - {
     id: 5,
     name: balck pepper,
     amount: 1,
-    unit: 'tbsp',
-    comment: ''
+    unit: 'tbsp'
   }
   - {
     id: 6,
     name: salt,
     amount: 2,
-    unit: 'tsp',
-    comment: ''
+    unit: 'tsp'
   }
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add
