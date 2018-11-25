@@ -3,7 +3,7 @@ Generate static webpages from YAML files for a foodblog
 
 # Setup
 
-Make sure python (at least v 3.6) and the neccessary python packages are installed:
+Make sure python (at least v 3.7) and the neccessary python packages are installed:
 
 ## Windows
 
