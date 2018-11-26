@@ -5,15 +5,18 @@ steps:
   }
   - {
     short: "Add milk to to the butter and let cool",
-    ingredients: [{name: milk, amount: 115, unit: g}]
+    ingredients: [{name: milk, amount: 115, unit: g}],
+    depencencies: [-1]
   }
   - {
     short: "Pour mixture over into kitchen machine bowl",
+    depencencies: [-1]
   }
   - {
     short: "Add egg",
     long: "Make sure you've let the butter and milk cool down a bit so that you don't end up with chunks of boiled eggs in the dough.",
-    ingredients: [{name: egg, amount: 2}]
+    ingredients: [{name: egg, amount: 2}],
+    depencencies: [-1]
   }
   - {
     short: "Wash basil and berries",
@@ -22,7 +25,8 @@ steps:
   - {
     short: "Add basil, berries, and lemon zest",
     ingredients: [{name: "lemon zest", amount: 1, unit: tbsp}],
-    refined_ingredients: [{name: washed basil}, {name: washed berries}]
+    refined_ingredients: [{name: washed basil}, {name: washed berries}],
+    depencencies: [-1, -2]
   }
   - {
     short: "In separate bow, mix the dry ingredients",
@@ -39,13 +43,16 @@ steps:
   }
   - {
     short: "Add dry to wet in kitchen machin while it's working",
-    long: "You want to run the kitchen machine on low, and add the dry stuff gradually (don't just dump it all in there at once)."
+    long: "You want to run the kitchen machine on low, and add the dry stuff gradually (don't just dump it all in there at once).",
+    depencencies: [-2, -3]
   }
   - {
     short: "Pour in fomrs",
-    long: "With the amounts specified here you should get a decent size on the muffins if you divide the dough on approximately 12 muffin forms."
+    long: "With the amounts specified here you should get a decent size on the muffins if you divide the dough on approximately 12 muffin forms.",
+    depencencies: [-1]
   }
   - {
     short: "Roast for 25 minutes",
-    long: "Put the muffins into the oven that you have pre-heated to 175 °C and set to convection. They should be done after about 25 minutes."
+    long: "Put the muffins into the oven that you have pre-heated to 175 °C and set to convection. They should be done after about 25 minutes.",
+    depencencies: [-1, -3]
   }
