@@ -60,7 +60,7 @@ class Recipe:
     date_created: str
     date_updated: str
     steps: List[Step]
-    ingredients: List[Ingredient]
+    ingredients: List[IngredientsOverview]
     description: str = ""
     source: str = ""
     image: str = ""
