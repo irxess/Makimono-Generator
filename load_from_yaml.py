@@ -49,7 +49,7 @@ class Step:
     svg = StepSVG()
 
 @dataclass
-class AggegateIngredientsDataClass:
+class IngredientsOverview:
     name: str
     # step?
     total_amount: Union[int, float]
