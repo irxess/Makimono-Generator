@@ -8,20 +8,24 @@ steps:
     short: "Melt butter",
     ingredients: [{name: butter, amount: 112, unit: g }],
     type: saucepan,
-    temp: warm
+    temp: warm,
+    active-time: 10
   }
   - {
     short: "Add milk to to the butter and let cool",
     ingredients: [{name: milk, amount: 115, unit: g}],
     depencencies: [-1],
     type: add,
-    temp: warm
+    temp: warm,
+    active-time: 1,
+    passive-time: 5
   }
   - {
     short: "Pour mixture over into kitchen machine bowl",
     depencencies: [-1],
     type: bowl,
-    temp: room
+    temp: room,
+    active-time: 1
   }
   - {
     short: "Add egg",
@@ -29,13 +33,15 @@ steps:
     ingredients: [{name: egg, amount: 2}],
     depencencies: [-1],
     type: add,
-    temp: room
+    temp: room,
+    active-time: 1
   }
   - {
     short: "Wash basil and berries",
     ingredients: [{name: basil, amount: 1, unit: plant}, {name: blueberries, amount: 2, unit: cups}],
     type: wash,
-    temp: cold
+    temp: cold,
+    active-time: 3
   }
   - {
     short: "Add basil, berries, and lemon zest",
@@ -43,7 +49,8 @@ steps:
     refined_ingredients: [{name: washed basil}, {name: washed berries}],
     depencencies: [-1, -2],
     type: add,
-    temp: room
+    temp: room,
+    active-time: 4
   }
   - {
     short: "In separate bow, mix the dry ingredients",
@@ -54,32 +61,38 @@ steps:
       {name: salt, amount: 1, unit: tsp}
     ],
     type: add,
-    temp: room
+    temp: room,
+    active-time: 5
   }
   - {
     short: "Pre-heat oven",
     long: "175 °C, convection.",
     type: oven,
-    temp: room
+    temp: room,
+    active-time: 1
   }
   - {
     short: "Add dry to wet in kitchen machin while it's working",
     long: "You want to run the kitchen machine on low, and add the dry stuff gradually (don't just dump it all in there at once).",
     depencencies: [-2, -3],
     type: km,
-    temp: room
+    temp: room,
+    active-time: 5
   }
   - {
     short: "Pour in fomrs",
     long: "With the amounts specified here you should get a decent size on the muffins if you divide the dough on approximately 12 muffin forms.",
     depencencies: [-1],
     type: shape,
-    temp: room
+    temp: room,
+    active-time: 10
   }
   - {
     short: "Roast for 25 minutes",
     long: "Put the muffins into the oven that you have pre-heated to 175 °C and set to convection. They should be done after about 25 minutes.",
     depencencies: [-1, -3],
     type: bake,
-    temp: hot
+    temp: hot,
+    active-time: 2,
+    passive-time: 25
   }
