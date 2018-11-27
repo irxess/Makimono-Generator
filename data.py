@@ -4,10 +4,10 @@ from dataclasses import dataclass
 
 @dataclass
 class Ingredient:
-    id: int
+    #id: int
     name: str
     amount: Union[float, int]
-    unit: str = 'g'
+    unit: str = ''
     comment: Optional[str] = None
 
 @dataclass
@@ -38,7 +38,7 @@ Temperature = enum('freeze', 'cold', 'room', 'warm', 'hot')
 @dataclass
 class Step:
     id: int
-    time: str
+    time: StepTime
     step_type: Type
     temperature: int
     ingredients_used: List[Ingredient]
@@ -53,6 +53,8 @@ class IngredientsOverview:
     name: str
     # step?
     total_amount: Union[int, float]
+    unit: str = ''
+    comment: Optional[str] = None
 
 @dataclass
 class Recipe:
