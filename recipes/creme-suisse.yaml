@@ -5,14 +5,6 @@ date_created: 2018-03-25
 last_updated: 2018-03-25
 image: waffles
 
-ingredients:
-  - {id: 0, name: whole milk, amount: 480, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'}
-  - {id: 2, name: sugar, amount: 100, unit: 'g'}
-  - {id: 7, name: heavy cream, amount: 200, unit: 'ml'}
-
-# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), knife, shape, bake, add
-#        spreading knife, shape (hands, braid?), spoon
-# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
   - {
     short: mix cornstarch and milk,
@@ -21,7 +13,7 @@ steps:
     type: 'bowl',
     temp: 'room',
     ingredients: [
-      {id: 0, amount: 20},
+      {name: whole milk, amount: 20, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'}
       {name: cornstarch, amount: 40, unit: 'g'}
     ],
   }
@@ -35,7 +27,7 @@ steps:
     ingredients: [
       {name: vanilla essence, amount: 2, unit: 'tsp'}
       {name: egg yolks, amount: 4, unit: ''},
-      {id: 2, amount: 20}
+      {name: sugar, amount: 20, unit: 'g'}
     ],
   }
   - {
@@ -45,9 +37,9 @@ steps:
     type: 'saucepan',
     temp: 'warm',
     ingredients: [
-      {id: 0},
+      {name: whole milk, amount: 460, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'}
       {name: vanilla bean, amount: 1, unit: '', comment: "Vanilla bean gives a much better taste than other vanilla products. If you really can't use it, consider using vanilla essence."},
-      {id: 2}
+      {name: sugar, amount: 80, unit: 'g'}
     ],
   }
   - {
@@ -80,7 +72,7 @@ steps:
     time: ,
     type: 'saucepan',
     temp: 'warm',
-    ingredients: [ {id: 7, amount: 30} ],
+    ingredients: [{name: heavy cream, amount: 30, unit: 'ml'}],
   }
   - {
     short: mix cream and gelatin,
@@ -96,7 +88,7 @@ steps:
     time: ,
     type: 'bowl',
     temp: 'room',
-    ingredients: [ {id: 7, name: heavy cream, amount: 200, unit: 'ml'}],
+    ingredients: [name: heavy cream, amount: 170, unit: 'ml'}],
   }
   - {
     short: mix everything,
