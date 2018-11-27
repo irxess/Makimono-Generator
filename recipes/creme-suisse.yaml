@@ -9,7 +9,6 @@ steps:
   - {
     short: mix cornstarch and milk,
     long: "In a small bowl, stir together the cornstarch with a little splash of milk. It should turn into a smooth paste. Add a little more milk to make it fairly liquid.",
-    time: ,
     type: 'bowl',
     temp: 'room',
     ingredients: [
@@ -20,7 +19,6 @@ steps:
   - {
     short: add vanilla essence, yolks and sugar,
     long: "Add the vanilla essence, yolks and 20g of sugar and whisk until frothy and well combined.",
-    time: ,
     type: 'bowl',
     temp: 'room',
     depencencies: [-1],
@@ -33,7 +31,6 @@ steps:
   - {
     short: warm milk, vanilla bean and sugar,
     long: "Combine the milk, the vanilla bean and 80g of sugar in a small saucepan. Over low heat, gently heat the milk mixture until scalding.",
-    time: ,
     type: 'saucepan',
     temp: 'warm',
     ingredients: [
@@ -45,7 +42,6 @@ steps:
   - {
     short: combine the milk mixtures, heat to thicken,
     long: "Take the milk off the heat and drizzle it into the cornstarch and egg mixture, whisking constantly. Pour the mixture back into the saucepan and gently heat over medium-high heat, stirring continuously with a rubber spatula, until the mixture thickens into pastry cream.",
-    time: ,
     type: 'add',
     temp: 'warm',
     depencencies: [-1, -2],
@@ -53,7 +49,6 @@ steps:
   - {
     short: cool mixture in bowl,
     long: "Transfer the hot pastry cream to a heatproof bowl, press a piece of plastic wrap directly onto the surface of the pastry cream to prevent a skin from forming and leave to cool to room temperature.",
-    time: ,
     type: 'bowl',
     temp: 'room',
     depencencies: [-1],
@@ -61,7 +56,6 @@ steps:
   - {
     short: soak gelatin,
     long: "Soak the gelatin sheets in cold water for 10 minutes.",
-    time: ,
     type: 'bowl',
     temp: 'cold',
     ingredients: [{name: gelatin, amount: 5, unit: 'sheets'} ],
@@ -69,7 +63,6 @@ steps:
   - {
     short: heat a little cream,
     long: "Use a little of the heavy cream to cover the bottom of a small saucepan. Gently heat the splash of cream until it is hot to the touch.",
-    time: ,
     type: 'saucepan',
     temp: 'warm',
     ingredients: [{name: heavy cream, amount: 30, unit: 'ml'}],
@@ -77,7 +70,6 @@ steps:
   - {
     short: mix cream and gelatin,
     long: "Take it off the heat. Squeeze water out of the gelatin. Add the gelatin to the cream. Put the mixture on low heat and stir until the gelatin is completely dissolved. Take it off the heat.",
-    time: ,
     type: 'saucepan',
     temp: 'warm',
     depencencies: [-1, -2],
@@ -85,7 +77,6 @@ steps:
   - {
     short: whip heavy cream,
     long: "Pour the remaining cream into a bowl. Add a little bit of sugar, and whip the mixture to form soft peaks.",
-    time: ,
     type: 'bowl',
     temp: 'room',
     ingredients: [name: heavy cream, amount: 170, unit: 'ml'}],
@@ -93,7 +84,6 @@ steps:
   - {
     short: mix everything,
     long: "Mix together the pastry cream and the gelatin-cream mixture. Gently fold in the whipped cream using a rubber spatula.",
-    time: ,
     type: 'add',
     temp: 'room',
     depencencies: [-1, -2, -5],
@@ -101,7 +91,6 @@ steps:
   - {
     short: cool,
     long: "Place the mixture into the fridge and let it cool for at least 2 hours.",
-    time: ,
     type: 'bowl',
     temp: 'cold',
     depencencies: [-1],
