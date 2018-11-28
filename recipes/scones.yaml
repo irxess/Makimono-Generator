@@ -1,53 +1,75 @@
 recipe: Scones
-
 description: "Scones are flaky, savory and relatively quick to make. Often served with jam and clotted cream,
 one of my favorites for breakfast."
+
 source: "https://www.fifteenspatulas.com/english-style-scones/"
 date_created: 2018-04-02
 last_updated: 2018-11-20
 image: scones
 
-ingredients:
-  - {id: 0, name: all-purpose flour, amount: 280, unit: 'g', comment: ''}
-  - {id: 1, name: baking powder, amount: 16, unit: 'g', comment: ''}
-  - {id: 2, name: salt, amount: 6, unit: 'g', comment: ''}
-  - {id: 3, name: sugar, amount: 50, unit: 'g', comment: ''}
-  - {id: 4, name: butter, amount: 90, unit: 'g', comment: ''}
-  - {id: 5, name: whole milk, amount: 155, unit: 'g', comment: 'Can be swapped for buttermilk'}
-  - {id: 6, name: egg, amount: 1, unit: '', comment: ''}
-
-# types: bowl, frying pan, saucepan, cast-iron pan, piping bag/siphon (decorate), oven, kitchen machine, 
-#        chopping knife (chef's knife), spreading knife, shape (hands, braid, cookie cutter?), spoon,
-#        bake (box with heat above), add (pour from bowl)
-# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
-  - {id: 0, short: Mix dry ingredients, time: 1, type: 'bowl', temp: 'room',
-     depends_on: [],
-     ingredients: [ {id: 0}, {id: 1}, {id: 2}, {id: 3} ],
-     long: "Mix together the flour, baking powder, salt and sugar in a bowl."}
-  - {id: 1, short: Add butter, time: 5, type: 'bowl', temp: 'room',
-     depends_on: [0],
-     ingredients: [ {id: 4} ],
-     long: "Add the butter with your fingers until the mixture has a sandy texture without chunks."}
-  - {id: 2, short: Mix milk and egg, time: 1, type: 'bowl', temp: 'room',
-     depends_on: [],
-     ingredients: [ {id: 5, amount: 100}, {id: 6} ],
-     long: "In a different bowl, mix the egg with most of the milk. If desired, save a bit of the egg for an egg wash later."}
-  - {id: 3, short: Mix everything, time: 2, type: 'bowl', temp: 'room',
-     depends_on: [1,2],
-     ingredients: [{id: 5}],
-     long: "Add the milk mixture to the bowl with flour. Mix until it becomes a relatively smooth ball, but try to
-     avoid kneading the dough too much. The dough should come together without being sticky.
-     Add more of the milk if the dough still is crumbly.
-     If it does end up sticky, add a bit more flour, so the dough is easier to handle.
-     However, be careful when adjusting the milk and flour ratio, as you want to knead the dough as little as possible."}
-  - {id: 4, short: Preheat oven, time: 0, type: 'oven', temp: 'room',
-     depends_on: [],
-     long: "Preheat the oven to 200 degrees Celsius."}
-  - {id: 5, short: Shape, time: 6, type: 'shape', temp: 'room',
-     depends_on: [3],
-     long: "Roll the dough until it is about 1-2 cm thick. Cut out circles of the desired size and transfer them onto a baking sheet."}
-  - {id: 6, short: Bake, time: 14, type: 'oven', temp: 'hot',
-     depends_on: [4, 5],
-     long: "Put the scones into the oven, and bake at 200 degrees C with convection on. The scones
-     are done when they have a nice, golden color on top. This should take about 14 minutes."}
+  - {
+    short: Mix dry ingredients,
+    long: "Mix together the flour, baking powder, salt and sugar in a bowl.",
+    ingredients: [
+      { name: all-purpose flour, amount: 280, unit: 'g'},
+      { name: baking powder, amount: 16, unit: 'g'},
+      { name: salt, amount: 6, unit: 'g'},
+      { name: sugar, amount: 50, unit: 'g'},
+    ],
+    active-time: 1,
+    type: 'bowl',
+    temp: 'room',
+  }
+  - {
+    short: Add butter,
+    long: "Add the butter with your fingers until the mixture has a sandy texture without chunks.",
+    ingredients: [{ name: butter, amount: 90, unit: 'g'}],
+    active-time: 5,
+    type: 'bowl',
+    temp: 'room',
+    depencencies: [-1],
+  }
+  - {
+    short: Mix milk and egg,
+    long: "In a different bowl, mix the egg with most of the milk. If desired, save a bit of the egg for an egg wash later.",
+    ingredients: [
+      { name: whole milk, amount: 100, unit: 'g', comment: 'Can be swapped for buttermilk'},
+      { name: egg, amount: 1, unit: ''}
+    ],
+    active-time: 1,
+    type: 'bowl',
+    temp: 'room',
+  }
+  - {
+    short: Mix everything,
+    long: "Add the milk mixture to the bowl with flour. Mix until it becomes a relatively smooth ball, but try to avoid kneading the dough too much. The dough should come together without being sticky. Add more of the milk if the dough still is crumbly. If it does end up sticky, add a bit more flour, so the dough is easier to handle. However, be careful when adjusting the milk and flour ratio, as you want to knead the dough as little as possible.",
+    ingredients: [{ name: whole milk, amount: 55, unit: 'g', comment: 'Can be swapped for buttermilk'},],
+    active-time: 2,
+    type: 'bowl',
+    temp: 'room',
+    depencencies: [-1, -2],
+  }
+  - {
+    short: Preheat oven,
+    long: "Preheat the oven to 200 degrees Celsius.",
+    active-time: 0,
+    type: 'oven',
+    temp: 'room',
+  }
+  - {
+    short: Shape,
+    long: "Roll the dough until it is about 1-2 cm thick. Cut out circles of the desired size and transfer them onto a baking sheet.",
+    active-time: 6,
+    type: 'shape',
+    temp: 'room',
+    depencencies: [-2],
+  }
+  - {
+    short: Bake,
+    long: "Put the scones into the oven, and bake at 200 degrees C with convection on. The scones are done when they have a nice, golden color on top. This should take about 14 minutes.",
+    passive-time: 14,
+    type: 'oven',
+    temp: 'hot',
+    depencencies: [-1, -2],
+  }
