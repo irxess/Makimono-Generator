@@ -5,6 +5,9 @@ import yaml
 from PIL import Image
 import timeline
 import shutil
+from dataclasses import dataclass
+from read_from_yaml import read_recipe_into_data
+from data import *
 
 # TODO:
 # Check that each ingredient is used at least once
@@ -76,7 +79,7 @@ def generate_files_for_recipe(name):
     template = env.get_template('recipe.html')
 
     output = template.render(
-        r=yaml_result,
+        r=recipe,
         path_to_base='.',
         all_recipes_path='all/page-1.html',
         about_path='about.html'
@@ -96,9 +99,9 @@ def generate_files_for_recipe(name):
 
 @dataclass
 class PaginationElement:
-    self.url
-    self.name
-    self.current = False
+    url: str = ""
+    name: str = ""
+    current = False
 
 def split_thumbnail_list_into_pages(thumbnails):
     chunk_size = 4 # This is the number of recipes that will be shown on the "All recipes"-page
