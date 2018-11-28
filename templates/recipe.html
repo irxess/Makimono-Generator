@@ -6,7 +6,7 @@
 <main id="content">
 
   <section id="intro">
-    <h1>{{ r.recipe }}</h1>
+    <h1>{{ r.name }}</h1>
 
    {% if (r.description is defined) and r.description %}
     <p id="flavor-text">
@@ -25,7 +25,7 @@
       Last updated on {{ r.last_updated }}
   </p>
   {% else %}
-  <p class="recipe-date">Created on {{ r.last_updated }}</p>
+  <p class="recipe-date">Created on {{ r.date_updated }}</p>
   {% endif %}
 
 
@@ -34,7 +34,7 @@
     <hr>
     <ul>
       {% for i in r.ingredients %}
-        <li><b>{{i.amount}} {{i.unit}}</b> {{ i.name }}</li>
+        <li><b>{{i.total_amount}} {{i.unit}}</b> {{ i.name }}</li>
       {% endfor %}
     </ul>
   </section>
@@ -50,13 +50,13 @@
     {% for s in r.steps %}
     <hr>
     <div class="step">
-      {% if (s.ingredients is defined) and s.ingredients %}
+      {% if s.ingredients_used %}
       <div class="ingredient-container">
         <div class="step-ingredient-list">
             <ul>
-              {% for i in s['ingredients'] %}
-                <li><b>{{ i['amount'] }} {{r.ingredients[i.id].unit}}</b>
-                    {{ r.ingredients[i.id].name }}</li>
+              {% for i in s.ingredients_used %}
+                <li><b>{{ i.amount }} {{i.unit}}</b>
+                    {{ i.name }}</li>
               {% endfor %}
             </ul>
         </div>

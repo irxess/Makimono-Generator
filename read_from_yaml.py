@@ -57,6 +57,9 @@ def read_steps(yaml, recipe, ingredients):
                     if 'unit' in ingr:
                         ingredient.unit = ingr['unit']
                     step_data.refined_ingredients_used.append(ingredient)
+            if 'depencencies' in step:
+                for dep in step['depencencies']:
+                    step_data.depends_on.append( id + int(dep) )
             recipe.steps.append(step_data)
             id += 1
     else:
