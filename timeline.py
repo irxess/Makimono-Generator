@@ -1,4 +1,5 @@
 import yaml
+from data import Step, StepSVG, Point, Line, Circle, Timeline, Recipe
 
 # Generate an svg image which shows the timeline of a recipe
 
@@ -7,48 +8,37 @@ y_spacing = 2.2 # em
 x_offset = 5    # percent
 x_spacing = 0   # percent, set in find_positions
 
-class StepNode:
-    # Each node has a timeline step (its x position) and a height (its y position)
-    # All nodes in a line on the same height belong to the same group
-    def __init__(self, id, depends_list, temp, step_type):
-        self.x = id
-        self.y = 0
-        self.group = 0
-        self.svg_x = 0
-        self.svg_y = 0
-        self.temp = temp
-        self.step_type = step_type
-        self.depends_on = depends_list
-
-def find_positions(yaml):
+def find_positions(recipe):
     global x_spacing
     global y_offset
     global y_spacing
 
-    nodes = []
+    #nodes = []
     next_group = 1
-    amount_of_steps = len(yaml['steps'])
+    amount_of_steps = len(recipe.steps)
     x_spacing = (90.0/amount_of_steps)
 
-    for step in yaml['steps']:
-        node = StepNode(step['id'], step['depends_on'], step['temp'], step['type'])
-        if node.depends_on == []:
-            node.group = next_group
+    for step in recipe.steps:
+        svg_node = StepSVG(step.id)
+        if step.depends_on == []:
+            svg_node.group = next_group
             next_group += 1
         else:
             lowest_group = 1024
-            for d in node.depends_on:
-                if nodes[d].group < lowest_group:
-                    lowest_group = nodes[d].group
-            node.group = lowest_group
-        nodes.append(node)
+            for d in step.depends_on:
+                if recipe.steps[d].svg.group < lowest_group:
+                    lowest_group = recipe.steps[d].svg.group
+            svg_node.group = lowest_group
+        step.svg = svg_node
+        #nodes.append(svg_node)
 
+    done_svg = StepSVG(amount_of_steps) #StepNode(amount_of_steps, [amount_of_steps - 1], 'done', 'done')
+    done_svg.y = 1
+    done_step = Step(amount_of_steps, 0, 'done', 'done', [], [], [amount_of_steps - 1])
+    done_step.svg = done_svg
+    recipe.steps.append(done_step)
+    #nodes.append(done_svg)
 
-    done_node = StepNode(amount_of_steps, [amount_of_steps - 1], 'done', 'done')
-    done_node.y = 1
-    nodes.append(done_node)
-
-    return nodes
 
 def start_improve_positions(nodes):
     y_pos = 1
@@ -56,27 +46,28 @@ def start_improve_positions(nodes):
     safe_ys = [1]*len(nodes)
 
     for i,node in enumerate(nodes):
-        if node.group == current_group:
-            node.y = y_pos
+        if node.svg.group == current_group:
+            node.svg.y = y_pos
             safe_ys[i] = y_pos+1
             safe_y = y_pos + 1
             if len(node.depends_on) > 1:
                 for dep in node.depends_on:
-                    dep_group = nodes[dep].group
+                    dep_group = nodes[dep].svg.group
                     if dep_group != current_group:
                         dep_y = improve_positions(nodes[:dep+1], dep_group, dep, safe_y, safe_ys[:i+1])
                         safe_y = dep_y + 1
                         safe_ys[i] = max(safe_ys[i], safe_y)
 
+
 def improve_positions(nodes, current_group, cur_index, start_y, safe_ys):
     cur_node = nodes[cur_index]
-    if cur_node.y > 0:
-        return cur_node.y
+    if cur_node.svg.y > 0:
+        return cur_node.svg.y
 
     y_levels_taken = []
     first_in_group = 0
     for n in nodes:
-        if n.group == current_group:
+        if n.svg.group == current_group:
             break
         first_in_group += 1
 
@@ -87,7 +78,7 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys):
 
     connected = len(cur_node.depends_on)
     if connected > 1:
-        cur_node.y = y_used
+        cur_node.svg.y = y_used
         safe_y = y_used
         for dep in cur_node.depends_on:
             dep_group = nodes[dep].group
@@ -96,72 +87,64 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys):
         safe_ys[cur_index] = max(safe_ys[cur_index], safe_y)
     elif connected == 1:
         y_used = improve_positions(nodes[:cur_index], current_group, cur_node.depends_on[0], y_used, safe_ys[:cur_index+1])
-    cur_node.y = y_used
+    cur_node.svg.y = y_used
     safe_ys[cur_index] = max(safe_ys[cur_index], y_used+1)
     return y_used
 
-def add_svg_positions(nodes):
+
+def add_svg_positions(steps):
     global y_offset
     global y_spacing
     global x_offset
     global x_spacing
 
-    for node in nodes:
-        node.svg_x = (node.x * x_spacing) + x_offset
-        node.svg_y = y_offset + (y_spacing * (node.y-1))
-    return nodes
+    for step in steps:
+        step.svg.svg_x = (step.svg.x * x_spacing) + x_offset
+        step.svg.svg_y = y_offset + (y_spacing * (step.svg.y-1))
 
-def print_nodes(nodes):
-    for n in nodes:
-        print('Node ', n.x, '\ty: ', n.y, '\tsvg_x: ', n.svg_x, '%')
 
-def add_timeline_to_yaml(yaml, nodes):
+def print_nodes(recipe):
+    for n in recipe.steps:
+        print('Node ', n.svg.x, '\ty: ', n.svg.y, '\tsvg_x: ', n.svg.svg_x, '%')
+
+def add_timeline_to_yaml(recipe):
+    global y_offset
     global y_spacing
     lines = []
     circles = []
 
-    yaml['timeline']['lines'] = []
-    yaml['timeline']['circles'] = []
-    for n in nodes:
-        circle = {}
-        circle['color'] = n.temp
-        circle['center'] = {'x': n.svg_x, 'y': n.svg_y}
-        circle['type'] = n.step_type
-        yaml['timeline']['circles'].append(circle)
-        for d in n.depends_on:
-            split_x = n.svg_x - x_spacing
-            m = nodes[d]
-            if m.svg_x >= split_x:
-                line = {}
-                line['color'] = m.temp
-                line['start'] = {'x': m.svg_x, 'y': m.svg_y}
-                line['end'] = {'x': n.svg_x, 'y': n.svg_y}
-                yaml['timeline']['lines'].append(line)
-            else:
-                line1 = {}
-                line1['color'] = m.temp
-                line1['start'] = {'x': m.svg_x, 'y': m.svg_y}
-                line1['end'] = {'x': split_x, 'y': m.svg_y}
-                yaml['timeline']['lines'].append(line1)
-                line2 = {}
-                line2['color'] = m.temp
-                line2['start'] = {'x': split_x, 'y': m.svg_y}
-                line2['end'] = {'x': n.svg_x, 'y': n.svg_y}
-                yaml['timeline']['lines'].append(line2)
-
-
-def generate_svg(yaml):
-    global y_offset
-    global y_spacing
-    nodes = find_positions(yaml)
-    start_improve_positions(nodes)
-
     deepest_y = 0
-    for n in nodes:
-        if n.y > deepest_y:
-            deepest_y = n.y
-    yaml['timeline'] = {}
-    yaml['timeline']['height'] = y_offset*2 + y_spacing*(deepest_y-1)
+    for step in recipe.steps:
+        if step.svg.y > deepest_y:
+            deepest_y = step.svg.y
+    height = y_offset*2 + y_spacing*(deepest_y-1)
+    recipe.timeline = Timeline([], [], 0)
 
-    add_svg_positions(nodes)
-    add_timeline_to_yaml(yaml, nodes)
+    for s in recipe.steps:
+        circle = Circle(s.temperature, Point(s.svg.x, s.svg.y), s.step_type)
+        recipe.timeline.circles.append(circle)
+        for d in s.depends_on:
+            dep_step = recipe.steps[d]
+            split_x = dep_step.svg.svg_x - x_spacing
+            if dep_step.svg.svg_x >= split_x:
+                color = dep_step.temperature
+                start = Point(dep_step.svg.svg_x, dep_step.svg.svg_y)
+                end = Point(s.svg.svg_x, s.svg.svg_y)
+                line = Line(start, end, color)
+                recipe.timeline.lines.append(line)
+            else:
+                color = dep_step.temperature
+                start = Point(dep_step.svg.svg_x, dep_step.svg.svg_y)
+                middle = Point(split_x, dep_step.svg.svg_y)
+                end = Point(s.svg.svg_x, s.svg.svg_y)
+                line1 = Line(start, middle, color)
+                line2 = Line(middle, end, color)
+                recipe.timeline.lines.append(line1)
+                recipe.timeline.lines.append(line2)
+
+
+def generate_svg(recipe):
+    svg_nodes = find_positions(recipe)
+    start_improve_positions(recipe.steps)
+    add_svg_positions(recipe.steps)
+    add_timeline_to_yaml(recipe)

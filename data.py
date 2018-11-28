@@ -23,10 +23,11 @@ class StepTime:
 
 @dataclass
 class StepSVG:
-    group: int = 0
+    x: int = 0
+    y: int = 0
     svg_x: int = 0
     svg_y: int = 0
-    y: int = 0
+    group: int = 0
 
 def enum(*args):
     enums = dict(zip(args, range(len(args))))
@@ -40,12 +41,12 @@ class Step:
     id: int
     time: StepTime
     step_type: Type
-    temperature: int
+    temperature: Temperature
     ingredients_used: List[Ingredient]
     refined_ingredients_used: List[RefinedIngredient]
+    depends_on: List[int]
     short: str = ""
     long: str = ""
-    depends_on = []
     svg = StepSVG()
 
 @dataclass
@@ -57,12 +58,36 @@ class IngredientsOverview:
     comment: Optional[str] = None
 
 @dataclass
+class Point:
+    x: int
+    y: int
+
+@dataclass
+class Line:
+    start: Point
+    end: Point
+    color: Temperature
+
+@dataclass
+class Circle:
+    color: Temperature
+    center: Point
+    step_type: Type
+
+@dataclass
+class Timeline:
+    circles: List[Circle]
+    lines: List[Line]
+    height: int = 0
+
+@dataclass
 class Recipe:
     name: str
     date_created: str
     date_updated: str
     steps: List[Step]
     ingredients: List[IngredientsOverview]
+    timeline: Timeline = Timeline([],[])
     description: str = ""
     source: str = ""
     image: str = ""

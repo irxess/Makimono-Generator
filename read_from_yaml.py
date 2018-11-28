@@ -30,7 +30,7 @@ def read_steps(yaml, recipe, ingredients):
                 time = StepTime(1,0)
             type = step['type']
             temperature = step['temp']
-            step_data = Step(id, time, type, temperature, [], [])
+            step_data = Step(id, time, type, temperature, [], [], [])
             if 'short' in step:
                 step_data.short = step['short']
             if 'long' in step:
@@ -113,3 +113,8 @@ if __name__ == "__main__":
         print(s.short)
     for i in r.ingredients:
         print(f"{i.total_amount} {i.unit} {i.name}")
+
+    import timeline
+    timeline.generate_svg(r)
+    timeline.print_nodes(r)
+
