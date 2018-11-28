@@ -3,7 +3,7 @@ recipe: Red Pasta Sauce
 description: "Student's Milanese"
 source: "Simon's dad"
 date_created: 2018-11-19
-last_updated: 2018-11-19
+last_updated: 2018-11-28
 image: ''
 
 steps:
@@ -47,6 +47,7 @@ steps:
   - {
     short: 'Fry the garlic and chilli',
     long: "Start up the frying process with the garlic and the chilli so that they begin giving off some of their awesome fragnance. Be careful though, garlic easily burns, and the taste of burnt garlic penetrates everything and is really hard to get rid of, so it's better to err on the side of caution and fry it too little rather than too much.\n\nAlso note that I like using really good nonstick pans and not adding excess fat, so even though I don't, you might want to add perhaps a tablespoon or so of butter or olive oil for this step.",
+    ingredients: [ {name: 'olive oil', amount: 2, unit: 'tbsp'} ],
     active-time: 2,
     type: fry,
     temp: hot,
