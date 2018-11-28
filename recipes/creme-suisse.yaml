@@ -12,7 +12,7 @@ steps:
     type: 'bowl',
     temp: 'room',
     ingredients: [
-      {name: whole milk, amount: 20, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'}
+      {name: whole milk, amount: 20, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'},
       {name: cornstarch, amount: 40, unit: 'g'}
     ],
   }
@@ -23,7 +23,7 @@ steps:
     temp: 'room',
     depencencies: [-1],
     ingredients: [
-      {name: vanilla essence, amount: 2, unit: 'tsp'}
+      {name: vanilla essence, amount: 2, unit: 'tsp'},
       {name: egg yolks, amount: 4, unit: ''},
       {name: sugar, amount: 20, unit: 'g'}
     ],
@@ -34,7 +34,7 @@ steps:
     type: 'saucepan',
     temp: 'warm',
     ingredients: [
-      {name: whole milk, amount: 460, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'}
+      {name: whole milk, amount: 460, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'},
       {name: vanilla bean, amount: 1, unit: '', comment: "Vanilla bean gives a much better taste than other vanilla products. If you really can't use it, consider using vanilla essence."},
       {name: sugar, amount: 80, unit: 'g'}
     ],
