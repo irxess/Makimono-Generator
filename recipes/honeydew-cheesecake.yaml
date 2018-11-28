@@ -6,59 +6,100 @@ date_created: 2018-10-28
 last_updated: 2018-10-28
 image: honeydew_cheesecake
 
-ingredients:
-  - {id: 0, name: honeydew melon, amount: 1, unit: '', comment: ''}
-  - {id: 1, name: sugar, amount: 100, unit: 'g', comment: ''}
-  - {id: 2, name: gelatin powder, amount: 2, unit: 'tsp', comment: 'You can use 4 sheets of gelatin instead.'}
-  - {id: 3, name: cold water, amount: 2, unit: 'tbsp', comment: ''}
-  - {id: 4, name: creme fraiche, amount: 300, unit: 'g', comment: ''}
-  - {id: 5, name: ricotta, amount: 250, unit: 'g', comment: ''}
-  - {id: 6, name: oat cookies, amount: 225, unit: 'g', comment: ''}
-  - {id: 7, name: butter, amount: 120, unit: 'g', comment: ''}
-  - {id: 8, name: water, amount: 25, unit: 'g', comment: ''}
-  - {id: 9, name: mint extract, amount: 2, unit: 'drops', comment: 'Optional'}
-  - {id: 10, name: honey, amount: 1, unit: 'tbsp', comment: 'Optional'}
-
-# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add
-# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
-  - {id: 0, short: prepare the melon, time: 5, type: 'cut', temp: 'room',
-     depends_on: [],
-     ingredients: [ {id: 0} ],
-     long: "Cut the honeydew melon in half. Scrape out the seeds. Then use a spoon to cut out the flesh of the melon in chunks. Put that into a saucepan."}
-  - {id: 1, short: heat to thicken, time: 30, type: 'saucepan', temp: 'hot',
-     depends_on: [0],
-     ingredients: [ {id: 1} ],
-     long: "Add sugar to the saucepan. Then heat the mixture, stirring occasionally. After a while, the melon chunks will fall apart. When the mixture has thickened a bit, let it cool."}
-  - {id: 2, short: mix to form the crust, time: 20, type: 'bowl', temp: 'room',
-     depends_on: [],
-     ingredients: [ {id: 6}, {id: 7} ],
-     long: "Crush the cookies into a bowl, and add the butter. When mixed enough, push the cookie dough into a cake form."}
-  - {id: 3, short: cool the crust, time: 1, type: 'bowl', temp: 'cold',
-     depends_on: [2],
-     ingredients: [],
-     long: "Put the cake form into the fridge to cool."}
-  - {id: 4, short: soak the gelatin, time: 1, type: 'bowl', temp: 'cold',
-     depends_on: [],
-     ingredients: [ {id: 2}, {id: 3} ],
-     long: "Prepare the gelation by mixing gelatin powder with cold water."}
-  - {id: 5, short: mix, time: 3, type: 'bowl', temp: 'room',
-     depends_on: [],
-     ingredients: [ {id: 4}, {id: 5} ],
-     long: "Mix together the creme fraiche and ricotta."}
-  - {id: 6, short: add honeydew and other flavors, time: 1, type: 'add', temp: 'room',
-     depends_on: [1, 5],
-     ingredients: [ {id: 9}, {id: 10} ],
-     long: "Add the honeydew syrup and other optional flavors, and mix together."}
-  - {id: 7, short: add hot gelatin, time: 1, type: 'add', temp: 'warm',
-     depends_on: [4, 6],
-     ingredients: [ {id: 8} ],
-     long: "Boil the water. Then add it to the gelatin. Stir and pour into the bowl with the cheesecake mixture. Mix together."}
-  - {id: 8, short: assemble, time: 1, type: 'add', temp: 'room',
-     depends_on: [3, 7],
-     ingredients: [],
-     long: "Take the crust out of the fridge, and pour the cheesecake filling into it."}
-  - {id: 9, short: cool, time: 240, type: 'bowl', temp: 'cold',
-     depends_on: [8],
-     ingredients: [],
-     long: "Place the cheesecake into the fridge and let it set for at least 4 hours before serving. If in a hurry, place into the freezer instead, for about 40 minutes."}
+  - {
+    short: prepare the melon,
+    long: "Cut the honeydew melon in half. Scrape out the seeds. Then use a spoon to cut out the flesh of the melon in chunks. Put that into a saucepan.",
+    ingredients: [ {name: honeydew melon, amount: 1, unit: ''} ],
+    active-time: 5,
+    type: 'cut',
+    temp: 'room',
+  }
+  - {
+    short: heat to thicken,
+    long: "Add sugar to the saucepan. Then heat the mixture, stirring occasionally. After a while, the melon chunks will fall apart. When the mixture has thickened a bit, let it cool.",
+    ingredients: [ {name: sugar, amount: 100, unit: 'g'} ],
+    active-time: 30,
+    type: 'saucepan',
+    temp: 'hot',
+    depencencies: [-1],
+  }
+  - {
+    short: mix to form the crust,
+    long: "Crush the cookies into a bowl, and add the butter. When mixed enough, push the cookie dough into a cake form.",
+    ingredients: [
+      {name: oat cookies, amount: 225, unit: 'g'},
+      {name: butter, amount: 120, unit: 'g'}
+    ],
+    active-time: 20,
+    type: 'bowl',
+    temp: 'room',
+  }
+  - {
+    short: cool the crust,
+    long: "Put the cake form into the fridge to cool.",
+    passive-time: 1,
+    type: 'bowl',
+    temp: 'cold',
+    depencencies: [-1],
+  }
+  - {
+    short: soak the gelatin,
+    long: "Prepare the gelation by mixing gelatin powder with cold water.",
+    ingredients: [
+      {name: gelatin powder, amount: 2, unit: 'tsp', comment: 'You can use 4 sheets of gelatin instead.'},
+      {name: cold water, amount: 2, unit: 'tbsp'}
+    ],
+    active-time: 1,
+    passive-time: 3,
+    type: 'bowl',
+    temp: 'cold',
+  }
+  - {
+    short: mix,
+    long: "Mix together the creme fraiche and ricotta.",
+    ingredients: [
+      {name: creme fraiche, amount: 300, unit: 'g'},
+      {name: ricotta, amount: 250, unit: 'g'}
+    ],
+    active-time: 3,
+    type: 'bowl',
+    temp: 'room',
+  }
+  - {
+    short: add honeydew and other flavors,
+    long: "Add the honeydew syrup and other optional flavors, and mix together.",
+    ingredients: [
+      {name: mint extract, amount: 2, unit: 'drops', comment: 'Optional'},
+      {name: honey, amount: 1, unit: 'tbsp', comment: 'Optional'}
+    ],
+    active-time: 1,
+    type: 'add',
+    temp: 'room',
+    depencencies: [-1, -5],
+  }
+  - {
+    short: add hot gelatin,
+    long: "Boil the water. Then add it to the gelatin. Stir and pour into the bowl with the cheesecake mixture. Mix together.",
+    ingredients: [ {name: water, amount: 25, unit: 'g'} ],
+    active-time: 1,
+    type: 'add',
+    temp: 'warm',
+    depencencies: [-1, -3],
+  }
+  - {
+    short: assemble,
+    long: "Take the crust out of the fridge, and pour the cheesecake filling into it.",
+    active-time: 1,
+    type: 'add',
+    temp: 'room',
+    depencencies: [-1, -5],
+  }
+  - {
+    short: cool,
+    long: "Place the cheesecake into the fridge and let it set for at least 4 hours before serving. If in a hurry, place into the freezer instead, for about 40 minutes.",
+    passive-time: 240,
+    type: 'bowl',
+    temp: 'cold',
+    depencencies: [-1],
+  }
