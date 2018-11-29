@@ -8,13 +8,6 @@
   <rect x="0" y="0" width="100%" height="{{ r.timeline.height }}em" fill="#f5f5f5" />
 
   {% for line in r.timeline.lines %}
-    <line class="dark-line"
-      x1="{{ line.start.x }}%"
-      y1="{{ line.start.y }}em"
-      x2="{{ line.end.x }}%"
-      y2="{{ line.end.y }}em" />
-  {% endfor %}
-  {% for line in r.timeline.lines %}
     <line class="{{ line.color }}"
       x1="{{ line.start.x }}%"
       y1="{{ line.start.y }}em"

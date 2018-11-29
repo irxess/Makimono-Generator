@@ -99,7 +99,7 @@ def add_svg_positions(steps):
     global x_spacing
 
     for step in steps:
-        step.svg.svg_x = (step.svg.x * x_spacing) + x_offset
+        step.svg.svg_x = int((step.svg.x * x_spacing) + x_offset)
         step.svg.svg_y = y_offset + (y_spacing * (step.svg.y-1))
 
 
@@ -107,9 +107,10 @@ def print_nodes(recipe):
     for n in recipe.steps:
         print('Node ', n.svg.x, '\ty: ', n.svg.y, '\tsvg_x: ', n.svg.svg_x, '%')
 
-def add_timeline_to_yaml(recipe):
+def add_timeline_to_data(recipe):
     global y_offset
     global y_spacing
+    global x_spacing
     lines = []
     circles = []
 
@@ -118,14 +119,14 @@ def add_timeline_to_yaml(recipe):
         if step.svg.y > deepest_y:
             deepest_y = step.svg.y
     height = y_offset*2 + y_spacing*(deepest_y-1)
-    recipe.timeline = Timeline([], [], 0)
+    recipe.timeline = Timeline([], [], height)
 
     for s in recipe.steps:
-        circle = Circle(s.temperature, Point(s.svg.x, s.svg.y), s.step_type)
+        circle = Circle(s.temperature, Point(s.svg.svg_x, s.svg.svg_y), s.step_type)
         recipe.timeline.circles.append(circle)
         for d in s.depends_on:
             dep_step = recipe.steps[d]
-            split_x = dep_step.svg.svg_x - x_spacing
+            split_x = s.svg.svg_x - x_spacing
             if dep_step.svg.svg_x >= split_x:
                 color = dep_step.temperature
                 start = Point(dep_step.svg.svg_x, dep_step.svg.svg_y)
@@ -147,4 +148,4 @@ def generate_svg(recipe):
     svg_nodes = find_positions(recipe)
     start_improve_positions(recipe.steps)
     add_svg_positions(recipe.steps)
-    add_timeline_to_yaml(recipe)
+    add_timeline_to_data(recipe)
