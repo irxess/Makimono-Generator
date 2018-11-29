@@ -6,7 +6,7 @@
 <main id="content">
 
   <section id="intro">
-    <h1>{{ r.recipe }}</h1>
+    <h1>{{ r.name }}</h1>
 
    {% if (r.description is defined) and r.description %}
     <p id="flavor-text">
@@ -19,13 +19,13 @@
     {% endif %}
   </section>
 
-  {% if (r.date_created is defined) and r.date_created %}
+  {% if r.date_updated != '' and r.date_updated != r.date_created %}
   <p class="recipe-date">
       Created on {{ r.date_created }}</br>
-      Last updated on {{ r.last_updated }}
+      Last updated on {{ r.date_updated }}
   </p>
   {% else %}
-  <p class="recipe-date">Created on {{ r.last_updated }}</p>
+  <p class="recipe-date">Created on {{ r.date_created }}</p>
   {% endif %}
 
 
@@ -34,7 +34,7 @@
     <hr>
     <ul>
       {% for i in r.ingredients %}
-        <li><b>{{i.amount}} {{i.unit}}</b> {{ i.name }}</li>
+        <li><b>{{i.total_amount}} {{i.unit}}</b> {{ i.name }}</li>
       {% endfor %}
     </ul>
   </section>
@@ -50,13 +50,13 @@
     {% for s in r.steps %}
     <hr>
     <div class="step">
-      {% if (s.ingredients is defined) and s.ingredients %}
+      {% if s.ingredients_used %}
       <div class="ingredient-container">
         <div class="step-ingredient-list">
             <ul>
-              {% for i in s['ingredients'] %}
-                <li><b>{{ i['amount'] }} {{r.ingredients[i.id].unit}}</b>
-                    {{ r.ingredients[i.id].name }}</li>
+              {% for i in s.ingredients_used %}
+                <li><b>{{ i.amount }} {{i.unit}}</b>
+                    {{ i.name }}</li>
               {% endfor %}
             </ul>
         </div>
@@ -65,8 +65,8 @@
       <div class="description-container">
         <div class="step-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2em 2em" height="2em" width="2em">
-            <circle class="{{ s.temp }}" cx="1em" cy="1em" r="1em" />
-            <image class="svg-icon" xlink:href="images/icons/{{ s.type }}-light.svg"
+            <circle class="{{ s.temperature }}" cx="1em" cy="1em" r="1em" />
+            <image class="svg-icon" xlink:href="images/icons/{{ s.step_type }}-light.svg"
                    x="0.25em" y="0.25em"
                    width="1.5em" height="1.5em" />
           </svg>

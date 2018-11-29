@@ -5,6 +5,9 @@ import yaml
 from PIL import Image
 import timeline
 import shutil
+from dataclasses import dataclass
+from read_from_yaml import read_recipe_into_data
+from data import *
 
 # TODO:
 # Check that each ingredient is used at least once
@@ -14,15 +17,12 @@ import shutil
 
 # Add description on hover in browse all?
 
-class Ingredient:
-    def __init__(self, amount):
-        self.amount = amount
-        self.rest_id = -1
+
 
 class Thumbnail:
     def __init__(self, name, url, img, updated, created):
         self.name = name
-        self.url = '../'+url
+        self.url = '../'+get_url_friendly_name(url)
         if img != '':
             self.image = '../images/thumbnails/'+img
         else:
@@ -30,34 +30,11 @@ class Thumbnail:
         self.updated = updated
         self.created = created
 
-class PaginationElement:
-    def __init__(self, page_url, number):
-        self.url = page_url
-        self.current = False
-        self.name = number
+def get_url_friendly_name(name):
+    return name.replace(' ', '-').replace('&', 'and').lower()
 
-def add_ingredient_amounts_to_steps(yaml):
-    ingredients = dict()
-    for ingr in yaml['ingredients']:
-        if ingr['amount'] == None:
-            ingr['amount'] = ''
-        ingredients[ ingr['id'] ] = Ingredient( ingr['amount'] )
-    for s in yaml['steps']:
-        if 'ingredients' in s:
-            for i in s['ingredients']:
-                if 'amount' in i:
-                    ingredients[i['id']].amount -= i['amount']
-                else:
-                    if ingredients[i['id']].rest_id == -1:
-                        ingredients[i['id']].rest_id = i
-                    else:
-                        print(f"Ingredient {i['id']} in {yaml['recipe']} has multiple unspecified steps")
-    for _,i in ingredients.items():
-        if i.rest_id != -1:
-            i.rest_id['amount'] = i.amount
-
-def prepare_image(yaml):
-    img_name = yaml['image'].casefold()
+def prepare_image(recipe):
+    img_name = recipe.image.casefold()
     known_image_extensions = ['jpg', 'png', 'jpeg']
     file_name = ""
     for extension in known_image_extensions:
@@ -65,9 +42,9 @@ def prepare_image(yaml):
             file_name = img_name + '.' + extension
             break;
     if file_name == "":
-        yaml['image'] = ""
+        recipe.image = ""
         return ""
-    yaml['image'] = file_name
+    recipe.image = file_name
     # generate thumbnail, if not exists
     img = Image.open("publish/images/" + file_name)
 
@@ -91,15 +68,12 @@ def prepare_image(yaml):
     img_thumbnail = img_thumbnail.resize((200,200), Image.ANTIALIAS)
     img_thumbnail.save("publish/images/thumbnails/" + file_name)
 
-    return file_name
-
 
 def generate_files_for_recipe(name):
-    recipe = open(os.path.join('recipes', name + '.yaml'), 'r')
-    yaml_result = yaml.load(recipe)
-    add_ingredient_amounts_to_steps(yaml_result)
-    prepare_image(yaml_result)
-    timeline.generate_svg(yaml_result)
+    recipe = read_recipe_into_data(name)
+
+    prepare_image(recipe)
+    timeline.generate_timeline_svg(recipe)
 
     if not os.path.isdir('publish'):
         os.makedirs('publish')
@@ -108,23 +82,28 @@ def generate_files_for_recipe(name):
     template = env.get_template('recipe.html')
 
     output = template.render(
-        r=yaml_result,
+        r=recipe,
         path_to_base='.',
         all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
-    with open('publish/' + name + '.html', 'w') as f:
+    name_for_url = get_url_friendly_name(name)
+    with open('publish/' + name_for_url + '.html', 'w') as f:
         print(output, file=f)
-    if yaml_result['date_created'] == yaml_result['last_updated']:
-        yaml_result['date_created'] = ''
     return Thumbnail(
-        yaml_result['recipe'],
-        './'+name+'.html',
-        yaml_result['image'],
-        yaml_result['last_updated'],
-        yaml_result['date_created'],
+        recipe.name,
+        './'+name_for_url+'.html',
+        recipe.image,
+        recipe.date_updated,
+        recipe.date_created,
     )
 
+
+@dataclass
+class PaginationElement:
+    url: str = ""
+    name: str = ""
+    current = False
 
 def split_thumbnail_list_into_pages(thumbnails):
     chunk_size = 4 # This is the number of recipes that will be shown on the "All recipes"-page

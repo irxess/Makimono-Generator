@@ -6,59 +6,37 @@ date_created: 20YY-mm-dd
 last_updated: 20YY-mm-dd
 image: ''
 
-ingredients:
-  - {
-    id: 0,
-    amount: ,
-    unit: 'g',
-    name: "",
-    comment: ""
-  }
-  - {
-    id: 1,
-    amount: ,
-    unit: 'g',
-    name: "",
-    comment: ""
-  }
-  - {
-    id: 2,
-    amount: ,
-    unit: 'g',
-    name: "",
-    comment: ""
-  }
-
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
   - {
-    id: 0,
-    depends_on: [],
-    ingredients: [ {id: 0} ],
     short: "",
     long: "",
-    time: 1,
+    ingredients: [ {name: , amount: , unit: , comment: } ],
+    active-time: 1,
+    passive-time: 1,
     type: 'bowl',
     temp: 'room',
   }
   - {
-    id: 1,
-    depends_on: [0],
-    ingredients: [ {id: 1}, {id: 2} ],
     short: "",
     long: "",
-    time: 1,
+    ingredients: [
+      {name: , amount: , unit: , comment: },
+      {name: , amount: , unit: , comment: }
+    ],
+    depencencies: [-1],
+    active-time: 1,
+    passive-time: 1,
     type: 'bowl',
     temp: 'room',
   }
   - {
-    id: 2,
-    depends_on: [1],
-    ingredients: [],
     short: "",
     long: "",
-    time: 1,
+    depencencies: [-1, -2],
+    active-time: 1,
+    passive-time: 1,
     type: 'bowl',
     temp: 'room',
   }
