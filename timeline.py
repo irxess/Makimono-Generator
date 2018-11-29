@@ -3,9 +3,9 @@ from data import Step, StepSVG, Point, Line, Circle, Timeline, Recipe
 
 # Generate an svg image which shows the timeline of a recipe
 
-y_offset = 1.5  # em
+y_offset  = 1.5 # em
 y_spacing = 2.2 # em
-x_offset = 5    # percent
+x_offset  = 5   # percent
 x_spacing = 0   # percent, set in find_positions
 
 def find_positions(recipe):
@@ -30,11 +30,13 @@ def find_positions(recipe):
             svg_node.group = lowest_group
         step.svg = svg_node
 
-    done_svg = StepSVG(amount_of_steps)
+def append_done_node_to_steps(steps):
+    number_of_steps = len(steps)
+    done_svg = StepSVG(number_of_steps)
     done_svg.y = 1
-    done_step = Step(amount_of_steps, 0, 'done', 'done', [], [], [amount_of_steps - 1])
+    done_step = Step(number_of_steps, 0, 'done', 'done', [], [], [number_of_steps - 1])
     done_step.svg = done_svg
-    recipe.steps.append(done_step)
+    steps.append(done_step)
 
 
 def start_improve_positions(nodes):
@@ -143,6 +145,7 @@ def add_timeline_to_data(recipe):
 
 def generate_timeline_svg(recipe):
     find_positions(recipe)
+    append_done_node_to_steps(recipe.steps)
     start_improve_positions(recipe.steps)
     add_svg_positions(recipe.steps)
     add_timeline_to_data(recipe)
