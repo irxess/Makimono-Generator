@@ -31,7 +31,7 @@ steps:
   }
   - {
     short: "Wash the spinach",
-    ingredients: [ {name: spinach leaves, amount: 100, unit: 'g'}}],
+    ingredients: [ {name: spinach leaves, amount: 100, unit: 'g'} ],
     active-time: 1,
     type: wash,
     temp: room,
@@ -73,8 +73,8 @@ steps:
     short: 'Add the chopped tomatoes and paste',
     long: "Stir it in",
     ingredients: [
-      {name: chopped tomatoes, amount: 400, unit: 'g'}
-      {name: tomato paste, amount: 140, unit: 'g', comment: 'about 2 to 4 table spoons, to taste'}
+      {name: chopped tomatoes, amount: 400, unit: 'g'},
+      {name: tomato paste, amount: 140, unit: 'g', comment: 'about 2 to 4 table spoons, to taste'},
     ],
     active-time: 2,
     type: fry,
@@ -84,10 +84,10 @@ steps:
   - {
     short: 'Season',
     ingredients: [
-      {name: basil, amount: 1, unit: 'tbsp'}
-      {name: oregano, amount: 1, unit: 'tbsp'}
-      {name: black pepper, amount: 2, unit: 'tsp', comment: 'optional'}
-      {name: salt, amount: 1, unit: 'tbsp', comment: 'to taste'}
+      {name: basil, amount: 1, unit: 'tbsp'},
+      {name: oregano, amount: 1, unit: 'tbsp'},
+      {name: black pepper, amount: 2, unit: 'tsp', comment: 'optional'},
+      {name: salt, amount: 1, unit: 'tbsp', comment: 'to taste'},
     ],
     active-time: 1,
     type: fry,

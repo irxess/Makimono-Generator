@@ -15,7 +15,8 @@ def create_ingredient_overview(recipe, ingredients):
                 ingredients[name].total_amount += amount
                 if ingredients[name].unit != unit:
                     print("Multiple amount units used for {name} in {recipe.name}")
-                ingredients[name].comment += comment
+                if comment:
+                    ingredients[name].comment += comment
     for k,v in ingredients.items():
         recipe.ingredients.append(v)
 

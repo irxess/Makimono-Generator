@@ -19,8 +19,8 @@ steps:
     short: Warm the pears,
     long: "Put the pears into a frying pan, adding vanilla extract and the optional other spices. Warm on medium-low heat until the pears are soft, but not falling apart yet. Set aside to cool",
     ingredients: [
-      {name: vanilla extract, amount: 2, unit: 'tbsp'}
-      {name: other spices, amount: , unit: '', comment: 'You can use anything that goes well with the pears. Some examples are brown sugar, cinnamon, cardamon or ginger.'}
+      {name: vanilla extract, amount: 2, unit: 'tbsp'},
+      {name: other spices, amount: , unit: '', comment: 'You can use anything that goes well with the pears. Some examples are brown sugar, cinnamon, cardamon or ginger.'},
     ],
     active-time: 10,
     type: 'fry',

@@ -81,7 +81,7 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys):
         cur_node.svg.y = y_used
         safe_y = y_used
         for dep in cur_node.depends_on:
-            dep_group = nodes[dep].group
+            dep_group = nodes[dep].svg.group
             dep_y = improve_positions(nodes[:cur_index], dep_group, dep, safe_y, safe_ys[:cur_index+1])
             safe_y = dep_y + 1
         safe_ys[cur_index] = max(safe_ys[cur_index], safe_y)
