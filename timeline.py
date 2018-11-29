@@ -13,7 +13,6 @@ def find_positions(recipe):
     global y_offset
     global y_spacing
 
-    #nodes = []
     next_group = 1
     amount_of_steps = len(recipe.steps)
     x_spacing = (90.0/amount_of_steps)
@@ -102,8 +101,8 @@ def add_svg_positions(steps):
 
 
 def print_nodes(recipe):
-    for n in recipe.steps:
-        print('Node ', n.svg.x, '\ty: ', n.svg.y, '\tsvg_x: ', n.svg.svg_x, '%')
+    for step in recipe.steps:
+        print('Node ', step.svg.x, '\ty: ', step.svg.y, '\tsvg_x: ', step.svg.svg_x, '%')
 
 def add_timeline_to_data(recipe):
     global y_offset
@@ -119,23 +118,23 @@ def add_timeline_to_data(recipe):
     height = y_offset*2 + y_spacing*(deepest_y-1)
     recipe.timeline = Timeline([], [], height)
 
-    for s in recipe.steps:
-        circle = Circle(s.temperature, Point(s.svg.svg_x, s.svg.svg_y), s.step_type)
+    for step in recipe.steps:
+        circle = Circle(step.temperature, Point(step.svg.svg_x, step.svg.svg_y), step.step_type)
         recipe.timeline.circles.append(circle)
-        for d in s.depends_on:
+        for d in step.depends_on:
             dep_step = recipe.steps[d]
-            split_x = s.svg.svg_x - x_spacing
+            split_x = step.svg.svg_x - x_spacing
             if dep_step.svg.svg_x >= split_x:
                 color = dep_step.temperature
                 start = Point(dep_step.svg.svg_x, dep_step.svg.svg_y)
-                end = Point(s.svg.svg_x, s.svg.svg_y)
+                end = Point(step.svg.svg_x, step.svg.svg_y)
                 line = Line(start, end, color)
                 recipe.timeline.lines.append(line)
             else:
                 color = dep_step.temperature
                 start = Point(dep_step.svg.svg_x, dep_step.svg.svg_y)
                 middle = Point(split_x, dep_step.svg.svg_y)
-                end = Point(s.svg.svg_x, s.svg.svg_y)
+                end = Point(step.svg.svg_x, step.svg.svg_y)
                 line1 = Line(start, middle, color)
                 line2 = Line(middle, end, color)
                 recipe.timeline.lines.append(line1)
