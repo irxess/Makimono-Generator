@@ -87,11 +87,12 @@ def generate_files_for_recipe(name):
         all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
-    with open('publish/' + name + '.html', 'w') as f:
+    name_for_url = get_url_friendly_name(name)
+    with open('publish/' + name_for_url + '.html', 'w') as f:
         print(output, file=f)
     return Thumbnail(
         recipe.name,
-        './'+recipe.name+'.html',
+        './'+name_for_url+'.html',
         recipe.image,
         recipe.date_updated,
         recipe.date_created,
