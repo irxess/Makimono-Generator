@@ -22,13 +22,16 @@ from data import *
 class Thumbnail:
     def __init__(self, name, url, img, updated, created):
         self.name = name
-        self.url = '../'+url
+        self.url = '../'+get_url_friendly_name(url)
         if img != '':
             self.image = '../images/thumbnails/'+img
         else:
             self.image = ''
         self.updated = updated
         self.created = created
+
+def get_url_friendly_name(name):
+    return name.replace(' ', '-').replace('&', 'and').lower()
 
 def prepare_image(recipe):
     img_name = recipe.image.casefold()
