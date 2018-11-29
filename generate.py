@@ -87,7 +87,7 @@ def generate_files_for_recipe(name):
     with open('publish/' + name + '.html', 'w') as f:
         print(output, file=f)
     if recipe.date_created == recipe.date_updated:
-        recipe.date_created = ''
+        recipe.date_updated = ''
     return Thumbnail(
         recipe.name,
         './'+recipe.name+'.html',
