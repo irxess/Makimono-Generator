@@ -21,7 +21,9 @@
   <header>
     Makimono
   </header>
-  {% include 'nav.html' %}
+  {% with nav_type='desktop-nav' %}
+    {% include 'nav.html' %}
+  {% endwith %}
 
   <div id="three-col">
   <div id="empty-col-left"></div>
@@ -31,6 +33,9 @@
 
   <div id="empty-col-right"></div>
 
+  {% with nav_type='mobile-nav' %}
+    {% include 'nav.html' %}
+  {% endwith %}
   {% include 'footer.html' %}
 </body>
 </html>
