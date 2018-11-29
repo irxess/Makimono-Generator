@@ -22,10 +22,10 @@
   {% if (r.date_created is defined) and r.date_created %}
   <p class="recipe-date">
       Created on {{ r.date_created }}</br>
-      Last updated on {{ r.last_updated }}
+      Last updated on {{ r.date_updated }}
   </p>
   {% else %}
-  <p class="recipe-date">Created on {{ r.date_updated }}</p>
+  <p class="recipe-date">Created on {{ r.date_created }}</p>
   {% endif %}
 
 
