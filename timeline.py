@@ -30,14 +30,12 @@ def find_positions(recipe):
                     lowest_group = recipe.steps[d].svg.group
             svg_node.group = lowest_group
         step.svg = svg_node
-        #nodes.append(svg_node)
 
-    done_svg = StepSVG(amount_of_steps) #StepNode(amount_of_steps, [amount_of_steps - 1], 'done', 'done')
+    done_svg = StepSVG(amount_of_steps)
     done_svg.y = 1
     done_step = Step(amount_of_steps, 0, 'done', 'done', [], [], [amount_of_steps - 1])
     done_step.svg = done_svg
     recipe.steps.append(done_step)
-    #nodes.append(done_svg)
 
 
 def start_improve_positions(nodes):
@@ -144,8 +142,9 @@ def add_timeline_to_data(recipe):
                 recipe.timeline.lines.append(line2)
 
 
-def generate_svg(recipe):
-    svg_nodes = find_positions(recipe)
+def generate_timeline_svg(recipe):
+    find_positions(recipe)
     start_improve_positions(recipe.steps)
     add_svg_positions(recipe.steps)
     add_timeline_to_data(recipe)
+    del recipe.steps[-1] # Remove "done" step used at end of timeline

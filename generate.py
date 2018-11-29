@@ -73,7 +73,7 @@ def generate_files_for_recipe(name):
     recipe = read_recipe_into_data(name)
 
     prepare_image(recipe)
-    timeline.generate_svg(recipe)
+    timeline.generate_timeline_svg(recipe)
 
     if not os.path.isdir('publish'):
         os.makedirs('publish')
