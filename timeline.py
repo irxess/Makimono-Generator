@@ -53,12 +53,12 @@ def start_improve_positions(nodes):
                 for dep in node.depends_on:
                     dep_group = nodes[dep].svg.group
                     if dep_group != current_group:
-                        dep_y = improve_positions(nodes[:dep+1], dep_group, dep, safe_y, safe_ys[:i+1])
+                        dep_y = improve_positions(nodes[:dep+1], dep_group, dep, safe_y, safe_ys, i+1)
                         safe_y = dep_y + 1
                         safe_ys[i] = max(safe_ys[i], safe_y)
 
 
-def improve_positions(nodes, current_group, cur_index, start_y, safe_ys):
+def improve_positions(nodes, current_group, cur_index, start_y, safe_ys, end):
     cur_node = nodes[cur_index]
     if cur_node.svg.y > 0:
         return cur_node.svg.y
@@ -71,7 +71,7 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys):
         first_in_group += 1
 
     y_used = start_y
-    for y in safe_ys[first_in_group:]:
+    for y in safe_ys[first_in_group:end]:
         if y > y_used:
             y_used = y
 
@@ -81,11 +81,12 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys):
         safe_y = y_used
         for dep in cur_node.depends_on:
             dep_group = nodes[dep].svg.group
-            dep_y = improve_positions(nodes[:cur_index], dep_group, dep, safe_y, safe_ys[:cur_index+1])
+            dep_y = improve_positions(nodes[:cur_index], dep_group, dep, safe_y, safe_ys, cur_index+1)
             safe_y = dep_y + 1
-        safe_ys[cur_index] = max(safe_ys[cur_index], safe_y)
+            safe_ys[dep] = max(safe_ys[dep], safe_y)
+        safe_ys[cur_index] = max(safe_ys[cur_index], cur_node.svg.y +1)
     elif connected == 1:
-        y_used = improve_positions(nodes[:cur_index], current_group, cur_node.depends_on[0], y_used, safe_ys[:cur_index+1])
+        y_used = improve_positions(nodes[:cur_index], current_group, cur_node.depends_on[0], y_used, safe_ys, cur_index+1)
     cur_node.svg.y = y_used
     safe_ys[cur_index] = max(safe_ys[cur_index], y_used+1)
     return y_used
