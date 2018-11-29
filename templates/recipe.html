@@ -19,7 +19,7 @@
     {% endif %}
   </section>
 
-  {% if (r.date_created is defined) and r.date_created %}
+  {% if r.date_updated != '' and r.date_updated != r.date_created %}
   <p class="recipe-date">
       Created on {{ r.date_created }}</br>
       Last updated on {{ r.date_updated }}
