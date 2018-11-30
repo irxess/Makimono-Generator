@@ -1,0 +1,52 @@
+recipe: Chocolate Balls
+description: Also known as "Coconut Balls" and "Swedish Chocolate Balls"
+date_created: 2018-11-30
+
+steps:
+  - {
+    short: Mix dry ingredients in a bowl,
+    ingredients: [
+      {name: instant oats, amount: 150, unit: g, comment: ''},
+      {name: sugar, amount: 180, unit: g, comment: ''},
+      {name: cocoa powder, amount: 8, unit: g, comment: ''},
+    ],
+    type: bowl,
+    temp: room,
+    active-time: 5,
+  }
+  - {
+    short: Add butter and spices,
+    long: softening the butter beforehand might be a good idea,
+    ingredients: [
+      {name: butter, amount: 200, unit: g, comment: 'softened?'},
+      {name: vanilla extract, amount: 1, unit: tsp, comment: ''},
+      {name: strong coffee, amount: 2, unit: tbsp, comment: ''},
+    ],
+    depencencies: [-1],
+    type: add,
+    temp: room,
+    active-time: 2,
+  }
+  - {
+    short: Knead,
+    long: By hand, untill you have an even dough.,
+    depencencies: [-1],
+    type: bowl,
+    temp: room,
+    active-time: 3,
+  }
+  - {
+    short: Shape into small balls,
+    depencencies: [-1],
+    type: shape,
+    temp: room,
+    active-time: 10,
+  }
+  - {
+    short: Roll in coconut flakes,
+    ingredients: [ {name: coconut flakes, amount: 50, unit: g, comment: ''} ],
+    depencencies: [-1],
+    type: shape,
+    temp: room,
+    active-time: 5,
+  }
