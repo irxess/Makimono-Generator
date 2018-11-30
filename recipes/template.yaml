@@ -12,24 +12,24 @@ steps:
   - {
     short: "",
     long: "",
-    ingredients: [ {name: , amount: , unit: , comment: } ],
+    ingredients: [ {name: , amount: , unit: , comment: ''} ],
     active-time: 1,
     passive-time: 1,
-    type: 'bowl',
-    temp: 'room',
+    type: bowl,
+    temp: room,
   }
   - {
     short: "",
     long: "",
     ingredients: [
-      {name: , amount: , unit: , comment: },
-      {name: , amount: , unit: , comment: }
+      {name: , amount: , unit: , comment: ''},
+      {amount: , unit: , name: , comment: ''},
     ],
     depencencies: [-1],
     active-time: 1,
     passive-time: 1,
-    type: 'bowl',
-    temp: 'room',
+    type: bowl,
+    temp: room,
   }
   - {
     short: "",
@@ -37,6 +37,6 @@ steps:
     depencencies: [-1, -2],
     active-time: 1,
     passive-time: 1,
-    type: 'bowl',
-    temp: 'room',
+    type: bowl,
+    temp: room,
   }
