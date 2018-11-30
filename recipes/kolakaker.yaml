@@ -1,0 +1,109 @@
+recipe: Kolakaker
+
+description: ""
+source: "https://www.detsoteliv.no/oppskrift/kolakaker"
+date_created: 2018-11-30
+last_updated: 2018-11-30
+image: ''
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Lag smørkrem",
+    long: "Pisk sammen smør og sukker til smørkrem. Her bruker de fleste oppskriftene hvitt sukker,
+    men jeg tror det blir ekstra godt om man erstatter 50g av den med brunt sukker.",
+    ingredients: [
+      {name: smør, amount: 200, unit: g, comment: },
+      {name: sukker, amount: 200, unit: g, comment: },
+    ],
+    active-time: 3,
+    passive-time: 1,
+    type: 'km',
+    temp: 'room',
+  }
+  - {
+    short: "Tilsett sirup",
+    long: "Bland inn sirup.",
+    ingredients: [
+      {name: sirup, amount: 1-2, unit: ss, comment: },
+    ],
+    depencencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: 'add',
+    temp: 'room',
+  }
+  - {
+    short: "Tilsett det tørre",
+    long: "Bland sammen de tørre ingrediensene. Sikt dem inn i smørkremen. Ikke bruk kjøkkenmaskin til roringen mens du sikter inn.",
+    ingredients: [
+      {amount: 300, unit: g, name: hvetemel, comment: },
+      {amount: 2, unit: ts, name: natron, comment: },
+      {amount: 2, unit: ts, name: vaniljesukker, comment: },
+    ],
+    depencencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: 'add',
+    temp: 'room',
+  }
+  - {
+    short: "Kna",
+    long: "Bruk hendene til å kna sammen deigen til den er jevnt.",
+    ingredients: [
+    ],
+    depencencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: 'bowl',
+    temp: 'room',
+  }
+  - {
+    short: "Forvarm ovnen",
+    long: "Skru ovnen på 175°C.",
+    ingredients: [
+    ],
+    depencencies: [],
+    active-time: 1,
+    passive-time: 0,
+    type: 'bowl',
+    temp: 'hot',
+  }
+  - {
+    short: "Form deigen",
+    long: "Del deigen i 4 like deler. Rull de ut til pølser som er ca like lange som langsiden til stekeplaten du skal bake de på.
+    Legg bakepapir på en stekeplate, og legg deigpølsene på den.
+    Trykk dem så litt flate. De skal være ca 1 cm tykke, og ca 3 cm brede.
+    I ovnen kommer de til å spre seg bredere, så pass på at deigpølsene ligger langt nok fra hverandre.",
+    ingredients: [
+    ],
+    depencencies: [-2],
+    active-time: 5,
+    passive-time: 0,
+    type: 'shape',
+    temp: 'room',
+  }
+  - {
+    short: "Bak",
+    long: "Bak deigpølsene midt i ovnen, i ca 15 minutter, til de er gullbrune.",
+    ingredients: [
+    ],
+    depencencies: [-1, -2],
+    active-time: 1,
+    passive-time: 15,
+    type: bake,
+    temp: 'hot',
+  }
+  - {
+    short: "Skjær og kjøl",
+    long: "Rett etter at kakene kommer ut av ovnen, skjær dem på skrå.
+    De skal fortsatt være litt myke når de er varme, men blir hardere når de kjøler seg ned.",
+    ingredients: [
+    ],
+    depencencies: [-1],
+    active-time: 1,
+    passive-time: 1,
+    type: 'cut',
+    temp: 'warm',
+  }
