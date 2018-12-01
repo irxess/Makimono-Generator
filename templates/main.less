@@ -240,6 +240,12 @@ hr {
 
 #timeline{
   margin-top: 1em;
+  @media (max-width: @size-cutoff-almost) {
+    font-size: 14pt;
+  }
+  @media (max-width: @size-tiny){
+    font-size: 10pt;
+  }
 
   svg {
     width: 100%;
