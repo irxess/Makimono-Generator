@@ -31,7 +31,7 @@ class Thumbnail:
         self.created = created
 
 def get_url_friendly_name(name):
-    return name.replace(' ', '-').replace('&', 'and').lower()
+    return name.replace(' ', '-').replace('&', 'and').casefold()
 
 def prepare_image(recipe):
     img_name = recipe.image.casefold()
