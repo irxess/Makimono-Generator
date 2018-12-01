@@ -25,7 +25,7 @@ steps:
       {name: , amount: , unit: , comment: ''},
       {amount: , unit: , name: , comment: ''},
     ],
-    depencencies: [-1],
+    dependencies: [-1],
     active-time: 1,
     passive-time: 1,
     type: bowl,
@@ -34,7 +34,7 @@ steps:
   - {
     short: "",
     long: "",
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
     active-time: 1,
     passive-time: 1,
     type: bowl,

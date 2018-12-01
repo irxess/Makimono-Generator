@@ -22,7 +22,7 @@ steps:
       {name: vanilla extract, amount: 1, unit: tsp, comment: ''},
       {name: strong coffee, amount: 2, unit: tbsp, comment: ''},
     ],
-    depencencies: [-1],
+    dependencies: [-1],
     type: add,
     temp: room,
     active-time: 2,
@@ -30,14 +30,14 @@ steps:
   - {
     short: Knead,
     long: By hand, untill you have an even dough.,
-    depencencies: [-1],
+    dependencies: [-1],
     type: bowl,
     temp: room,
     active-time: 3,
   }
   - {
     short: Shape into small balls,
-    depencencies: [-1],
+    dependencies: [-1],
     type: shape,
     temp: room,
     active-time: 10,
@@ -45,7 +45,7 @@ steps:
   - {
     short: Roll in coconut flakes,
     ingredients: [ {name: coconut flakes, amount: 50, unit: g, comment: ''} ],
-    depencencies: [-1],
+    dependencies: [-1],
     type: shape,
     temp: room,
     active-time: 5,

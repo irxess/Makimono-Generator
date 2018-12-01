@@ -27,7 +27,7 @@ steps:
     active-time: 1,
     type: 'bowl',
     temp: 'room',
-    depencencies: [-1],
+    dependencies: [-1],
     ingredients: [{name: eggs, amount: 2, unit: ''}],
   }
   - {
@@ -36,7 +36,7 @@ steps:
     active-time: 1,
     type: 'bowl',
     temp: 'room',
-    depencencies: [-1],
+    dependencies: [-1],
     ingredients: [
       {name: lemon juice, amount: 1, unit: 'tsp', comment: 'Optional'},
       {name: milk, amount: 22, unit: 'g'}
@@ -48,6 +48,6 @@ steps:
     active-time: 15,
     type: 'fry',
     temp: 'warm',
-    depencencies: [-1],
+    dependencies: [-1],
     ingredients: [{name: coconut oil, amount: , unit: '', comment: 'Or any other oil or butter'}],
   }

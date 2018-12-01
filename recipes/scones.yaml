@@ -28,7 +28,7 @@ steps:
     active-time: 5,
     type: 'bowl',
     temp: 'room',
-    depencencies: [-1],
+    dependencies: [-1],
   }
   - {
     short: Mix milk and egg,
@@ -48,7 +48,7 @@ steps:
     active-time: 2,
     type: 'bowl',
     temp: 'room',
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
   }
   - {
     short: Preheat oven,
@@ -63,7 +63,7 @@ steps:
     active-time: 6,
     type: 'shape',
     temp: 'room',
-    depencencies: [-2],
+    dependencies: [-2],
   }
   - {
     short: Bake,
@@ -71,5 +71,5 @@ steps:
     passive-time: 14,
     type: 'oven',
     temp: 'hot',
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
   }

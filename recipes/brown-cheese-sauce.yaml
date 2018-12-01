@@ -27,7 +27,7 @@ steps:
     time: 10,
     type: 'saucepan',
     temp: 'warm',
-    depencencies: [-1],
+    dependencies: [-1],
   }
   - {
     short: slice the cheese,
@@ -54,7 +54,7 @@ steps:
     active-time: 5,
     type: 'saucepan',
     temp: 'warm',
-    depencencies: [-2, -3],
+    dependencies: [-2, -3],
   }
   - {
     short: Add the pepper and juniper,
@@ -62,7 +62,7 @@ steps:
     active-time: 1,
     type: 'saucepan',
     temp: 'warm',
-    depencencies: [-1,-2],
+    dependencies: [-1,-2],
   }
   - {
     short: Add the game stock,
@@ -70,7 +70,7 @@ steps:
     active-time: 1,
     type: 'saucepan',
     temp: 'warm',
-    depencencies: [-1],
+    dependencies: [-1],
     ingredients: [{name: game stock, amount: 3, unit: 'tbsp'}],
   }
   - {
@@ -79,7 +79,7 @@ steps:
     active-time: 2,
     type: 'saucepan',
     temp: 'warm',
-    depencencies: [-1],
+    dependencies: [-1],
     ingredients: [{name: corn starch, amount: 1, unit: 'tsp', comment: 'Optional'}],
     optional: true
   }
@@ -89,6 +89,6 @@ steps:
     active-time: 5,
     type: 'saucepan',
     temp: 'warm',
-    depencencies: [-1],
+    dependencies: [-1],
     optional: true
   }

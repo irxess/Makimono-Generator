@@ -28,7 +28,7 @@ steps:
     ingredients: [
       {name: sirup, amount: 1-2, unit: ss, comment: },
     ],
-    depencencies: [-1],
+    dependencies: [-1],
     active-time: 1,
     passive-time: 0,
     type: 'add',
@@ -42,7 +42,7 @@ steps:
       {amount: 2, unit: ts, name: natron, comment: },
       {amount: 2, unit: ts, name: vaniljesukker, comment: },
     ],
-    depencencies: [-1],
+    dependencies: [-1],
     active-time: 2,
     passive-time: 0,
     type: 'add',
@@ -53,7 +53,7 @@ steps:
     long: "Bruk hendene til å kna sammen deigen til den er jevnt.",
     ingredients: [
     ],
-    depencencies: [-1],
+    dependencies: [-1],
     active-time: 1,
     passive-time: 0,
     type: 'bowl',
@@ -64,7 +64,7 @@ steps:
     long: "Skru ovnen på 175°C.",
     ingredients: [
     ],
-    depencencies: [],
+    dependencies: [],
     active-time: 1,
     passive-time: 0,
     type: 'bowl',
@@ -78,7 +78,7 @@ steps:
     I ovnen kommer de til å spre seg bredere, så pass på at deigpølsene ligger langt nok fra hverandre.",
     ingredients: [
     ],
-    depencencies: [-2],
+    dependencies: [-2],
     active-time: 5,
     passive-time: 0,
     type: 'shape',
@@ -89,7 +89,7 @@ steps:
     long: "Bak deigpølsene midt i ovnen, i ca 15 minutter, til de er gullbrune.",
     ingredients: [
     ],
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
     active-time: 1,
     passive-time: 15,
     type: 'bake',
@@ -101,7 +101,7 @@ steps:
     De skal fortsatt være litt myke når de er varme, men blir hardere når de kjøler seg ned.",
     ingredients: [
     ],
-    depencencies: [-1],
+    dependencies: [-1],
     active-time: 1,
     passive-time: 1,
     type: 'cut',

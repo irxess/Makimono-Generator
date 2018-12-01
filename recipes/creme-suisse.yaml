@@ -21,7 +21,7 @@ steps:
     long: "Add the vanilla essence, yolks and 20g of sugar and whisk until frothy and well combined.",
     type: 'bowl',
     temp: 'room',
-    depencencies: [-1],
+    dependencies: [-1],
     ingredients: [
       {name: vanilla essence, amount: 2, unit: 'tsp'},
       {name: egg yolks, amount: 4, unit: ''},
@@ -44,14 +44,14 @@ steps:
     long: "Take the milk off the heat and drizzle it into the cornstarch and egg mixture, whisking constantly. Pour the mixture back into the saucepan and gently heat over medium-high heat, stirring continuously with a rubber spatula, until the mixture thickens into pastry cream.",
     type: 'add',
     temp: 'warm',
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
   }
   - {
     short: cool mixture in bowl,
     long: "Transfer the hot pastry cream to a heatproof bowl, press a piece of plastic wrap directly onto the surface of the pastry cream to prevent a skin from forming and leave to cool to room temperature.",
     type: 'bowl',
     temp: 'room',
-    depencencies: [-1],
+    dependencies: [-1],
   }
   - {
     short: soak gelatin,
@@ -72,7 +72,7 @@ steps:
     long: "Take it off the heat. Squeeze water out of the gelatin. Add the gelatin to the cream. Put the mixture on low heat and stir until the gelatin is completely dissolved. Take it off the heat.",
     type: 'saucepan',
     temp: 'warm',
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
   }
   - {
     short: whip heavy cream,
@@ -86,12 +86,12 @@ steps:
     long: "Mix together the pastry cream and the gelatin-cream mixture. Gently fold in the whipped cream using a rubber spatula.",
     type: 'add',
     temp: 'room',
-    depencencies: [-1, -2, -5],
+    dependencies: [-1, -2, -5],
   }
   - {
     short: cool,
     long: "Place the mixture into the fridge and let it cool for at least 2 hours.",
     type: 'bowl',
     temp: 'cold',
-    depencencies: [-1],
+    dependencies: [-1],
   }

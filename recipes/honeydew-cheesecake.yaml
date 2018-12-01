@@ -22,7 +22,7 @@ steps:
     active-time: 30,
     type: 'saucepan',
     temp: 'hot',
-    depencencies: [-1],
+    dependencies: [-1],
   }
   - {
     short: mix to form the crust,
@@ -41,7 +41,7 @@ steps:
     passive-time: 1,
     type: 'bowl',
     temp: 'cold',
-    depencencies: [-1],
+    dependencies: [-1],
   }
   - {
     short: soak the gelatin,
@@ -76,7 +76,7 @@ steps:
     active-time: 1,
     type: 'add',
     temp: 'room',
-    depencencies: [-1, -5],
+    dependencies: [-1, -5],
   }
   - {
     short: add hot gelatin,
@@ -85,7 +85,7 @@ steps:
     active-time: 1,
     type: 'add',
     temp: 'warm',
-    depencencies: [-1, -3],
+    dependencies: [-1, -3],
   }
   - {
     short: assemble,
@@ -93,7 +93,7 @@ steps:
     active-time: 1,
     type: 'add',
     temp: 'room',
-    depencencies: [-1, -5],
+    dependencies: [-1, -5],
   }
   - {
     short: cool,
@@ -101,5 +101,5 @@ steps:
     passive-time: 240,
     type: 'bowl',
     temp: 'cold',
-    depencencies: [-1],
+    dependencies: [-1],
   }

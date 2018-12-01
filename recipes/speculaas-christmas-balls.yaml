@@ -24,7 +24,7 @@ steps:
     short: Remove cream from heat and stir in the chockolate,
     long: "Adding the chockolate in chunks makes the dissolving go smoother. You can alternatively grate the chockolate before you add it, but it's usually more work and the end result is the same.",
     ingredients: [ {name: white chocolate, amount: 90, unit: g} ],
-    depencencies: [-1],
+    dependencies: [-1],
     type: saucepan,
     temp: warm,
     active-time: 3
@@ -32,35 +32,35 @@ steps:
   - {
     short: Stir in the honey,
     ingredients: [ {name: liquid honey, amount: 3, unit: tbsp} ],
-    depencencies: [-1],
+    dependencies: [-1],
     type: saucepan,
     temp: warm,
     active-time: 1
   }
   - {
     short: Let the mixture cool off for about 5 minutes,
-    depencencies: [-1],
+    dependencies: [-1],
     type: saucepan,
     temp: room,
     passive-time: 5
   }
   - {
     short: Mix the wet and dry into a smooth dough,
-    depencencies: [-1, -5],
+    dependencies: [-1, -5],
     type: add,
     temp: room,
     active-time: 5
   }
   - {
     short: Let the dough cool in the fridge for 30 minutes,
-    depencencies: [-1],
+    dependencies: [-1],
     type: bowl,
     temp: cold,
     passive-time: 30
   }
   - {
     short: Shape the dough into small balls,
-    depencencies: [-1],
+    dependencies: [-1],
     type: shape,
     temp: room,
     active-time: 20
@@ -77,7 +77,7 @@ steps:
   }
   - {
     short: Roll the balls in the white chockolate and aldmon crumb,
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
     type: shape,
     temp: room,
     active-time: 10

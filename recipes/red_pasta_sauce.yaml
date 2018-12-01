@@ -51,7 +51,7 @@ steps:
     active-time: 2,
     type: fry,
     temp: hot,
-    depencencies: [-3],
+    dependencies: [-3],
   }
   - {
     short: 'Add minced meat and onion',
@@ -60,14 +60,14 @@ steps:
     active-time: 7,
     type: fry,
     temp: hot,
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
   }
   - {
     short: 'Add shrooms and paprika',
     active-time: 4,
     type: fry,
     temp: hot,
-    depencencies: [-1,-6],
+    dependencies: [-1,-6],
   }
   - {
     short: 'Add the chopped tomatoes and paste',
@@ -79,7 +79,7 @@ steps:
     active-time: 2,
     type: fry,
     temp: hot,
-    depencencies: [-1],
+    dependencies: [-1],
   }
   - {
     short: 'Season',
@@ -92,7 +92,7 @@ steps:
     active-time: 1,
     type: fry,
     temp: hot,
-    depencencies: [-1],
+    dependencies: [-1],
   }
   - {
     short: 'Let it simmer',
@@ -100,7 +100,7 @@ steps:
     passive-time: 5,
     type: fry,
     temp: hot,
-    depencencies: [-1],
+    dependencies: [-1],
   }
   - {
     short: 'Stir in the spinach',
@@ -108,5 +108,5 @@ steps:
     active-time: 5,
     type: fry,
     temp: hot,
-    depencencies: [-1, -8],
+    dependencies: [-1, -8],
   }

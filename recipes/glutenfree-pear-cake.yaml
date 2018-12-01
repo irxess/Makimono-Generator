@@ -25,7 +25,7 @@ steps:
     active-time: 10,
     type: 'fry',
     temp: 'warm',
-    depencencies: [-1],
+    dependencies: [-1],
    }
   - {
     short: Soften butter,
@@ -52,7 +52,7 @@ steps:
     active-time: 2,
     type: 'km',
     temp: 'room',
-    depencencies: [-1],
+    dependencies: [-1],
     ingredients: [ {name: sugar, amount: 150, unit: 'g'} ],
    }
   - {
@@ -61,7 +61,7 @@ steps:
     active-time: 3,
     type: 'bowl',
     temp: 'room',
-    depencencies: [-2, -3, -4],
+    dependencies: [-2, -3, -4],
     ingredients: [
       {name: gluten-free flour, amount: 440, unit: 'g', comment: 'Almond flour gives the best taste, but any gluten-free flour will work.'},
       {name: baking powder, amount: 15, unit: 'g'},
@@ -81,13 +81,13 @@ steps:
     active-time: 2,
     type: 'bowl',
     temp: 'room',
-    depencencies: [-2, -3],
+    dependencies: [-2, -3],
    }
   - {
     short: Bake,
     passive-time: 45,
     type: 'oven',
     temp: 'hot',
-    depencencies: [-1, -2],
+    dependencies: [-1, -2],
     long: "Bake the cake for about 45 minutes, until golden-brown on top and a cake skewer comes out clean.",
    }
