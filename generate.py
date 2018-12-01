@@ -75,24 +75,24 @@ def generate_files_for_recipe(name):
     prepare_image(recipe)
     timeline.generate_timeline_svg(recipe)
 
-    if not os.path.isdir('publish'):
-        os.makedirs('publish')
+    if not os.path.isdir('publish/recipes'):
+        os.makedirs('publish/recipes')
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
     template = env.get_template('recipe.html')
 
     output = template.render(
         r=recipe,
-        path_to_base='.',
+        path_to_base='..',
         all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
     name_for_url = get_url_friendly_name(name)
-    with open('publish/' + name_for_url + '.html', 'w') as f:
+    with open('publish/recipes/' + name_for_url + '.html', 'w') as f:
         print(output, file=f)
     return Thumbnail(
         recipe.name,
-        './'+name_for_url+'.html',
+        'recipes/' + name_for_url + '.html', # Path to recipe from base used in pagination list
         recipe.image,
         recipe.date_updated,
         recipe.date_created,
