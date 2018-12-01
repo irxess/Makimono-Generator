@@ -83,7 +83,7 @@ def generate_files_for_recipe(name):
 
     output = template.render(
         r=recipe,
-        path_to_base='../',
+        path_to_base='..',
         all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
