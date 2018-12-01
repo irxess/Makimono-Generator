@@ -92,7 +92,7 @@ steps:
     depencencies: [-1, -2],
     active-time: 1,
     passive-time: 15,
-    type: bake,
+    type: 'bake',
     temp: 'hot',
   }
   - {
