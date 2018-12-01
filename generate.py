@@ -81,11 +81,9 @@ def generate_files_for_recipe(name):
     env = Environment(loader=file_loader)
     template = env.get_template('recipe.html')
 
-    path_to_base = '../'
-
     output = template.render(
         r=recipe,
-        path_to_base=path_to_base,
+        path_to_base='../',
         all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
@@ -94,7 +92,7 @@ def generate_files_for_recipe(name):
         print(output, file=f)
     return Thumbnail(
         recipe.name,
-        path_to_base + '/recipes/' + name_for_url + '.html',
+        'recipes/' + name_for_url + '.html', # Path to recipe from base used in pagination list
         recipe.image,
         recipe.date_updated,
         recipe.date_created,
