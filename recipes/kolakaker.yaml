@@ -67,8 +67,8 @@ steps:
     dependencies: [],
     active-time: 1,
     passive-time: 0,
-    type: 'bowl',
-    temp: 'hot',
+    type: 'oven',
+    temp: 'room',
   }
   - {
     short: "Form deigen",
@@ -92,7 +92,7 @@ steps:
     dependencies: [-1, -2],
     active-time: 1,
     passive-time: 15,
-    type: 'bake',
+    type: 'oven',
     temp: 'hot',
   }
   - {
