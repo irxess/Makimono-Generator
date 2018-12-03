@@ -28,15 +28,23 @@
   <p class="recipe-date">Created on {{ r.date_created }}</p>
   {% endif %}
 
-
   <section id="ingredients">
     <h2>Ingredients</h2>
     <hr>
-    <ul>
-      {% for i in r.ingredients %}
-        <li><b>{{i.total_amount}} {{i.unit}}</b> {{ i.name }}</li>
-      {% endfor %}
-    </ul>
+    <div id="ingredients-table">
+      <table>
+        {% for ingredient in r.ingredients %}
+          <tr>
+            <td class="amount">{{ingredient.total_amount}}</td>
+            <td class="unit">{{ingredient.unit}}</td>
+            <td class="name">{{ingredient.name}}</td>
+            {% if ingredient.comment %}
+              <td class="comment">{{ingredient.comment}}</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
   </section>
 
   <section id="timeline">

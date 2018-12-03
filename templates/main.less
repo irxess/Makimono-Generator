@@ -271,16 +271,30 @@ svg {
 }
 
 #ingredients {
-  .steps;
-  ul {
+  #ingredients-table{
+    width: 100%;
     background: @super-light-grey;
-    padding-top: 0;
-    li {
-      text-align: left;
-      b {
-        display: inline-block;
-        text-align: right;
-        min-width: 4em;
+    table {
+      padding-top: 0;
+      border-collapse: collapse;
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding-right: 0.2em;
+        &.amount {
+          font-weight: bold;
+          text-align: right;
+          padding-left: 0.5em;
+        }
+        &.unit {
+          font-weight: bold;
+        }
+        &.name {
+          white-space: nowrap;
+        }
+        &.comment {
+          font-style: italic;
+        }
       }
     }
   }
