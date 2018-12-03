@@ -30,7 +30,10 @@ steps:
   }
   - {
     short: "mix everything into a paste/dough",
-    long: "Take the spices, vegetables(?), and meat, and mix it all together. Note that you want the mix to be as even as possible. If the ingredients lump togheter the burgers will tend to fall apart as you fry the, specially when you're turning them. You can use a bowl if you're most comfortable with that, I just to it on the cutting board I used previously because I find it easier to mix with my hands on the open surface, and you'll need something to shape the burgers on later anyways.",
+    long: "Take the spices, vegetables(?), and meat, and mix it all together.
+      <p>You can use a bowl if you're most comfortable with that, I just to it on the cutting board I used previously because I find it easier to mix with my hands on the open surface, and you'll need something to shape the burgers on later anyways.</p>
+      <p>Note that you want the mix to be as even as possible. If the ingredients lump togheter the burgers will tend to fall apart as you fry the, specially when you're turning them.</p>
+      ",
     ingredients: [ {name: minced meat, amount: 400, unit: 'g'} ],
     active-time: 2,
     type: 'add',
