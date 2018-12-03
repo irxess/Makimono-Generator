@@ -227,17 +227,6 @@ hr {
   padding-bottom: 0.5em; // Ensures that there is a bit of breathing room after the last step, which helps the icons not overflow.
 }
 
-.steps {
-  li {
-    text-align: left;
-    b {
-      display: inline-block;
-      text-align: right;
-      min-width: 4em;
-    }
-  }
-}
-
 #timeline{
   margin-top: 1em;
   @media (max-width: @size-cutoff-almost) {
@@ -286,6 +275,14 @@ svg {
   ul {
     background: @super-light-grey;
     padding-top: 0;
+    li {
+      text-align: left;
+      b {
+        display: inline-block;
+        text-align: right;
+        min-width: 4em;
+      }
+    }
   }
 }
 
