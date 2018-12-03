@@ -3,7 +3,7 @@ recipe: Brown cheese sauce
 description: A savory sauce with tones of juniper and sweetness, making it good for dishes based on game meat. Or simply when you'd use a gravy.
 source: "Simons dad"
 date_created: 2018-10-20
-last_updated: 2018-10-20
+last_updated: 2018-12-03
 image: brown_cheese_sauce
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add
@@ -17,7 +17,7 @@ steps:
     type: 'saucepan',
     temp: 'room',
     ingredients: [
-      {name: cream, amount: 300, unit: 'g', comment: 'Variants with less fat will make it harder to bind the cheese.'},
+      {name: cream, amount: 300, unit: 'g', comment: 'I use the 20% fat, regular variant for cooking. Variants with less fat will make it harder to bind the cheese.'},
       {name: beef bouillon cubes, amount: 1, unit: 'piece'}
     ],
   }
@@ -35,7 +35,7 @@ steps:
     active-time: 2,
     type: 'cut',
     temp: 'room',
-    ingredients: [ {name: Gudbrandsdalsost, amount: 100, unit: 'g'} ],
+    ingredients: [ {name: Gudbrandsdalsost, amount: 80, unit: 'g', comment: "To make it sweeter and more cheesy, add more cheese to taste. Going up to 90g or 100g should be safe, but above that the cheese taste can become a bit overpowering."} ],
   }
   - {
     short: grind the pepper and juniper,
