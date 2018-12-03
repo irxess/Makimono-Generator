@@ -18,7 +18,7 @@ steps:
     temp: 'room',
     ingredients: [
       {name: cream, amount: 300, unit: 'g', comment: 'I use the 20% fat, regular variant for cooking. Variants with less fat will make it harder to bind the cheese.'},
-      {name: beef bouillon cubes, amount: 1, unit: 'piece'}
+      {name: beef bouillon, amount: 10, unit: g, comment: 'Or use 1 cube if you have bouillon in cubes.'}
     ],
   }
   - {
