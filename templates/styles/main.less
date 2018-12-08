@@ -40,11 +40,12 @@ body {
   }
 }
 
-@import 'screen-sizes';
-
 #three-col {
   .three-col;
-  @media (min-width: @size-cutoff) {
+}
+
+.three-col-above-cutoff {
+  #three-col{
     flex-direction: row;
     flex: 1;
     flex-wrap: wrap;
@@ -90,90 +91,24 @@ hr {
   }
 }
 
-// .nav {
-//   font-weight: bold;
-//   font-size: 1.2em;
-//   ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-//     overflow: hidden;
-//     background-color: @green;
-//   }
-//   li {
-//     a {
-//       &:hover {
-//         background-color: @green-light;
-//       }
-//     }
-//   }
-// }
-
-// @nav-box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.23);
-
-// .desktop-nav {
-//   .nav;
-//   @media (min-width: @size-cutoff) {
-//     box-shadow: @nav-box-shadow;
-//     ul {
-//       li {
-//         float: left;
-//       }
-//       a {
-//         display: inline-block;
-//         color: @text-color-dark;
-//         text-align: center;
-//         // padding: 14px 16px;
-//         padding: 0.2em;
-//         text-decoration: none;
-//         width: 12em;
-//       }
-//     }
-//   }
-//   @media (max-width: @size-cutoff-almost) {
-//     display: none;
-//   }
-// }
-
-// .mobile-nav {
-//   .nav;
-//   font-family: @serif-fonts;
-//   @media (min-width: @size-cutoff) {
-//     display: none;
-//   }
-//   @media (max-width: @size-cutoff-almost) {
-//     box-shadow: @nav-box-shadow;
-//     ul {
-//       li {
-//         &:nth-child(n+2) { // Applies to all elements except the first
-//           border-top: 1px solid black;
-//         }
-//         a {
-//           display: flex;
-//           flex-direction: column;
-//           color: @text-color-dark;
-//           padding: 4px 16px;
-//           text-decoration: none;
-//           font-size: 1.2em;
-//         }
-//       }
-//     }
-//   }
-// }
-
 #empty-col-left {
   /* put this on the left */
   order: -1;
-  @media (min-width: @size-cutoff) {
+}
+
+.empty-col-left-aboce-cutoff {
+  #empty-col-left {
     flex: 0 0 @non-mobile-empty-side-space-size;
   }
 }
 
-#empty-col-right {
-  @media (min-width: @size-cutoff) {
+.empty-col-right-above-cutoff {
+  #empty-col-right{
     flex: 0 0 @non-mobile-empty-side-space-size;
   }
 }
+
+@import 'screen-sizes';
 
 #content {
   background-color: @grey-light;
