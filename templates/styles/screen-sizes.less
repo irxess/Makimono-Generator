@@ -1,0 +1,18 @@
+@size-cutoff: 70em;
+@size-cutoff-almost: 69.99em;
+@size-tiny: 45em;
+
+@media (min-width: @size-cutoff) {
+	.nav-desktop-shown;
+	.nav-mobile-hidden;
+}
+
+@media (max-width: @size-cutoff-almost) {
+	.nav-desktop-hidden;
+	.nav-mobile-shown;
+	.header-reduced-size;
+}
+
+@media (max-width: @size-tiny) {
+	.body-tiny;
+}
