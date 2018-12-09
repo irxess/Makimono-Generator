@@ -1,7 +1,10 @@
 @non-mobile-empty-side-space-size: 10%;
 @import 'colors';
 @import 'fonts';
+
 @import 'nav';
+@import 'ingredients-overview';
+@import 'timeline';
 
 header {
   background-color: @grey;
@@ -129,7 +132,6 @@ hr {
   }
 }
 
-
 #intro {
   img {
     width: 100%;
@@ -145,40 +147,6 @@ hr {
   padding-bottom: 0.5em; // Ensures that there is a bit of breathing room after the last step, which helps the icons not overflow.
 }
 
-#timeline{
-  margin-top: 1em;
-
-  svg {
-    width: 100%;
-    margin: 0 auto;
-    line {
-      stroke-width: 0.3em; /* 0.5em */
-      stroke: @svg-bright-green;
-      &.hot      {stroke: @red-dark;}
-      &.warm     {stroke: @orange-dark;}
-      &.room     {stroke: @yellow-dark;}
-      &.cold     {stroke: @lightblue-dark;}
-      &.freezing {stroke: @blue-dark;}
-      &.done     {stroke: @green-dark;}
-    }
-    .dark-line {
-      stroke-width: 0em;
-      stroke: @grey;
-    }
-    .svg-icon { transform: translate(-1em,-1em);}
-  }
-}
-.media-below-almost-cutoff-timeline {
-  #timeline{
-    font-size: 14pt;
-  }
-}
-.media-below-tiny-timeline {
-  #timeline{
-    font-size: 10pt;
-  }
-}
-
 svg {
   circle {
     stroke-width: 0em; /* 0.1em */
@@ -189,36 +157,6 @@ svg {
     &.cold     {fill: @lightblue-dark;}
     &.freezing {fill: @blue-dark;}
     &.done     {fill: @green-dark;}
-  }
-}
-
-#ingredients {
-  #ingredients-table{
-    width: 100%;
-    background: @super-light-grey;
-    table {
-      padding-top: 0;
-      border-collapse: collapse;
-      td {
-        text-align: left;
-        vertical-align: top;
-        padding-right: 0.2em;
-        &.amount {
-          font-weight: bold;
-          text-align: right;
-          padding-left: 0.5em;
-        }
-        &.unit {
-          font-weight: bold;
-        }
-        &.name {
-          white-space: nowrap;
-        }
-        &.comment {
-          font-style: italic;
-        }
-      }
-    }
   }
 }
 
