@@ -1,0 +1,26 @@
+@size-cutoff: 70em;
+@size-cutoff-almost: 69.99em;
+@size-tiny: 45em;
+
+@media (min-width: @size-cutoff) {
+	.media-above-cutuoff-nav-desktop;
+	.media-above-cutuoff-nav-mobile;
+	.media-above-cutuoff-three-col;
+	.media-above-cutuoff-empty-col-left;
+	.media-above-cutuoff-empty-col-right;
+	.media-above-cutuoff-content;
+	.media-above-cutoff-info-col;
+}
+
+@media (max-width: @size-cutoff-almost) {
+	.media-below-almost-cutoff-nav-desktop;
+	.media-below-almost-cutoff-nav-mobile;
+	.media-below-almost-cutoff-header;
+	.media-below-almost-cutoff-content;
+	.media-below-almost-cutoff-timeline;
+}
+
+@media (max-width: @size-tiny) {
+	.media-below-tiny-body;
+	.media-below-tiny-timeline;
+}
