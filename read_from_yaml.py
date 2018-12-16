@@ -38,33 +38,43 @@ def read_steps(yaml, recipe, ingredients):
                 step_data.long = step['long']
 
             if 'ingredients' in step:
-                for ingr in step['ingredients']:
-                    name = ingr['name']
-                    amount = ingr['amount'] # might fail?
-                    ingredient = Ingredient(name, amount)
-                    #if not name in ingredients:
-                        #ingredients[name] = IngredientsOverview(name, 
-                    if 'unit' in ingr:
-                        ingredient.unit = ingr['unit']
-                    if 'comment' in ingr:
-                        ingredient.comment = ingr['comment']
-                        #ingredients[name].comment = ingredient.comment
-                    step_data.ingredients_used.append(ingredient)
+                add_ingredients_from_step_to_step_data(step, step_data)
             if 'refined_ingredients' in step:
-                for ingr in step['refined_ingredients']:
-                    ingredient = RefinedIngredient(ingr['name'])
-                    if 'amount' in ingr:
-                        ingredient.amount = ingr['amount']
-                    if 'unit' in ingr:
-                        ingredient.unit = ingr['unit']
-                    step_data.refined_ingredients_used.append(ingredient)
+                add_refined_ingredients_from_step_to_step_data(step, step_data)
             if 'dependencies' in step:
-                for dep in step['dependencies']:
-                    step_data.depends_on.append( id + int(dep) )
+                add_dependencies_to_step_data(step, step_data)
+
             recipe.steps.append(step_data)
             id += 1
     else:
         print(f'Recipe {recipe.name} has no steps.')
+
+def add_ingredients_from_step_to_step_data(step, step_data):
+    for ingr in step['ingredients']:
+        name = ingr['name']
+        amount = ingr['amount'] # might fail?
+        ingredient = Ingredient(name, amount)
+        #if not name in ingredients:
+            #ingredients[name] = IngredientsOverview(name,
+        if 'unit' in ingr:
+            ingredient.unit = ingr['unit']
+        if 'comment' in ingr:
+            ingredient.comment = ingr['comment']
+            #ingredients[name].comment = ingredient.comment
+        step_data.ingredients_used.append(ingredient)
+
+def add_refined_ingredients_from_step_to_step_data(step, step_data):
+    for ingr in step['refined_ingredients']:
+        ingredient = RefinedIngredient(ingr['name'])
+        if 'amount' in ingr:
+            ingredient.amount = ingr['amount']
+        if 'unit' in ingr:
+            ingredient.unit = ingr['unit']
+        step_data.refined_ingredients_used.append(ingredient)
+
+def add_dependencies_to_step_data(step, step_data):
+    for dep in step['dependencies']:
+        step_data.depends_on.append( step_data.id + int(dep) )
 
 def read_ingredients(yaml):
     ingredients = dict()
