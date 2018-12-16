@@ -31,7 +31,7 @@ def read_steps(yaml, recipe, ingredients):
                 time = StepTime(1,0)
             type = step['type']
             temperature = step['temp']
-            step_data = Step(id, time, type, temperature, [], [], [])
+            step_data = Step(id, time, type, temperature)
             if 'short' in step:
                 step_data.short = step['short']
             if 'long' in step:
@@ -98,7 +98,7 @@ def read_recipe(yaml):
         updated = yaml['last_updated']
     else:
         updated = created
-    recipe = Recipe(name, created, updated, [], [])
+    recipe = Recipe(name, created, updated)
     if 'image' in yaml:
         recipe.image = yaml['image']
     if 'description' in yaml:

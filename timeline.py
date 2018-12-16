@@ -34,7 +34,7 @@ def append_done_node_to_steps(steps):
     number_of_steps = len(steps)
     done_svg = StepSVG(number_of_steps)
     done_svg.y = 1
-    done_step = Step(number_of_steps, 0, 'done', 'done', [], [], [number_of_steps - 1])
+    done_step = Step(number_of_steps, 0, 'done', 'done', depends_on=[number_of_steps - 1])
     done_step.svg = done_svg
     steps.append(done_step)
 
@@ -119,7 +119,7 @@ def add_timeline_to_data(recipe):
         if step.svg.y > deepest_y:
             deepest_y = step.svg.y
     height = y_offset*2 + y_spacing*(deepest_y-1)
-    recipe.timeline = Timeline([], [], height)
+    recipe.timeline = Timeline(height)
 
     for step in recipe.steps:
         circle = Circle(step.temperature, Point(step.svg.svg_x, step.svg.svg_y), step.step_type)
