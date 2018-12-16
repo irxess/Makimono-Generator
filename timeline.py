@@ -91,11 +91,6 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys, end):
 
 
 def add_svg_positions(steps):
-    global y_offset
-    global y_spacing
-    global x_offset
-    global x_spacing
-
     for step in steps:
         step.svg.svg_x = int((step.svg.x * x_spacing) + x_offset)
         step.svg.svg_y = ((step.svg.y-1) * y_spacing) + y_offset
@@ -106,10 +101,6 @@ def print_nodes(recipe):
         print('Node ', step.svg.x, '\ty: ', step.svg.y, '\tsvg_x: ', step.svg.svg_x, '%')
 
 def add_timeline_to_data(recipe):
-    global y_offset
-    global y_spacing
-    global x_spacing
-
     deepest_y = 0
     for step in recipe.steps:
         if step.svg.y > deepest_y:
