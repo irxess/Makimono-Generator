@@ -98,7 +98,7 @@ def add_svg_positions(steps):
 
     for step in steps:
         step.svg.svg_x = int((step.svg.x * x_spacing) + x_offset)
-        step.svg.svg_y = y_offset + (y_spacing * (step.svg.y-1))
+        step.svg.svg_y = ((step.svg.y-1) * y_spacing) + y_offset
 
 
 def print_nodes(recipe):
