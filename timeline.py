@@ -111,8 +111,6 @@ def add_timeline_to_data(recipe):
     global y_offset
     global y_spacing
     global x_spacing
-    lines = []
-    circles = []
 
     deepest_y = 0
     for step in recipe.steps:
