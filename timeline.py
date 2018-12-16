@@ -118,26 +118,30 @@ def add_timeline_to_data(recipe):
     recipe.timeline = Timeline(height=height)
 
     for step in recipe.steps:
-        circle = Circle(color=step.temperature, center=Point(x=step.svg.svg_x, y=step.svg.svg_y), step_type=step.step_type)
+        position_on_timeline = Point(x=step.svg.svg_x, y=step.svg.svg_y)
+        circle = Circle(color=step.temperature, center=position_on_timeline, step_type=step.step_type)
         recipe.timeline.circles.append(circle)
-        for d in step.depends_on:
-            dep_step = recipe.steps[d]
-            split_x = step.svg.svg_x - x_spacing
-            if dep_step.svg.svg_x >= split_x:
-                color = dep_step.temperature
-                start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
-                end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
-                line = Line(start=start, end=end, color=color)
-                recipe.timeline.lines.append(line)
-            else:
-                color = dep_step.temperature
-                start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
-                middle = Point(x=split_x, y=dep_step.svg.svg_y)
-                end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
-                line1 = Line(start=start, end=middle, color=color)
-                line2 = Line(start=middle, end=end, color=color)
-                recipe.timeline.lines.append(line1)
-                recipe.timeline.lines.append(line2)
+        add_lines_for_step_dependencies(recipe, step)
+
+def add_lines_for_step_dependencies(recipe, step):
+    for dependency in step.depends_on:
+        dep_step = recipe.steps[dependency]
+        split_x = step.svg.svg_x - x_spacing
+        if dep_step.svg.svg_x >= split_x:
+            color = dep_step.temperature
+            start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
+            end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
+            line = Line(start=start, end=end, color=color)
+            recipe.timeline.lines.append(line)
+        else:
+            color = dep_step.temperature
+            start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
+            middle = Point(x=split_x, y=dep_step.svg.svg_y)
+            end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
+            line1 = Line(start=start, end=middle, color=color)
+            line2 = Line(start=middle, end=end, color=color)
+            recipe.timeline.lines.append(line1)
+            recipe.timeline.lines.append(line2)
 
 
 def generate_timeline_svg(recipe):
