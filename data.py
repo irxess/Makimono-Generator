@@ -4,7 +4,6 @@ from dataclasses import dataclass, field
 
 @dataclass
 class Ingredient:
-    #id: int
     name: str
     amount: Union[float, int]
     unit: str = ''

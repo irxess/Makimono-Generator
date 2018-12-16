@@ -76,21 +76,6 @@ def add_dependencies_to_step_data(step, step_data):
     for dep in step['dependencies']:
         step_data.depends_on.append( step_data.id + int(dep) )
 
-def read_ingredients(yaml):
-    ingredients = dict()
-    if 'ingredients' in yaml:
-        id = 0
-        for i in yaml['ingredients']:
-            name = i['name']
-            amount = i['amount']
-            ingredients[name] = Ingredient(id, name, amount)
-            if 'unit' in i:
-                ingredients[name].unit = i['unit']
-            if 'comment' in i:
-                ingredients[name].comment = i['comment']
-            id += 1
-    return ingredients
-
 def read_recipe(yaml):
     name = yaml['recipe']
     created = yaml['date_created']
