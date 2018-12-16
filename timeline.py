@@ -10,8 +10,6 @@ x_spacing = 0   # percent, set in find_positions
 
 def find_positions(recipe):
     global x_spacing
-    global y_offset
-    global y_spacing
 
     next_group = 1
     amount_of_steps = len(recipe.steps)
