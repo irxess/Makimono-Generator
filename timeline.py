@@ -18,7 +18,7 @@ def find_positions(recipe):
     x_spacing = (90.0/amount_of_steps)
 
     for step in recipe.steps:
-        svg_node = StepSVG(step.id)
+        svg_node = StepSVG(x=step.id)
         if step.depends_on == []:
             svg_node.group = next_group
             next_group += 1
@@ -32,9 +32,9 @@ def find_positions(recipe):
 
 def append_done_node_to_steps(steps):
     number_of_steps = len(steps)
-    done_svg = StepSVG(number_of_steps)
+    done_svg = StepSVG(x=number_of_steps)
     done_svg.y = 1
-    done_step = Step(number_of_steps, 0, 'done', 'done', depends_on=[number_of_steps - 1])
+    done_step = Step(id=number_of_steps, time=0, step_type='done', temperature='done', depends_on=[number_of_steps - 1])
     done_step.svg = done_svg
     steps.append(done_step)
 
@@ -119,27 +119,27 @@ def add_timeline_to_data(recipe):
         if step.svg.y > deepest_y:
             deepest_y = step.svg.y
     height = y_offset*2 + y_spacing*(deepest_y-1)
-    recipe.timeline = Timeline(height)
+    recipe.timeline = Timeline(height=height)
 
     for step in recipe.steps:
-        circle = Circle(step.temperature, Point(step.svg.svg_x, step.svg.svg_y), step.step_type)
+        circle = Circle(color=step.temperature, center=Point(x=step.svg.svg_x, y=step.svg.svg_y), step_type=step.step_type)
         recipe.timeline.circles.append(circle)
         for d in step.depends_on:
             dep_step = recipe.steps[d]
             split_x = step.svg.svg_x - x_spacing
             if dep_step.svg.svg_x >= split_x:
                 color = dep_step.temperature
-                start = Point(dep_step.svg.svg_x, dep_step.svg.svg_y)
-                end = Point(step.svg.svg_x, step.svg.svg_y)
-                line = Line(start, end, color)
+                start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
+                end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
+                line = Line(start=start, end=end, color=color)
                 recipe.timeline.lines.append(line)
             else:
                 color = dep_step.temperature
-                start = Point(dep_step.svg.svg_x, dep_step.svg.svg_y)
-                middle = Point(split_x, dep_step.svg.svg_y)
-                end = Point(step.svg.svg_x, step.svg.svg_y)
-                line1 = Line(start, middle, color)
-                line2 = Line(middle, end, color)
+                start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
+                middle = Point(x=split_x, y=dep_step.svg.svg_y)
+                end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
+                line1 = Line(start=start, end=middle, color=color)
+                line2 = Line(start=middle, end=end, color=color)
                 recipe.timeline.lines.append(line1)
                 recipe.timeline.lines.append(line2)
 

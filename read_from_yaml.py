@@ -10,7 +10,7 @@ def create_ingredient_overview(recipe, ingredients):
             unit = ingr.unit
             comment = ingr.comment
             if not name in ingredients:
-                ingredients[name] = IngredientsOverview(name, amount, unit, comment)
+                ingredients[name] = IngredientsOverview(name=name, total_amount=amount, unit=unit, comment=comment)
             else:
                 ingredients[name].total_amount += amount
                 if ingredients[name].unit != unit:
@@ -26,12 +26,12 @@ def read_steps(yaml, recipe, ingredients):
         id = 0
         for step in yaml['steps']:
             if 'time' in step:
-                time = StepTime(step['time'], 0)
+                time = StepTime(active=step['time'], passive=0)
             else:
-                time = StepTime(1,0)
+                time = StepTime(active=1, passive=0)
             type = step['type']
             temperature = step['temp']
-            step_data = Step(id, time, type, temperature)
+            step_data = Step(id=id, time=time, step_type=type, temperature=temperature)
             if 'short' in step:
                 step_data.short = step['short']
             if 'long' in step:
@@ -53,7 +53,7 @@ def add_ingredients_from_step_to_step_data(step, step_data):
     for ingr in step['ingredients']:
         name = ingr['name']
         amount = ingr['amount'] # might fail?
-        ingredient = Ingredient(name, amount)
+        ingredient = Ingredient(name=name, amount=amount)
         #if not name in ingredients:
             #ingredients[name] = IngredientsOverview(name,
         if 'unit' in ingr:
@@ -65,7 +65,7 @@ def add_ingredients_from_step_to_step_data(step, step_data):
 
 def add_refined_ingredients_from_step_to_step_data(step, step_data):
     for ingr in step['refined_ingredients']:
-        ingredient = RefinedIngredient(ingr['name'])
+        ingredient = RefinedIngredient(name=ingr['name'])
         if 'amount' in ingr:
             ingredient.amount = ingr['amount']
         if 'unit' in ingr:
