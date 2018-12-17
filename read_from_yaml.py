@@ -75,6 +75,7 @@ def add_refined_ingredients_from_step_to_step_data(step, step_data):
 def add_dependencies_to_step_data(step, step_data):
     for dep in step['dependencies']:
         step_data.depends_on.append( step_data.id + int(dep) )
+    step_data.depends_on.sort()
 
 def read_recipe(yaml):
     name = yaml['recipe']
