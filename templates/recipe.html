@@ -35,8 +35,16 @@
       <table>
         {% for ingredient in r.ingredients %}
           <tr>
-            <td class="amount">{{ingredient.total_amount}}</td>
-            <td class="unit">{{ingredient.unit}}</td>
+            <td class="amount">
+              {% if ingredient.total_amount %}
+                {{ingredient.total_amount}}
+              {% endif %}
+            </td>
+            <td class="unit">
+              {% if ingredient.total_amount %}
+                {{ingredient.unit}}
+              {% endif %}
+            </td>
             <td class="name">{{ingredient.name}}</td>
             {% if ingredient.comment %}
               <td class="comment">{{ingredient.comment}}</td>
