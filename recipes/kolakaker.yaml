@@ -3,7 +3,7 @@ recipe: Kolakaker
 description: ""
 source: "https://www.detsoteliv.no/oppskrift/kolakaker"
 date_created: 2018-11-30
-last_updated: 2018-11-30
+last_updated: 2018-12-17
 image: ''
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
@@ -26,7 +26,7 @@ steps:
     short: "Tilsett sirup",
     long: "Bland inn sirup.",
     ingredients: [
-      {name: sirup, amount: 1-2, unit: ss, comment: },
+      {name: sirup, amount: 2, unit: ss, comment: },
     ],
     dependencies: [-1],
     active-time: 1,

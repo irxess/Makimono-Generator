@@ -71,8 +71,15 @@
         <div class="step-ingredient-list">
             <ul>
               {% for i in s.ingredients_used %}
-                <li><b>{{ i.amount }} {{i.unit}}</b>
-                    {{ i.name }}</li>
+                <li>
+                  <b>
+                    {% if i.amount %}
+                      <span class="amount">{{ i.amount }}</span>
+                    {% endif %}
+                    {{i.unit}}
+                  </b>
+                  {{ i.name }}
+                </li>
               {% endfor %}
             </ul>
         </div>

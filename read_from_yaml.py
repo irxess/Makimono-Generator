@@ -6,7 +6,9 @@ def create_ingredient_overview(recipe, ingredients):
     for step in recipe.steps:
         for ingr in step.ingredients_used:
             name = ingr.name
-            amount = ingr.amount
+            amount = 0
+            if ingr.amount:
+                amount = ingr.amount
             unit = ingr.unit
             comment = ingr.comment
             if not name in ingredients:
@@ -17,7 +19,8 @@ def create_ingredient_overview(recipe, ingredients):
                     print(f"Multiple amount units used for {name} in {recipe.name}")
                 if comment:
                     ingredients[name].comment += comment
-    for k,v in ingredients.items():
+    ingredients_sorted_by_amount = sorted(ingredients.items(), key=lambda kv: kv[1].total_amount, reverse=True)
+    for k,v in ingredients_sorted_by_amount:
         recipe.ingredients.append(v)
 
 
