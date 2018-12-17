@@ -48,10 +48,10 @@ def start_improve_positions(nodes):
             safe_ys[i] = y_pos+1
             safe_y = y_pos + 1
             if len(node.depends_on) > 1:
-                for dep in node.depends_on:
-                    dep_group = nodes[dep].svg.group
+                for child in node.depends_on:
+                    dep_group = nodes[child].svg.group
                     if dep_group != current_group:
-                        dep_y = improve_positions(nodes[:dep+1], dep_group, dep, safe_y, safe_ys, i+1)
+                        dep_y = improve_positions(nodes[:child+1], dep_group, child, safe_y, safe_ys, i+1)
                         safe_y = dep_y + 1
                         safe_ys[i] = max(safe_ys[i], safe_y)
 
@@ -76,11 +76,11 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys, end):
     if number_of_dependencies > 1:
         cur_node.svg.y = y_used
         safe_y = y_used
-        for dep in cur_node.depends_on:
-            dep_group = nodes[dep].svg.group
-            dep_y = improve_positions(nodes[:cur_index], dep_group, dep, safe_y, safe_ys, cur_index+1)
+        for child in cur_node.depends_on:
+            dep_group = nodes[child].svg.group
+            dep_y = improve_positions(nodes[:cur_index], dep_group, child, safe_y, safe_ys, cur_index+1)
             safe_y = dep_y + 1
-            safe_ys[dep] = max(safe_ys[dep], safe_y)
+            safe_ys[child] = max(safe_ys[child], safe_y)
         safe_ys[cur_index] = max(safe_ys[cur_index], cur_node.svg.y +1)
     elif number_of_dependencies == 1:
         y_used = improve_positions(nodes[:cur_index], current_group, cur_node.depends_on[0], y_used, safe_ys, cur_index+1)
