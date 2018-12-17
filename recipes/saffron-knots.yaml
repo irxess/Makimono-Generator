@@ -1,0 +1,136 @@
+recipe: Saffron Knots
+
+description: ""
+source: "https://www.detsoteliv.no/oppskrift/safranknuter-med-smor-og-vaniljefyll"
+date_created: 2018-12-17
+last_updated: 2018-12-17
+image: 'saffron_knots'
+
+result: {amount: 15, name: knots}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "heat",
+    long: "Add milk, butter and sugar to a saucepan, and bring to a boil while stirring.
+    When the sugar is dissolved, the butter melted and the milk boils, take the saucepan
+    of the heat. Add the saffon, stir,  and let the mixture cool.",
+    ingredients: [
+      {amount: 5, unit: dl, name: milk, comment: 'I used whole milk, but any milk should work.'},
+      {amount: 150, unit: g, name: butter, comment: ''},
+      {amount: 120, unit: g, name: sugar, comment: ''},
+      {amount: 0.4, unit: g, name: saffron, comment: "There's no real taste replacement here. If you can't afford saffron, these knots will still taste good (but different) using cinnamon or some other spice."},
+    ],
+    active-time: 10,
+    passive-time: 30,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Mix",
+    long: "When the milk mix has cooled down a bit, pour it into the kitchen machine bowl (or a large bowl). Add the yeast when the milk is around 37 degrees Celsius.
+    Then add most of the flour, and mix with the dough hook (or your hands). The dough should not be sticky, so add more flour if needed.
+    Continue kneading the dough for a few minutes when it's not sticky anymore.
+    Then take the dough out of the kitchen machine bowl, and put it somewhere to rest.",
+    ingredients: [
+      {amount: 25, unit: g, name: fresh yeast, comment: 'or half of sacket of dry yeast'},
+      {amount: 750, unit: g, name: all purpose flour, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Soften butter",
+    long: "Use the microwave to soften the butter. Be careful not to melt it. About 10 seconds should be enough.",
+    ingredients: [
+      {amount: 120, unit: g, name: butter, comment: ''},
+    ],
+    dependencies: [],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: warm,
+  }
+  - {
+    short: "Mix buttercream",
+    long: "Meanwhile, create the filling with the kitchen machine. Whisk together the softened butter with sugar.
+    Then mix in the vanilla extract.",
+    ingredients: [
+      {amount: 75, unit: g, name: sugar, comment: ''},
+      {amount: 2, unit: tbsp, name: vanilla extract, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 1,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Spread the filling",
+    long: "Cut the dough into two pieces. Roll out half of it into a rectangle that is a little under half a centimeter thick.
+    Use a spatula or spoon to spread half of the buttercream onto half of the rectangle, dividing along the longest side.
+    Then fold the other half of the dough over the half with buttercream.",
+    dependencies: [-1, -3],
+    active-time: 3,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Shape into knots",
+    long: "Cut the dough along its short side, into about 8 strips. Take one strip at a time, and twist it. Then make a knot of it.
+    One way to make a knot is by creating a loop with the middle of the strip. Cross the ends of the strip and push them through the loop.
+    Put the shaped knots onto sheets of baking paper to rest. Make sure to have some distance between the knots, as they will
+    expand both while proofing and in the oven.",
+    dependencies: [-1],
+    active-time: 4,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Repeat and let proof",
+    long: "Take the other half of your dough, and flatten, fill and shape it as you did with the first half.
+    Then let the knots proof for about 45 minutes.",
+    dependencies: [-1],
+    active-time: 7,
+    passive-time: 45,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Preheat the oven to 220 degrees Celsius (not using convection).",
+    dependencies: [],
+    active-time: 1,
+    passive-time: 0,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Brush on eggwash",
+    long: "Mix together one egg with a splash of milk. Brush a thin layer onto the knots. You will probably have some eggwash left over.",
+    ingredients: [
+      {amount: 1, unit: '', name: egg, comment: ''},
+      {amount: 1, unit: tbsp, name: milk, comment: ''},
+    ],
+    dependencies: [-2],
+    active-time: 1,
+    passive-time: 1,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Bake",
+    long: "Bake the knots in the center of the oven until they are golden with a bit brown on the top. This should take about 12 minutes.",
+    dependencies: [-2, -1],
+    active-time: 1,
+    passive-time: 12,
+    type: oven,
+    temp: hot,
+  }
+
+eating: These knots taste better when they're a bit warm, so I recommend heating them in the microwave.
