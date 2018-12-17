@@ -118,17 +118,14 @@ def add_lines_for_step_dependencies(recipe, step):
     for dependency in step.depends_on:
         dep_step = recipe.steps[dependency]
         split_x = step.svg.svg_x - x_spacing
+        color = dep_step.temperature
+        start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
+        end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
         if dep_step.svg.svg_x >= split_x:
-            color = dep_step.temperature
-            start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
-            end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
             line = Line(start=start, end=end, color=color)
             recipe.timeline.lines.append(line)
         else:
-            color = dep_step.temperature
-            start = Point(x=dep_step.svg.svg_x, y=dep_step.svg.svg_y)
             middle = Point(x=split_x, y=dep_step.svg.svg_y)
-            end = Point(x=step.svg.svg_x, y=step.svg.svg_y)
             line1 = Line(start=start, end=middle, color=color)
             line2 = Line(start=middle, end=end, color=color)
             recipe.timeline.lines.append(line1)
