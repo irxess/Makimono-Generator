@@ -22,9 +22,9 @@ def find_positions(recipe):
             next_group += 1
         else:
             lowest_group = 1024
-            for d in step.depends_on:
-                if recipe.steps[d].svg.group < lowest_group:
-                    lowest_group = recipe.steps[d].svg.group
+            for child in step.depends_on:
+                if recipe.steps[child].svg.group < lowest_group:
+                    lowest_group = recipe.steps[child].svg.group
             svg_node.group = lowest_group
         step.svg = svg_node
 
@@ -89,7 +89,7 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys, end):
     return y_used
 
 
-def add_svg_positions(steps):
+def transform_svg_xy_values(steps):
     for step in steps:
         step.svg.svg_x = int((step.svg.x * x_spacing) + x_offset)
         step.svg.svg_y = ((step.svg.y-1) * y_spacing) + y_offset
@@ -135,6 +135,6 @@ def generate_timeline_svg(recipe):
     find_positions(recipe)
     append_done_node_to_steps(recipe.steps)
     start_improve_positions(recipe.steps)
-    add_svg_positions(recipe.steps)
-    add_timeline_to_data(recipe)
+    transform_svg_xy_values(recipe.steps)
+    add_timeline_to_data(recipe) # The lines are calculated and added here
     del recipe.steps[-1] # Remove "done" step used at end of timeline
