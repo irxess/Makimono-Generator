@@ -90,5 +90,3 @@ class Recipe:
     description: str = ""
     source: str = ""
     image: str = ""
-
-
