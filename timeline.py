@@ -8,6 +8,12 @@ y_spacing = 2.2 # em
 x_offset  = 5   # percent
 x_spacing = 0   # percent, set in find_positions
 
+
+# def print_nodes(recipe):
+#     for step in recipe.steps:
+#         print('Node ', step.svg.x, '\ty: ', step.svg.y, '\tsvg_x: ', step.svg.svg_x, '%')
+
+
 def find_positions(recipe):
     global x_spacing
 
@@ -27,14 +33,6 @@ def find_positions(recipe):
                     largest_seen_y_value = recipe.steps[child].svg.group
             svg_node.group = largest_seen_y_value
         step.svg = svg_node
-
-def append_done_node_to_steps(steps):
-    number_of_steps = len(steps)
-    done_svg = StepSVG(x=number_of_steps)
-    done_svg.y = 1
-    done_step = Step(id=number_of_steps, step_type='done', temperature='done', depends_on=[number_of_steps - 1])
-    done_step.svg = done_svg
-    steps.append(done_step)
 
 
 def start_improve_positions(nodes):
@@ -93,16 +91,6 @@ def find_largest_safe_y(initial_y, nodes, safe_ys, current_group, end):
     return initial_y
 
 
-def transform_svg_xy_values(steps):
-    for step in steps:
-        step.svg.svg_x = int((step.svg.x * x_spacing) + x_offset)
-        step.svg.svg_y = ((step.svg.y-1) * y_spacing) + y_offset
-
-
-def print_nodes(recipe):
-    for step in recipe.steps:
-        print('Node ', step.svg.x, '\ty: ', step.svg.y, '\tsvg_x: ', step.svg.svg_x, '%')
-
 def add_timeline_to_data(recipe):
     deepest_y = 0
     for step in recipe.steps:
@@ -133,6 +121,21 @@ def add_lines_for_step_dependencies(recipe, step):
             line2 = Line(start=middle, end=end, color=color)
             recipe.timeline.lines.append(line1)
             recipe.timeline.lines.append(line2)
+
+
+def transform_svg_xy_values(steps):
+    for step in steps:
+        step.svg.svg_x = int((step.svg.x * x_spacing) + x_offset)
+        step.svg.svg_y = ((step.svg.y-1) * y_spacing) + y_offset
+
+
+def append_done_node_to_steps(steps):
+    number_of_steps = len(steps)
+    done_svg = StepSVG(x=number_of_steps)
+    done_svg.y = 1
+    done_step = Step(id=number_of_steps, step_type='done', temperature='done', depends_on=[number_of_steps - 1])
+    done_step.svg = done_svg
+    steps.append(done_step)
 
 
 def generate_timeline_svg(recipe):
