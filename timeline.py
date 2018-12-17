@@ -32,7 +32,7 @@ def append_done_node_to_steps(steps):
     number_of_steps = len(steps)
     done_svg = StepSVG(x=number_of_steps)
     done_svg.y = 1
-    done_step = Step(id=number_of_steps, time=0, step_type='done', temperature='done', depends_on=[number_of_steps - 1])
+    done_step = Step(id=number_of_steps, step_type='done', temperature='done', depends_on=[number_of_steps - 1])
     done_step.svg = done_svg
     steps.append(done_step)
 

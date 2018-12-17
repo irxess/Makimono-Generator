@@ -38,9 +38,9 @@ Temperature = enum('freeze', 'cold', 'room', 'warm', 'hot')
 @dataclass
 class Step:
     id: int
-    time: StepTime
     step_type: Type
     temperature: Temperature
+    time: StepTime = StepTime()
     ingredients_used: List[Ingredient] = field(default_factory=lambda: [])
     refined_ingredients_used: List[RefinedIngredient] = field(default_factory=lambda: [])
     depends_on: List[int] = field(default_factory=lambda: [])
