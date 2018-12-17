@@ -26,7 +26,7 @@ class StepSVG:
     y: int = 0
     svg_x: int = 0
     svg_y: int = 0
-    group: int = 0 # One group per leaf node, parent belongs to group of child with lowest y-value used.
+    group: int = 0 # One group per leaf node, parent belongs to group of child with smallest y-value used.
 
 def enum(*args):
     enums = dict(zip(args, range(len(args))))
