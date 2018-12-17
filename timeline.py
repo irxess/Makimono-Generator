@@ -61,7 +61,6 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys, end):
     if cur_node.svg.y > 0:
         return cur_node.svg.y
 
-    y_levels_taken = []
     first_in_group = 0
     for n in nodes:
         if n.svg.group == current_group:
@@ -73,8 +72,8 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys, end):
         if y > y_used:
             y_used = y
 
-    connected = len(cur_node.depends_on)
-    if connected > 1:
+    number_of_dependencies = len(cur_node.depends_on)
+    if number_of_dependencies > 1:
         cur_node.svg.y = y_used
         safe_y = y_used
         for dep in cur_node.depends_on:
@@ -83,7 +82,7 @@ def improve_positions(nodes, current_group, cur_index, start_y, safe_ys, end):
             safe_y = dep_y + 1
             safe_ys[dep] = max(safe_ys[dep], safe_y)
         safe_ys[cur_index] = max(safe_ys[cur_index], cur_node.svg.y +1)
-    elif connected == 1:
+    elif number_of_dependencies == 1:
         y_used = improve_positions(nodes[:cur_index], current_group, cur_node.depends_on[0], y_used, safe_ys, cur_index+1)
     cur_node.svg.y = y_used
     safe_ys[cur_index] = max(safe_ys[cur_index], y_used+1)
