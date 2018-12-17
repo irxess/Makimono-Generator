@@ -75,6 +75,8 @@ def add_refined_ingredients_from_step_to_step_data(step, step_data):
 def add_dependencies_to_step_data(step, step_data):
     for dep in step['dependencies']:
         step_data.depends_on.append( step_data.id + int(dep) )
+    # Sort the list to try to make the generated graph look a bit prettier.
+    # The desired effect is that the steps occurring earlier are processed earlier, so that earlier entries get smaller y values.
     step_data.depends_on.sort()
 
 def read_recipe(yaml):
