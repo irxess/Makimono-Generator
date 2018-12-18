@@ -69,10 +69,10 @@
       </fieldset>
       <fieldset name="ingredient">
         <label for="ingredient">By ingredient</label>
-        <select name="ingredient">
+        <select id="ingredient-select" name="ingredient">
           {% for ingredient in r.ingredients %}
             {% if ingredient.total_amount %}
-              <option value="{{ingredient.name}}">
+              <option value="{{ingredient.total_amount}}">
                 {{ingredient.name}}
                 {% if ingredient.unit %}
                   ({{ingredient.unit}})
@@ -82,7 +82,7 @@
           {% endfor %}
         </select>
         amount:
-        <input type="number" name="ingredient">
+        <input type="number" id="ingredient-inputted-amount" name="ingredient">
         <button type="button" onclick="scaleByIngredient()">Scale</button>
       </fieldset>
     </form>

@@ -23,6 +23,11 @@ function scaleByPercentSlider(){
 }
 
 function scaleByIngredient(){
+	var ingredientsMenu = document.getElementById('ingredient-select');
+	var selectedIngredientOriginalAmount = ingredientsMenu.options[ingredientsMenu.selectedIndex].value;
+	var userDesiredAmount = document.getElementById('ingredient-inputted-amount').value;
+	var percentageToScaleBy = userDesiredAmount/selectedIngredientOriginalAmount;
+	applyScaling(percentageToScaleBy);
 }
 
 function applyScaling(percentageToScaleBy) {
