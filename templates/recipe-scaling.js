@@ -9,8 +9,13 @@ function resetScaling(){
 
 function scaleByPercentNumber(){
 	var percentValue = document.getElementById('percent-number').value;
-	document.getElementById('percent-slider').value = percentValue;
-	applyScaling(percentValue/100);
+	if(percentValue > 0){
+		document.getElementById('percent-slider').value = percentValue;
+		applyScaling(percentValue/100);
+	}
+	else {
+		resetScaling();
+	}
 }
 
 
