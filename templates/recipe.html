@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}{{ r.name }} Recipe{% endblock %}
 {% block meta_description %}{{ r.description }}{% endblock %}
+{% block page_specific_scripts %}
+  <link rel="script" type="text/javascript" href="{{path_to_base}}/js/recipe-scaling.js" async>
+{% endblock %}
 
 {% block content %}
 <main id="content">

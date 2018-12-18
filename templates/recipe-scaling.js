@@ -1,0 +1,15 @@
+resetScaling(){
+
+}
+
+scaleByPercentNumber(){
+
+}
+
+scaleByPercentSlider(){
+
+}
+
+scaleByIngredient(){
+	
+}
