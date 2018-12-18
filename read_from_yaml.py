@@ -2,7 +2,8 @@ import os
 import yaml
 from data import *
 
-def create_ingredient_overview(recipe, ingredients):
+def create_ingredient_overview(recipe):
+    ingredients = dict()
     for step in recipe.steps:
         for ingr in step.ingredients_used:
             name = ingr.name
@@ -11,20 +12,22 @@ def create_ingredient_overview(recipe, ingredients):
                 amount = ingr.amount
             unit = ingr.unit
             comment = ingr.comment
-            if not name in ingredients:
-                ingredients[name] = IngredientsOverview(name=name, total_amount=amount, unit=unit, comment=comment)
+            key_tuple = (name, unit)
+            if not key_tuple in ingredients:
+                ingredients[key_tuple] = IngredientsOverview(name=name, total_amount=amount, unit=unit, comment=comment)
             else:
-                ingredients[name].total_amount += amount
-                if ingredients[name].unit != unit:
-                    print(f"Multiple amount units used for {name} in {recipe.name}")
-                if comment:
-                    ingredients[name].comment += comment
+                # if
+                ingredients[key_tuple].total_amount += amount
+                # if ingredients[key_tuple].unit != unit:
+                #     print(f"Multiple amount units used for {name} in {recipe.name}")
+                if comment and ingredients[key_tuple].comment != comment:
+                    ingredients[key_tuple].comment += comment
     ingredients_sorted_by_amount = sorted(ingredients.items(), key=lambda kv: kv[1].total_amount, reverse=True)
     for k,v in ingredients_sorted_by_amount:
         recipe.ingredients.append(v)
 
 
-def read_steps(yaml, recipe, ingredients):
+def read_steps(yaml, recipe):
     if 'steps' in yaml:
         id = 0
         for step in yaml['steps']:
@@ -104,9 +107,8 @@ def read_recipe_into_data(name):
         yaml_data = yaml.load(recipe_file)
     recipe = read_recipe(yaml_data)
     #ingredient_dict = read_ingredients(yaml_data)
-    ingredient_dict = dict()
-    read_steps(yaml_data, recipe, ingredient_dict)
-    create_ingredient_overview(recipe, ingredient_dict)
+    read_steps(yaml_data, recipe)
+    create_ingredient_overview(recipe)
     return recipe
 
 if __name__ == "__main__":
