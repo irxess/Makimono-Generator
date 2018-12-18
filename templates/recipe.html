@@ -35,13 +35,13 @@
       <table>
         {% for ingredient in r.ingredients %}
           <tr>
-            <td class="amount">
+            <td class="amount" data-original-amount="{{ingredient.total_amount}}" >
               {% if ingredient.total_amount %}
                 {{ingredient.total_amount}}
               {% endif %}
             </td>
             <td class="unit">
-              {% if ingredient.total_amount %}
+              {% if ingredient.unit %}
                 {{ingredient.unit}}
               {% endif %}
             </td>
@@ -53,6 +53,36 @@
         {% endfor %}
       </table>
     </div>
+  </section>
+
+  <section id="scaling">
+    <h2>Scaling</h2>
+    <form>
+      <button type="button" onclick="resetScaling()">Reset</button>
+      <fieldset name="percent">
+        <label for="percent">Percent</label>
+        <input type="number" name="percent" min="0" step="any" value="100" oninput="scaleByPercentNumber()">%
+        <input type="range" name="percent" value="100" min="10" max="1000" step="5" oninput="scaleByPercentSlider()">
+      </fieldset>
+      <fieldset name="ingredient">
+        <label for="ingredient">By ingredient</label>
+        <select name="ingredient">
+          {% for ingredient in r.ingredients %}
+            {% if ingredient.total_amount %}
+              <option value="{{ingredient.name}}">
+                {{ingredient.name}}
+                {% if ingredient.unit %}
+                  ({{ingredient.unit}})
+                {% endif %}
+              </option>
+            {% endif %}
+          {% endfor %}
+        </select>
+        amount:
+        <input type="number" name="ingredient">
+        <button type="button" onclick="scaleByIngredient()">Scale</button>
+      </fieldset>
+    </form>
   </section>
 
   <section id="timeline">
@@ -74,7 +104,7 @@
                 <li>
                   <b>
                     {% if i.amount %}
-                      <span class="amount">{{ i.amount }}</span>
+                      <span class="amount" data-original-amount="{{ i.amount }}">{{ i.amount }}</span>
                     {% endif %}
                     {{i.unit}}
                   </b>
