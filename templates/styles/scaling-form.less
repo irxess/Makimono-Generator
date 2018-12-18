@@ -7,6 +7,7 @@
 			margin-left: 1em;
 			margin-bottom: 0.5em;
 			margin-top: 0.5em;
+			display: block;
 		}
 		input{
 			font-size: @scaling-form-input-fields-font-size;
@@ -16,6 +17,16 @@
 		}
 		select{
 			font-size: @scaling-form-input-fields-font-size;
+		}
+	}
+}
+
+.media-above-cutoff-scaling-form{
+	#scaling{
+		form{
+			fieldset{
+				display: inline-block;
+			}
 		}
 	}
 }
