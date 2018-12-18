@@ -58,7 +58,7 @@
   <section id="scaling">
     <h2>Scaling</h2>
     <form>
-      <button type="button" onclick="resetScaling()">Reset</button>
+      <button type="button" id="reset-button" onclick="resetScaling()">Reset</button>
       <fieldset name="percent">
         <label for="percent">Percent</label>
         <input type="number" name="percent" min="0" step="any" value="100" oninput="scaleByPercentNumber()">%
