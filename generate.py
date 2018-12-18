@@ -199,6 +199,11 @@ if __name__ == "__main__":
     with open('publish/css/main.css', 'w') as f:
         print(compiled_css, file=f)
 
+    print("Copying JS")
+    if not os.path.isdir('publish/js'):
+        os.makedirs('publish/js')
+    shutil.copy('templates/recipe-scaling.js', 'publish/js/')
+
     print("Copying svg icons")
     if not os.path.isdir('publish/images/icons'):
         os.makedirs('publish/images/icons')
