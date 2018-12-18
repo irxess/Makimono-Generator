@@ -1,15 +1,18 @@
-resetScaling(){
+function resetScaling(){
 
 }
 
-scaleByPercentNumber(){
-
+function scaleByPercentNumber(){
+	var percentValue = document.getElementById('percent-number').value;
+	document.getElementById('percent-slider').value = percentValue;
 }
 
-scaleByPercentSlider(){
 
+function scaleByPercentSlider(){
+	var currentSliderValue = document.getElementById('percent-slider').value;
+	document.getElementById('percent-number').value = currentSliderValue;
 }
 
-scaleByIngredient(){
-	
+function scaleByIngredient(){
+
 }

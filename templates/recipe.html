@@ -2,7 +2,7 @@
 {% block title %}{{ r.name }} Recipe{% endblock %}
 {% block meta_description %}{{ r.description }}{% endblock %}
 {% block page_specific_scripts %}
-  <link rel="script" type="text/javascript" href="{{path_to_base}}/js/recipe-scaling.js" async>
+  <script type="text/javascript" src="{{path_to_base}}/js/recipe-scaling.js" async></script>
 {% endblock %}
 
 {% block content %}
@@ -60,12 +60,12 @@
 
   <section id="scaling">
     <h2>Scaling</h2>
-    <form>
+    <form id="scaling-form">
       <button type="button" id="reset-button" onclick="resetScaling()">Reset</button>
       <fieldset name="percent">
         <label for="percent">Percent</label>
-        <input type="number" name="percent" min="0" step="any" value="100" oninput="scaleByPercentNumber()">%
-        <input type="range" name="percent" value="100" min="10" max="1000" step="5" oninput="scaleByPercentSlider()">
+        <input type="number" id="percent-number" name="percent" min="0" step="any" value="100" oninput="scaleByPercentNumber()">%
+        <input type="range" id="percent-slider" name="percent" value="100" min="10" max="500" step="5" oninput="scaleByPercentSlider()">
       </fieldset>
       <fieldset name="ingredient">
         <label for="ingredient">By ingredient</label>
