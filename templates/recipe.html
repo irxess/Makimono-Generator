@@ -93,22 +93,22 @@
 
   <section id="steps">
     <h2>Directions</h2>
-    {% for s in r.steps %}
+    {% for step in r.steps %}
     <hr>
     <div class="step">
-      {% if s.ingredients_used %}
+      {% if step.ingredients_used %}
       <div class="ingredient-container">
         <div class="step-ingredient-list">
             <ul>
-              {% for i in s.ingredients_used %}
+              {% for ingredient in step.ingredients_used %}
                 <li>
                   <b>
-                    {% if i.amount %}
-                      <span class="amount" data-original-amount="{{ i.amount }}">{{ i.amount }}</span>
+                    {% if ingredient.amount %}
+                      <span class="amount" data-original-amount="{{ ingredient.amount }}">{{ ingredient.amount }}</span>
                     {% endif %}
-                    {{i.unit}}
+                    {{ingredient.unit}}
                   </b>
-                  {{ i.name }}
+                  {{ ingredient.name }}
                 </li>
               {% endfor %}
             </ul>
@@ -118,15 +118,15 @@
       <div class="description-container">
         <div class="step-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2em 2em" height="2em" width="2em">
-            <circle class="{{ s.temperature }}" cx="1em" cy="1em" r="1em" />
-            <image class="svg-icon" xlink:href="{{path_to_base}}/images/icons/{{ s.step_type }}-light.svg"
+            <circle class="{{ step.temperature }}" cx="1em" cy="1em" r="1em" />
+            <image class="svg-icon" xlink:href="{{path_to_base}}/images/icons/{{ step.step_type }}-light.svg"
                    x="0.25em" y="0.25em"
                    width="1.5em" height="1.5em" />
           </svg>
         </div>
         <div class="step-description">
-            <b>{{ s.short }}{% if s.long %}: {% endif %}</b>
-            {{ s.long }}
+            <b>{{ step.short }}{% if step.long %}: {% endif %}</b>
+            {{ step.long }}
         </div>
       </div>
     </div>
