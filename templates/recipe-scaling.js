@@ -13,9 +13,6 @@ function scaleByPercentNumber(){
 		document.getElementById('percent-slider').value = percentValue;
 		applyScaling(percentValue/100);
 	}
-	else {
-		resetScaling();
-	}
 }
 
 
