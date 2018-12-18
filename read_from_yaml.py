@@ -12,14 +12,11 @@ def create_ingredient_overview(recipe):
                 amount = ingr.amount
             unit = ingr.unit
             comment = ingr.comment
-            key_tuple = (name, unit)
+            key_tuple = (name, unit) # Same ingredient but different units should get distinct entries in overview.
             if not key_tuple in ingredients:
                 ingredients[key_tuple] = IngredientsOverview(name=name, total_amount=amount, unit=unit, comment=comment)
             else:
-                # if
                 ingredients[key_tuple].total_amount += amount
-                # if ingredients[key_tuple].unit != unit:
-                #     print(f"Multiple amount units used for {name} in {recipe.name}")
                 if comment and ingredients[key_tuple].comment != comment:
                     ingredients[key_tuple].comment += comment
     ingredients_sorted_by_amount = sorted(ingredients.items(), key=lambda kv: kv[1].total_amount, reverse=True)
