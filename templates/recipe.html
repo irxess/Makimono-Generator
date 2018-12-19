@@ -62,31 +62,30 @@
     <h2>Scaling</h2>
     <form id="scaling-form">
       <button type="button" id="reset-button" onclick="resetScaling()">Reset</button>
-      <fieldset name="percent">
-        <label for="percent">Percent</label>
+      <fieldset name="by-percent">
+        <legend>Percent</legend>
         <input
           type="number"
           id="percent-number"
-          name="percent"
           min="0"
           step="any"
           value="100"
           oninput="scaleByPercentNumber()"
-          >%
+          />%
         <input
           type="range"
           id="percent-slider"
-          name="percent"
           value="100"
           min="10"
           max="500"
           step="5"
           oninput="scaleByPercentSlider()"
-          >
+          />
       </fieldset>
-      <fieldset name="ingredient">
-        <label for="ingredient">By ingredient</label>
-        <select id="ingredient-select" name="ingredient">
+      <fieldset name="by-ingredient">
+        <legend>By ingredient</legend>
+        <label for="ingredient-select">Ingredient:</label>
+        <select id="ingredient-select">
           {% for ingredient in r.ingredients %}
             {% if ingredient.total_amount %}
               <option value="{{ingredient.total_amount}}">
@@ -98,8 +97,8 @@
             {% endif %}
           {% endfor %}
         </select>
-        amount:
-        <input type="number" id="ingredient-inputted-amount" name="ingredient">
+        <label for="ingredient-inputted-amount">amount:</label>
+        <input type="number" id="ingredient-inputted-amount" />
         <button type="button" onclick="scaleByIngredient()">Scale</button>
       </fieldset>
     </form>
