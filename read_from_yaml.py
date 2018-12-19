@@ -2,7 +2,7 @@ import os
 import yaml
 from data import *
 
-def create_ingredient_overview(recipe):
+def create_sorted_ingredient_overview(recipe):
     ingredients = dict()
     for step in recipe.steps:
         for ingr in step.ingredients_used:
@@ -11,18 +11,36 @@ def create_ingredient_overview(recipe):
             if ingr.amount:
                 amount = ingr.amount
             unit = ingr.unit
-            comment = ingr.comment
-            key_tuple = (name, unit) # Same ingredient but different units should get distinct entries in overview.
-            if not key_tuple in ingredients:
-                ingredients[key_tuple] = IngredientsOverview(name=name, total_amount=amount, unit=unit, comment=comment)
+            comment = ''
+            if ingr.comment:
+                comment = ingr.comment
+            if not name in ingredients:
+                ingredients[name] = [(amount, unit, comment)]
             else:
-                ingredients[key_tuple].total_amount += amount
-                if comment and ingredients[key_tuple].comment != comment:
-                    ingredients[key_tuple].comment += comment
-    ingredients_sorted_by_amount = sorted(ingredients.items(), key=lambda kv: kv[1].total_amount, reverse=True)
-    for k,v in ingredients_sorted_by_amount:
-        recipe.ingredients.append(v)
+                added = False
+                for index,item in enumerate(ingredients[name]):
+                    if unit == item[1]:
+                        ingredients[name][index] = (item[0]+amount, unit, item[2]+comment)
+                        added = True
+                if not added:
+                    index = 0
+                    for item in ingredients[name]:
+                        if item[0] > amount:
+                            index += 1
+                        else:
+                            break
+                    ingredients[name].insert(index, (amount, unit, comment))
 
+    sorted_ingredients = sorted(ingredients.items(), key=lambda kv: kv[1][0], reverse=True)
+
+    for kv in sorted_ingredients:
+        name = kv[0]
+        for value in kv[1]:
+            amount = value[0]
+            if amount == 0:
+                amount = None
+            ingr_overview = IngredientsOverview(name=name, total_amount=amount, unit=value[1], comment=value[2])
+            recipe.ingredients.append(ingr_overview)
 
 def read_steps(yaml, recipe):
     if 'steps' in yaml:
@@ -103,15 +121,14 @@ def read_recipe_into_data(name):
     with open(path, 'r') as recipe_file:
         yaml_data = yaml.load(recipe_file)
     recipe = read_recipe(yaml_data)
-    #ingredient_dict = read_ingredients(yaml_data)
     read_steps(yaml_data, recipe)
-    create_ingredient_overview(recipe)
+    create_sorted_ingredient_overview(recipe)
     return recipe
 
 if __name__ == "__main__":
     #r = read_recipe_into_data("simons-burger")
     #r = read_recipe_into_data("muffins-blueberry-and-basil")
-    r = read_recipe_into_data("brown-cheese-sauce")
+    r = read_recipe_into_data("saffron-knots")
     print(r)
     for s in r.steps:
         print(s.short)
