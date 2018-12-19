@@ -10,8 +10,11 @@ function resetScaling(){
 
 function scaleByPercentNumber(){
 	var percentValue = document.getElementById('percent-number').value;
-	if(percentValue > 0){
-		document.getElementById('percent-slider').value = percentValue;
+	if(percentValue >= 0){
+		var slider = document.getElementById('percent-slider');
+		if(slider.value != percentValue){
+			slider.value = percentValue;
+		}
 		applyScaling(percentValue/100);
 	}
 }
@@ -19,7 +22,10 @@ function scaleByPercentNumber(){
 
 function scaleByPercentSlider(){
 	var currentSliderValue = document.getElementById('percent-slider').value;
-	document.getElementById('percent-number').value = currentSliderValue;
+	var percentField = document.getElementById('percent-number');
+	if(percentField.value != currentSliderValue){
+		percentField.value = currentSliderValue;
+	}
 	applyScaling(currentSliderValue/100);
 }
 
