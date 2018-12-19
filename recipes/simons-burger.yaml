@@ -1,10 +1,14 @@
 recipe: Simons burger
 
 description: A burger with a lot of taste
-source: "Simons dad"
 date_created: 2018-10-20
 last_updated: 2018-12-03
 image: simons_burger
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: "Simon's dad", # recipe name or whole citation
+}
 
 steps:
   - {

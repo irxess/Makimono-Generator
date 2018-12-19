@@ -80,6 +80,15 @@ class Timeline:
     lines: List[Line] = field(default_factory=lambda: [])
 
 @dataclass
+class Source:
+    name: str
+    originality: Optional[str] = 'source' # source, adapted, inspired
+    author: Optional[str] = None
+    publication: Optional[str] = None
+    url: Optional[str] = None
+    date: Optional[str] = None
+
+@dataclass
 class Recipe:
     name: str
     date_created: str
@@ -88,5 +97,5 @@ class Recipe:
     ingredients: List[IngredientsOverview] = field(default_factory=lambda: [])
     timeline: Timeline = Timeline()
     description: str = ""
-    source: str = ""
+    source: Optional[Source] = None
     image: str = ""

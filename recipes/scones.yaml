@@ -2,10 +2,19 @@ recipe: Scones
 description: "Scones are flaky, savory and relatively quick to make. Often served with jam and clotted cream,
 one of my favorites for breakfast."
 
-source: "https://www.fifteenspatulas.com/english-style-scones/"
 date_created: 2018-04-02
 last_updated: 2018-11-20
 image: scones
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  type: 'adapted',
+  name: English-style scones, # recipe name or whole citation
+  author: Joanne Ozug,
+  publication: 'Fifteen Spatulas',
+  url: "https://www.fifteenspatulas.com/english-style-scones/",
+  date: 2018-12-19,
+}
 
 result: {amount: 8, name: scones}
 

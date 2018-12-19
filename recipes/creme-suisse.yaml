@@ -2,8 +2,18 @@ recipe: Crème Suisse
 
 description: A light and fluffy cream created by mixing together custard and whipped cream.
 date_created: 2018-03-25
-last_updated: 2018-03-25
+last_updated: 2018-12-18
 image: waffles
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  type: 'adapted',
+  name: Brusselse wafels met crème suisse, # recipe name or whole citation
+  author: Roger van Damme,
+  publication: 'njam!',
+  url: 'https://njam.tv/recepten/brusselse-wafels-met-creme-suisse',
+  date: 2018-12-18,
+}
 
 steps:
   - {
@@ -79,7 +89,7 @@ steps:
     long: "Pour the remaining cream into a bowl. Add a little bit of sugar, and whip the mixture to form soft peaks.",
     type: 'bowl',
     temp: 'room',
-    ingredients: [{name: heavy cream, amount: 170, unit: 'ml'}],
+    ingredients: [{name: heavy cream, amount: 270, unit: 'ml'}],
   }
   - {
     short: mix everything,

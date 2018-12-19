@@ -1,10 +1,19 @@
 recipe: Name
 
 description: ""
-source: ""
 date_created: 20YY-mm-dd
 last_updated: 20YY-mm-dd
 image: ''
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  type: 'adapted',
+  name: , # recipe name or whole citation
+  author: ,
+  publication: '',
+  url: '',
+  date: 20YY-mm-dd
+}
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)

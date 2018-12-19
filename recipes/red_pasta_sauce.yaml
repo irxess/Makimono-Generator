@@ -1,7 +1,7 @@
 recipe: Red Pasta Sauce
 
 description: "Student's Milanese"
-source: "Simon's dad"
+source: {name: "Simon's dad"}
 date_created: 2018-11-19
 last_updated: 2018-11-28
 image: red_pasta_sauce

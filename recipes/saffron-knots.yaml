@@ -1,7 +1,16 @@
 recipe: Saffron Knots
 
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  type: 'adapted',
+  name: "Safranknuter med smør og vaniljefyll", # recipe name or whole citation
+  author: Kristine Ilstad,
+  publication: 'Det søte liv',
+  url: "https://www.detsoteliv.no/oppskrift/safranknuter-med-smor-og-vaniljefyll",
+  date: 2018-12-18
+}
+
 description: ""
-source: "https://www.detsoteliv.no/oppskrift/safranknuter-med-smor-og-vaniljefyll"
 date_created: 2018-12-17
 last_updated: 2018-12-17
 image: 'saffron_knots'

@@ -1,7 +1,11 @@
 recipe: Brown cheese sauce
 
 description: A savory sauce with tones of juniper and sweetness, making it good for dishes based on game meat. Or simply when you'd use a gravy.
-source: "Simons dad"
+
+source: {
+  name: "Simon's dad", # recipe name or whole citation
+}
+
 date_created: 2018-10-20
 last_updated: 2018-12-03
 image: brown_cheese_sauce

@@ -4,6 +4,16 @@ date_created: 2018-11-26
 date_updated: 2018-11-26
 image: muffins_blueberry_basil
 
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  type: 'inspired',
+  name: Blueberry Basil Muffins, # recipe name or whole citation
+  author: Liz,
+  publication: 'OhMyVeggies.com',
+  url: 'https://ohmyveggies.com/blueberry-basil-muffins/',
+  date: 2018-12-18
+}
+
 steps:
   - {
     short: "Melt butter",
