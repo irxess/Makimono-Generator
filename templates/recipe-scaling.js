@@ -1,6 +1,7 @@
 function resetScaling(){
 	document.getElementById('percent-number').value = 100;
 	document.getElementById('percent-slider').value = 100;
+	document.getElementById('ingredient-inputted-amount').value = "";
 	var amountElements = document.getElementsByClassName('amount');
 	for (var i = 0; i < amountElements.length; i++) {
 		amountElements[i].textContent = amountElements[i].getAttribute('data-original-amount');
