@@ -6,6 +6,7 @@
 @import 'ingredients-overview';
 @import 'timeline';
 @import 'scaling-form';
+@import 'recipe';
 
 header {
   background-color: @grey;
@@ -128,89 +129,6 @@ hr {
 .media-below-almost-cutoff-content {
   #content {
     margin-top: 0em;
-  }
-}
-
-#intro {
-  img {
-    width: 100%;
-  }
-  h1 {
-    font-size: 2em;
-    margin-left: 0.5em;
-    margin-bottom: 0.5em;
-  }
-}
-
-.media-print-recipe-intro{
-  #intro{
-    img{
-      display: none;
-    }
-  }
-}
-
-#steps{
-  padding-bottom: 0.5em; // Ensures that there is a bit of breathing room after the last step, which helps the icons not overflow.
-}
-
-svg {
-  circle {
-    stroke-width: 0em; /* 0.1em */
-    //fill: @grey;
-    &.hot      {fill: @red-dark;}
-    &.warm     {fill: @orange-dark;}
-    &.room     {fill: @yellow-dark;}
-    &.cold     {fill: @lightblue-dark;}
-    &.freezing {fill: @blue-dark;}
-    &.done     {fill: @green-dark;}
-  }
-}
-
-.step-ingredient-list {
-  ul {
-    background: @super-light-grey;
-    padding-top: 0;
-    flex-direction: row;
-    flex: 1;
-    flex-wrap: wrap;
-    li {
-      display: inline-block;
-      margin-right: 1.5em;
-    }
-  }
-}
-
-.description-container {
-  display: flex;
-  margin-top: 0.5em;
-  padding-bottom: 0.3em;
-}
-
-.step-icon {
-  align: right;
-  width: 1.5em;
-  height: 1.5em;
-  margin-left: 5px;
-  margin-right: 5px;
-  img {
-    width: 1.5em;
-    padding: 3px;
-    padding-left: 20px;
-  }
-}
-
-.step-description {
-  flex: 1;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-
-.media-print-steps{
-  #steps{
-    .step{
-      page-break-inside: avoid;
-    }
   }
 }
 
