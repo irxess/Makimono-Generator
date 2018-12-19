@@ -50,6 +50,13 @@ body {
   }
 }
 
+.media-print-body{
+  body{
+    display: block;
+    overflow-y:visible;
+  }
+}
+
 #three-col {
   .three-col;
 }
@@ -85,20 +92,6 @@ hr {
   background-color: @background-dark;
   border-color: @background-dark;
   margin-bottom: 0;
-}
-
-.step-ingredient-list {
-  ul {
-    background: @super-light-grey;
-    padding-top: 0;
-    flex-direction: row;
-    flex: 1;
-    flex-wrap: wrap;
-    li {
-      display: inline-block;
-      margin-right: 1.5em;
-    }
-  }
 }
 
 #empty-col-left {
@@ -150,6 +143,14 @@ hr {
   }
 }
 
+.media-print-recipe-intro{
+  #intro{
+    img{
+      display: none;
+    }
+  }
+}
+
 #steps{
   padding-bottom: 0.5em; // Ensures that there is a bit of breathing room after the last step, which helps the icons not overflow.
 }
@@ -181,6 +182,20 @@ svg {
   display: none;
 }
 
+.step-ingredient-list {
+  ul {
+    background: @super-light-grey;
+    padding-top: 0;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: wrap;
+    li {
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+  }
+}
+
 .description-container {
   display: flex;
   margin-top: 0.5em;
@@ -204,6 +219,14 @@ svg {
   flex: 1;
   padding-left: 0.5em;
   padding-right: 0.5em;
+}
+
+.media-print-steps{
+  #steps{
+    .step{
+      page-break-inside: avoid;
+    }
+  }
 }
 
 #info {

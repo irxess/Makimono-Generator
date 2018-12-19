@@ -27,6 +27,7 @@
     }
   }
 }
+
 .media-below-tiny-ingredients-table {
   #ingredients{
     #ingredients-table{
@@ -41,6 +42,18 @@
               margin-left: 1em;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+.media-print-ingredients-table {
+  #ingredients{
+    #ingredients-table{
+      table {
+        tr, td{
+            page-break-inside: avoid;
         }
       }
     }
