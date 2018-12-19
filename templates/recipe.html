@@ -49,9 +49,11 @@
               {% endif %}
             </td>
             <td class="name">{{ingredient.name}}</td>
-            {% if ingredient.comment %}
-              <td class="comment">{{ingredient.comment}}</td>
-            {% endif %}
+            <td class="comment">
+              {% if ingredient.comment %}
+                {{ingredient.comment}}
+              {% endif %}
+            </td>
           </tr>
         {% endfor %}
       </table>
