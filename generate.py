@@ -17,6 +17,8 @@ from data import *
 
 # Add description on hover in browse all?
 
+def remove_empty_lines(string):
+    return "\n".join([s for s in string.splitlines() if s.strip()])
 
 
 class Thumbnail:
@@ -87,6 +89,7 @@ def generate_files_for_recipe(name):
         all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
+    output = remove_empty_lines(output)
     name_for_url = get_url_friendly_name(name)
     with open('publish/recipes/' + name_for_url + '.html', 'w') as f:
         print(output, file=f)
@@ -144,6 +147,7 @@ def generate_browse_page(thumbnails):
             all_recipes_path='all/page-1.html',
             about_path='about.html'
         )
+        output = remove_empty_lines(output)
         with open('publish/all/page-'+str(i+1)+'.html', 'w') as f:
             print(output, file=f)
         current_page.current = False
@@ -162,7 +166,7 @@ def generate_about_page():
         all_recipes_path='all/page-1.html',
         about_path='about.html'
     )
-
+    output = remove_empty_lines(output)
     with open('publish/about.html', 'w') as f:
         print(output, file=f)
 
