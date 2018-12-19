@@ -38,7 +38,7 @@ def create_sorted_ingredient_overview(recipe):
         for value in kv[1]:
             amount = value[0]
             if amount == 0:
-                amount = None
+                amount = ''
             ingr_overview = IngredientsOverview(name=name, total_amount=amount, unit=value[1], comment=value[2])
             recipe.ingredients.append(ingr_overview)
 
