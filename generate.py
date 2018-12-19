@@ -199,7 +199,7 @@ if __name__ == "__main__":
     print("Generating CSS")
     if not os.path.isdir('publish/css'):
         os.makedirs('publish/css')
-    compiled_css = lesscpy.compile(open('templates/styles/main.less', 'r'))
+    compiled_css = lesscpy.compile(open('templates/styles/main.less', 'r'), xminify=True)
     with open('publish/css/main.css', 'w') as f:
         print(compiled_css, file=f)
 
