@@ -129,6 +129,9 @@
                     {{ingredient.unit}}
                   </b>
                   {{ ingredient.name }}
+                  {% if ingredient.comment %}
+                    | <span class="comment">{{ingredient.comment}}</span>
+                  {% endif %}
                 </li>
               {% endfor %}
             </ul>
