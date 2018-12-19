@@ -26,13 +26,14 @@
   {% with nav_type='mobile-nav' %}{% include 'nav.html' %}{% endwith %}
 
   <div id="three-col">
-  <div id="empty-col-left"></div>
+    <div id="empty-col-left"></div>
 
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
 
-  <div id="empty-col-right"></div>
+    <div id="empty-col-right"></div>
 
+  </div> <!-- end three-col -->
   {% with nav_type='mobile-nav' %}{% include 'nav.html' %}{% endwith %}
   {% include 'footer.html' %}
 </body>
