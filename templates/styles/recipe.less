@@ -46,7 +46,7 @@ svg {
         display: inline-block;
         margin-right: 1.5em;
         .comment {
-          font-style: italic;
+          display: none;
         }
       }
     }
@@ -67,6 +67,10 @@ svg {
             li{
               display: block;
               margin-right: 0;
+              .comment {
+                display: initial;
+                font-style: italic;
+              }
             }
           }
         }
