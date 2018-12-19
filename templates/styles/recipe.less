@@ -34,16 +34,44 @@ svg {
   }
 }
 
-.step-ingredient-list {
-  ul {
-    background: @super-light-grey;
-    padding-top: 0;
-    flex-direction: row;
-    flex: 1;
-    flex-wrap: wrap;
-    li {
-      display: inline-block;
-      margin-right: 1.5em;
+.ingredient-container{
+  background: @super-light-grey;
+  .step-ingredient-list {
+    ul {
+      padding-top: 0;
+      flex-direction: row;
+      flex: 1;
+      flex-wrap: wrap;
+      li {
+        display: inline-block;
+        margin-right: 1.5em;
+      }
+    }
+  }
+}
+
+.media-above-wider-step{
+  #steps{
+    hr{
+      margin-top: 0;
+    }
+    .step{
+      display: grid;
+      grid-template-columns: 25% auto;
+      .ingredient-container{
+        .step-ingredient-list{
+          ul{
+            li{
+              display: block;
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      .description-container{
+        grid-column-start: 2;
+        padding-bottom: 0.75em;
+      }
     }
   }
 }
