@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dilution/thinning out calcluator</title>
+	<script type="text/javascript">
+		function roundNumber(number, decimalPlaces) {
+			return +(Math.round(number + "e+" + decimalPlaces)  + "e-" + decimalPlaces);
+		}
+		function calculatePercentDilutionFixedStrongerLiquid(){
+			var strongerLiquidAmount = document.getElementById('concentrated_amount').value;
+			var strongerLiquidPercentage = document.getElementById('concentrated_percent').value;
+			var weakerLiquidPercentage = document.getElementById('diluted_percent').value;
+			var targetPercentage = document.getElementById('target_percent').value;
+
+			// Calculation:
+			// strongPercent*strongAmount + weakPercent*weakAmount = targetPercent * targetAmount
+			// strongPercent*strongAmount + weakPercent*weakAmount = targetPercent * (strongAmount + weakAmount)
+			// strongPercent*strongAmount + weakPercent*weakAmount = targetPercent*strongAmount + targetPercent*weakAmount
+			// strongPercent*strongAmount - targetPercent*strongAmount = targetPercent*weakAmount - weakPercent*weakAmount
+			// strongPercent*strongAmount - targetPercent*strongAmount = (targetPercent - weakPercent) * weakAmount
+			// (strongPercent*strongAmount - targetPercent*strongAmount)/(targetPercent - weakPercent) = weakAmount
+			// ((strongPercent - targetPercent)*strongAmount)/(targetPercent - weakPercent) = weakAmount
+
+			var weakerLiquidRequiredAmount =
+				((strongerLiquidAmount - targetPercentage) * strongerLiquidPercentage)
+				/(targetPercentage - weakerLiquidPercentage);
+
+			var roundedRequiredAmount = roundNumber(weakerLiquidRequiredAmount, 2);
+
+			var resultingAmount = roundNumber(Number(weakerLiquidRequiredAmount) + Number(strongerLiquidAmount), 2);
+			var weakerLiquidRequiredAmountField = document.getElementById('target_amount');
+			var resultingAmountField = document.getElementById('final_amount');
+			weakerLiquidRequiredAmountField.value = roundedRequiredAmount;
+			resultingAmountField.value = resultingAmount;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		I have
+		<input type="number" id="concentrated_amount" step="any" />ml
+		that is
+		<input
+			type="number"
+			id="concentrated_percent"
+			min="0"
+			step="any"
+		/>%
+		I want to thin it out using another liquid that has
+		<input
+			type="number"
+			id="diluted_percent"
+			min="0"
+			step="any"
+		/>%
+		to get a result that is
+		<input
+			type="number"
+			id="target_percent"
+			min="0"
+			step="any"
+		/>%
+		<button type="button" onclick="calculatePercentDilutionFixedStrongerLiquid()">Figure out needed amount</button>
+		For this I need to add
+		<input type="number" id="target_amount" step="any" disabled />ml
+		of the weaker liquid. In total, this leaves me with
+		<input type="number" id="final_amount" step="any" disabled/>ml.
+	</form>
+</body>
+</html>
