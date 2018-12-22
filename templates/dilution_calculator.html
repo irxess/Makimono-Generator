@@ -52,6 +52,12 @@
 <body>
 	<h1>Dilution calculator</h1>
 	<p>Here is a small tool for diluting liquids to get a result having a desired strength.</p>
+	<p>Important things to note about the utility:</p>
+	<ul>
+		<li>The units used for amount and concentration can be anything, it still works out the same. That is, it doesn't matter if the concentration is in grams per liter or percent, or if the amount is in grams, liters, etc.</li>
+		<li>The amounts have to be of a consistent type. If your total desired amount is in milliliters, the suplied amounts have to be milliliters.</li>
+		<li>The concentrations have to be of a consistent type. If you are using percent for the concentration, all the concentration fields have to be in percent.</li>
+	</ul>
 	<form>
 		<button type="button" onclick="clearForm()">Clear all values</button>
 		<fieldset>
@@ -82,5 +88,20 @@
 			<button type="button" onclick="findNeededAmounts()">Figure out amounts needed</button>
 		</fieldset>
 	</form>
+	<section id="examples">
+		<h2>Examples</h2>
+		<h3>Diluting vinegar</h3>
+			<ol>
+				<li>50 ml vinegar * 30% acid</li>
+				<li>add 100 ml water * 0% acid</li>
+				<li>yields 150 ml vinegar * 10% acid</li>
+			</ol>
+			<h3>Using butter and milk to get liquid with same fat percentage as cream</h3>
+			<ol>
+				<li>butter - amount 52.55 grams, concentration 82% fat</li>
+				<li>milk - amount 197.45 grams, concentration 3.5% fat</li>
+				<li>gives the amount 250 grams, with the concentration 20% fat</li>
+			</ol>
+	</section>
 </body>
 </html>
