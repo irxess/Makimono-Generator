@@ -53,19 +53,34 @@
 	<h1>Dilution calculator</h1>
 	<p>Here is a small tool for diluting liquids to get a result having a desired strength.</p>
 	<form>
-		<button type="button" onclick="clearForm()">clear out values</button>
-		<input type="number" id="amount_1" min="0" step="any" />
-		*
-		<input type="number" id="concentration_1" min="0" step="any" />
+		<button type="button" onclick="clearForm()">Clear all values</button>
+		<fieldset>
+			<legend>First thing you want to mix</legend>
+			<label for="amount_1">Amount</label>
+			<input type="number" id="amount_1" min="0" step="any" disabled />
+			*
+			<label for="concentration_1">Concentration (Strength of one of the things you are mixing)</label>
+			<input type="number" id="concentration_1" min="0" step="any" />
+		</fieldset>
 		+
-		<input type="number" id="amount_2" min="0" step="any" />
-		*
-		<input type="number" id="concentration_2" min="0" step="any" />
+		<fieldset>
+			<legend>Other thing you want to mix</legend>
+			<label for="amount_2">Amount</label>
+			<input type="number" id="amount_2" min="0" step="any" disabled />
+			*
+			<label for="concentration_2">Concentration (Strength of the other you are mixing)</label>
+			<input type="number" id="concentration_2" min="0" step="any" />
+		</fieldset>
 		=
-		<input type="number" id="amount_target" min="0" step="any" />
-		*
-		<input type="number" id="concentration_final" min="0" step="any" />
-		<button type="button" onclick="findNeededAmounts()">Figure out needed amounts</button>
+		<fieldset>
+			<legend>Resulting mixture</legend>
+			<label for="amount_target">Desired total amount</label>
+			<input type="number" id="amount_target" min="0" step="any" />
+			*
+			<label for="concentration_final">Final concentration (Strength you want the final mixture to have)</label>
+			<input type="number" id="concentration_final" min="0" step="any" />
+			<button type="button" onclick="findNeededAmounts()">Figure out amounts needed</button>
+		</fieldset>
 	</form>
 </body>
 </html>
