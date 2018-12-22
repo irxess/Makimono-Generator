@@ -6,32 +6,46 @@
 		function roundNumber(number, decimalPlaces) {
 			return +(Math.round(number + "e+" + decimalPlaces)  + "e-" + decimalPlaces);
 		}
-		function calculatePercentDilutionFixedStrongerLiquid(){
-			var strongerLiquidAmount = document.getElementById('concentrated_amount').value;
-			var strongerLiquidPercentage = document.getElementById('concentrated_percent').value;
-			var weakerLiquidPercentage = document.getElementById('diluted_percent').value;
-			var targetPercentage = document.getElementById('target_percent').value;
-
+		function calculateAmountIfTargetFixed({concentration, concentrationOther, concentrationFinal, amountTotal} = {}) {
+			amount = amountTotal * (concentrationFinal - concentrationOther)/(concentration - concentrationOther);
+			return roundNumber(amount, 2)
 			// Calculation:
-			// strongPercent*strongAmount + weakPercent*weakAmount = targetPercent * targetAmount
-			// strongPercent*strongAmount + weakPercent*weakAmount = targetPercent * (strongAmount + weakAmount)
-			// strongPercent*strongAmount + weakPercent*weakAmount = targetPercent*strongAmount + targetPercent*weakAmount
-			// strongPercent*strongAmount - targetPercent*strongAmount = targetPercent*weakAmount - weakPercent*weakAmount
-			// strongPercent*strongAmount - targetPercent*strongAmount = (targetPercent - weakPercent) * weakAmount
-			// (strongPercent*strongAmount - targetPercent*strongAmount)/(targetPercent - weakPercent) = weakAmount
-			// ((strongPercent - targetPercent)*strongAmount)/(targetPercent - weakPercent) = weakAmount
+			// c1*a1 + c2*a2 = cf * at
+			// a1*c1 + (at - a1)*c2 = at*cf
+			// a1*c1 -a1*c2 + at*c2 = at*cf
+			// a1*(c1 - c2) = at*(cf - c2)
+			// a1 = at*(cf-c2)/(c1-c2)
+		}
+		function calculateAmountIfOtherFixed({concentration, concentrationOther, concentrationFinal, amountOther} = {}){
+			amount = amountOther * (concentrationOther - concentrationFinal) / (concentrationFinal - concentration);
+			return roundNumber(amount, 2)
+			// Calculation:
+			// c1*a1 + c2*a2 = cf * at
+			// c1*a1 + c2*a2 = cf * (a1 + a2)
+			// c1*a1 + c2*a2 = cf*a1 + cf*a2
+			// c1*a1 - cf*a1 = cf*a2 - c2*a2
+			// c1*a1 - cf*a1 = (cf - c2) * a2
+			// (c1*a1 - cf*a1)/(cf - c2) = a2
+			// ((c1 - cf)*a1)/(cf - c2) = a2
+		}
+		function findNeededAmounts() {
+			var a1 = document.getElementById('amount_1');
+			var c1 = document.getElementById('concentration_1');
+			var a2 = document.getElementById('amount_2');
+			var c2 = document.getElementById('concentration_2');
+			var at = document.getElementById('amount_target');
+			var cf = document.getElementById('concentration_final');
 
-			var weakerLiquidRequiredAmount =
-				((strongerLiquidAmount - targetPercentage) * strongerLiquidPercentage)
-				/(targetPercentage - weakerLiquidPercentage);
-
-			var roundedRequiredAmount = roundNumber(weakerLiquidRequiredAmount, 2);
-
-			var resultingAmount = roundNumber(Number(weakerLiquidRequiredAmount) + Number(strongerLiquidAmount), 2);
-			var weakerLiquidRequiredAmountField = document.getElementById('target_amount');
-			var resultingAmountField = document.getElementById('final_amount');
-			weakerLiquidRequiredAmountField.value = roundedRequiredAmount;
-			resultingAmountField.value = resultingAmount;
+			a1.value = calculateAmountIfTargetFixed({concentration: c1.value, concentrationOther: c2.value, concentrationFinal: cf.value, amountTotal: at.value });
+			a2.value = calculateAmountIfTargetFixed({concentration: c2.value, concentrationOther: c1.value, concentrationFinal: cf.value, amountTotal: at.value });
+		}
+		function clearForm() {
+			document.getElementById('amount_1').value = '';
+			document.getElementById('concentration_1').value = '';
+			document.getElementById('amount_2').value = '';
+			document.getElementById('concentration_2').value = '';
+			document.getElementById('amount_target').value = '';
+			document.getElementById('concentration_final').value = '';
 		}
 	</script>
 </head>
@@ -39,34 +53,19 @@
 	<h1>Dilution calculator</h1>
 	<p>Here is a small tool for diluting liquids to get a result having a desired strength.</p>
 	<form>
-		I have
-		<input type="number" id="concentrated_amount" step="any" />ml
-		that is
-		<input
-			type="number"
-			id="concentrated_percent"
-			min="0"
-			step="any"
-		/>%
-		I want to thin it out using another liquid that has
-		<input
-			type="number"
-			id="diluted_percent"
-			min="0"
-			step="any"
-		/>%
-		to get a result that is
-		<input
-			type="number"
-			id="target_percent"
-			min="0"
-			step="any"
-		/>%
-		<button type="button" onclick="calculatePercentDilutionFixedStrongerLiquid()">Figure out needed amount</button>
-		For this I need to add
-		<input type="number" id="target_amount" step="any" disabled />ml
-		of the weaker liquid. In total, this leaves me with
-		<input type="number" id="final_amount" step="any" disabled/>ml.
+		<button type="button" onclick="clearForm()">clear out values</button>
+		<input type="number" id="amount_1" min="0" step="any" />
+		*
+		<input type="number" id="concentration_1" min="0" step="any" />
+		+
+		<input type="number" id="amount_2" min="0" step="any" />
+		*
+		<input type="number" id="concentration_2" min="0" step="any" />
+		=
+		<input type="number" id="amount_target" min="0" step="any" />
+		*
+		<input type="number" id="concentration_final" min="0" step="any" />
+		<button type="button" onclick="findNeededAmounts()">Figure out needed amounts</button>
 	</form>
 </body>
 </html>
