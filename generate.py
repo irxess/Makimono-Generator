@@ -170,6 +170,22 @@ def generate_about_page():
     with open('publish/about.html', 'w') as f:
         print(output, file=f)
 
+def generate_dilution_calculator():
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+    template = env.get_template('dilution_calculator.html')
+    if not os.path.isdir('publish'):
+        os.makedirs('publish')
+
+    output = template.render(
+        path_to_base='.',
+        all_recipes_path='all/page-1.html',
+        about_path='about.html'
+    )
+    output = remove_empty_lines(output)
+    with open('publish/dilution_calculator.html', 'w') as f:
+        print(output, file=f)
+
 
 if __name__ == "__main__":
     thumbnails = []
@@ -195,6 +211,9 @@ if __name__ == "__main__":
     print("Generating about-page")
     generate_about_page()
     shutil.copy('publish/about.html', 'publish/index.html')
+
+    print("Generating dilution calculator page")
+    generate_dilution_calculator()
 
     print("Generating CSS")
     if not os.path.isdir('publish/css'):

@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Dilution/mixing calcluator</title>
+{% extends 'base.html' %}
+{% block title %}Dilution/mixing calcluator{% endblock %}
+{% block meta_description %}Dilution/mixing calcluator{% endblock %}
+{% block page_specific_scripts %}
 	<script type="text/javascript">
 		function roundNumber(number, decimalPlaces) {
 			return +(Math.round(number + "e+" + decimalPlaces)  + "e-" + decimalPlaces);
@@ -48,8 +48,9 @@
 			document.getElementById('concentration_final').value = '';
 		}
 	</script>
-</head>
-<body>
+{% endblock %}
+{% block content %}
+<main id="content">
 	<h1>Dilution calculator</h1>
 	<p>Here is a small tool for diluting liquids to get a result having a desired strength.</p>
 	<p>Important things to note about the utility:</p>
@@ -103,5 +104,5 @@
 				<li>gives the amount 250 grams, with the concentration 20% fat</li>
 			</ol>
 	</section>
-</body>
-</html>
+</main>
+{% endblock %}
