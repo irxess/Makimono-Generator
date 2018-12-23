@@ -1,0 +1,147 @@
+recipe: Lenja Pita
+
+description: "Lazymans pie, a simplistic serbian interpretation of the apple pie."
+date_created: 2018-12-23
+image: ''
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: "Simon's mom", # recipe name or whole citation
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Split eggs",
+    long: "Save the eggwhites for later, and put the egg yolks in a larger bowl you will use for mixing the rest of the ingredients",
+    ingredients: [ {name: egg, amount: 200, unit: g, comment: 'About 4 medium sized eggs of 50g each'} ],
+    active-time: 3,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Add sugar",
+    long: "Add sugar to the egg yolks and mix it in",
+    ingredients: [ {name: sugar, amount: 150, unit: g,} ],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+    dependencies: [-1],
+  }
+  - {
+    short: "Soften butter",
+    long: "Soften the butter so that you can easily mix it with the egg yolks and sugar. Make sure that it is not too hot when you add it, or you will be eating cake with chunks of boiled egg.",
+    ingredients: [ {name: butter, amount: 250, unit: g, comment: 'Some people swear to using unsalted butter for this recipe, personally I like using salted butter for the flavor enhancing effect of the salt in addittion to the a bit sharper flavor.'} ],
+    active-time: 1,
+    passive-time: 1,
+    type: bowl,
+    temp: warm,
+  }
+  - {
+    short: "Add the softened butter",
+    long: "Add the softened butter to the sugar/egg yolk mixture",
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+    dependencies: [-1, -2],
+  }
+  - {
+    short: "Add flour",
+    long: "Mix in flour untill you have a smooth dough",
+    ingredients: [ {name: flour, amount: 300, unit: g,} ],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+    dependencies: [-1],
+  }
+  - {
+    short: "Beat eggwhites",
+    long: "Beat the eggwhites as good as you can, preferrably untill they are stiff (usually not achievable if you are not using a machine for the beating). This step is important, because most of the fluffyness in the resulting cake will come from the air trapped in the eggwhites in this step.",
+    active-time: 3,
+    passive-time: 0,
+    type: km,
+    temp: room,
+    dependencies: [-5],
+  }
+  - {
+    short: "Fold in the eggwhites",
+    long: "Carefully fold the eggwhites into the dought. Remember that the more air you squeeze out at this step, the less fluffy the resulting cake becomes.",
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+    dependencies: [-1, -2],
+  }
+  - {
+    short: "Peel and cut apples",
+    long: "The apples will go into the filling. If you want a more chunky filling, cut them up roughly. If you want a really smooth apple filling, consider shredding the apples.",
+    ingredients: [ {name: apples, amount: 800, unit: g, comment: 'About 8 apples'} ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Put apples in frying pan and season them",
+    long: ,
+    ingredients: [
+      {name: sugar, amount: 25, unit: g, comment: 'About 2 tablespoons'},
+      {name: vanilla powder, amount: 4, unit: g, comment: 'Optional, about one teaspoon'},
+      {name: cinnamon, amount: 3.5, unit: g, comment: 'Optional, about one teaspoon'},
+    ],
+    active-time: 1,
+    passive-time: 0,
+    type: fry,
+    temp: room,
+    dependencies: [-1],
+  }
+  - {
+    short: "Fry the apples",
+    long: "This has two purposes. Firstly it will draw out water from the apples, so that the dough around the apples doesn't become soggy. Secondly, depending on how finely you chopped the apples, they will become very soft, perhaps almost a smooth mass. It also helps the sugar and spices draw a bit better in. Depending on your frying pan you might need some fat to make this go smoother, in which case I recoment using some butter.",
+    ingredients: [ {name: butter, amount: 15, unit: g, comment: 'Optional, for frying, about 1 tbsp'} ],
+    active-time: 7,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+    dependencies: [-1],
+  }
+  - {
+    short: "Butter cake pan",
+    long: "You can also use neutral cooking oil, but I preffer the taste of butter.",
+    ingredients: [ {name: butter, amount: 15, unit: g, comment: 'About 1 tbsp'} ],
+    active-time: 3,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Pre-heat the oven",
+    long: "To about 150 deg c",
+    active-time: 1,
+    passive-time: 10,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Assemble the cake",
+    long: "Put about two thirds of the dough in the bottom of th cake pan. Cover it completely with the apple filling. Place the last third of the dough on top so that it agan covers the whole of the cake.",
+    active-time: 3,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+    dependencies: [-2, -3, -6],
+  }
+  - {
+    short: "Bake the cake",
+    long: "For about 40 minutes. If you want, you can turn up the heat a bit the last 5 - 10 minutes.",
+    active-time: 0,
+    passive-time: 40,
+    type: oven,
+    temp: hot,
+    dependencies: [-1, -2],
+  }
