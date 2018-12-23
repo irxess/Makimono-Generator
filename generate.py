@@ -125,7 +125,7 @@ def generate_browse_page(thumbnails):
     thumbnails.sort(key=lambda t: t.updated, reverse=True) # Newest first
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    template = env.get_template('list_of_all_recipes.html')
+    template = env.get_template('list_of_recipes.html')
     if not os.path.isdir('publish/all'):
         os.makedirs('publish/all')
 
