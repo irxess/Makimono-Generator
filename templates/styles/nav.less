@@ -7,11 +7,32 @@
     padding: 0;
     overflow: hidden;
     background-color: @green;
-  }
-  li {
-    a {
-      &:hover {
+    li {
+      ul{
+        display: none;
+        visibility: hidden;
+        position: absolute;
+        z-index: 2;
+        li{
+          clear: both;
+          width: 100%;
+        }
+        &:hover{
+          visibility: visible;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      &:hover, &:focus-within{
         background-color: @green-light;
+        &>ul{
+          visibility: visible;
+          display: flex;
+          flex-direction: column;
+        }
+        a{
+          outline: none;
+        }
       }
     }
   }
@@ -29,15 +50,15 @@
     ul {
       li {
         float: left;
-      }
-      a {
-        display: inline-block;
-        color: @text-color-dark;
-        text-align: center;
-        // padding: 14px 16px;
-        padding: 0.2em;
-        text-decoration: none;
-        width: 12em;
+        a {
+          color: @text-color-dark;
+          text-decoration: none;
+          display: inline-block;
+          text-align: center;
+          padding: 0.2em;
+          // padding: 14px 16px;
+          width: 12em;
+        }
       }
     }
   }
@@ -61,13 +82,17 @@
         &:nth-child(n+2) { // Applies to all elements except the first
           border-top: 1px solid black;
         }
+        display: flex;
+        flex-direction: column;
+        padding: 4px 16px;
+        font-size: 1.2em;
         a {
-          display: flex;
-          flex-direction: column;
           color: @text-color-dark;
-          padding: 4px 16px;
           text-decoration: none;
-          font-size: 1.2em;
+        }
+        ul{
+          position: initial;
+          font-size: 0.75em;
         }
       }
     }

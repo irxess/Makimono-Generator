@@ -87,6 +87,7 @@ def generate_files_for_recipe(name):
         r=recipe,
         path_to_base='..',
         all_recipes_path='all/page-1.html',
+        dilution_calculator_path='dilution_calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -145,6 +146,7 @@ def generate_browse_page(thumbnails):
             next_page = next_page,
             path_to_base='..',
             all_recipes_path='all/page-1.html',
+            dilution_calculator_path='dilution_calculator.html',
             about_path='about.html'
         )
         output = remove_empty_lines(output)
@@ -164,6 +166,7 @@ def generate_about_page():
     output = template.render(
         path_to_base='.',
         all_recipes_path='all/page-1.html',
+        dilution_calculator_path='dilution_calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -180,6 +183,7 @@ def generate_dilution_calculator():
     output = template.render(
         path_to_base='.',
         all_recipes_path='all/page-1.html',
+        dilution_calculator_path='dilution_calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
