@@ -109,7 +109,7 @@ steps:
     short: "Eggwash",
     long: "Beat an egg in a bowl, and use a brush to coat the outside of the rolls with a thin layer of egg.",
     ingredients: [
-      {amount: 15, unit: g, name: egg, comment: ''},
+      {amount: 15, unit: g, name: egg, comment: 'One egg is about 50 g'},
     ],
     dependencies: [-2],
     active-time: 1,
