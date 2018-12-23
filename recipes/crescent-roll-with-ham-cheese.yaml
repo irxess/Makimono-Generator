@@ -1,0 +1,128 @@
+recipe: Crescent Rolls with Ham and Cheese
+
+description: "An easy, neutral yeast-dough which can be combined with many different fillings. This variant is based on a Norwegian horn-recipe. These small rolls are best when they're still warm - but don't eat them right out of the oven, or you will burn yourself."
+date_created: 2018-12-23
+last_updated: 2018-12-23
+image: 'crescent_rolls_ham_cheese'
+
+result: {amount: 16, name: rolls}
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  type: 'inspired',
+  name: Horn, # recipe name or whole citation
+  author: ,
+  publication: 'Damms Store Bakebok (3. opplag)',
+  url: '',
+  date: 2004
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Melt butter in milk",
+    long: "Use the microwave or a saucepan to melt the butter and heat the milk a little bit. We don't want the milk to become too hot, so stop the heating as soon as the butter is melted.",
+    ingredients: [
+      {amount: 100, unit: g, name: butter, comment: ''},
+      {amount: 100, unit: g, name: milk, comment: ''},
+    ],
+    active-time: 2,
+    passive-time: 2,
+    type: bowl,
+    temp: warm,
+  }
+  - {
+    short: "Add yeast",
+    long: "When the milk is a little warm to touch, but not hot, add yeast to the milk and stir.",
+    ingredients: [
+      {amount: 20, unit: g, name: yeast, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Mix dry ingredients",
+    long: "Add the dry ingredients to a bowl. Use your kitchen machine bowl if you have one.",
+    ingredients: [
+      {amount: 200, unit: g, name: all-purpose flour, comment: ''},
+      {amount: 2, unit: tbsp, name: suger, comment: ''},
+      {amount: 1, unit: tsp, name: salt, comment: ''},
+    ],
+    active-time: 1,
+    passive-time: 1,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Mix and knead",
+    long: "Add the milk mixture to the dry ingredients. Knead until smooth. If the dough is a bit sticky, add a little flour. If it's too dry, add a splash of milk.",
+    dependencies: [-1, -2],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Proof",
+    long: "Cover the bowl with a towel or plastic wrap, and leave the dough to proof for about 45 minutes.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 40,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Shape the dough",
+    long: "Divide the dough into two balls. Push one of them flat, then roll to a thin circle. Cut the circle into 8 triangles. Place one slice of ham and one slice of cheese on each of the triangles. Roll the triangles starting from the outside edge, towards the middle of the circle, one triagle at a time. Bend the edges a little, to get a rounder shape on the rolls. Place the shaped rolls onto a sheet of baking paper on a wire rack. Repeat with the second ball of dough after the first one.",
+    ingredients: [
+      {amount: 16, unit: slices, name: ham, comment: ''},
+      {amount: 16, unit: slices, name: cheese, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 1,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Second proof",
+    long: "Let the shaped rolls proof for 45 minutes.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 45,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Preheat the oven",
+    long: "A few minutes before the rolls are done proofing, turn on the oven to 180 degrees Celsius (convection). You can use 200 degrees if you don't have a convection oven.",
+    active-time: 1,
+    passive-time: 0,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Eggwash",
+    long: "Beat an egg in a bowl, and use a brush to coat the outside of the rolls with a thin layer of egg.",
+    ingredients: [
+      {amount: 15, unit: g, name: egg, comment: ''},
+    ],
+    dependencies: [-2],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Bake",
+    long: "Bake the rolls in the oven for about 10 minutes, until the outside has a golden brown color.",
+    dependencies: [-1, -2],
+    active-time: 1,
+    passive-time: 1,
+    type: oven,
+    temp: hot,
+  }
