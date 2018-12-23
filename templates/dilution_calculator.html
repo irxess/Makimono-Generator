@@ -46,6 +46,14 @@
 			document.getElementById('concentration_2').value = '';
 			document.getElementById('amount_target').value = '';
 			document.getElementById('concentration_final').value = '';
+			var nameFields = document
+				.getElementById('dilution-form')
+				.elements['name']
+				.forEach(
+					function(field){
+						field.value = '';
+					}
+				);
 		}
 	</script>
 {% endblock %}
@@ -54,7 +62,7 @@
 	<section id="dilution-calculator-main-section">
 		<h1>Dilution calculator</h1>
 		<p>Here is a small tool for diluting liquids to get a result having a desired strength.</p>
-		<form>
+		<form id="dilution-form">
 			<button type="button" onclick="clearForm()">Clear all values</button>
 			<fieldset>
 				<legend>Resulting mixture</legend>
@@ -71,6 +79,10 @@
 			<fieldset>
 				<legend>First thing you want to mix</legend>
 				<div class="input-label-combination">
+					<label for="name">[Optional] Name</label>
+					<input type="text" id="name">
+				</div>
+				<div class="input-label-combination">
 					<label for="amount_1">Amount</label>
 					<input type="number" id="amount_1" min="0" step="any" disabled />
 				</div>
@@ -81,6 +93,10 @@
 			</fieldset>
 			<fieldset>
 				<legend>Other thing you want to mix</legend>
+				<div class="input-label-combination">
+					<label for="name">[Optional] Name</label>
+					<input type="text" name="name">
+				</div>
 				<div class="input-label-combination">
 					<label for="amount_2">Amount</label>
 					<input type="number" id="amount_2" min="0" step="any" disabled />
