@@ -22,6 +22,8 @@
     {% endif %}
   </section>
 
+  <section id="metadata">
+      <h2 hidden>metadata</h2>
   {% if r.date_updated != '' and r.date_updated != r.date_created %}
   <p class="recipe-date">
       Created on {{ r.date_created }}</br>
@@ -30,6 +32,37 @@
   {% else %}
   <p class="recipe-date">Created on {{ r.date_created }}</p>
   {% endif %}
+
+  {% if r.source is defined and r.source %}
+    {% if r.source.originality == 'source' %}
+  <p class="recipe-source">
+      Source: {{r.source.name}}
+  </p>
+    {% else %}
+  <p class="recipe-source">
+      {% if r.source.originality == 'inspired' %}
+        Ispired by
+      {% else %}
+        Adapted from
+      {% endif %}
+      {% if r.source.url %}
+        <a href="{{r.source.url}}">{{r.source.name}}</a>
+      {% else %}
+        {{r.source.name}}
+      {% endif %}
+      {% if r.source.author %}
+        by {{r.source.author}}
+      {% endif %}
+      {% if r.source.publication %}
+        @ {{r.source.publication}}
+       {% endif %}
+      {% if r.source.date != '' %}
+        <i>({{r.source.date}})</i>
+      {% endif %}
+  </p>
+    {% endif %}
+  {% endif %}
+  </section>
 
   <section id="ingredients">
     <h2>Ingredients</h2>

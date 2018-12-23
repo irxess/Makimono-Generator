@@ -100,6 +100,21 @@ def add_dependencies_to_step_data(step, step_data):
     # The desired effect is that the steps occurring earlier are processed earlier, so that earlier entries get smaller y values.
     step_data.depends_on.sort()
 
+def read_source(yaml_source):
+    name = yaml_source['name']
+    source = Source(name)
+    if 'type' in yaml_source:
+        source.originality = yaml_source['type']
+    if 'author' in yaml_source:
+        source.author = yaml_source['author']
+    if 'publication' in yaml_source:
+        source.publication = yaml_source['publication']
+    if 'url' in yaml_source:
+        source.url = yaml_source['url']
+    if 'date' in yaml_source:
+        source.date = yaml_source['date']
+    return source
+
 def read_recipe(yaml):
     name = yaml['recipe']
     created = yaml['date_created']
@@ -113,7 +128,7 @@ def read_recipe(yaml):
     if 'description' in yaml:
         recipe.description = yaml['description']
     if 'source' in yaml:
-        recipe.source = yaml['source']
+        recipe.source = read_source(yaml['source'])
     return recipe
 
 def read_recipe_into_data(name):
