@@ -2,11 +2,10 @@ TODOs
 
 * Recipe Card (Google)
 ** Generating JSON-LD
-*** Decouple YAML from internal representation
 *** Generate JSON from internal representation
 ** Update recipe information
 *** Prep time, cook time, total time
-*** Nutritial information
+*** Nutritial information - or not?
 **** Create ingredients with info about allergies and content
 Check the suitableForDiet section of the spec
 **** Allow recipes to override the ingredient allergies
@@ -20,10 +19,6 @@ Example: Deep-frying. Some oil will be left in the doughnuts, but most will rema
 *** Cuisine
 **** What can I use here?
 *** Keywords
-*** Servings
-*** isBasedOn
-This already exists, but I should show it on the website
-*** User rating - ignore this?
 * Photo's added to steps
 ** Path to the photo
 ** Add to YAML template
@@ -32,7 +27,7 @@ This already exists, but I should show it on the website
 ** Update the YAML+template
 ** Add to the code
 * Image aspect ratio's
-Recipe cards need 16x9, 4x3 and 1x1
+Recipe cards want 16x9, 4x3 and 1x1
 Pinterest needs "phone images" - possibly with text
 Pinterest also uses alt-text as description
 * Recipes consisting of multiple partial recipes
@@ -43,26 +38,11 @@ Since this in a python project, we should look into using virtualenv to manage o
 
 * Support for multiple distinct paragraphs in long description field
 
-* Recipe steps: remove need to always add `{id: }`, when most recipes only need the numbers. The parser should be able to pick up on the special cases where amount has to be addittionally specifies.
-
 * Error output form recipe compiling is daunting.
-
-* Recipe steps with only short description show a `:` at the end of the line, even though there is nothing to put after.
-
-* Recipe steps show the text `none:` in bold if there is no no short description.
-
-* Fields that can be empty should be optional altogether.
-Examples: the 'image' field in recipes, the 'depends_on' field in recipe steps
-
-* When writing a recipe, it's weird to work with ingredients id.
-When authoring the text one thinks about the ingredient in terms of the name, but the ingredient is defined by it's id. This makes for many roundtrips to the ingredient list to check what the number for the ingredient you're currently thinking of is, and then perform the check again when you remember that you have to double check that it hasn't been used in another step already. And then you ponder why we even bother with having the id in a recipe when in most cases the name is just as unique as the id.
-
 * Recipe scaling
 ** By volume
 Try to change cooking time based on heat equation
 Need to add volume used to recipes
-** By ingredient
-I ended up with 472 g pumpkin - scale recipe after that
 ** By servings
 Need to add a concept of servings first
 * Small changes
@@ -78,11 +58,6 @@ For search engines; metric recipes with simple ingredients, realistic times and 
 *** Hover/click on a timeline step shows the short description
 *** Add functionality to "check for step done" on a recipe page
 *** Research if I can optimize for "featured snippets"
-*** Create a front page
-*** Show the optional ingredient notes
-
-*** Add credits to the recipes "adapted from"
-*** Fill up the "Tags" section - or delete from the site
 *** More detailed recipes
 *** Step numbers in alt-text/description
 *** Update the text on the About-page
