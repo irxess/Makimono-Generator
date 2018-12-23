@@ -156,6 +156,23 @@ def generate_browse_page(thumbnails):
         prev_page = current_page
 
 
+def generate_all_recipes_overview_page(thumbnails):
+    thumbnails.sort(key=lambda t: t.name)
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+    template = env.get_template('all_recipes_overview.html')
+    output = template.render(
+        thumbnails = thumbnails,
+        path_to_base='.',
+        all_recipes_path='all/page-1.html',
+        dilution_calculator_path='dilution_calculator.html',
+        about_path='about.html'
+    )
+    output = remove_empty_lines(output)
+    with open('publish/all-recipes-overview.html', 'w') as f:
+        print(output, file=f)
+
+
 def generate_about_page():
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
@@ -211,6 +228,9 @@ if __name__ == "__main__":
     if not os.path.isdir('publish/all'):
         os.makedirs('publish/all')
     generate_browse_page(thumbnails)
+
+    print("Generating all recipes overview page")
+    generate_all_recipes_overview_page(thumbnails)
 
     print("Generating about-page")
     generate_about_page()

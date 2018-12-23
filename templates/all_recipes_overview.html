@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}All Recipes{% endblock %}
+{% block meta_description %}All recipes{% endblock %}
+
+{% block content %}
+<main id="content">
+  <table id="all_recipes_table">
+    <tr>
+      <th>Recipe</th><th>Created on</th><th>Updated on</th>
+    </tr>
+    {% for thumbnail in thumbnails %}
+      <tr>
+        <td>
+          <a href="{{ thumbnail.url }}">{{ thumbnail.name }}</a>
+        </td>
+        <td>
+          {% if (thumbnail.created is defined) and thumbnail.created %}
+          {{ thumbnail.created }}
+          {% endif %}
+        </td>
+        <td>
+          {% if (thumbnail.updated is defined) and thumbnail.updated %}
+          {{ thumbnail.updated }}
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</main>
+{% endblock %}
