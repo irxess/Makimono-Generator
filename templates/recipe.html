@@ -23,123 +23,125 @@
   </section>
 
   <section id="metadata">
-      <h2 hidden>metadata</h2>
-  {% if r.date_updated != '' and r.date_updated != r.date_created %}
-  <p class="recipe-date">
-      Created on {{ r.date_created }}</br>
-      Last updated on {{ r.date_updated }}
-  </p>
-  {% else %}
-  <p class="recipe-date">Created on {{ r.date_created }}</p>
-  {% endif %}
-
-  {% if r.source is defined and r.source %}
-    {% if r.source.originality == 'source' %}
-  <p class="recipe-source">
-      Source: {{r.source.name}}
-  </p>
+    <h2 hidden>metadata</h2>
+    {% if r.date_updated != '' and r.date_updated != r.date_created %}
+    <p class="recipe-date">
+        Created on {{ r.date_created }}</br>
+        Last updated on {{ r.date_updated }}
+    </p>
     {% else %}
-  <p class="recipe-source">
-      {% if r.source.originality == 'inspired' %}
-        Inspired by
-      {% else %}
-        Adapted from
-      {% endif %}
-      {% if r.source.url %}
-        <a href="{{r.source.url}}">{{r.source.name}}</a>
-      {% else %}
-        {{r.source.name}}
-      {% endif %}
-      {% if r.source.author %}
-        by {{r.source.author}}
-      {% endif %}
-      {% if r.source.publication %}
-        @ {{r.source.publication}}
-       {% endif %}
-      {% if r.source.date != '' %}
-        <i>({{r.source.date}})</i>
-      {% endif %}
-  </p>
+    <p class="recipe-date">Created on {{ r.date_created }}</p>
     {% endif %}
-  {% endif %}
+
+    {% if r.source is defined and r.source %}
+      {% if r.source.originality == 'source' %}
+      <p class="recipe-source">
+          Source: {{r.source.name}}
+      </p>
+      {% else %}
+      <p class="recipe-source">
+        {% if r.source.originality == 'inspired' %}
+          Inspired by
+        {% else %}
+          Adapted from
+        {% endif %}
+        {% if r.source.url %}
+          <a href="{{r.source.url}}">{{r.source.name}}</a>
+        {% else %}
+          {{r.source.name}}
+        {% endif %}
+        {% if r.source.author %}
+          by {{r.source.author}}
+        {% endif %}
+        {% if r.source.publication %}
+          @ {{r.source.publication}}
+         {% endif %}
+        {% if r.source.date != '' %}
+          <i>({{r.source.date}})</i>
+        {% endif %}
+      </p>
+      {% endif %}
+    {% endif %}
   </section>
 
-  <section id="ingredients">
-    <h2>Ingredients</h2>
-    <hr>
-    <div id="ingredients-table">
-      <table>
-        {% for ingredient in r.ingredients %}
-          <tr>
-            <td class="amount" data-original-amount="{{ingredient.total_amount}}" >
-              {% if ingredient.total_amount %}
-                {{ingredient.total_amount}}
-              {% endif %}
-            </td>
-            <td class="unit">
-              {% if ingredient.unit %}
-                {{ingredient.unit}}
-              {% endif %}
-            </td>
-            <td class="name">{{ingredient.name}}</td>
-            <td class="comment">
-              {% if ingredient.comment %}
-                {{ingredient.comment}}
-              {% endif %}
-            </td>
-          </tr>
-        {% endfor %}
-      </table>
-    </div>
-  </section>
-
-  <section id="scaling">
-    <h2>Scaling</h2>
-    <form id="scaling-form">
-      <button type="button" id="reset-button" onclick="resetScaling()">Reset</button>
-      <fieldset name="by-percent">
-        <legend>Percent</legend>
-        <label for="percent-number" hidden>Enter percentage number to scale all the amounts in the recipe by</label>
-        <input
-          type="number"
-          id="percent-number"
-          min="0"
-          step="any"
-          value="100"
-          oninput="scaleByPercentNumber()"
-          />%
-        <label for="percent-slider" hidden>Drag the slider to the percentage number you wish to scale all the amounts in the recipe by</label>
-        <input
-          type="range"
-          id="percent-slider"
-          value="100"
-          min="10"
-          max="500"
-          step="5"
-          oninput="scaleByPercentSlider()"
-          />
-      </fieldset>
-      <fieldset name="by-ingredient">
-        <legend>By ingredient</legend>
-        <label for="ingredient-select">Ingredient:</label>
-        <select id="ingredient-select">
+  <div id="recipe-ingredients-and-scaling-group">
+    <section id="ingredients">
+      <h2>Ingredients</h2>
+      <hr>
+      <div id="ingredients-table">
+        <table>
           {% for ingredient in r.ingredients %}
-            {% if ingredient.total_amount %}
-              <option value="{{ingredient.total_amount}}">
-                {{ingredient.name}}
-                {% if ingredient.unit %}
-                  ({{ingredient.unit}})
+            <tr>
+              <td class="amount" data-original-amount="{{ingredient.total_amount}}" >
+                {% if ingredient.total_amount %}
+                  {{ingredient.total_amount}}
                 {% endif %}
-              </option>
-            {% endif %}
+              </td>
+              <td class="unit">
+                {% if ingredient.unit %}
+                  {{ingredient.unit}}
+                {% endif %}
+              </td>
+              <td class="name">{{ingredient.name}}</td>
+              <td class="comment">
+                {% if ingredient.comment %}
+                  {{ingredient.comment}}
+                {% endif %}
+              </td>
+            </tr>
           {% endfor %}
-        </select>
-        <label for="ingredient-inputted-amount">amount:</label>
-        <input type="number" id="ingredient-inputted-amount" step="any" />
-        <button type="button" onclick="scaleByIngredient()">Scale</button>
-      </fieldset>
-    </form>
-  </section>
+        </table>
+      </div>
+    </section>
+
+    <section id="scaling">
+      <h2>Scaling</h2>
+      <form id="scaling-form">
+        <button type="button" id="reset-button" onclick="resetScaling()">Reset</button>
+        <fieldset name="by-percent">
+          <legend>Percent</legend>
+          <label for="percent-number" hidden>Enter percentage number to scale all the amounts in the recipe by</label>
+          <input
+            type="number"
+            id="percent-number"
+            min="0"
+            step="any"
+            value="100"
+            oninput="scaleByPercentNumber()"
+            />%
+          <label for="percent-slider" hidden>Drag the slider to the percentage number you wish to scale all the amounts in the recipe by</label>
+          <input
+            type="range"
+            id="percent-slider"
+            value="100"
+            min="10"
+            max="500"
+            step="5"
+            oninput="scaleByPercentSlider()"
+            />
+        </fieldset>
+        <fieldset name="by-ingredient">
+          <legend>By ingredient</legend>
+          <label for="ingredient-select">Ingredient:</label>
+          <select id="ingredient-select">
+            {% for ingredient in r.ingredients %}
+              {% if ingredient.total_amount %}
+                <option value="{{ingredient.total_amount}}">
+                  {{ingredient.name}}
+                  {% if ingredient.unit %}
+                    ({{ingredient.unit}})
+                  {% endif %}
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <label for="ingredient-inputted-amount">amount:</label>
+          <input type="number" id="ingredient-inputted-amount" step="any" />
+          <button type="button" onclick="scaleByIngredient()">Scale</button>
+        </fieldset>
+      </form>
+    </section>
+  </div>
 
   <section id="timeline">
     <h2 hidden>Timeline diagram</h2>
