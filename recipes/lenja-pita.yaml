@@ -4,9 +4,8 @@ description: "While simplistic in it's approach and choice of ingredients, the s
 date_created: 2018-12-23
 image: ''
 
-# {adapted from} {name} by {author} @ {publication} ({date})
 source: {
-  name: "Simon's mom", # recipe name or whole citation
+  name: "Simon's mom",
 }
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
@@ -34,7 +33,7 @@ steps:
   - {
     short: "Soften butter",
     long: "Soften the butter so that you can easily mix it with the egg yolks and sugar. Make sure that it is not too hot when you add it, or you will be eating cake with chunks of boiled egg.",
-    ingredients: [ {name: butter, amount: 250, unit: g, comment: 'Some people swear to using unsalted butter for this recipe, personally I like using salted butter for the flavor enhancing effect of the salt in addittion to the a bit sharper flavor.'} ],
+    ingredients: [ {name: butter, amount: 250, unit: g, comment: 'Some people swear to using unsalted butter for this recipe, personally I like using salted butter for the flavor enhancing effect of the salt in addittion to the somewhat flavor.'} ],
     active-time: 1,
     passive-time: 1,
     type: bowl,
@@ -88,7 +87,6 @@ steps:
   }
   - {
     short: "Put apples in frying pan and season them",
-    long: ,
     ingredients: [
       {name: sugar, amount: 25, unit: g, comment: 'About 2 tablespoons'},
       {name: vanilla powder, amount: 4, unit: g, comment: 'Optional, about one teaspoon'},
