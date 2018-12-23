@@ -111,6 +111,14 @@ steps:
     dependencies: [-1],
   }
   - {
+    short: "Pre-heat the oven",
+    long: "To about 150 deg c",
+    active-time: 1,
+    passive-time: 10,
+    type: oven,
+    temp: room,
+  }
+  - {
     short: "Butter cake pan",
     long: "You can also use neutral cooking oil, but I preffer the taste of butter.",
     ingredients: [ {name: butter, amount: 15, unit: g, comment: 'About 1 tbsp'} ],
@@ -120,21 +128,13 @@ steps:
     temp: room,
   }
   - {
-    short: "Pre-heat the oven",
-    long: "To about 150 deg c",
-    active-time: 1,
-    passive-time: 10,
-    type: oven,
-    temp: room,
-  }
-  - {
     short: "Assemble the cake",
     long: "Put about two thirds of the dough in the bottom of th cake pan. Cover it completely with the apple filling. Place the last third of the dough on top so that it agan covers the whole of the cake.",
     active-time: 3,
     passive-time: 0,
     type: shape,
     temp: room,
-    dependencies: [-2, -3, -6],
+    dependencies: [-1, -3, -6],
   }
   - {
     short: "Bake the cake",
@@ -143,5 +143,5 @@ steps:
     passive-time: 40,
     type: oven,
     temp: hot,
-    dependencies: [-1, -2],
+    dependencies: [-1, -3],
   }
