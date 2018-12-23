@@ -105,7 +105,24 @@
 			<li>The units used for amount and concentration can be anything, it still works out the same. That is, it doesn't matter if the concentration is in grams per liter or percent, or if the amount is in grams, liters, etc.</li>
 			<li>The amounts have to be of a consistent type. If your total desired amount is in milliliters, the suplied amounts have to be milliliters.</li>
 			<li>The concentrations have to be of a consistent type. If you are using percent for the concentration, all the concentration fields have to be in percent.</li>
+			<li>The tool rounds off the amounts, to two decimal places.</li>
 		</ul>
+	</section>
+	<section id="dilution-theory">
+		<h2>The math behind it</h2>
+		<p>Heres is an overview of the assumptions behind the tool and how it works. It is based on the following assumption:</p>
+		<blockquote>Amount 1 * Concentration 1 + Amount 2 * Concentration 2 = Target Amount * Final Concentration</blockquote>
+		<p>Or, for short</p>
+		<blockquote>a1 * c1 + a2 * c2 = at * cf</blockquote>
+		<p>Using the property that we expect the amounts to add up, that is <q>a1 + a2 = at</q>, we can find the amounts we need to add together to get the final result. We must known the concentrations, and when we do we can figure out the amounts like this:</p>
+		<ol>
+			<li>a1 * c1 + a2 * c2 = at * cf</li>
+			<li>a1 * c1 + (at - a1) * c2 = at * cf</li>
+			<li>a1 * c1 - a1 * c2 + at * c2 = at * cf</li>
+			<li>a1 * (c1 - c2) = at * (cf - c2)</li>
+			<li>a1 = at * (cf - c2) / (c1 - c2)</li>
+		</ol>
+		<p>Upon closer inspection, we can see that the last expression only relies on the final amount we want to be left with, and the concentrations. Therefore, for the cases where we rely on order, or if we want to compute the amounts simultaneously, we can similairly express the other amount as <q>a2 = at * (cf - c1) / (c2 - c1)</q>.</p>
 	</section>
 </main>
 {% endblock %}
