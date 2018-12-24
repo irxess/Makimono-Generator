@@ -11,7 +11,7 @@
     {% for thumbnail in thumbnails %}
       <tr>
         <td>
-          <a href="{{ thumbnail.url }}">{{ thumbnail.name }}</a>
+          <a href="{{path_to_base}}/{{ thumbnail.url }}">{{ thumbnail.name }}</a>
         </td>
         <td>
           {% if (thumbnail.created is defined) and thumbnail.created %}

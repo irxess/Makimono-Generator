@@ -11,11 +11,11 @@
     {% for thumbnail in chunk_of_thumbnails %}
       <li class="recipe-in-list">
         {% if (thumbnail.image is defined) and thumbnail.image %}
-        <a href="{{ thumbnail.url }}">
-          <img src="{{ thumbnail.image }}" alt="Thumbnail image for the {{ thumbnail.name }} recipe.">
+        <a href="{{path_to_base}}/{{ thumbnail.url }}">
+            <img src="{{path_to_base}}/{{ thumbnail.image }}" alt="Thumbnail image for the {{ thumbnail.name }} recipe.">
         </a>
         {% endif %}
-        <a href="{{ thumbnail.url }}">
+        <a href="{{path_to_base}}/{{ thumbnail.url }}">
           <h1 class="recipe-name-in-list">{{ thumbnail.name }}</h1>
         </a>
 

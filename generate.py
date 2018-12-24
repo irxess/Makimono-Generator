@@ -15,8 +15,6 @@ from data import *
 # Check that the duration is filled for each step
 # Show the time each step takes, and the total time (rounded to hours?)
 
-# Add description on hover in browse all?
-
 def remove_empty_lines(string):
     return "\n".join([s for s in string.splitlines() if s.strip()])
 
@@ -24,9 +22,9 @@ def remove_empty_lines(string):
 class Thumbnail:
     def __init__(self, name, url, img, updated, created):
         self.name = name
-        self.url = '../'+get_url_friendly_name(url)
+        self.url = get_url_friendly_name(url)
         if img != '':
-            self.image = '../images/thumbnails/'+img
+            self.image = 'images/thumbnails/'+img
         else:
             self.image = ''
         self.updated = updated
