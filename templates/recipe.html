@@ -18,7 +18,7 @@
     {% endif %}
 
     {% if (r.image is defined) and r.image %}
-        <img src="{{path_to_base}}/images/{{ r.image }}" alt="">
+        <img src="{{path_to_base}}/images/{{ r.image }}" alt="{{r.name}}">
     {% endif %}
   </section>
 
