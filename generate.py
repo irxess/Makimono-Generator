@@ -115,7 +115,7 @@ def split_thumbnail_list_into_pages(thumbnails):
     chunk_number = 1
     for i in range(0, len(thumbnails), chunk_size):
         list_of_thumbnail_chunks.append( thumbnails[i:i+chunk_size] )
-        pagination_list.append( PaginationElement('page-'+str(chunk_number)+'.html', chunk_number) )
+        pagination_list.append( PaginationElement('all/page-'+str(chunk_number)+'.html', chunk_number) )
         chunk_number += 1
     return list_of_thumbnail_chunks, pagination_list
 
@@ -152,6 +152,21 @@ def generate_browse_page(thumbnails):
         output = remove_empty_lines(output)
         with open('publish/all/page-'+str(i+1)+'.html', 'w') as f:
             print(output, file=f)
+        if(i == 0):
+            output = template.render(
+                chunk_of_thumbnails = thumbnails,
+                paginated_pages = pagination_list,
+                previous_page = prev_page,
+                next_page = next_page,
+                path_to_base='.',
+                recipes_path='all/page-1.html',
+                all_recipes_overview_path='all-recipes-overview.html',
+                dilution_calculator_path='dilution_calculator.html',
+                about_path='about.html'
+            )
+            output = remove_empty_lines(output)
+            with open('publish/index.html', 'w') as f:
+                print(output, file=f)
         current_page.current = False
         prev_page = current_page
 
@@ -237,7 +252,6 @@ if __name__ == "__main__":
 
     print("Generating about-page")
     generate_about_page()
-    shutil.copy('publish/about.html', 'publish/index.html')
 
     print("Generating dilution calculator page")
     generate_dilution_calculator()
