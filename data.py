@@ -89,6 +89,11 @@ class Source:
     date: Optional[str] = None
 
 @dataclass
+class Yield:
+    amount: Union[int,str]
+    name: str
+
+@dataclass
 class Recipe:
     name: str
     date_created: str
@@ -99,3 +104,5 @@ class Recipe:
     description: str = ""
     source: Optional[Source] = None
     image: str = ""
+    result: Optional[Yield] = None
+    url_name: str = ""

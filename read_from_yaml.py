@@ -129,6 +129,8 @@ def read_recipe(yaml):
         recipe.description = yaml['description']
     if 'source' in yaml:
         recipe.source = read_source(yaml['source'])
+    if 'result' in yaml:
+        recipe.result = Yield(yaml['result']['amount'], yaml['result']['name'])
     return recipe
 
 def read_recipe_into_data(name):
