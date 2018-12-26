@@ -8,6 +8,7 @@ import shutil
 from dataclasses import dataclass
 from read_from_yaml import read_recipe_into_data
 from data import *
+from jsonld import generate_jsonld
 
 # TODO:
 # Check that each ingredient is used at least once
@@ -74,6 +75,10 @@ def generate_files_for_recipe(name):
 
     prepare_image(recipe)
     timeline.generate_timeline_svg(recipe)
+    recipe.url_name = get_url_friendly_name(name)
+    jsonld = generate_jsonld(recipe)
+    with open('publish/js/recipes/' + recipe.url_name + '.json', 'w') as f:
+        print(jsonld, file=f)
 
     if not os.path.isdir('publish/recipes'):
         os.makedirs('publish/recipes')
@@ -90,12 +95,11 @@ def generate_files_for_recipe(name):
         about_path='about.html'
     )
     output = remove_empty_lines(output)
-    name_for_url = get_url_friendly_name(name)
-    with open('publish/recipes/' + name_for_url + '.html', 'w') as f:
+    with open('publish/recipes/' + recipe.url_name + '.html', 'w') as f:
         print(output, file=f)
     return Thumbnail(
         recipe.name,
-        'recipes/' + name_for_url + '.html', # Path to recipe from base used in pagination list
+        'recipes/' + recipe.url_name + '.html', # Path to recipe from base used in pagination list
         recipe.image,
         recipe.date_updated,
         recipe.date_created,
@@ -238,6 +242,13 @@ if __name__ == "__main__":
     from rename_files_in_folder_to_lower_case import rename_files_in_folder_to_lower_case
     rename_files_in_folder_to_lower_case('publish/images')
 
+    print("Copying JS")
+    if not os.path.isdir('publish/js'):
+        os.makedirs('publish/js')
+    shutil.copy('templates/recipe-scaling.js', 'publish/js/')
+    if not os.path.isdir('publish/js/recipes'):
+        os.makedirs('publish/js/recipes')
+
     for filename in os.listdir('recipes'):
         if filename[0] != '.':
             name,extension = filename.split('.')
@@ -266,11 +277,6 @@ if __name__ == "__main__":
     compiled_css = lesscpy.compile(open('templates/styles/main.less', 'r'), xminify=True)
     with open('publish/css/main.css', 'w') as f:
         print(compiled_css, file=f)
-
-    print("Copying JS")
-    if not os.path.isdir('publish/js'):
-        os.makedirs('publish/js')
-    shutil.copy('templates/recipe-scaling.js', 'publish/js/')
 
     print("Copying svg icons")
     if not os.path.isdir('publish/images/icons'):

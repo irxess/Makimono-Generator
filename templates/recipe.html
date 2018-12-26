@@ -3,6 +3,7 @@
 {% block meta_description %}{{ r.description }}{% endblock %}
 {% block page_specific_scripts %}
   <script type="text/javascript" src="{{path_to_base}}/js/recipe-scaling.js" async></script>
+  <script type="application/ld+json" src="{{path_to_base}}/js/recipes/{{r.url_name}}.json" async></script>
 {% endblock %}
 
 {% block content %}
