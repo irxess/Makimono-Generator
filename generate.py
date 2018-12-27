@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from read_from_yaml import read_recipe_into_data
 from data import *
 from jsonld import generate_jsonld
+from sitemap import create_sitemap
 
 # TODO:
 # Check that each ingredient is used at least once
@@ -283,3 +284,9 @@ if __name__ == "__main__":
         os.makedirs('publish/images/icons')
     for icon in os.listdir('templates/icons'):
         shutil.copy('templates/icons/'+icon, 'publish/images/icons/'+icon)
+
+    print("Copying robots.txt and generating sitemap")
+    shutil.copy('templates/robots.txt', 'publish/')
+    sitemap = create_sitemap(thumbnails)
+    with open('publish/sitemap.xml', 'w') as f:
+        print(sitemap, file=f)
