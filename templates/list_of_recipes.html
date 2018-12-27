@@ -3,7 +3,6 @@
 {% block meta_description %}{{ Recipes }}{% endblock %}
 
 {% block content %}
-<main id="content">
   {% if (paginated_pages is defined) and paginated_pages|length > 1 %}
     {% include 'pagination_menu.html' %}
   {% endif %}
@@ -30,5 +29,4 @@
   {% if (paginated_pages is defined) and paginated_pages|length > 1 %}
     {% include 'pagination_menu.html' %}
   {% endif %}
-</main>
 {% endblock %}

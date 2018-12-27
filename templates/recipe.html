@@ -7,8 +7,6 @@
 {% endblock %}
 
 {% block content %}
-<main id="content">
-
   <section id="intro">
     <h1>{{ r.name }}</h1>
 
@@ -188,13 +186,11 @@
           </svg>
         </div>
         <div class="step-description">
-            <b>{{ step.short }}{% if step.long %}: {% endif %}</b>
-            {{ step.long }}
+            <h3>{{ step.short }}{% if step.long %}: {% endif %}</h3>
+            <p>{{ step.long }}</p>
         </div>
       </div>
     </div>
     {% endfor %}
   </section>
-
-</main>
 {% endblock %}
