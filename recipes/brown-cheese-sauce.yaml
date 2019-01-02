@@ -7,7 +7,7 @@ source: {
 }
 
 date_created: 2018-10-20
-last_updated: 2018-12-03
+last_updated: 2019-01-02
 image: brown_cheese_sauce
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add
@@ -21,7 +21,7 @@ steps:
     type: 'saucepan',
     temp: 'room',
     ingredients: [
-      {name: cream, amount: 300, unit: 'g', comment: 'I use the 20% fat, regular variant for cooking. Variants with less fat will make it harder to bind the cheese.'},
+      {name: cream, amount: 300, unit: 'g', comment: 'I use the 20% fat variant for cooking.'},
       {name: beef bouillon, amount: 10, unit: g, comment: 'Or use 1 cube if you have bouillon in cubes.'}
     ],
   }
