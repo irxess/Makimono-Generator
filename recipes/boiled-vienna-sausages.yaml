@@ -1,0 +1,49 @@
+recipe: Boiled Vienna Sausages
+
+description: "A simple dish with lots of potenital."
+date_created: 2019-01-02
+image: ''
+
+source: {
+  name: "Simon's dad", # recipe name or whole citation
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Chop onion",
+    long: "",
+    ingredients: [ {name: onion, amount: 200, unit: 'g', comment: 'about 1 large one'}],
+    active-time: 1,
+    passive-time: 1,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Season the water and boild it up",
+    long: "Get a large pot and fill it up with water so that the sausages have plenty of room later. Don't make it too full though, to avoid splashing while boiling up and so that there is also room left for the sausages. For this recipe I usually use 3 liters of water in a pot that fits 5 liters (if filled to the brim). I'd also recommend using a pot that you have a lid for, as it makes the simmering later go smoother. When you got the pot ready and filled with water add the chopped onion and other seasonings. Then crank the heat and wait for it to start boiling.",
+    ingredients: [
+      {name: water, amount: 3, unit: l},
+      {name: beef bouillon, amount: 30, unit: g, comment: 'Or use 3 cubes if you have bouillon in cubes of 10g each.'},
+      {name: bay leaves, amount: 5, unit: leaves, comment: 'I usually use laurel leaves'},
+      {name: black pepper, amount: 2, unit: tbsp, comment: 'I like using a mixture of both whole peppercorns and crushed/powdered.'},
+      {name: rosemary, amount: 2, unit: tsp, comment: 'optional, can also be used as a substitute the bay leaves'},
+      {name: sherry, amount: 2, unit: tbsp, comment: 'optional'},
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 15,
+    type: saucepan,
+    temp: room,
+  }
+  - {
+    short: "Simmer the sausages",
+    long: "When the water has boiled up remove the pot from the heat, add the sausages, put the lid on, and let the sausages simmer. How long this takes depends on the sausages. If they are thin and not raw (as for instance you typpical Vienna sasuages) you can probably get away with letting them sit for about 5 to 10 minutes. If they are thicker they will need more, and if they are raw they will probably need much more. (Although I have never really boiled high quality raw sasuages, and I think in generall good raw sasuages will turn out better if fried.)",
+    ingredients: [ {name: Vienna sasuages, amount: 750, unit: 'g', comment: 'Between 500 to 1000 g should be fine for 3 liters of water.'}],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 10,
+    type: saucepan,
+    temp: warm,
+  }
