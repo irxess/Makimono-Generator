@@ -61,6 +61,15 @@ steps:
     temp: warm,
   }
   - {
+    short: "Strain the chili oil",
+    long: "Once the chili oil is done, run it through a strainer and discard everything besides the oil, which you set aside for later. Beware that the oil is very hot at this point, and that both the strainer, and dish/container you pour the oil over into, should be heat resistant.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: saucepan,
+    temp: hot,
+  }
+  - {
     short: "Prepare chicken broth",
     long: "Prepare som chicken broth and set it aside for later.",
     ingredients: [
@@ -87,7 +96,7 @@ steps:
   }
   - {
     short: "Stir fry vegetables",
-    long: "Using a couple of tablespoons of the cili oil prepared previously, heat it up in a wok pan, add the vegetables, a bit of salt, and stir fry it untill you are satisfied that they are done. Place them in the serving bowl.",
+    long: "Using a couple of tablespoons of the cili oil prepared previously, heat it up in a wok pan, add the vegetables, a bit of salt, and stir fry it until you are satisfied that they are done. Place them in the serving bowl.",
     ingredients: [ {name: salt, amount: 1, unit: tsp, comment: ''} ],
     dependencies: [-1, -3],
     active-time: 5,
@@ -108,9 +117,39 @@ steps:
   - {
     short: "Cook the fish",
     long: "Add the fish slices to the wok pan. Cook for about 1 minute. Then pour it over the vegetables in the bowl.",
-    dependencies: [-1, -6],
+    dependencies: [-1, -7],
     active-time: 1,
     passive-time: 1,
     type: fry,
     temp: hot,
+  }
+  - {
+    short: "Fry sichuan green pepper",
+    long: "In a dry pan, fry the green sichuan peppers until the become crispy. Note that the heating step is important even if the pepper you have is dried, it will release more flavor.",
+    ingredients: [ {name: green sichuan pepper, amount: 1, unit: tbsp, comment: ''} ],
+    active-time: 2,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Make sichuan green pepper powder",
+    long: "Pour them over in a mortar and crush them to a powder. (Be aware that if you don't have a mortar and pestle you could crush the pepper on a cutting board under the backside of a spoon. But seriously, get a mortar and pestle.)",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: mortar,
+    temp: room,
+  }
+    - {
+    short: "Make hot oil sauce",
+    long: "In a saucepan, add about 4 tablespoons of the cili oil you made previously, and a few of the dried chilies. Heat it up, and when the oil is boling, pour in the sichuan green pepper powder you made previously. Stir it around, and after a few seconds (10 - 20 after you added the pepper powder), pour it all (with the chilies and everything) over the bowl.",
+    ingredients: [
+      {name: dried chili, amount: , unit: , comment: ''},
+    ],
+    dependencies: [-1, -8],
+    active-time: 5,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
   }
