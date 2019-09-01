@@ -135,7 +135,7 @@ def read_recipe(yaml):
 
 def read_recipe_into_data(name):
     path = os.path.join('recipes', name+'.yaml')
-    with open(path, 'r') as recipe_file:
+    with open(path, 'r', encoding='utf-8') as recipe_file:
         yaml_data = yaml.load(recipe_file)
     recipe = read_recipe(yaml_data)
     read_steps(yaml_data, recipe)

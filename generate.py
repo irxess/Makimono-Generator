@@ -78,7 +78,7 @@ def generate_files_for_recipe(name):
     timeline.generate_timeline_svg(recipe)
     recipe.url_name = get_url_friendly_name(name)
     jsonld = generate_jsonld(recipe)
-    with open('publish/js/recipes/' + recipe.url_name + '.json', 'w') as f:
+    with open('publish/js/recipes/' + recipe.url_name + '.json', 'w', encoding='utf-8') as f:
         print(jsonld, file=f)
 
     if not os.path.isdir('publish/recipes'):
@@ -96,7 +96,7 @@ def generate_files_for_recipe(name):
         about_path='about.html'
     )
     output = remove_empty_lines(output)
-    with open('publish/recipes/' + recipe.url_name + '.html', 'w') as f:
+    with open('publish/recipes/' + recipe.url_name + '.html', 'w', encoding='utf-8') as f:
         print(output, file=f)
     return Thumbnail(
         recipe.name,
@@ -151,7 +151,7 @@ def generate_browse_page(thumbnails):
         about_path='about.html'
     )
     output = remove_empty_lines(output)
-    with open('publish/index.html', 'w') as f:
+    with open('publish/index.html', 'w', encoding='utf-8') as f:
         print(output, file=f)
 
     for i in range(0,len(pagination_list)):
@@ -174,7 +174,7 @@ def generate_browse_page(thumbnails):
             about_path='about.html'
         )
         output = remove_empty_lines(output)
-        with open('publish/all/page-'+str(i+1)+'.html', 'w') as f:
+        with open('publish/all/page-'+str(i+1)+'.html', 'w', encoding='utf-8') as f:
             print(output, file=f)
         current_page.current = False
         prev_page = current_page
@@ -194,7 +194,7 @@ def generate_all_recipes_overview_page(thumbnails):
         about_path='about.html'
     )
     output = remove_empty_lines(output)
-    with open('publish/all-recipes-overview.html', 'w') as f:
+    with open('publish/all-recipes-overview.html', 'w', encoding='utf-8') as f:
         print(output, file=f)
 
 
@@ -213,7 +213,7 @@ def generate_about_page():
         about_path='about.html'
     )
     output = remove_empty_lines(output)
-    with open('publish/about.html', 'w') as f:
+    with open('publish/about.html', 'w', encoding='utf-8') as f:
         print(output, file=f)
 
 def generate_dilution_calculator():
@@ -231,7 +231,7 @@ def generate_dilution_calculator():
         about_path='about.html'
     )
     output = remove_empty_lines(output)
-    with open('publish/dilution_calculator.html', 'w') as f:
+    with open('publish/dilution_calculator.html', 'w', encoding='utf-8') as f:
         print(output, file=f)
 
 
@@ -275,8 +275,8 @@ if __name__ == "__main__":
     print("Generating CSS")
     if not os.path.isdir('publish/css'):
         os.makedirs('publish/css')
-    compiled_css = lesscpy.compile(open('templates/styles/main.less', 'r'), xminify=True)
-    with open('publish/css/main.css', 'w') as f:
+    compiled_css = lesscpy.compile(open('templates/styles/main.less', 'r', encoding='utf-8'), xminify=True)
+    with open('publish/css/main.css', 'w', encoding='utf-8') as f:
         print(compiled_css, file=f)
 
     print("Copying svg icons")
@@ -288,5 +288,5 @@ if __name__ == "__main__":
     print("Copying robots.txt and generating sitemap")
     shutil.copy('templates/robots.txt', 'publish/')
     sitemap = create_sitemap(thumbnails)
-    with open('publish/sitemap.xml', 'w') as f:
+    with open('publish/sitemap.xml', 'w', encoding='utf-8') as f:
         print(sitemap, file=f)
