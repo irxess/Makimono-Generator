@@ -48,7 +48,7 @@ steps:
   }
   - {
     short: "Make chili oil",
-    long: "Add the oil to the saucepan, and stir inn the sichuan pepper, chili powder, and dried chillies. Mix it all unitl it is even. Place it over medium heat unitl the oil begins to boil. Then turn down to low heat, and let it simmer for about 20 minutes. It is possible to burn it, so stir occasionally.",
+    long: "Add the oil to the saucepan, and stir inn the sichuan pepper, chili powder, and dried chilies. Mix it all unitl it is even. Place it over medium heat unitl the oil begins to boil. Then turn down to low heat, and let it simmer for about 20 minutes. It is possible to burn it, so stir occasionally.",
     ingredients: [
       {name: oil, amount: 1, unit: cup, comment: 'Should be neutral and capable of sustaining high heat'},
       {name: sichuan pepper, amount: 2, unit: tbsp, comment: 'Black pepper is not really a substitute here'},
@@ -61,11 +61,56 @@ steps:
     temp: warm,
   }
   - {
-    short: "Make chili oil",
-    long: "",
-    dependencies: [-1, -2],
+    short: "Prepare chicken broth",
+    long: "Prepare som chicken broth and set it aside for later.",
+    ingredients: [
+      {name: water, amount: 2, unit: cups, comment: ''},
+      {name: chicken buillion, amount: 10, unit: g, comment: 'Or use 1 cube if you have bouillon in cubes'},
+    ],
+    active-time: 1,
+    passive-time: 5,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Prepare the vegetables",
+    long: "Chop the garlic and mushrooms, and was the bean sprouts. The garlic should be rougly chopped in large pieces.",
+    ingredients: [
+      {name: garlic, amount: 30, unit: g, comment: ''},
+      {name: bean sprouts, amount: 100, unit: g, comment: ''},
+      {name: mushrooms, amount: 150, unit: g, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Stir fry vegetables",
+    long: "Using a couple of tablespoons of the cili oil prepared previously, heat it up in a wok pan, add the vegetables, a bit of salt, and stir fry it untill you are satisfied that they are done. Place them in the serving bowl.",
+    ingredients: [ {name: salt, amount: 1, unit: tsp, comment: ''} ],
+    dependencies: [-1, -3],
+    active-time: 5,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+  }
+  - {
+    short: "Prepare the soup base",
+    long: "Add a tablespoon of the chili oil you made previosly to the wok pan, while the pan is still hot. Add the bean paste, and fry it for about 30 seconds. Then add the chicken broth, and bring it to a boil.",
+    ingredients: [ {name: hot bean paste, amount: 2, unit: tbsp, comment: ''} ],
+    dependencies: [-3, -4],
+    active-time: 1,
+    passive-time: 3,
+    type: fry,
+    temp: hot,
+  }
+  - {
+    short: "Cook the fish",
+    long: "Add the fish slices to the wok pan. Cook for about 1 minute. Then pour it over the vegetables in the bowl.",
+    dependencies: [-1, -6],
     active-time: 1,
     passive-time: 1,
-    type: bowl,
-    temp: room,
+    type: fry,
+    temp: hot,
   }
