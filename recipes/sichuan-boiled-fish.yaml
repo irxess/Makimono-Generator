@@ -1,0 +1,71 @@
+recipe: Sichuan Boiled Fish
+
+description: ""
+date_created: 2019-09-01
+last_updated: 2019-09-01
+image: ''
+
+result: {
+  amount: ,
+  name: ,
+}
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: '【田园时光美食】水煮鱼Fish filets in hot chili oil', # recipe name or whole citation
+  type: 'adapted',
+  author: '田园时光Garden Time homemade cuisine',
+  publication: 'YouTube',
+  url: 'https://www.youtube.com/watch?v=etix0NGyYuc',
+  date: 2019-08-31
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Slice the fish",
+    long: "You want to slice the fish as thinly as possible. It's no problem if it's so thin that the slices are transparent. However, you should only go as thing as you are comfortable with, as you don't want the pieces to tear apart as you're cutting them either. To make it easier, try to cut diagonally. If you are familiar with it, the result should look like sashimi pieces.",
+    ingredients: [ {name: Tilapia, amount: 300, unit: g, comment: 'Use filets if you want to keep things simple. Can be substituted for other white fish that might be easier to get a hold of where you live, such as wolffish. It's no problem to buy the fish frozen, as you might find it easier to work with the fish when it's partially frozen.} ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: cold,
+  }
+  - {
+    short: "Coat fish slices",
+    long: "In a bowl, coat the fish slices with som salt, pepper, and cornstarch. Make sure to mix it all together well, so that the fish is evenly covered. Set aside, and let it rest for at least 10 minutes while you proceed with the rest of the steps.",
+    ingredients: [
+      {name: cornstarch, amount: 1, unit: tbsp, comment: ''},
+      {name: salt, amount: 0.5, unit: tsp, comment: ''},
+      {name: white pepper, amount: 0.5, unit: tsp, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 10,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Make chili oil",
+    long: "Add the oil to the saucepan, and stir inn the sichuan pepper, chili powder, and dried chillies. Mix it all unitl it is even. Place it over medium heat unitl the oil begins to boil. Then turn down to low heat, and let it simmer for about 20 minutes. It is possible to burn it, so stir occasionally.",
+    ingredients: [
+      {name: oil, amount: 1, unit: cup, comment: 'Should be neutral and capable of sustaining high heat'},
+      {name: sichuan pepper, amount: 2, unit: tbsp, comment: 'Black pepper is not really a substitute here'},
+      {name: Korean chili powder, amount: 15, unit: g, comment: ''},
+      {name: dried chili, amount: 10, unit: g, comment: 'whole'},
+    ],
+    active-time: 1,
+    passive-time: 25,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Make chili oil",
+    long: "",
+    dependencies: [-1, -2],
+    active-time: 1,
+    passive-time: 1,
+    type: bowl,
+    temp: room,
+  }
