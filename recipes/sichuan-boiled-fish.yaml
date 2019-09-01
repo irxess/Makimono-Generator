@@ -107,7 +107,7 @@ steps:
   - {
     short: "Prepare the soup base",
     long: "Add a tablespoon of the chili oil you made previosly to the wok pan, while the pan is still hot. Add the bean paste, and fry it for about 30 seconds. Then add the chicken broth, and bring it to a boil.",
-    ingredients: [ {name: hot bean paste, amount: 2, unit: tbsp, comment: ''} ],
+    ingredients: [ {name: hot bean paste, amount: 2, unit: tbsp, comment: 'Often used in Chinese cooking. Can usually be found in jars, is red-ish in color, and can also be found with other names such as «hot bean paste» or «chili bean sauce».'} ],
     dependencies: [-3, -4],
     active-time: 1,
     passive-time: 3,
