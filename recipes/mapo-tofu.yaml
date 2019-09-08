@@ -148,7 +148,7 @@ steps:
   - {
     short: "Add greens and starchy water",
     long: "Add the greens (if you also want to use the greens for garnish save some of them though), and half the starchy water. As it has maybe been sitting for a while now, it might be a good idea to give the starch mixture a stir before adding it. After abot 30 seconds, add the rest of the starch. At this point, if you want to adjust the direction of the dish, you could give it a taste, and add some sugar if you feel it's getting to spicy, or salt if you feel it needs that. Cook unitl the sauce and most of the other ingredients stick to the tofu.",
-    dependencies: [-1, -10],
+    dependencies: [-1, -8, -10],
     active-time: 1,
     passive-time: 2,
     type: fry,
