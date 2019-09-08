@@ -23,13 +23,22 @@ source: {
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
   - {
-    short: "Prepare sichuan pepper powder",
-    long: "Roast the sichuan pepper in a clean, dry frying pan (don't use any oil or fats). Stir and toss them for about 30 seconds to a minute, until they become fragnant or start releasing smoke. Some of the corns may take up a slightly grey-ish color. Crush them in a mortar, or use the backside of a spoon or a similar blunt instrument. Note that, while you can use pre-ground sichuan pepper powder, being freshly ground will give it a stronger flavor, and the frying step will take the intensity up a considerable notch above that again.",
+    short: "Roast sichuan pepper",
+    long: "Roast the sichuan pepper in a clean, dry frying pan (don't use any oil or fats). Stir and toss them for about 30 seconds to a minute, until they become fragnant or start releasing smoke. Some of the corns may take up a slightly grey-ish color. Immediately remove them from the pan. Note that, while you can use pre-ground sichuan pepper powder, being freshly ground will give it a stronger flavor, and the frying step will take the intensity up a considerable notch above that again.",
     ingredients: [ {name: sichuan pepper, amount: 0.5, unit: tbsp, comment: ''} ],
     active-time: 2,
     passive-time: 0,
     type: fry,
     temp: hot,
+  }
+  - {
+    short: "Crush sichuan pepper",
+    long: "Crus the sichuan pepper using a mortar, or use the backside of a spoon/another similar blunt instrument.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: mortar,
+    temp: room,
   }
   - {
     short: "Chop vegetables",
