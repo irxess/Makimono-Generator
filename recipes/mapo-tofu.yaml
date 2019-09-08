@@ -1,6 +1,6 @@
 recipe: Mapo Tofu
 
-description: ""
+description: "A flavorful and spicy dish. A vegetarian (vegan?) variation can be made if you drop the minced meat. If you do so, you will probably want to add more tofu, and possibly use some vegetable buillion or msg to boost the umami."
 date_created: 2019-09-08
 last_updated: 2019-09-08
 image: ''
@@ -45,10 +45,10 @@ steps:
     long: "Roughly chop the beans. Finely chop the rest of the vegetables. Set aside for later. Note that the greens will be applied close to the end, so you might want to store them separately.",
     ingredients: [
       {name: ginger, amount: 5, unit: slices, comment: ''},
-      {name: garlic greens, amount: 4, unit: pieces, comment: 'can substitute in scallion greens'},
+      {name: garlic greens, amount: 4, unit: pieces, comment: 'Can substitute in scallion greens.'},
       {name: scallion whites, amount: 2, unit: pieces, comment: ''},
       {name: garlic, amount: 2, unit: cloves, comment: ''},
-      {name: fermented black beans, amount: 0.5, unit: tbsp, comment: 'can also be found under the name dou-chi, or sometimes fermented soya beans'},
+      {name: fermented black beans, amount: 0.5, unit: tbsp, comment: 'Can also be found under the name dou-chi, or sometimes fermented soya beans.'},
     ],
     active-time: 10,
     passive-time: 0,
@@ -59,7 +59,7 @@ steps:
     short: "Season meat",
     long: "Mix the meat with the sesame oil and a bit of salt, and set it aside.",
     ingredients: [
-      {name: minced meat, amount: 100, unit: g, comment: 'beef or pork'},
+      {name: minced meat, amount: 100, unit: g, comment: 'Beef or pork.'},
       {name: sesame oil, amount: 0.5, unit: tbsp, comment: ''},
       {name: salt, amount: 1, unit: pinch, comment: ''},
     ],
@@ -72,7 +72,7 @@ steps:
     short: "Make starchy water",
     long: "Combine the water and starch in a small bowl to make som starchy water.",
     ingredients: [
-      {name: cornstarch, amount: 1, unit: tbsp, comment: ''},
+      {name: cornstarch, amount: 1, unit: tbsp, comment: 'Used as a neutral thickening agent, can be replaced by for instance potato flour.'},
       {name: water, amount: 2.5, unit: tbsp, comment: ''},
     ],
     active-time: 1,
@@ -115,7 +115,7 @@ steps:
   - {
     short: "Fry the bean paste",
     long: "Over low heat, fry the chilli bean paste for about 1 minute.",
-    ingredients: [ {name: chilli bean paste, amount: 1.5, unit: tbsp, comment: 'Also known as Doubanjiang'} ],
+    ingredients: [ {name: chilli bean paste, amount: 1.5, unit: tbsp, comment: "Also known as Doubanjiang. Can be very salty, there is a lot of variation. This will impact whether you'll want to add more salt later or not."} ],
     dependencies: [-1],
     active-time: 1,
     passive-time: 0,
@@ -136,7 +136,7 @@ steps:
     long: "Stir in the pepper if you want to use it, add water, and turn to hight heat to bring it all to a boil.",
     ingredients: [
       {name: black pepper, amount: 1, unit: tbsp, comment: 'optional'},
-      {name: water, amount: 4, unit: dl, comment: ''},
+      {name: water, amount: 4, unit: dl, comment: 'Can also use broth for even more savory.'},
     ],
     dependencies: [-1],
     active-time: 3,
