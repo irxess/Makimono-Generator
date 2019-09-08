@@ -1,0 +1,165 @@
+recipe: Mapo Tofu
+
+description: ""
+date_created: 2019-09-08
+last_updated: 2019-09-08
+image: ''
+
+result: {
+  amount: ,
+  name: ,
+}
+
+source: {
+  name: Mapo Tofu Recipe,
+  type: 'adapted',
+  author: Elaine Luo,
+  publication: 'chinasichuanfood.com',
+  url: 'https://www.chinasichuanfood.com/mapo-tofu-recipe/',
+  date: 20YY-mm-dd
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Prepare sichuan pepper powder",
+    long: "Roast the sichuan pepper in a clean, dry frying pan (don't use any oil or fats). Stir and toss them for about 30 seconds to a minute, until they become fragnant or start releasing smoke. Some of the corns may take up a slightly grey-ish color. Crush them in a mortar, or use the backside of a spoon or a similar blunt instrument. Note that, while you can use pre-ground sichuan pepper powder, being freshly ground will give it a stronger flavor, and the frying step will take the intensity up a considerable notch above that again.",
+    ingredients: [ {name: sichuan pepper, amount: 0.5, unit: tbsp, comment: ''} ],
+    active-time: 2,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+  }
+  - {
+    short: "Chop vegetables",
+    long: "Roughly chop the beans. Finely chop the rest of the vegetables. Set aside for later. Note that the greens will be applied close to the end, so you might want to store them separately.",
+    ingredients: [
+      {name: ginger, amount: 5, unit: slices, comment: ''},
+      {name: garlic greens, amount: 4, unit: pieces, comment: 'can substitute in scallion greens'},
+      {name: scallion whites, amount: 2, unit: pieces, comment: ''},
+      {name: garlic, amount: 2, unit: cloves, comment: ''},
+      {name: fermented black beans, amount: 0.5, unit: tbsp, comment: 'can also be found under the name dou-chi, or sometimes fermented soya beans'},
+    ],
+    active-time: 10,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Season meat",
+    long: "Mix the meat with the sesame oil and a bit of salt, and set it aside.",
+    ingredients: [
+      {name: minced meat, amount: 100, unit: g, comment: 'beef or pork'},
+      {name: sesame oil, amount: 0.5, unit: tbsp, comment: ''},
+      {name: salt, amount: 1, unit: pinch, comment: ''},
+    ],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Make starchy water",
+    long: "Combine the water and starch in a small bowl to make som starchy water.",
+    ingredients: [
+      {name: cornstarch, amount: 1, unit: tbsp, comment: ''},
+      {name: water, amount: 2.5, unit: tbsp, comment: ''},
+    ],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Cut tofu in cubes",
+    long: "Cut the tofu into square cubes, the sides can be about 2cm.",
+    ingredients: [ {name: tofu, amount: 450, unit: g, comment: "Silken tofu is recommended, what's most important is that it is firm so that it doesn't disintegreate into a mush while working with it." } ],
+    active-time: 1,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Boil tofu",
+    long: "Boil up water with a bit of salt. Once the water is boiling add the tofu. Cook it for about a minute. Then drain, and set aside. This should help make the tofu even firmer, so that you're less likely to crush them later on.",
+    ingredients: [
+      {name: water, amount: 10, unit: dl, comment: ''},
+      {name: salt, amount: 1, unit: pinch, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 5,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Fry the meat",
+    long: "Heat up som oil in a (prefferably wok?) pan. Fry the minced meat until it is crispy. Once done, take the meat out, and leave the oil in the pan for the next step.",
+    ingredients: [ {name: oil, amount: 2, unit: tbsp, comment: ''} ],
+    dependencies: [-4],
+    active-time: 5,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+  }
+  - {
+    short: "Fry the bean paste",
+    long: "Over low heat, fry the chilli bean paste for about 1 minute.",
+    ingredients: [ {name: chilli bean paste, amount: 1.5, unit: tbsp, comment: 'Also known as Doubanjiang'} ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Add the vegetables, except greens",
+    long: "Cook for about 30 seconds, until it becomes fragnant.",
+    dependencies: [-1, -7],
+    active-time: 0.5,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Add pepper and water",
+    long: "Stir in the pepper if you want to use it, add water, and turn to hight heat to bring it all to a boil.",
+    ingredients: [
+      {name: black pepper, amount: 1, unit: tbsp, comment: 'optional'},
+      {name: water, amount: 4, unit: dl, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+  }
+  - {
+    short: "Add tofu and meat",
+    long: "Carefully slide in the tofu, and add the meat you previously prepared and the soy sauce. Reduce the heat, and let it simmer for about 6 to 8 minutes.",
+    ingredients: [ {name: light soy sauce, amount: 1, unit: tbsp, comment: ''} ],
+    dependencies: [-1, -4, -5],
+    active-time: 1,
+    passive-time: 8,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Add greens and starchy water",
+    long: "Add the greens (if you also want to use the greens for garnish save some of them though), and half the starchy water. As it has maybe been sitting for a while now, it might be a good idea to give the starch mixture a stir before adding it. After abot 30 seconds, add the rest of the starch. At this point, if you want to adjust the direction of the dish, you could give it a taste, and add some sugar if you feel it's getting to spicy, or salt if you feel it needs that. Cook unitl the sauce and most of the other ingredients stick to the tofu.",
+    dependencies: [-1, -10],
+    active-time: 1,
+    passive-time: 2,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Garnish",
+    long: "Garnish with the rest of the greens and sichuan pepper powder. Serve immediately.",
+    dependencies: [-1, -11, -12],
+    active-time: 1,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
