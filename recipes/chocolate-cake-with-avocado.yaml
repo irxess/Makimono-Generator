@@ -1,0 +1,111 @@
+recipe: Chocolate Cake with Avocado
+
+description: ""
+date_created: 2019-10-12
+last_updated: 2019-10-12
+image: ''
+
+result: {
+  amount: ,
+  name: ,
+}
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Easy vegan chocolate cake,
+  type: 'adapted',
+  author: Jane Hornby,
+  publication: 'BBC Good Food',
+  url: 'https://www.bbcgoodfood.com/recipes/chocolate-avocado-cake',
+  date: 2019-10-12
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Preheat oven",
+    long: "Turn on the oven to 180 degrees Celsius (convection). You can use 160 degrees if you don't have a convection oven.",
+    active-time: 0,
+    passive-time: 10,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Grease the cake pan",
+    long: "You can also use neutral cooking oil, but I preffer the taste of butter. The base amount of this recipe should fill a sheet pan, but if you want to use a taller pan (or more smaller pans) you can do that as well. Just remember, the thicker you make it, the longer it will take to cook all the way through.",
+    # 6 cm x 20 cm x 25 cm = 3L was too large, layers got too thin.
+    ingredients: [ {name: butter, amount: 15, unit: g, comment: 'About 1 tbsp'} ],
+    active-time: 3,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Peel and pit avocado",
+    long: "Peel and remove the the stone from the avocado so that it's ready to be mixed into the dough.",
+    ingredients: [
+      {name: Avocado, amount: 150, unit: g, comment: 'Ripe, 150 g should be equivalent to 1 large avocado'},
+    ],
+    active-time: 2,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Blend avocado with sugar",
+    long: "Using a food processor or immersion blender, mix the avocado with sugar until it's smooth.",
+    ingredients: [
+      {name: Muscovado Sugar, amount: 300, unit: g, comment: 'Brown sugar'},
+    ],
+    active-time: 2,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Add other ingredients",
+    long: "",
+    ingredients: [
+      {name: oatmeal milk, amount: 400, unit: ml, comment: 'preferrably chocolate flavored'},
+      {name: flour, amount: 350, unit: g, comment: 'plain wheat'},
+      {name: vegetable oil, amount: 150, unit: ml, comment: 'Can be substituted with butter'},
+      {name: cocoa powder, amount: 50, unit: g, comment: ''},
+      {name: bicarbonate of soda, amount: 1, unit: tsp, comment: ''},
+      {name: baking powder, amount: 2, unit: tsp, comment: ''},
+      {name: vanilla extract, amount: 2, unit: tsp, comment: ''},
+      {name: salt, amount: 0.5, unit: tsp, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Blend togehter",
+    long: "Using the blender or processor blend it togehter, until the batter is velvety and somewhat liquid.",
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Transfer dough to prepared pan",
+    long: "",
+    dependencies: [-1, -5],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Bake until done",
+    long: "Bake for 25 mins, or until fully risen and a skewer inserted into the middle of the cakes comes out clean.",
+    dependencies: [-1, -7],
+    active-time: 1,
+    passive-time: 0,
+    type: bake,
+    temp: hot,
+  }
