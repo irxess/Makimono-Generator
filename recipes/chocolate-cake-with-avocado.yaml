@@ -36,9 +36,7 @@ steps:
   - {
     short: "Melt chocolate",
     long: "In a saucepan, over low heat, melt the chocolate",
-    ingredients: [
-      {name: Cooking chocolate, amount: 40, unit: g, comment: 'Can be light or milk chocolate, depends on how '},
-    ],
+    ingredients: [ {name: Cooking chocolate, amount: 40, unit: g, comment: 'Can be light or milk chocolate, depends on how '} ],
     active-time: 2,
     passive-time: 0,
     type: saucepan,
@@ -47,9 +45,7 @@ steps:
   - {
     short: "Peel and pit avocado",
     long: "Peel and remove the the stone from the avocado so that it's ready to be mixed into the dough.",
-    ingredients: [
-      {name: Avocado, amount: 150, unit: g, comment: 'Ripe, 150 g should be equivalent to 1 large avocado'},
-    ],
+    ingredients: [ {name: Avocado, amount: 150, unit: g, comment: 'Ripe, 150 g should be equivalent to 1 large avocado'} ],
     active-time: 2,
     passive-time: 0,
     type: cut,
