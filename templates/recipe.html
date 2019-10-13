@@ -154,6 +154,30 @@
     {% for step in r.steps %}
     <hr>
     <div class="step">
+      {% if step.time.active > 0 or step.time.passive > 0 %}
+        <div class="step-time-container">
+          <p>
+            Guessed time needed:
+            {% if step.time.active > 0 %}
+              <span class="step-active-time">
+                <span class="step-time-name">Active time</span>
+                <span class="step-time-amount">{{step.time.active}}</span>
+                <span class="step-time-unit">minutes</span>
+              </span>
+            {% endif %}
+            {% if step.time.active > 0 and step.time.passive > 0 %}
+              <span class="step-time-separator">|</span>
+            {% endif %}
+            {% if step.time.passive > 0 %}
+              <span class="step-passive-time">
+                <span class="step-time-name">Passive time</span>
+                <span class="step-time-amount">{{step.time.passive}}</span>
+                <span class="step-time-unit">minutes</span>
+              </span>
+            {% endif %}
+          </p>
+        </div>
+      {% endif %}
       {% if step.ingredients_used %}
       <div class="ingredient-container">
         <div class="step-ingredient-list">

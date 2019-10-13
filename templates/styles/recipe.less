@@ -43,6 +43,20 @@ svg {
   }
 }
 
+.step-time-container {
+  text-align: right;
+  p{
+    margin: 0;
+    margin-right: 0.75em;
+  }
+  .step-time-name{
+    font-style: italic;
+  }
+  .step-time-amount, .step-time-unit{
+    font-weight: bold;
+  }
+}
+
 .ingredient-container {
   background: @super-light-grey;
   .step-ingredient-list {
@@ -74,7 +88,19 @@ svg {
     .step{
       background: @super-light-grey;
       display: grid;
-      grid-template-columns: 1fr 3fr;
+      grid-template-columns: max-content 1fr 3fr;
+      // grid-template-columns: 0.75fr 1fr 3fr;
+      .step-time-container{
+        .step-time-separator{
+          display: none;
+        }
+        .step-active-time{
+          display: block;
+        }
+        .step-passive-time{
+          display: block;
+        }
+      }
       .ingredient-container{
         .step-ingredient-list{
           ul{
@@ -91,7 +117,7 @@ svg {
       }
       .description-container{
         background: @grey-light;
-        grid-column-start: 2;
+        grid-column-start: 3;
         padding-bottom: 0.75em;
       }
     }
