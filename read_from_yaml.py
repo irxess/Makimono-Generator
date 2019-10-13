@@ -46,10 +46,13 @@ def read_steps(yaml, recipe):
     if 'steps' in yaml:
         id = 0
         for step in yaml['steps']:
-            if 'time' in step:
-                time = StepTime(active=step['time'], passive=0)
-            else:
-                time = StepTime(active=1, passive=0)
+            active_time = 1
+            passive_time = 0
+            if 'active-time' in step:
+                active_time = step['active-time']
+            if 'passive-time' in step:
+                passive_time = step['passive-time']
+            time = StepTime(active=active_time, passive=passive_time)
             type = step['type']
             temperature = step['temp']
             step_data = Step(id=id, time=time, step_type=type, temperature=temperature)
