@@ -2,7 +2,7 @@ recipe: Sichuan Boiled Fish
 
 description: ""
 date_created: 2019-09-01
-last_updated: 2019-09-01
+last_updated: 2019-10-27
 image: sichuan_boiled_fish
 
 result: {
@@ -26,7 +26,7 @@ steps:
   - {
     short: "Slice the fish",
     long: "You want to slice the fish as thinly as possible. It's no problem if it's so thin that the slices are transparent. However, you should only go as thing as you are comfortable with, as you don't want the pieces to tear apart as you're cutting them either. To make it easier, try to cut diagonally. If you are familiar with it, the result should look like sashimi pieces.",
-    ingredients: [ {name: Pangasius bocourti, amount: 300, unit: g, comment: "Use filets if you want to keep things simple. Can be substituted for other white fish that might be easier to get a hold of where you live, such as tilapia. It's no problem to buy the fish frozen, as you might find it easier to work with the fish when it's partially frozen."} ],
+    ingredients: [ {name: White fish, amount: 300, unit: g, comment: "Use filets if you want to keep things simple. The actual type of fish that seems to be more commonly used in China is Pangasius bocourti (found no other name in English). Can be substituted for other white fish that might be easier to get a hold of where you live, such as tilapia. It's no problem to buy the fish frozen, actually you might find it easier to work with the fish when it's partially frozen."} ],
     active-time: 5,
     passive-time: 0,
     type: cut,
