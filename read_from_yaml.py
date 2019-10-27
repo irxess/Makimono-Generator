@@ -46,7 +46,7 @@ def read_steps(yaml, recipe):
     if 'steps' in yaml:
         id = 0
         for step in yaml['steps']:
-            active_time = 1
+            active_time = 0
             passive_time = 0
             if 'active-time' in step:
                 active_time = step['active-time']
