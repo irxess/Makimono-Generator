@@ -12,9 +12,9 @@ result: {
 
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
-  name: SAFTIG JULEBRØD (ELLER JULEKAKE, OM DU VIL), # recipe name or whole citation
+  name: "SAFTIG JULEBRØD (ELLER JULEKAKE, OM DU VIL)", # recipe name or whole citation
   type: 'adapted',
-  author: Trine?,
+  author: "Trine?",
   publication: 'Trines matblogg',
   url: 'https://trinesmatblogg.no/recipe/saftig-julebrod-eller-julekake-om-du-vil/',
   date: 2019-12-08
@@ -42,7 +42,7 @@ steps:
       {name: flour, amount: 1000, unit: g, comment: ''},
       {name: milk, amount: 6, unit: dl, comment: ''},
       {name: sugar, amount: 150, unit: g, comment: ''},
-      {name: egg, amount: 1, unit: , comment: ''},
+      {name: egg, amount: 1, unit: '', comment: ''},
       {name: dry yeast, amount: 25, unit: g, comment: ''},
       {name: cardamom, amount: 2, unit: tsp, comment: ''},
       {name: salt, amount: 0.5, unit: tsp, comment: ''},
@@ -127,7 +127,7 @@ steps:
   - {
     short: "Brush loaves with egg wash and score",
     long: "Whisk together and egg to make egg wash, and brush on the loaves. Then, if you want to, score the bread by making some cuts into it.",
-    ingredients: [ {name: egg, amount: 1, unit: , comment: ''} ],
+    ingredients: [ {name: egg, amount: 1, unit: '', comment: ''} ],
     dependencies: [-2],
     active-time: 4,
     passive-time: 0,
@@ -140,6 +140,6 @@ steps:
     dependencies: [-1, -2],
     active-time: 2,
     passive-time: 30,
-    type: bake,
+    type: oven,
     temp: hot,
   }
