@@ -1,0 +1,145 @@
+recipe: Julebrød
+
+description: Norwegian "christmas bread" is a sweet pastry usually shaped like a bread. Is tasty to eat as it is, gets even better with butter, and works well with jams or cured meat.
+date_created: 2019-12-19
+last_updated: 2019-12-19
+image: ''
+
+result: {
+  amount: ,
+  name: ,
+}
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: SAFTIG JULEBRØD (ELLER JULEKAKE, OM DU VIL), # recipe name or whole citation
+  type: 'adapted',
+  author: Trine?,
+  publication: 'Trines matblogg',
+  url: 'https://trinesmatblogg.no/recipe/saftig-julebrod-eller-julekake-om-du-vil/',
+  date: 2019-12-08
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Put raisins in warm water.",
+    long: "The water should just barely cover the raisins, so the amount you need may vary with the size and shape of container you're using. Set them aside to soak for about 15 minutes.",
+    ingredients: [
+      {name: Raisins, amount: 300, unit: g, comment: ''},
+      {name: Water, amount: 1, unit: dl, comment: 'Warm'},
+    ],
+    active-time: 1,
+    passive-time: 15,
+    type: bowl,
+    temp: warm,
+  }
+  - {
+    short: "Mix dough and knead",
+    long: "Mix together the ingredients and knead for about 10 minutes. If you're using a kitchen machine use a dough hook and mix at medium speed (still for 10 minutes). If your feeling that the dough is getting too loose or too compact feel free to add more flour or milk as needed.",
+    ingredients: [
+      {name: flour, amount: 1000, unit: g, comment: ''},
+      {name: milk, amount: 6, unit: dl, comment: ''},
+      {name: sugar, amount: 150, unit: g, comment: ''},
+      {name: egg, amount: 1, unit: , comment: ''},
+      {name: dry yeast, amount: 25, unit: g, comment: ''},
+      {name: cardamom, amount: 2, unit: tsp, comment: ''},
+      {name: salt, amount: 0.5, unit: tsp, comment: ''},
+    ],
+    active-time: 15,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Knead in butter in small chunks",
+    long: "Add butter in small chunks and knead until it's completely blended in. The dough should now easily let go of the sides of the bowl fo the kitchen machine or the surface you're working on. This should take you about 10 minutes of kneading.",
+    ingredients: [ {name: butter, amount: 150, unit: g, comment: ''} ],
+    dependencies: [-1],
+    active-time: 11,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Drain and add raisins to dough",
+    long: "Drain the raisins, squeeze them a little bit to get out some of the excess moisture, and add them to the dough. Knead the dough until the raisins are evenly distributed. But be carefull not to knead it too much, if you do the raisins will end up crushed.",
+    dependencies: [-1, -3],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Rest until doubled in size",
+    long: "Cover the dough and set aside to rest, until it has approximately doubled in size. This can take about 1 and a half hours.",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 90,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Divide dough in pieces on lightly floured surface",
+    long: "Lightly flour the surface you want to work on. Divide the dough into evenly sized pieces that you're later going to shape into the loaves you'll be baking. The base recipe amount works well for 4 loaves.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Shape dough pieces into buns and bench rest",
+    long: "This step can be skipped if you want to. After dividing your dough into pieces shape them into buns, cover (with for instance a cloth), and let bench rest for about 15 minutes.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 15,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Shape dough into loaves",
+    long: "Shape the dough pieces into loaves and place on baking trays lined with baking paper. If you split the original sized recipe in 4 pieces about 2 loaves per baking tray should be fine.",
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Rest until doubled in size",
+    long: "Cover the loaves and set aside to rest, until they have about doubled in size. This can take about 1 hour.",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 60,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Preheat the oven",
+    long: "If you're using convection, set it to approximately 175 degrees Celsius. Otherwise, if you're using the conventional heating mode (top and bottom element heating), set it to 200 degrees Celsius.",
+    active-time: 1,
+    passive-time: 10,
+    type: oven,
+    temp: hot,
+  }
+  - {
+    short: "Brush loaves with egg wash and score",
+    long: "Whisk together and egg to make egg wash, and brush on the loaves. Then, if you want to, score the bread by making some cuts into it.",
+    ingredients: [ {name: egg, amount: 1, unit: , comment: ''} ],
+    dependencies: [-2],
+    active-time: 4,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Bake loaves",
+    long: "If you're using conventional heating place the tray at the bottom rack. Bake unitll the loaves have a nice color, and are cooked through. The loaves should make a hollow sound if you knock on the underside. This should take about 25 to 30 minutes.",
+    dependencies: [-1, -2],
+    active-time: 2,
+    passive-time: 30,
+    type: bake,
+    temp: hot,
+  }
