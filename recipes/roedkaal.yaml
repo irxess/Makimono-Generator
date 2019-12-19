@@ -1,0 +1,135 @@
+recipe: Rødkål
+
+description: "A traditional norwegian dish, now usually made for christmas. Pickled red cabbage works well as a side-dish for heavy and savory food."
+date_created: 2019-12-19
+last_updated: 2019-12-19
+image: 'roedkaal'
+
+result: {
+  amount: ,
+  name: ,
+}
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Rødkål, # recipe name or whole citation
+  type: 'adapted',
+  author: 'Berit Nordstrand',
+  publication: 'beritnordstrand',
+  url: 'https://beritnordstrand.no/rodkal/',
+  date: 2019-12-14
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Shred red cabbage",
+    long: "",
+    ingredients: [ {name: red cabbage, amount: 1000, unit: g, comment: ''} ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Chop apples and shred prunes",
+    long: "Chop some apples and shred the prunes. Leave the skin on the apples.",
+    ingredients: [
+      {name: apple, amount: 150, unit: g, comment: ''},
+      {name: prunes, amount: 100, unit: g, comment: 'can be substituted with figs'},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Mix vegetables and spices/sauce",
+    long: "Mix everything together in a bowl with the cabbage, apples, and prunes you just shredded.",
+    ingredients: [
+      {name: red wine, amount: 5, unit: dl, comment: 'Can be substituted with sherry or port.'},
+      {name: orange juice, amount: 5, unit: dl, comment: ''},
+      {name: vinegar, amount: 2, unit: dl, comment: 'Preferably red wine vinegar I guess, but worked well with plain white vinegar.'},
+      {name: raisins, amount: 60, unit: g, comment: ''},
+      {name: cloves, amount: 4, unit: '', comment: ''},
+      {name: cinnamon stick, amount: 1, unit: '', comment: '1 small cinamon stick. Can be substituted with just adding a bit of ground cinnamon.'},
+    ],
+    dependencies: [-1, -2],
+    active-time: 10,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Let marinate",
+    long: "Set aside and let marinate for at least 1 hour. Can safely be left overnight for even better results. (You might want to consider covering it if you are leaving it for a long amount of time.)",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 60,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Prepare broth",
+    long: "",
+    ingredients: [
+      {name: water, amount: 5, unit: dl, comment: ''},
+      {name: chicken bouillon, amount: 10, unit: g, comment: 'Or use 1 cube if you have bouillon in cubes. Can be substituted with vegetable bouillon or left out completely.'},
+    ],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: warm,
+  }
+  - {
+    short: "Finely chop onion",
+    long: "",
+    ingredients: [ {name: onion, amount: 200, unit: g, comment: 'about 1 large one'} ],
+    active-time: 2,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Fry onion in fat",
+    long: "Take the onion you just chopped up in some butter, or even better fatty meat juices left over from other christmas cooking. To save yourself a round of washing you can just do this in the casserole/pot you'll be cooking the cabbage in from here.",
+    ingredients: [ {name: butter, amount: 100, unit: g, comment: 'can be substituted with lard or other fat'} ],
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Add everything to pot",
+    long: "In a large pot, mix the cabbage you've let marinate (with all the juice it marinated in), the broth you prepared, and the onion.",
+    dependencies: [-1, -3, -4],
+    active-time: 3,
+    passive-time: 0,
+    type: add,
+    temp: warm,
+  }
+  - {
+    short: "Boil",
+    long: "Bring it all to a boil, and let simmer until the cabbage is done and soft, and the fluid is reduced. Depending on how much you're making, and how much you want the liquid reduced, you might find that you need at least a couple of hours if not more of simmering/boiling before there is noticeably less fluid.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 90,
+    type: saucepan,
+    temp: hot,
+  }
+  - {
+    short: "Season",
+    long: "When you feel that the cabbage is done, season with salt, freshly ground black pepper and honey untill you're pleased with the taste. Give it a good stir, and let it have a couple of minutes to balance out before tasing again or serving. Remember, as this is usually a side dish, you might want it to for instance be more distinctly sweet, or less salty, depnding on what you're serving it with (not everything has to have a completely rounded taste when served with other things).",
+    ingredients: [
+      {name: Salt, amount: 2, unit: tsp, comment: ''},
+      {name: Black pepper, amount: 1, unit: tsp, comment: ''},
+      {name: Honey, amount: 1, unit: tbsp, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 2,
+    type: saucepan,
+    temp: warm,
+  }
