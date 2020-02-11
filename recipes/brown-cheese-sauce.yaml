@@ -28,7 +28,7 @@ steps:
   - {
     short: heat the cream over medium heat untill boiling,
     long: "Do you like the taste of burnt milk? No? Stir that sauce!",
-    time: 10,
+    active-time: 10,
     type: 'saucepan',
     temp: 'warm',
     dependencies: [-1],
