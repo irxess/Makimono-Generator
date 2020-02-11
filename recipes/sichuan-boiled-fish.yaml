@@ -50,7 +50,7 @@ steps:
     short: "Make chili oil",
     long: "Add the oil to the saucepan, and stir inn the sichuan pepper, chili powder, and dried chilies. Mix it all unitl it is even. Place it over medium heat unitl the oil begins to boil. Then turn down to low heat, and let it simmer for about 20 minutes. It is possible to burn it, so stir occasionally.",
     ingredients: [
-      {name: oil, amount: 1, unit: cup, comment: 'Should be neutral and capable of sustaining high heat'},
+      {name: oil, amount: 0.25, unit: l, comment: 'Should be neutral and capable of sustaining high heat'},
       {name: sichuan pepper, amount: 2, unit: tbsp, comment: 'Black pepper is not really a substitute here'},
       {name: Korean chili powder, amount: 15, unit: g, comment: ''},
       {name: dried chili, amount: 10, unit: g, comment: 'whole'},
@@ -73,7 +73,7 @@ steps:
     short: "Prepare chicken broth",
     long: "Prepare som chicken broth and set it aside for later.",
     ingredients: [
-      {name: water, amount: 2, unit: cups, comment: ''},
+      {name: water, amount: 0.5, unit: l, comment: ''},
       {name: chicken buillion, amount: 10, unit: g, comment: 'Or use 1 cube if you have bouillon in cubes'},
     ],
     active-time: 1,
