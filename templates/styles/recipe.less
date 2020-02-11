@@ -122,6 +122,14 @@ svg {
       .ingredient-container{
         // Remove separator between ingredients-list and step-time if it is present
         border-top: none;
+        &:nth-child(1){
+          // When there is no time associated with any of the steps
+          // (making the ingredients container the first child of the step container),
+          // occupy the entire space to the left of the description
+          // (starting at the beginning of the first column and ending before the beginning of the third column of the grid).
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
         .step-ingredient-list{
           ul{
             li{
