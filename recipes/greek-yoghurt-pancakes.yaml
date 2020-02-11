@@ -15,9 +15,9 @@ steps:
     ingredients: [
       {name: greek yoghurt, amount: 300, unit: 'g'},
       {name: flour, amount: 100, unit: 'g'},
-      {name: salt, amount: 1, unit: 'tsp'},
-      {name: baking powder, amount: 3, unit: 'tsp'},
-      {name: vanilla sugar, amount: 1, unit: 'tsp'},
+      {name: salt, amount: 5.7, unit: 'g', comment: '5.7 g of salt is about 1 tsp'},
+      {name: baking powder, amount: 12, unit: 'g', comment: '4 g of baking powder is about 1 tsp'},
+      {name: vanilla sugar, amount: 2.6, unit: 'g', comment: '2.6 g of vanilla sugar is about 1 tsp'},
       {name: honey, amount: 10, unit: 'g'}
     ],
   }
@@ -38,7 +38,7 @@ steps:
     temp: 'room',
     dependencies: [-1],
     ingredients: [
-      {name: lemon juice, amount: 1, unit: 'tsp', comment: 'Optional'},
+      {name: lemon juice, amount: 5, unit: 'g', comment: 'Optional. 5g lemon juice is about 1 tsp.'},
       {name: milk, amount: 22, unit: 'g'}
     ],
   }
