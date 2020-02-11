@@ -44,6 +44,7 @@ svg {
 }
 
 .step-time-container {
+  background: @super-light-grey;
   text-align: right;
   p{
     margin: 0;
@@ -59,6 +60,12 @@ svg {
 
 .ingredient-container {
   background: @super-light-grey;
+  &:nth-child(2){
+    // Draw a dotted border between the time indication on the line above and the ingredients list.
+    // But only draw the border if the time indication is present for the step!
+    // Which in the current setup should only occur if the ingredient list is the second child of the step-div.
+    border-top: dotted @grey;
+  }
   .step-ingredient-list {
     ul {
       padding-top: 0;
@@ -112,6 +119,8 @@ svg {
         }
       }
       .ingredient-container{
+        // Remove separator between ingredients-list and step-time if it is present
+        border-top: none;
         .step-ingredient-list{
           ul{
             li{
