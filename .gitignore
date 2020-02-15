@@ -1,2 +1,10 @@
+# General python
 __pycache__
+
+# Python virtual environment catalogs for binary files
+pyvenv.cfg
+Lib
+Scripts
+
+# Output directory
 publish/*
