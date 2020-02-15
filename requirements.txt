@@ -1,6 +1,10 @@
 # Pip packages required for running the python build scripts
 # To install the packages: `pip install -r requirements.txt`
 
+# Packages versions locked when using these versions of python and pip:
+# Python 3.7.6
+# pip 20.0.2
+
 # Library for parsing the yaml files with the recipes and so on
 PyYAML==5.3
 
