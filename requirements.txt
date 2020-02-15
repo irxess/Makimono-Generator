@@ -2,12 +2,17 @@
 # To install the packages: `pip install -r requirements.txt`
 
 # Library for parsing the yaml files with the recipes and so on
-pyyaml
+PyYAML==5.3
 
 # Library for producing html files from the jinja-templates (.html files) in the `templates/` folder
-jinja2
+Jinja2==2.11.1
 
 # Library for compiling the less files in the the `templates/` folder to css
-lesscpy
+lesscpy==0.14.0
 
-pillow
+Pillow==7.0.0
+
+# Not sure where these came from, but `pip freeze` outputted them in a venv, so I guess they should be included
+MarkupSafe==1.1.1
+ply==3.11
+six==1.14.0
