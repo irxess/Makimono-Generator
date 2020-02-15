@@ -7,10 +7,6 @@ Make sure python (at least v 3.7) and the neccessary python packages are install
 
 ## Windows
 
-(Might have to run from shell started as admin due to lack of suitable sudo functionality.)
-
-> python -m pip install pyyaml jinja2 lesscpy pillow
-
 ### Using python virtual environment
 
 Official docs per 2020-02-15 for venv can be found here:
@@ -32,6 +28,12 @@ To install the packages specified in the requirements-file:
 
 `pip install -r requirements.txt`
 
+### When not using virtual environments
+
+(Might have to run from shell started as admin due to lack of suitable sudo functionality.)
+
+> python -m pip install pyyaml jinja2 lesscpy pillow
+
 ## Other OSs
 
 > pip install pyyaml jinja2 lesscpy pillow
@@ -43,3 +45,5 @@ Run generate.py:
 > python generate.py
 
 This will create a 'publish'-folder, which can be used as root for the published site.
+
+Note that if you are using virtual environments, this should be executed while the virtual environment is active.
