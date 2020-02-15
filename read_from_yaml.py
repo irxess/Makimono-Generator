@@ -139,7 +139,7 @@ def read_recipe(yaml):
 def read_recipe_into_data(name):
     path = os.path.join('recipes', name+'.yaml')
     with open(path, 'r', encoding='utf-8') as recipe_file:
-        yaml_data = yaml.load(recipe_file)
+        yaml_data = yaml.load(recipe_file, Loader=yaml.FullLoader)
     recipe = read_recipe(yaml_data)
     read_steps(yaml_data, recipe)
     create_sorted_ingredient_overview(recipe)
