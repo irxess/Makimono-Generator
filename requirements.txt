@@ -1,0 +1,13 @@
+# Pip packages required for running the python build scripts
+# To install the packages: `pip install -r requirements.txt`
+
+# Library for parsing the yaml files with the recipes and so on
+pyyaml
+
+# Library for producing html files from the jinja-templates (.html files) in the `templates/` folder
+jinja2
+
+# Library for compiling the less files in the the `templates/` folder to css
+lesscpy
+
+pillow
