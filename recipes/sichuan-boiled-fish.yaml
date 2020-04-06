@@ -160,6 +160,6 @@ steps:
     dependencies: [-1, -6],
     active-time: 1,
     passive-time: 0,
-    type: mortar,
-    temp: room,
+    type: add,
+    temp: warm,
   }
