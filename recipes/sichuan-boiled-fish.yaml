@@ -36,9 +36,9 @@ steps:
     short: "Coat fish slices",
     long: "In a bowl, coat the fish slices with som salt, pepper, and cornstarch. Make sure to mix it all together well, so that the fish is evenly covered. Set aside, and let it rest for at least 10 minutes while you proceed with the rest of the steps.",
     ingredients: [
-      {name: cornstarch, amount: 1, unit: tbsp, comment: ''},
-      {name: salt, amount: 0.5, unit: tsp, comment: ''},
-      {name: white pepper, amount: 0.5, unit: tsp, comment: ''},
+      {name: cornstarch, amount: 7.5, unit: g, comment: '7.5g is about 1 tbsp'},
+      {name: salt, amount: 2.8, unit: g, comment: '5.7g is about 1 tsp'},
+      {name: white pepper, amount: 1.2, unit: g, comment: '2.3g is about 1 tsp'},
     ],
     dependencies: [-1],
     active-time: 2,
@@ -127,7 +127,7 @@ steps:
   - {
     short: "Stir fry vegetables",
     long: "Using a couple of tablespoons of the cili oil prepared previously, heat it up in a wok pan, add the vegetables, a bit of salt, and stir fry it until you are satisfied that they are done. Place them in the serving bowl.",
-    ingredients: [ {name: salt, amount: 1, unit: tsp, comment: ''} ],
+    ingredients: [ {name: salt, amount: 5.7, unit: g, comment: ''} ],
     dependencies: [-1, -6],
     active-time: 5,
     passive-time: 0,
