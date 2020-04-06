@@ -50,8 +50,8 @@ steps:
     short: "Make chili oil",
     long: "Add the oil to the saucepan, and stir inn the sichuan pepper, chili powder, and dried chilies. Mix it all unitl it is even. Place it over medium heat unitl the oil begins to boil. Then turn down to low heat, and let it simmer for about 20 minutes. It is possible to burn it, so stir occasionally.",
     ingredients: [
-      {name: oil, amount: 2.5, unit: dl, comment: 'Should be neutral and capable of sustaining high heat'},
-      {name: sichuan pepper, amount: 2, unit: tbsp, comment: 'Black pepper is not really a substitute here'},
+      {name: oil, amount: 214, unit: g, comment: '214g is approximately 250 ml. Should be neutral and capable of sustaining high heat'},
+      {name: sichuan pepper, amount: 8.4, unit: g, comment: '4.2g is approximately 1 tbsp. Black pepper is not really a substitute here'},
       {name: Korean chili powder, amount: 15, unit: g, comment: ''},
       {name: dried chili, amount: 10, unit: g, comment: 'whole'},
     ],
@@ -107,7 +107,7 @@ steps:
   - {
     short: "Prepare the soup base",
     long: "Add a tablespoon of the chili oil you made previosly to the wok pan, while the pan is still hot. Add the bean paste, and fry it for about 30 seconds. Then add the chicken broth, and bring it to a boil.",
-    ingredients: [ {name: hot bean paste, amount: 2, unit: tbsp, comment: 'Often used in Chinese cooking. Can usually be found in jars, is red-ish in color, and can also be found with other names such as «hot bean paste» or «chili bean sauce».'} ],
+    ingredients: [ {name: hot bean paste, amount: 50, unit: g, comment: '50 g is approximately 1 tbsp. Often used in Chinese cooking. Can usually be found in jars, is red-ish in color, and can also be found with other names such as «hot bean paste» or «chili bean sauce».'} ],
     dependencies: [-3, -4],
     active-time: 1,
     passive-time: 3,
@@ -126,7 +126,7 @@ steps:
   - {
     short: "Fry sichuan green pepper",
     long: "In a dry pan, fry the green sichuan peppers until the become crispy. Note that the heating step is important even if the pepper you have is dried, it will release more flavor.",
-    ingredients: [ {name: green sichuan pepper, amount: 1, unit: tbsp, comment: ''} ],
+    ingredients: [ {name: green sichuan pepper, amount: 4.2, unit: g, comment: ''} ],
     active-time: 2,
     passive-time: 0,
     type: fry,
