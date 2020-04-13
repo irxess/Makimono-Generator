@@ -10,7 +10,7 @@ image: ''
 steps:
   - {
     short: "Make sauce",
-    long: "Mix the ingredients together and set aside.",
+    long: "Mix the ingredients together and set aside. You can adjust the ratios to taste. If it is hard to combine you could add some water.",
     ingredients: [
       {name: tamarind paste, amount: 3, unit: tbsp, comment: ''},
       {name: brown sugar, amount: 3, unit: tbsp, comment: ''},
