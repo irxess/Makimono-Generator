@@ -1,0 +1,53 @@
+recipe: Peanut free "satay" sauce
+
+description: ""
+date_created: 2020-04-13
+last_updated: 2020-04-13
+image: ''
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Grind cashews",
+    long: "Grind the cashews until they are slightly chunky. Do it together with the coconut milk and tamarind to go easier on your blender, if you are using one. If not I guess you could always just chop the kashews finely with a knife.",
+    ingredients: [
+      {name: cashews, amount: 70, unit: g, comment: ''},
+      {name: coconut milk, amount: 4, unit: dl, comment: ''},
+      {name: tamarind, amount: 4, unit: tbsp, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Chop the choppables",
+    long: "Dice the onion, and finely chop the chili peppers and ginger.",
+    ingredients: [
+      {name: chili pepper, amount: 2, unit: pieces, comment: ''},
+      {name: onion, amount: 75, unit: g, comment: '1 medium onion is about 150 g.'},
+      {name: ginger, amount: 10, unit: g, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Mix everything",
+    long: "Mix the spices with the chopped vegetables and the cashew paste you've already prepared. Adjust the amounts of all the spices as you go to taste.",
+    ingredients: [
+      {name: ginger spice, amount: 0.5, unit: tsp, comment: ''},
+      {name: paprika spice, amount: 1, unit: tsp, comment: ''},
+      {name: onion spice, amount: 0.5, unit: tsp, comment: ''},
+      {name: chili spice, amount: 0.25, unit: tsp, comment: ''},
+      {name: malt syrup, amount: 1, unit: tbsp, comment: ''},
+      {name: brown sugar, amount: 1, unit: tbsp, comment: ''},
+    ],
+    dependencies: [-1, -2],
+    active-time: 5,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
