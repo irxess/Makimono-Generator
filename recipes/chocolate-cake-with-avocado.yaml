@@ -2,7 +2,7 @@ recipe: Chocolate Cake with Avocado
 
 description: "A delicious and moist chocolate cake, that's reasonably simple to make. For those days that you don't feel like making brownies because you want something more firm, cake, but you still want the depth of chocolate and non-dryness you typically see in brownies. The original recipe details how you could make it gluten free as well as vegan."
 date_created: 2019-10-12
-last_updated: 2019-10-12
+last_updated: 2019-12-07
 image: ''
 
 result: {
@@ -25,7 +25,7 @@ source: {
 steps:
   - {
     short: "Grease the cake pan",
-    long: "You can also use neutral cooking oil, but I preffer the taste of butter. The base amount of this recipe should fill a sheet pan, but if you want to use a taller pan (or more smaller pans) you can do that as well. Just remember, the thicker you make it, the longer it will take to cook all the way through.",
+    long: "You can also use neutral cooking oil, but I prefer the taste of butter. The base amount of this recipe should fill a sheet pan, but if you want to use a taller pan (or more smaller pans) you can do that as well. Just remember, the thicker you make it, the longer it will take to cook all the way through.",
     # 6 cm x 20 cm x 25 cm = 3L was too large, layers got too thin.
     ingredients: [ {name: butter, amount: 15, unit: g, comment: 'About 1 tbsp'} ],
     active-time: 3,
@@ -43,8 +43,8 @@ steps:
     temp: warm,
   }
   - {
-    short: "Peel and pit avocado",
-    long: "Peel and remove the the stone from the avocado so that it's ready to be mixed into the dough.",
+    short: "Peel, pit and mash avocado",
+    long: "Peel and remove the the stone from the avocado so that it's ready to be mixed into the dough. To make it easier for the food processor, cut the avocado into smaller chunks and roughly mash with a fork.",
     ingredients: [ {name: Avocado, amount: 150, unit: g, comment: 'Ripe, 150 g should be equivalent to 1 large avocado'} ],
     active-time: 2,
     passive-time: 0,
