@@ -1,0 +1,41 @@
+recipe: Oatmeal (Havregrøt)
+
+description: ""
+date_created: 2020-04-13
+last_updated: 2020-04-13
+image: ''
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Boil milk",
+    long: "Bring the milk to a boil over medium heat. Remember to stir so that it doesn't become burned.",
+    ingredients: [ {name: milk, amount: 600, unit: g, comment: ''} ],
+    active-time: 10,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Add oats",
+    long: "Add oats and a pinch of salt. Stir and let thicken.",
+    ingredients: [
+      {name: oats, amount: 140, unit: g, comment: 'Rolled or instant oats. Use instant oats if you want a more mushy result, or rolled oats if you want the resulting porridge to have more texture/be more chewy.'},
+      {name: salt, amount: 0.5, unit: tsp, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: add,
+    temp: warm,
+  }
+  - {
+    short: "Serve with butter",
+    long: "Brown sugar and cinnamon are also good addittions.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
