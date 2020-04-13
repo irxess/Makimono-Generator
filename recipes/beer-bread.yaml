@@ -5,6 +5,16 @@ date_created: 2020-04-13
 last_updated: 2020-04-13
 image: ''
 
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Beer bread, # recipe name or whole citation
+  type: 'adapted',
+  author: tommynaganuma,
+  publication: 'Reddit',
+  url: 'https://www.reddit.com/r/AskReddit/comments/9zxypy/chefs_of_reddit_whats_the_greatest_recipe_youve/eaczjcl/',
+  date: 2019-10-07
+}
+
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
