@@ -10,7 +10,7 @@ image: ''
 steps:
   - {
     short: "Grind cashews",
-    long: "Grind the cashews until they are slightly chunky. Do it together with the coconut milk and tamarind to go easier on your blender, if you are using one. If not I guess you could always just chop the kashews finely with a knife.",
+    long: "Grind the cashews until they are slightly chunky. Do it together with the coconut milk and tamarind to go easier on your blender, if you are using one. If not I guess you could always just chop the cashews finely with a knife.",
     ingredients: [
       {name: cashews, amount: 70, unit: g, comment: ''},
       {name: coconut milk, amount: 4, unit: dl, comment: ''},
