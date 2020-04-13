@@ -1,0 +1,59 @@
+recipe: Beer bread
+
+description: ""
+date_created: 2020-04-13
+last_updated: 2020-04-13
+image: ''
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Pre-heat oven",
+    long: "225 °C, convection",
+    active-time: 1,
+    passive-time: 5,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Mix ingredients",
+    long: "Combine all the ingredients to a smooth dough.",
+    ingredients: [
+      {name: beer, amount: 330, unit: ml, comment: ''},
+      {name: flour, amount: 270, unit: g, comment: ''},
+      {name: baking powder, amount: 3, unit: tsp, comment: ''},
+      {name: salt, amount: 1, unit: tsp, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Transfer dough to cast iron pot and place in oven",
+    long: "No need to let it rise. Keep the lid on the pot when placing in in the oven.",
+    dependencies: [-1, -2],
+    active-time: 2,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Bake for 20 to 25 minutes",
+    long: "",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 25,
+    type: oven,
+    temp: hot,
+  }
+  - {
+    short: "Remove the lid and reduce temperature",
+    long: "Remove the lid, and reduce the temperature to 190 °C. Bake for about 25 minutes more, and it should be done.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 25,
+    type: oven,
+    temp: hot,
+  }
