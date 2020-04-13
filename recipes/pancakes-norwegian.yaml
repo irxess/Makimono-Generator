@@ -1,0 +1,70 @@
+recipe: Pancakes (Norwegian)
+
+description: ""
+date_created: 2020-04-13
+last_updated: 2020-04-13
+image: ''
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Melt butter",
+    long: "Melt butter, and set it aside to let it cool so that it doesn't mess up the eggs.",
+    ingredients: [ {name: butter, amount: 50, unit: g, comment: ''} ],
+    active-time: 2,
+    passive-time: 5,
+    type: saucepan,
+    temp: hot,
+  }
+  - {
+    short: "Mix eggs and milk",
+    long: "",
+    ingredients: [
+      {name: eggs, amount: 300, unit: g, comment: '1 medium sized egg is approximately 50 g.'},
+      {name: milk, amount: 600, unit: g, comment: ''}
+    ],
+    active-time: 2,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Add four",
+    long: "",
+    ingredients: [ {name: flour, amount: 250, unit: g, comment: ''} ],
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Add the melted butter",
+    long: "If using unsalted butter add a pinch of salt as well.",
+    ingredients: [ {name: salt, amount: 0.5, unit: tsp, comment: 'Optional, use if using unsalted butter.'} ],
+    dependencies: [-1, -3],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Let batter swell for half an hour",
+    long: "",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 30,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Fry on medium high heat",
+    long: "Add a bit of oil to the pan for frying in between each of the pancakes or just when the pan is getting dry. Let the pan heat up a bit so that you don't start the first pancake in a cold pan. Setting the heat to 6.5 out of 9 seems to work well on our stove, but you'll probably have to do some trial and error to figure out what works for you.",
+    ingredients: [ {name: oil, amount: 4, unit: tbsp, comment: 'For frying, can be substituted with butter or lard.'} ],
+    dependencies: [-1],
+    active-time: 20,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+  }
