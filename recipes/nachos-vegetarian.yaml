@@ -1,0 +1,107 @@
+recipe: Vegetarian nachos
+
+description: ""
+date_created: 2020-04-13
+last_updated: 2020-04-13
+image: ''
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Fry chickpeas",
+    long: "Fry chickpeas over medium to medium-high heat with some oil until they are nice and soft.",
+    ingredients: [
+      {name: chickpeas, amount: 250, unit: g, comment: '1 can of 400 g should be about 250 g actual chickpeas'},
+      {name: oil, amount: 2, unit: tbsp, comment: 'For frying the chickpeas, should be capable of sustaining high heat.'},
+    ],
+    active-time: 5,
+    passive-time: 5,
+    type: fry,
+    temp: hot,
+  }
+  - {
+    short: "Season and blend chickpeas",
+    long: "Use an immersion blender or other tool yielding similar results. Adjust amounts of spice to taste",
+    ingredients: [
+      {name: paprika spice, amount: 1, unit: tsp, comment: ''},
+      {name: cilantro, amount: 1, unit: tsp, comment: ''},
+      {name: garlic powder, amount: 0.5, unit: tsp, comment: ''}
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: bowl,
+    temp: warm,
+  }
+  - {
+    short: "Chop and add vegetables",
+    long: "Stir everything together. Don't discard the tomato sauce if using canned tomato beans. You can adjust the amount of cayenne pepper to make it as spicy as you like.",
+    ingredients: [
+      {name: tomato beans, amount: 400, unit: g, comment: ''},
+      {name: sweet corn, amount: 150, unit: g, comment: ''},
+      {name: paprika, amount: 0.5, unit: pieces, comment: ''},
+      {name: onion, amount: 75, unit: g, comment: '1 medium sized onion is about 150 g.'},
+      {name: garlic, amount: 2, unit: cloves, comment: ''},
+      {name: cayenne pepper, amount: 0.5, unit: tsp, comment: ''}
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Pre-heat oven",
+    long: "180 °C",
+    active-time: 1,
+    passive-time: 5,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Prepare nachos on baking sheet",
+    long: "Cover baking sheet with baking paper or grease it. Spread out about half to two thirds of the nachos and roughly crush it by pressing down with your palms. Pour over the vegetable mixture. Stab in a pleasing amout of nachos. Spread cheese over.",
+    ingredients: [
+      {name: nacho chips, amount: 400, unit: g, comment: ''},
+      {name: cheese, amount: 100, unit: g, comment: 'Cheddar seems to work well'},
+    ],
+    dependencies: [-2],
+    active-time: 5,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Roast the nachos",
+    long: "For about 10 minutes.",
+    dependencies: [-1, -2],
+    active-time: 0,
+    passive-time: 10,
+    type: oven,
+    temp: hot,
+  }
+  - {
+    short: "Make avocado sauce",
+    long: "Blend the avocados with an immersion blender untill creamy (if you don't have an immersion blender or similar tool I guess you could just crush them). Chop the garlic, and stir it in together with the avocado and the rest of the ingredients.",
+    ingredients: [
+      {name: avocado, amount: 2, unit: pieces, comment: ''},
+      {name: garlic, amount: 2, unit: cloves, comment: ''},
+      {name: salsa verde, amount: 100, unit: g, comment: ''},
+      {name: lemon juice, amount: 2, unit: tbsp, comment: ''},
+    ],
+    active-time: 10,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Serve with sourcream",
+    long: "",
+    ingredients: [ {name: sourcream, amount: 100, unit: g, comment: 'For serving, can be substituted with creme fraiche'} ],
+    dependencies: [-1, -2],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: warm,
+  }
