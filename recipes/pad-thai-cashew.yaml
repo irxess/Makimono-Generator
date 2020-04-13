@@ -1,0 +1,113 @@
+recipe: Cashew Pad Thai
+
+description: ""
+date_created: 2020-04-13
+last_updated: 2020-04-13
+image: ''
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Make sauce",
+    long: "Mix the ingredients together and set aside.",
+    ingredients: [
+      {name: tamarind paste, amount: 3, unit: tbsp, comment: ''},
+      {name: brown sugar, amount: 3, unit: tbsp, comment: ''},
+      {name: chili paste or red thai cury paste, amount: 1, unit: tsp, comment: ''},
+      {name: soy sauce, amount: 1, unit: tbsp, comment: ''},
+      {name: fish sauce, amount: 1, unit: tbsp, comment: ''}
+    ],
+    active-time: 1,
+    passive-time: 1,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Boil Rice Noodles",
+    long: "Start boiling the rice noodles while you fix other things. Once they are done you can just set them aside until you need them, it won't matter if they become cold.",
+    ingredients: [ {name: rice noodles, amount: 90, unit: g, comment: 'dry'} ],
+    active-time: 1,
+    passive-time: 10,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Shred salad",
+    long: "",
+    ingredients: [
+      {name: heart salad, amount: 150, unit: g, comment: '150 g is approximately 1 head of heart salad.'},
+    ],
+    active-time: 3,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Shred carrot",
+    long: "Peel and cut the carrot into small strips, about a finger in length.",
+    ingredients: [
+      {name: carrot, amount: 175, unit: g, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Finely chop garlic",
+    long: "",
+    ingredients: [
+      {name: garlic, amount: 3, unit: cloves, comment: ''},
+    ],
+    active-time: 3,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Shred chicken",
+    long: "",
+    ingredients: [
+      {name: chicken, amount: 300, unit: g, comment: ''},
+    ],
+    active-time: 2,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Fry carrot and garlic until fragrant",
+    long: "",
+    ingredients: [
+      {name: palin cooking oil, amount: 3, unit: tbsp, comment: ''},
+      {name: sesame oil, amount: 0.5, unit: tbsp, comment: ''},
+    ],
+    dependencies: [-2, -3],
+    active-time: 1,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+  }
+  - {
+    short: "Add chicken and vegetables",
+    long: "Add the chicken, salad, bean sprouts, and cashews. Fry until you are content with how well the chicken is done.",
+    ingredients: [
+      {name: bean sprouts, amount: 200, unit: g, comment: ''},
+      {name: cashew nuts, amount: 85, unit: g, comment: ''},
+    ],
+    dependencies: [-1, -2, -5],
+    active-time: 5,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+  }
+  - {
+    short: "Add noodles and sauce",
+    long: "Add the noodles and sauce, and fry for a couple of minutes.",
+    dependencies: [-1, -7, -8],
+    active-time: 3,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
