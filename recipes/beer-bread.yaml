@@ -9,8 +9,8 @@ image: ''
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
   - {
-    short: "Pre-heat oven",
-    long: "225 °C, convection",
+    short: "Pre-heat oven and cast iron pot",
+    long: "225 °C, convection. Place the cast iron pot you are going to use in there as well so that it is hot when you add the dough later. Keep the lid on in the oven so that it is warm as well.",
     active-time: 1,
     passive-time: 5,
     type: oven,
@@ -21,7 +21,7 @@ steps:
     long: "Combine all the ingredients to a smooth dough.",
     ingredients: [
       {name: beer, amount: 330, unit: ml, comment: ''},
-      {name: flour, amount: 270, unit: g, comment: ''},
+      {name: flour, amount: 370, unit: g, comment: ''},
       {name: baking powder, amount: 3, unit: tsp, comment: ''},
       {name: salt, amount: 1, unit: tsp, comment: ''},
     ],
@@ -32,7 +32,7 @@ steps:
   }
   - {
     short: "Transfer dough to cast iron pot and place in oven",
-    long: "No need to let it rise. Keep the lid on the pot when placing in in the oven.",
+    long: "No need to let it rise. Keep the lid on the pot when placing it in the oven.",
     dependencies: [-1, -2],
     active-time: 2,
     passive-time: 0,
