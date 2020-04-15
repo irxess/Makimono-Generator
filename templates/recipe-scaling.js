@@ -12,6 +12,10 @@ function resetScaling(){
 	// Use the embedded original amout data rather than the scale calculation function with input "1".
 	// One reason is that it avvoids wasting time with uneccessary calculations.
 	// Another is that it makes the reset function less prone to bugs in the calculation function (which is one reason why you might want to reset).
+	resetAllIngredientAmounts();
+}
+
+function resetAllIngredientAmounts(){
 	var amountElements = document.getElementsByClassName('amount');
 	for (var i = 0; i < amountElements.length; i++) {
 		amountElements[i].textContent = amountElements[i].getAttribute('data-original-amount');
@@ -46,6 +50,11 @@ function updateScaling(percentageToScaleBy){
 }
 
 function applyScalingToIngredients(percentageToScaleBy) {
+	if(percentageToScaleBy == 1){
+		resetAllIngredientAmounts();
+		return;
+	}
+
 	var amountElements = document.getElementsByClassName('amount');
 	for (var i = 0; i < amountElements.length; i++) {
 		var calculatedValue = percentageToScaleBy * amountElements[i].getAttribute('data-original-amount');
