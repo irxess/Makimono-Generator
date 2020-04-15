@@ -1,4 +1,5 @@
 @size-wider: 120em;
+@size-wider-almost: 119.99em;
 @size-cutoff: 70em;
 @size-cutoff-almost: 69.99em;
 @size-tiny: 45em;
@@ -8,7 +9,11 @@
 	.media-above-wider-scaling-form;
 }
 
-@media (min-width: @size-cutoff) {
+@media (min-width: @size-cutoff) and (max-width: @size-wider-almost) {
+	.media-between-cutoff-and-wider-scaling-form;
+}
+
+@media (min-width: @size-cutoff){
 	.media-above-cutuoff-nav-desktop;
 	.media-above-cutuoff-nav-mobile;
 	.media-above-cutuoff-three-col;
