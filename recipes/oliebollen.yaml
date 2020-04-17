@@ -1,0 +1,146 @@
+recipe: Oliebollen (Dutch Doughnuts)
+
+description: "This deep fried snack is often eaten around New Years Eve. This recipe is with raisins and corints, the more common way to eat it. However, you can also add dried fruit or apple pieces instead.
+
+The oliebollen freeze extremely well. To reheat, just warm in the oven for a few minutes."
+date_created: 2020-04-13
+last_updated: 2020-04-17
+image: 'oliebollen'
+
+result: {
+  amount: 20,
+  name: oliebollen,
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+
+steps:
+  - {
+    short: "Soak raisins and currants",
+    long: "Soak the raisins and currants in hot water for 10-15 minutes.",
+    ingredients: [
+      {amount: 70,  unit: g, name: raisins, comment: ''},
+      {amount: 40,  unit: g, name: currants, comment: 'dried zante currants, can be replaced by more raisins'},
+      {amount: 200, unit: g, name: hot water, comment: ''},
+    ],
+    active-time: 2,
+    passive-time: 15,
+    type: bowl,
+    temp: warm,
+  }
+  - {
+    short: "Dissolve yeast in liquid",
+    long: "Mix together the milk and beer. The liquid should be slightly above room temperature before you add yeast. If it's not warm enough yet, warm the liquid slightly in the microwave oven. However, be careful, as you don't want the liquid to be hot. When the right temperature is reached, add the yeast and stir to dissolve it. The mixture should start to form bubbles on the surface when you let it sit for a few minutes (indicating that the yeast is alive).",
+    ingredients: [
+      {amount: 333, unit: ml, name: beer, comment: "preferably a tripel or quadrupel, if you don't want to use beer, replace with milk"},
+      {amount: 80, unit: ml, name: milk, comment: 'at room temperature'},
+      {amount: 10, unit: g, name: active dry yeast, comment: '10 g active dry yeast can be replaced by 35 g fresh yeast'},
+    ],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+# Flour in bowl, add soft butter and sugar and egg
+  - {
+    short: "Mix ingredients",
+    long: "Soften (but not melt) the butter. Add flour, sugar, egg and the softened butter to a kitchen machine or mixer bowl. Mix using the flat beater.",
+    ingredients: [
+      {amount: 40, unit: g, name: butter, comment: ''},
+      {amount: 500, unit: g, name: flour, comment: ''},
+      {amount: 2, unit: '', name: egg, comment: ''},
+      {amount: 20, unit: g, name: sugar, comment: ''},
+    ],
+    dependencies: [],
+    active-time: 1,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+# Carefully add beermilk while mixing with k-beater, don't mix longer than needed
+  - {
+    short: "Add the beer and milk",
+    long: "Carefully add the beer liquid while mixing on low. Be careful to not overmix the batter.",
+    dependencies: [-1, -2],
+    active-time: 1,
+    passive-time: 1,
+    type: add,
+    temp: room,
+  }
+# Put raisins and currants on paper or towel to dry
+  - {
+    short: "Dry the fruits",
+    long: "When the raisins and currants have been soaking for 10-15 minutes, remove them from the bowl with water and put on a paper towel to dry. Pat dry with paper towel",
+    dependencies: [-4],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+# add lemon juice raisins and corints, and salt
+  - {
+    short: "Add the rest of the ingredients",
+    long: "Carefully add the salt, lemon juice, raisins and currants to the batter. Again, try not to mix too much.",
+    ingredients: [
+      {amount: 7, unit: g, name: salt, comment: 'use a bit less if using salted butter'},
+      {amount: 1, unit: tsp, name: lemon juice, comment: ''},
+    ],
+    dependencies: [-1, -2],
+    active-time: 1,
+    passive-time: 1,
+    type: add,
+    temp: room,
+  }
+# Let proof for 30 minutes (at room temp) - make sure the bowl is large enough
+  - {
+    short: "Proof for 40 minutes",
+    long: "Cover the bowl and let the batter proof for half an hour at room temperature. The batter will almost double in size, so make sure the bowl is large enough.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 40,
+    type: bowl,
+    temp: room,
+  }
+# 1x doorslaan, proof for 15 more minuts
+  - {
+    short: "Beat once, proof 15 minutes",
+    long: "Using a large spoon, beat the dough once. Just go all the way down to the bottom of the bowl, and lift the spoon again, using a circular motion. The batter should shrink a bit. Now cover the bowl again and let it rise for 10 more minuts.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 15,
+    type: bowl,
+    temp: room,
+  }
+# heat oil to 180 degrees
+  - {
+    short: "Heat oil in pan",
+    long: "Fill a large pan with oil. Heat the oil to 180 degrees Celsius. Our target deep frying temperature is 175, but the oil will cool down when batter is added.",
+    ingredients: [
+      {amount: 2, unit: l, name: vegetable oil, comment: ''},
+    ],
+    active-time: 1,
+    passive-time: 10,
+    type: saucepan,
+    temp: hot,
+  }
+# deepfry one icecreem spoon per oliebol, oil temp should be around 175
+  - {
+    short: "Deepfry the doughnuts",
+    long: "When your oil is the right temperature and the batter has risen enough, it is time to deep fry. Fill an ice cream spoon (or normal spoon) with batter. Then scrape the batter off, into the oil, using a spoon. If everything is going great, the balls will turn themselves when ready. If not, just use your skimmer to turn them when one side gets golden brown. Try to fry about 4 doughnuts (or less) at a time, and check once it a while that the temperature is around 175 degrees Celsius. You can also check whether your temperature and time are good by cutting through one of your first batch doughnuts. If it is too greasy, turn up the heat a little.",
+    dependencies: [-1, -2],
+    active-time: 20,
+    passive-time: 5,
+    type: saucepan,
+    temp: hot,
+  }
+# cool down on rack, if possible - else paper or wood; serve with powdered sugar
+  - {
+    short: "Cool down",
+    long: "When the doughnuts are done deep frying, lift them out of the oil with the skimmer. Put them on a paper towel to let some oil drip off. After a few minutes, move to a cooling rack, so the oliebollen remain crisp on the outside. Serve with powdered sugar.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 1,
+    type: bowl,
+    temp: room,
+  }
