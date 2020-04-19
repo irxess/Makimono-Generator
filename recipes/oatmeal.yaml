@@ -2,7 +2,7 @@ recipe: Oatmeal (Havregrøt)
 
 description: ""
 date_created: 2020-04-13
-last_updated: 2020-04-13
+last_updated: 2020-04-19
 image: ''
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
@@ -22,7 +22,7 @@ steps:
     long: "Add oats and a pinch of salt. Stir and let thicken.",
     ingredients: [
       {name: oats, amount: 140, unit: g, comment: 'Rolled or instant oats. Use instant oats if you want a more mushy result, or rolled oats if you want the resulting porridge to have more texture/be more chewy.'},
-      {name: salt, amount: 0.5, unit: tsp, comment: ''},
+      {name: salt, amount: 1.5, unit: g, comment: '1.5 g is about a quarter of a teaspoon (assuming 1 tsp ≈ 6 g).'},
     ],
     dependencies: [-1],
     active-time: 5,
