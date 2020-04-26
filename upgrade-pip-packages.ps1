@@ -96,6 +96,10 @@ if(!($newNotPreviouslyInstalledPackages -eq "")) {
 	$pipFileUpdatedContent += $newNotPreviouslyInstalledPackages
 }
 
+if(!($pipFileUpdatedContent.EndsWith("`n"))){
+	$pipFileUpdatedContent += "`n"
+}
+
 Write-Verbose "Writing packages and versions to requirements file."
 Set-Content -Path $pipFileAbsolutePath -Value $pipFileUpdatedContent -Encoding UTF8NoBOM -NoNewline
 
