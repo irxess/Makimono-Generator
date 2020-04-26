@@ -14,7 +14,7 @@ Jinja2==2.11.2
 # Library for compiling the less files in the the `templates/` folder to css
 lesscpy==0.14.0
 
-Pillow==7.1.1
+Pillow==7.1.2
 
 # Not sure where these came from, but `pip freeze` outputted them in a venv, so I guess they should be included
 MarkupSafe==1.1.1
