@@ -8,7 +8,6 @@ param(
 Write-Host "Starting attempt at upgrading package versions in pip requirements file."
 Write-Host "Note that the script performs a pip upgrade in the folder where the requirements file is to try to determin whether there are newer versions."
 Write-Host "Therefore, if you use python environments it might be a very good idea to enable them before use."
-Write-Host "Note also that the script doesn't really work with packages which are specified with `">=`" for the version."
 
 if($pipFile -eq "") {
 	# Pip file was not present.
@@ -61,7 +60,7 @@ Write-Debug ($pipFileWithoutEmptyLines -join "`n")
 
 # Remove all version information, so that we only pass the package names to pip,
 # and leave it to pip to pick what's the newest version.
-$pipPackageNames = $pipFileWithoutEmptyLines -replace "==.*`n?", ""
+$pipPackageNames = $pipFileWithoutEmptyLines -replace "[>=]=.*`n?", ""
 Write-Debug "Pip file with all other information than package names removed:"
 Write-Debug ($pipPackageNames -join "`n")
 
@@ -78,14 +77,14 @@ $pipFileUpdatedContent = $pipFileOriginalContent
 Write-Verbose "Replacing all current package versions with package versions pip found to be current and add new dependencies found by PIP."
 $newNotPreviouslyInstalledPackages = ""
 Foreach($versionedPackage in $updatedPackages) {
-	$packageName = $versionedPackage -replace "==.*", ""
-	$packageVersion = $versionedPackage -replace ".*==", ""
+	$packageName = $versionedPackage -replace "[>=]=.*", ""
+	$packageVersion = $versionedPackage -replace ".*[>=]=", ""
 	Write-Debug "Processing package ${packageName} (version ${packageVersion}) found by pip."
 
-	$packagePreviouslyInstalled = $pipFileUpdatedContent -match "(?<=$packageName==).*"
+	$packagePreviouslyInstalled = $pipFileUpdatedContent -match "(?<=$packageName[>=]=).*"
 	if($packagePreviouslyInstalled) {
 		Write-Debug "Setting ${packageName} to version ${packageVersion}"
-		$pipFileUpdatedContent = $pipFileUpdatedContent -replace "(?<=$packageName==).*", $packageVersion -join "`n"
+		$pipFileUpdatedContent = $pipFileUpdatedContent -replace "(?<=$packageName[>=]=).*", $packageVersion -join "`n"
 	}
 	else{
 		Write-Debug "Found new package not previously in requirements file: ${packageName} (version ${packageVersion})"
