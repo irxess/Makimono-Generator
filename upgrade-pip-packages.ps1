@@ -10,11 +10,6 @@ Write-Host "Note that the script performs a pip upgrade in the folder where the 
 Write-Host "Therefore, if you use python environments it might be a very good idea to enable them before use."
 Write-Host "Note also that the script doesn't really work with packages which are specified with `">=`" for the version."
 
-Write-Debug "Using python version:"
-Write-Debug (python --version)
-Write-Debug "Using pip version:"
-Write-Debug ((pip --version) -join " ")
-
 if($pipFile -eq "") {
 	# Pip file was not present.
 	# Start with assuming the pip file is in the same folder as this script (and is called requirements.txt).
@@ -42,6 +37,11 @@ else{
 	$pipFileDirectory = Split-Path -Path $pipFile -Parent
 	Push-Location $pipFileDirectory
 }
+
+Write-Debug "Using python version:"
+Write-Debug (python --version)
+Write-Debug "Using pip version:"
+Write-Debug ((pip --version) -join " ")
 
 $pipFileAbsolutePath = Resolve-Path $pipFile
 Write-Debug "Using [$pipFileAbsolutePath] as path to pip file"
