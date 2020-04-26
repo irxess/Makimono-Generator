@@ -21,6 +21,7 @@ if($pipFile -eq "") {
 	# Join-Path -Path 'c:\windows' -ChildPath $folder
 	$pipFile = Join-Path -Path $PSScriptRoot -ChildPath 'requirements.txt'
 	if(Test-Path $pipFile -PathType Leaf) {
+		$pipFileAbsolutePath = Resolve-Path $pipFile
 		Push-Location $PSScriptRoot
 	}
 	else {
@@ -29,12 +30,14 @@ if($pipFile -eq "") {
 		if(!(Test-Path $pipFile -PathType Leaf)) {
 			throw "Did not recieve pip requirements file as parameter. Could not find pip requirements file in script folder nor folder script was called from."
 		}
+		$pipFileAbsolutePath = Resolve-Path $pipFile
 	}
 }
 else{
 	# Get folder from pip file param
 	# push location
-	$pipFileDirectory = Split-Path -Path $pipFile -Parent
+	$pipFileAbsolutePath = Resolve-Path $pipFile
+	$pipFileDirectory = Split-Path -Path $pipFileAbsolutePath -Parent
 	Push-Location $pipFileDirectory
 }
 
@@ -43,7 +46,6 @@ Write-Debug (python --version)
 Write-Debug "Using pip version:"
 Write-Debug ((pip --version) -join " ")
 
-$pipFileAbsolutePath = Resolve-Path $pipFile
 Write-Debug "Using [$pipFileAbsolutePath] as path to pip file"
 
 $pipFileOriginalContent = (Get-Content $pipFileAbsolutePath)
