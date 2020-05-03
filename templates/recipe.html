@@ -134,8 +134,12 @@
             {% endfor %}
           </select>
           <label for="ingredient-inputted-amount">amount:</label>
-          <input type="number" id="ingredient-inputted-amount" step="any" />
-          <button type="button" onclick="scaleByIngredient()">Scale</button>
+          <input
+            type="number"
+            id="ingredient-inputted-amount"
+            step="any"
+            oninput="scaleByIngredient()"
+            />
         </fieldset>
       </form>
     </section>
