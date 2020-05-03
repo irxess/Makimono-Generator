@@ -19,12 +19,6 @@ header {
   text-align: center;
 }
 
-.media-print-header{
-  header{
-    display: none;
-  }
-}
-
 .three-col {
   display: flex;
   flex-direction: column;
@@ -165,7 +159,7 @@ hr {
   }
 }
 
-.media-above-cutoff {
+.media-above-cutoff-main {
   #three-col{
     flex-direction: row;
     flex: 1;
@@ -187,7 +181,7 @@ hr {
   }
 }
 
-.media-below-almost-cutoff {
+.media-below-almost-cutoff-main {
   #content {
     margin-top: 0em;
     margin-bottom: 0em;
@@ -197,13 +191,16 @@ hr {
   }
 }
 
-.media-below-tiny-body {
+.media-below-tiny-main {
   body {
     font-size: 15pt;
   }
 }
 
-.media-print-body{
+.media-print-main {
+  header{
+    display: none;
+  }
   body{
     display: block;
     background-color: initial;
