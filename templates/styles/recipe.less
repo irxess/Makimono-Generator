@@ -7,13 +7,9 @@
     margin-left: 0.5em;
     margin-bottom: 0.5em;
   }
-}
-
-.media-print-recipe-intro{
-  #intro{
-    img{
-      display: none;
-    }
+  #flavor-text{
+    text-align: justify;
+    hyphens: auto;
   }
 }
 
@@ -26,15 +22,6 @@
   .recipe-source { margin-top: 0.5em; }
 }
 
-#steps{
-  .step{
-    border-top: 0.15em solid @background-dark;
-    // &:nth-of-type(1){
-    //   border-top: none;
-    // }
-  }
-}
-
 svg {
   circle {
     stroke-width: 0em; /* 0.1em */
@@ -45,6 +32,12 @@ svg {
     &.cold     {fill: @lightblue-dark;}
     &.freezing {fill: @blue-dark;}
     &.done     {fill: @green-dark;}
+  }
+}
+
+#steps{
+  .step{
+    border-top: 0.15em solid @background-dark;
   }
 }
 
@@ -86,6 +79,40 @@ svg {
         }
       }
     }
+  }
+}
+
+.description-container {
+  display: flex;
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+  .step-description{
+      flex: 1;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      text-align: justify;
+      hyphens: auto;
+      h3{
+          display: inline;
+          font-size: 1em;
+      }
+      p{
+          display: inline;
+      }
+  }
+}
+
+.step-icon {
+  text-align: right;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0.5em;
+  img {
+    width: 1.5em;
+    padding: 3px;
+    padding-left: 20px;
   }
 }
 
@@ -160,39 +187,37 @@ svg {
   }
 }
 
-.description-container {
-  display: flex;
-  padding-top: 0.5em;
-  padding-bottom: 0.3em;
-  .step-description{
-      h3{
-          display: inline;
-          font-size: 1em;
+.media-below-tiny-recipe-steps{
+  #intro {
+    #flavor-text{
+      text-align: initial;
+      hyphens: initial;
+    }
+  }
+}
+.media-below-tiny-recipe-intro{
+  #steps{
+    .step{
+      .description-container {
+        .step-description{
+          text-align: initial;
+          hyphens: initial;
+        }
       }
-      p{
-          display: inline;
-      }
+    }
   }
 }
 
-.step-icon {
-  align: right;
-  width: 1.5em;
-  height: 1.5em;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 0.5em;
-  img {
-    width: 1.5em;
-    padding: 3px;
-    padding-left: 20px;
+.media-print-recipe-intro{
+  #intro{
+    img{
+      display: none;
+    }
+    #flavor-text{
+      text-align: justify;
+      hyphens: auto;
+    }
   }
-}
-
-.step-description {
-  flex: 1;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
 }
 
 .media-print-steps{
@@ -203,6 +228,12 @@ svg {
         // Don't display separator between step-time and ingredients overview for step on print.
         // It sort of adds a lot of visual nocie, is too thick, feels wasteful.
         border-top: none;
+      }
+      .description-container {
+        .step-description{
+          text-align: justify;
+          hyphens: auto;
+        }
       }
     }
   }
