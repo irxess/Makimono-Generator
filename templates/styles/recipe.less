@@ -199,6 +199,11 @@ svg {
   #steps{
     .step{
       page-break-inside: avoid;
+      .ingredient-container{
+        // Don't display separator between step-time and ingredients overview for step on print.
+        // It sort of adds a lot of visual nocie, is too thick, feels wasteful.
+        border-top: none;
+      }
     }
   }
 }
