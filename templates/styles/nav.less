@@ -8,29 +8,29 @@
 		overflow: hidden;
 		background-color: @green;
 		li {
-			ul{
+			ul {
 				display: none;
 				visibility: hidden;
 				position: absolute;
 				z-index: 2;
-				li{
+				li {
 					clear: both;
 					width: 100%;
 				}
-				&:hover{
+				&:hover {
 					visibility: visible;
 					display: flex;
 					flex-direction: column;
 				}
 			}
-			&:hover, &:focus-within{
+			&:hover, &:focus-within {
 				background-color: @green-light;
-				&>ul{
+				&>ul {
 					visibility: visible;
 					display: flex;
 					flex-direction: column;
 				}
-				a{
+				a {
 					outline: none;
 				}
 			}
@@ -73,7 +73,7 @@
 }
 
 .media-below-almost-cutoff-nav {
-	.desktop-nav{
+	.desktop-nav {
 		display: none;
 	}
 	.mobile-nav {
@@ -91,7 +91,7 @@
 					color: @text-color-dark;
 					text-decoration: none;
 				}
-				ul{
+				ul {
 					position: initial;
 					font-size: 0.75em;
 				}
@@ -101,7 +101,7 @@
 }
 
 .media-print-nav {
-	.desktop-nav{
+	.desktop-nav {
 		display: none;
 	}
 	.mobile-nav {

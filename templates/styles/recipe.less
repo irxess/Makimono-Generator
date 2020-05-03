@@ -7,13 +7,13 @@
 		margin-left: 0.5em;
 		margin-bottom: 0.5em;
 	}
-	#flavor-text{
+	#flavor-text {
 		text-align: justify;
 		hyphens: auto;
 	}
 }
 
-#metadata{
+#metadata {
 	.recipe-date, .recipe-source {
 		margin-left: 0.75em;
 		font-size: 0.85em;
@@ -35,28 +35,28 @@ svg {
 	}
 }
 
-#steps{
-	.step{
+#steps {
+	.step {
 		border-top: 0.15em solid @background-dark;
 		.step-time-container {
 			background: @super-light-grey;
 			text-align: right;
 			padding-bottom: 0.25em;
-			p{
+			p {
 				margin: 0;
 				margin-right: 0.75em;
 			}
-			.step-time-name{
+			.step-time-name {
 				font-style: italic;
 			}
-			.step-time-amount, .step-time-unit{
+			.step-time-amount, .step-time-unit {
 				font-weight: bold;
 			}
 		}
 
 		.ingredient-container {
 			background: @super-light-grey;
-			&:nth-child(2){
+			&:nth-child(2) {
 				// Draw a dotted border between the time indication on the line above and the ingredients list.
 				// But only draw the border if the time indication is present for the step!
 				// Which in the current setup should only occur if the ingredient list is the second child of the step-div.
@@ -97,17 +97,17 @@ svg {
 				}
 			}
 
-			.step-description{
+			.step-description {
 				flex: 1;
 				padding-left: 0.5em;
 				padding-right: 0.5em;
 				text-align: justify;
 				hyphens: auto;
-				h3{
+				h3 {
 						display: inline;
 						font-size: 1em;
 				}
-				p{
+				p {
 						display: inline;
 				}
 			}
@@ -115,19 +115,19 @@ svg {
 	}
 }
 
-.media-above-wider-recipe{
-	#recipe-ingredients-and-scaling-group{
+.media-above-wider-recipe {
+	#recipe-ingredients-and-scaling-group {
 		display: grid;
 		grid-template-columns: 2fr 1fr;
 		column-gap: 1em;
 		margin-left: 1em;
 		margin-right: 1em;
 	}
-	#steps{
-		hr{
+	#steps {
+		hr {
 			margin-top: 0;
 		}
-		.step{
+		.step {
 			background: @super-light-grey;
 			display: grid;
 			grid-template-columns: 11em 1fr 3fr;
@@ -142,23 +142,23 @@ svg {
 			// grid-template-columns: min-content 1fr 3fr;
 			// grid-template-columns: max-content 1fr 3fr;
 			// grid-template-columns: minmax(min-content, max-content) 1fr 3fr;
-			.step-time-container{
-				.step-time-separator{
+			.step-time-container {
+				.step-time-separator {
 					display: none;
 				}
-				.step-active-time{
+				.step-active-time {
 					display: block;
 				}
-				.step-passive-time{
+				.step-passive-time {
 					display: block;
 				}
 			}
-			.ingredient-container{
-				&:nth-child(2){
+			.ingredient-container {
+				&:nth-child(2) {
 					// Remove separator between ingredients-list and step-time if it is present
 					border-top: none;
 				}
-				&:nth-child(1){
+				&:nth-child(1) {
 					// When there is no time associated with any of the steps
 					// (making the ingredients container the first child of the step container),
 					// occupy the entire space to the left of the description
@@ -166,9 +166,9 @@ svg {
 					grid-column-start: 1;
 					grid-column-end: 3;
 				}
-				.step-ingredient-list{
-					ul{
-						li{
+				.step-ingredient-list {
+					ul {
+						li {
 							display: block;
 							margin-right: 0;
 							.comment {
@@ -179,7 +179,7 @@ svg {
 					}
 				}
 			}
-			.description-container{
+			.description-container {
 				background: @grey-light;
 				grid-column-start: 3;
 				padding-bottom: 0.75em;
@@ -188,17 +188,17 @@ svg {
 	}
 }
 
-.media-below-tiny-recipe{
+.media-below-tiny-recipe {
 	#intro {
-		#flavor-text{
+		#flavor-text {
 			text-align: initial;
 			hyphens: initial;
 		}
 	}
-	#steps{
-		.step{
+	#steps {
+		.step {
 			.description-container {
-				.step-description{
+				.step-description {
 					text-align: initial;
 					hyphens: initial;
 				}
@@ -207,26 +207,26 @@ svg {
 	}
 }
 
-.media-print-recipe{
-	#intro{
-		img{
+.media-print-recipe {
+	#intro {
+		img {
 			display: none;
 		}
-		#flavor-text{
+		#flavor-text {
 			text-align: justify;
 			hyphens: auto;
 		}
 	}
-	#steps{
-		.step{
+	#steps {
+		.step {
 			page-break-inside: avoid;
 			background: initial;
-			.step-time-container{
+			.step-time-container {
 				background: initial;
 			}
-			.ingredient-container{
+			.ingredient-container {
 				background: initial;
-				&:nth-child(2){
+				&:nth-child(2) {
 					// Don't display separator between step-time and ingredients overview for step on print.
 					// It sort of adds a lot of visual nocie, is too thick, feels wasteful.
 					border-top: none;
@@ -234,7 +234,7 @@ svg {
 			}
 			.description-container {
 				background: initial;
-				.step-description{
+				.step-description {
 					text-align: justify;
 					hyphens: auto;
 				}
