@@ -19,12 +19,6 @@ header {
   text-align: center;
 }
 
-.media-below-almost-cutoff-header {
-  header{
-    font-size: 3em;
-  }
-}
-
 .media-print-header{
   header{
     display: none;
@@ -46,28 +40,8 @@ body {
   .three-col;
 }
 
-.media-below-tiny-body {
-  body {
-    font-size: 15pt;
-  }
-}
-
-.media-print-body{
-  body{
-    display: block;
-  }
-}
-
 #three-col {
   .three-col;
-}
-
-.media-above-cutuoff-three-col {
-  #three-col{
-    flex-direction: row;
-    flex: 1;
-    flex-wrap: wrap;
-  }
 }
 
 ul {
@@ -100,18 +74,6 @@ hr {
   order: -1;
 }
 
-.media-above-cutuoff-empty-col-left {
-  #empty-col-left {
-    flex: 0 0 @non-mobile-empty-side-space-size;
-  }
-}
-
-.media-above-cutuoff-empty-col-right {
-  #empty-col-right{
-    flex: 0 0 @non-mobile-empty-side-space-size;
-  }
-}
-
 #content {
   background-color: @grey-light;
   color: @text-color-dark;
@@ -120,19 +82,6 @@ hr {
   position: relative;
   border-radius: 2px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.media-above-cutuoff-content {
-  #content {
-    flex: 1;
-  }
-}
-
-.media-below-almost-cutoff-content {
-  #content {
-    margin-top: 0em;
-    margin-bottom: 0em;
-  }
 }
 
 #info {
@@ -147,22 +96,14 @@ hr {
   display: none;
 }
 
-.media-above-cutoff-info-col {
-  #info-col {
-    margin-left: @non-mobile-empty-side-space-size;
-    margin-right: @non-mobile-empty-side-space-size;
-    flex-basis: 100%;
-  }
-}
-
 #flavor-text {
   font-style: italic;
   margin: 0.75em;
 }
 
 .recipe-date {
-    margin-left: 0.75em;
-    font-size: 0.85em;
+  margin-left: 0.75em;
+  font-size: 0.85em;
 }
 
 #list-of-recipes {
@@ -221,6 +162,54 @@ hr {
     font-size: 1.5em;
     margin-left: 0;
     margin-bottom: 0;
+  }
+}
+
+.media-above-cutoff {
+  #three-col{
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  #empty-col-left {
+    flex: 0 0 @non-mobile-empty-side-space-size;
+  }
+  #empty-col-right{
+    flex: 0 0 @non-mobile-empty-side-space-size;
+  }
+  #content {
+    flex: 1;
+  }
+  #info-col {
+    margin-left: @non-mobile-empty-side-space-size;
+    margin-right: @non-mobile-empty-side-space-size;
+    flex-basis: 100%;
+  }
+}
+
+.media-below-almost-cutoff {
+  #content {
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+  header{
+    font-size: 3em;
+  }
+}
+
+.media-below-tiny-body {
+  body {
+    font-size: 15pt;
+  }
+}
+
+.media-print-body{
+  body{
+    display: block;
+    background-color: initial;
+    #content{
+      background-color: initial;
+    }
   }
 }
 
