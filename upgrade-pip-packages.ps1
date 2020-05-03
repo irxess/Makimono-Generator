@@ -48,6 +48,7 @@ Write-Debug ((pip --version) -join " ")
 Write-Debug "Using [$pipFileAbsolutePath] as path to pip file"
 
 $pipFileOriginalContent = (Get-Content $pipFileAbsolutePath)
+# `(?m)` is for "multi-line mode". It ensures that the match removing from the first `#` character to the end of line (`n) is applied for every line, rather than for only the first hit in the (possibly multi line) string.
 $pipFileWithoutComments = $pipFileOriginalContent -replace "(?m)#.*`n?", ''
 Write-Debug "Pip file with all comments removed:"
 Write-Debug ($pipFileWithoutComments -join "`n")
@@ -60,6 +61,7 @@ Write-Debug ($pipFileWithoutEmptyLines -join "`n")
 
 # Remove all version information, so that we only pass the package names to pip,
 # and leave it to pip to pick what's the newest version.
+# `[>=]` matches "exactly one of > or ="
 $pipPackageNames = $pipFileWithoutEmptyLines -replace "[>=]=.*`n?", ""
 Write-Debug "Pip file with all other information than package names removed:"
 Write-Debug ($pipPackageNames -join "`n")
@@ -84,6 +86,7 @@ Foreach($versionedPackage in $updatedPackages) {
 	$packagePreviouslyInstalled = $pipFileUpdatedContent -match "(?<=$packageName[>=]=).*"
 	if($packagePreviouslyInstalled) {
 		Write-Debug "Setting ${packageName} to version ${packageVersion}"
+		# Use `-join "`n"` to ensure that the newlines are preserved in the string instead of powershell starting to consider each line a separate string that gets joined togehter weirdly when using the `-NoNewline` option on `Set-Content`.
 		$pipFileUpdatedContent = $pipFileUpdatedContent -replace "(?<=$packageName[>=]=).*", $packageVersion -join "`n"
 	}
 	else{
@@ -107,6 +110,8 @@ if(!($pipFileUpdatedContent.EndsWith("`n"))){
 }
 
 Write-Verbose "Writing packages and versions to requirements file."
+# Use `-NoNewline` to ensure that powershell does not add extra newlines between what it interprets to be different objects in the string we are trying to stuff into the file.
+# Although the encoding should go out as it out of the box, use `-Encoding UTF8NoBOM` to be very sure of that is being output.
 Set-Content -Path $pipFileAbsolutePath -Value $pipFileUpdatedContent -Encoding UTF8NoBOM -NoNewline
 
 Write-Host "Remember to test that upgraded dependencies work before checking in."
