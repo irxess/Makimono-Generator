@@ -1,67 +1,67 @@
 #ingredients {
-  #ingredients-table{
-    width: 100%;
-    background: @super-light-grey;
-    margin-top: 0.5em;
-    padding-bottom: 0.25em;
-    table {
-      padding-top: 0;
-      border-collapse: collapse;
-      td {
-        text-align: left;
-        vertical-align: top;
-        padding-right: 0.2em;
-        &.amount {
-          font-weight: bold;
-          text-align: right;
-          padding-left: 0.5em;
-        }
-        &.unit {
-          font-weight: bold;
-        }
-        &.name {
-          white-space: nowrap;
-        }
-        &.comment {
-          font-style: italic;
-        }
-      }
-    }
-  }
+	#ingredients-table{
+		width: 100%;
+		background: @super-light-grey;
+		margin-top: 0.5em;
+		padding-bottom: 0.25em;
+		table {
+			padding-top: 0;
+			border-collapse: collapse;
+			td {
+				text-align: left;
+				vertical-align: top;
+				padding-right: 0.2em;
+				&.amount {
+					font-weight: bold;
+					text-align: right;
+					padding-left: 0.5em;
+				}
+				&.unit {
+					font-weight: bold;
+				}
+				&.name {
+					white-space: nowrap;
+				}
+				&.comment {
+					font-style: italic;
+				}
+			}
+		}
+	}
 }
 
 .media-below-tiny-ingredients-table {
-  #ingredients{
-    #ingredients-table{
-      table {
-        width: 100%;
-        tr{
-          border-bottom: 0.10em solid @background-dark;
-          &:last-child{
-            border-bottom: none;
-          }
-          td {
-            display: inline-block;
-            &.comment {
-              // display: none;
-              margin-left: 1em;
-            }
-          }
-        }
-      }
-    }
-  }
+	#ingredients{
+		#ingredients-table{
+			table {
+				width: 100%;
+				tr{
+					border-bottom: 0.10em solid @background-dark;
+					&:last-child{
+						border-bottom: none;
+					}
+					td {
+						display: inline-block;
+						&.comment {
+							// display: none;
+							margin-left: 1em;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .media-print-ingredients-table {
-  #ingredients{
-    #ingredients-table{
-      background: initial;
-      table {
-        tr, td{
-            page-break-inside: avoid;
-        }
-      }
-    }
-  }
+	#ingredients{
+		#ingredients-table{
+			background: initial;
+			table {
+				tr, td{
+						page-break-inside: avoid;
+				}
+			}
+		}
+	}
 }

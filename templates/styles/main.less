@@ -10,204 +10,204 @@
 @import 'dilution-calculator';
 
 header {
-  background-color: @grey;
-  color: @text-color-light;
-  font-family: @serif-fonts;
-  font-size: 3.5em;
-  font-weight: bolder;
-  padding: 16px 0 5px 0; /* top, right, bottom, left */
-  text-align: center;
+	background-color: @grey;
+	color: @text-color-light;
+	font-family: @serif-fonts;
+	font-size: 3.5em;
+	font-weight: bolder;
+	padding: 16px 0 5px 0; /* top, right, bottom, left */
+	text-align: center;
 }
 
 .three-col {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  border: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	border: 0;
 }
 
 body {
-  font-size: 18pt;
-  font-family: @sans-serif-fonts;
-  background-color: @background-dark;
-  .three-col;
+	font-size: 18pt;
+	font-family: @sans-serif-fonts;
+	background-color: @background-dark;
+	.three-col;
 }
 
 #three-col {
-  .three-col;
+	.three-col;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0em;
-  padding: 1em;
-  padding-bottom: 0.5em;
+	list-style-type: none;
+	margin: 0em;
+	padding: 1em;
+	padding-bottom: 0.5em;
 }
 
 h2 {
-  font-size: 1.5em;
-  margin-left: 2em;
-  margin-bottom: 0em;
+	font-size: 1.5em;
+	margin-left: 2em;
+	margin-bottom: 0em;
 }
 
 h3 {
-  margin-top: 0em;
-  margin-bottom: 0em;
+	margin-top: 0em;
+	margin-bottom: 0em;
 }
 
 hr {
-  color: @background-dark;
-  background-color: @background-dark;
-  border-color: @background-dark;
-  margin-bottom: 0;
+	color: @background-dark;
+	background-color: @background-dark;
+	border-color: @background-dark;
+	margin-bottom: 0;
 }
 
 #empty-col-left {
-  /* put this on the left */
-  order: -1;
+	/* put this on the left */
+	order: -1;
 }
 
 #content {
-  background-color: @grey-light;
-  color: @text-color-dark;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  position: relative;
-  border-radius: 2px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	background-color: @grey-light;
+	color: @text-color-dark;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	position: relative;
+	border-radius: 2px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #info {
-  margin: 1em 0em 0.5em 0em;
-  background-color: @info-background;
-  padding: 0.4em;
-  color: @grey-light;
-  display: none;
+	margin: 1em 0em 0.5em 0em;
+	background-color: @info-background;
+	padding: 0.4em;
+	color: @grey-light;
+	display: none;
 }
 
 #info-col {
-  display: none;
+	display: none;
 }
 
 #flavor-text {
-  font-style: italic;
-  margin: 0.75em;
+	font-style: italic;
+	margin: 0.75em;
 }
 
 .recipe-date {
-  margin-left: 0.75em;
-  font-size: 0.85em;
+	margin-left: 0.75em;
+	font-size: 0.85em;
 }
 
 #list-of-recipes {
-  list-style: none; // Remove numbering from ordered list of recipes
-  padding-left: 0.5em;
-  li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // margin-top: 1em;
-    a{
-      text-decoration: none;
-      color: @text-color-dark;
-      h1{
-        padding: 0;
-        margin: 0;
-      }
-    }
-    p{
-      padding-top: 0;
-      margin-top: 0;
-      color: @grey;
-    }
-  }
+	list-style: none; // Remove numbering from ordered list of recipes
+	padding-left: 0.5em;
+	li{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		// margin-top: 1em;
+		a{
+			text-decoration: none;
+			color: @text-color-dark;
+			h1{
+				padding: 0;
+				margin: 0;
+			}
+		}
+		p{
+			padding-top: 0;
+			margin-top: 0;
+			color: @grey;
+		}
+	}
 }
 
 .pagination-menu-wrapper{
-  text-align: center;
-  .pagination-menu{
-    display: inline-block;
-    a{
-      color: @text-color-dark;
-      float: left;
-      padding: 8px 16px;
-      text-decoration: none;
-      transition: background-color .3s;
-      border: 1px solid @super-light-grey;
-      margin-top: 0.5em;
-      margin-bottom: 0.1em;
-      &:hover:not(.current-page) {
-        background-color: @super-light-grey;
-      }
-    }
-    .current-page {
-      background-color: @green;
-      color: @text-color-dark;
-      border: 1px solid @green;
-    }
-  }
+	text-align: center;
+	.pagination-menu{
+		display: inline-block;
+		a{
+			color: @text-color-dark;
+			float: left;
+			padding: 8px 16px;
+			text-decoration: none;
+			transition: background-color .3s;
+			border: 1px solid @super-light-grey;
+			margin-top: 0.5em;
+			margin-bottom: 0.1em;
+			&:hover:not(.current-page) {
+				background-color: @super-light-grey;
+			}
+		}
+		.current-page {
+			background-color: @green;
+			color: @text-color-dark;
+			border: 1px solid @green;
+		}
+	}
 }
 
 #about-page-main-section{
-  padding-left: 1em;
-  h2 {
-    font-size: 1.5em;
-    margin-left: 0;
-    margin-bottom: 0;
-  }
+	padding-left: 1em;
+	h2 {
+		font-size: 1.5em;
+		margin-left: 0;
+		margin-bottom: 0;
+	}
 }
 
 .media-above-cutoff-main {
-  #three-col{
-    flex-direction: row;
-    flex: 1;
-    flex-wrap: wrap;
-  }
-  #empty-col-left {
-    flex: 0 0 @non-mobile-empty-side-space-size;
-  }
-  #empty-col-right{
-    flex: 0 0 @non-mobile-empty-side-space-size;
-  }
-  #content {
-    flex: 1;
-  }
-  #info-col {
-    margin-left: @non-mobile-empty-side-space-size;
-    margin-right: @non-mobile-empty-side-space-size;
-    flex-basis: 100%;
-  }
+	#three-col{
+		flex-direction: row;
+		flex: 1;
+		flex-wrap: wrap;
+	}
+	#empty-col-left {
+		flex: 0 0 @non-mobile-empty-side-space-size;
+	}
+	#empty-col-right{
+		flex: 0 0 @non-mobile-empty-side-space-size;
+	}
+	#content {
+		flex: 1;
+	}
+	#info-col {
+		margin-left: @non-mobile-empty-side-space-size;
+		margin-right: @non-mobile-empty-side-space-size;
+		flex-basis: 100%;
+	}
 }
 
 .media-below-almost-cutoff-main {
-  #content {
-    margin-top: 0em;
-    margin-bottom: 0em;
-  }
-  header{
-    font-size: 3em;
-  }
+	#content {
+		margin-top: 0em;
+		margin-bottom: 0em;
+	}
+	header{
+		font-size: 3em;
+	}
 }
 
 .media-below-tiny-main {
-  body {
-    font-size: 15pt;
-  }
+	body {
+		font-size: 15pt;
+	}
 }
 
 .media-print-main {
-  header{
-    display: none;
-  }
-  body{
-    display: block;
-    background-color: initial;
-    #content{
-      background-color: initial;
-    }
-  }
+	header{
+		display: none;
+	}
+	body{
+		display: block;
+		background-color: initial;
+		#content{
+			background-color: initial;
+		}
+	}
 }
 
 @import 'screen-sizes';

@@ -1,244 +1,244 @@
 #intro {
-  img {
-    width: 100%;
-  }
-  h1 {
-    font-size: 2em;
-    margin-left: 0.5em;
-    margin-bottom: 0.5em;
-  }
-  #flavor-text{
-    text-align: justify;
-    hyphens: auto;
-  }
+	img {
+		width: 100%;
+	}
+	h1 {
+		font-size: 2em;
+		margin-left: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	#flavor-text{
+		text-align: justify;
+		hyphens: auto;
+	}
 }
 
 #metadata{
-  .recipe-date, .recipe-source {
-    margin-left: 0.75em;
-    font-size: 0.85em;
-  }
-  .recipe-date { margin-bottom: 0.5em; }
-  .recipe-source { margin-top: 0.5em; }
+	.recipe-date, .recipe-source {
+		margin-left: 0.75em;
+		font-size: 0.85em;
+	}
+	.recipe-date { margin-bottom: 0.5em; }
+	.recipe-source { margin-top: 0.5em; }
 }
 
 svg {
-  circle {
-    stroke-width: 0em; /* 0.1em */
-    //fill: @grey;
-    &.hot      {fill: @red-dark;}
-    &.warm     {fill: @orange-dark;}
-    &.room     {fill: @yellow-dark;}
-    &.cold     {fill: @lightblue-dark;}
-    &.freezing {fill: @blue-dark;}
-    &.done     {fill: @green-dark;}
-  }
+	circle {
+		stroke-width: 0em; /* 0.1em */
+		//fill: @grey;
+		&.hot      {fill: @red-dark;}
+		&.warm     {fill: @orange-dark;}
+		&.room     {fill: @yellow-dark;}
+		&.cold     {fill: @lightblue-dark;}
+		&.freezing {fill: @blue-dark;}
+		&.done     {fill: @green-dark;}
+	}
 }
 
 #steps{
-  .step{
-    border-top: 0.15em solid @background-dark;
-    .step-time-container {
-      background: @super-light-grey;
-      text-align: right;
-      padding-bottom: 0.25em;
-      p{
-        margin: 0;
-        margin-right: 0.75em;
-      }
-      .step-time-name{
-        font-style: italic;
-      }
-      .step-time-amount, .step-time-unit{
-        font-weight: bold;
-      }
-    }
+	.step{
+		border-top: 0.15em solid @background-dark;
+		.step-time-container {
+			background: @super-light-grey;
+			text-align: right;
+			padding-bottom: 0.25em;
+			p{
+				margin: 0;
+				margin-right: 0.75em;
+			}
+			.step-time-name{
+				font-style: italic;
+			}
+			.step-time-amount, .step-time-unit{
+				font-weight: bold;
+			}
+		}
 
-    .ingredient-container {
-      background: @super-light-grey;
-      &:nth-child(2){
-        // Draw a dotted border between the time indication on the line above and the ingredients list.
-        // But only draw the border if the time indication is present for the step!
-        // Which in the current setup should only occur if the ingredient list is the second child of the step-div.
-        border-top: dotted @background-dark;
-      }
-      .step-ingredient-list {
-        ul {
-          padding-top: 0;
-          flex-direction: row;
-          flex: 1;
-          flex-wrap: wrap;
-          li {
-            display: inline-block;
-            margin-right: 1.5em;
-            .comment {
-              display: none;
-            }
-          }
-        }
-      }
-    }
+		.ingredient-container {
+			background: @super-light-grey;
+			&:nth-child(2){
+				// Draw a dotted border between the time indication on the line above and the ingredients list.
+				// But only draw the border if the time indication is present for the step!
+				// Which in the current setup should only occur if the ingredient list is the second child of the step-div.
+				border-top: dotted @background-dark;
+			}
+			.step-ingredient-list {
+				ul {
+					padding-top: 0;
+					flex-direction: row;
+					flex: 1;
+					flex-wrap: wrap;
+					li {
+						display: inline-block;
+						margin-right: 1.5em;
+						.comment {
+							display: none;
+						}
+					}
+				}
+			}
+		}
 
-    .description-container {
-      display: flex;
-      padding-top: 0.5em;
-      padding-bottom: 0.3em;
-      .step-icon {
-        text-align: right;
-        width: 1.5em;
-        height: 1.5em;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-bottom: 0.5em;
-        img {
-          width: 1.5em;
-          padding: 3px;
-          padding-left: 20px;
-        }
-      }
+		.description-container {
+			display: flex;
+			padding-top: 0.5em;
+			padding-bottom: 0.3em;
+			.step-icon {
+				text-align: right;
+				width: 1.5em;
+				height: 1.5em;
+				margin-left: 5px;
+				margin-right: 5px;
+				margin-bottom: 0.5em;
+				img {
+					width: 1.5em;
+					padding: 3px;
+					padding-left: 20px;
+				}
+			}
 
-      .step-description{
-        flex: 1;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        text-align: justify;
-        hyphens: auto;
-        h3{
-            display: inline;
-            font-size: 1em;
-        }
-        p{
-            display: inline;
-        }
-      }
-    }
-  }
+			.step-description{
+				flex: 1;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				text-align: justify;
+				hyphens: auto;
+				h3{
+						display: inline;
+						font-size: 1em;
+				}
+				p{
+						display: inline;
+				}
+			}
+		}
+	}
 }
 
 .media-above-wider-recipe{
-  #recipe-ingredients-and-scaling-group{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-  #steps{
-    hr{
-      margin-top: 0;
-    }
-    .step{
-      background: @super-light-grey;
-      display: grid;
-      grid-template-columns: 11em 1fr 3fr;
-      // Attempts at making all the elements in the column fit to the same width,
-      // which should have been the width of the largest element.
-      // Instead got some monstrosity where each row in the column was the size of the content.
-      // Hope something akin to the max-content works in the way I desire in the future,
-      // as it would have been a more elegant solution.
-      // grid-template-columns: 0.75fr 1fr 3fr;
-      // grid-template-columns: minmax(max-content, 13em) 1fr 3fr;
-      // grid-template-columns: auto 1fr 3fr;
-      // grid-template-columns: min-content 1fr 3fr;
-      // grid-template-columns: max-content 1fr 3fr;
-      // grid-template-columns: minmax(min-content, max-content) 1fr 3fr;
-      .step-time-container{
-        .step-time-separator{
-          display: none;
-        }
-        .step-active-time{
-          display: block;
-        }
-        .step-passive-time{
-          display: block;
-        }
-      }
-      .ingredient-container{
-        &:nth-child(2){
-          // Remove separator between ingredients-list and step-time if it is present
-          border-top: none;
-        }
-        &:nth-child(1){
-          // When there is no time associated with any of the steps
-          // (making the ingredients container the first child of the step container),
-          // occupy the entire space to the left of the description
-          // (starting at the beginning of the first column and ending before the beginning of the third column of the grid).
-          grid-column-start: 1;
-          grid-column-end: 3;
-        }
-        .step-ingredient-list{
-          ul{
-            li{
-              display: block;
-              margin-right: 0;
-              .comment {
-                display: initial;
-                font-style: italic;
-              }
-            }
-          }
-        }
-      }
-      .description-container{
-        background: @grey-light;
-        grid-column-start: 3;
-        padding-bottom: 0.75em;
-      }
-    }
-  }
+	#recipe-ingredients-and-scaling-group{
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		column-gap: 1em;
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	#steps{
+		hr{
+			margin-top: 0;
+		}
+		.step{
+			background: @super-light-grey;
+			display: grid;
+			grid-template-columns: 11em 1fr 3fr;
+			// Attempts at making all the elements in the column fit to the same width,
+			// which should have been the width of the largest element.
+			// Instead got some monstrosity where each row in the column was the size of the content.
+			// Hope something akin to the max-content works in the way I desire in the future,
+			// as it would have been a more elegant solution.
+			// grid-template-columns: 0.75fr 1fr 3fr;
+			// grid-template-columns: minmax(max-content, 13em) 1fr 3fr;
+			// grid-template-columns: auto 1fr 3fr;
+			// grid-template-columns: min-content 1fr 3fr;
+			// grid-template-columns: max-content 1fr 3fr;
+			// grid-template-columns: minmax(min-content, max-content) 1fr 3fr;
+			.step-time-container{
+				.step-time-separator{
+					display: none;
+				}
+				.step-active-time{
+					display: block;
+				}
+				.step-passive-time{
+					display: block;
+				}
+			}
+			.ingredient-container{
+				&:nth-child(2){
+					// Remove separator between ingredients-list and step-time if it is present
+					border-top: none;
+				}
+				&:nth-child(1){
+					// When there is no time associated with any of the steps
+					// (making the ingredients container the first child of the step container),
+					// occupy the entire space to the left of the description
+					// (starting at the beginning of the first column and ending before the beginning of the third column of the grid).
+					grid-column-start: 1;
+					grid-column-end: 3;
+				}
+				.step-ingredient-list{
+					ul{
+						li{
+							display: block;
+							margin-right: 0;
+							.comment {
+								display: initial;
+								font-style: italic;
+							}
+						}
+					}
+				}
+			}
+			.description-container{
+				background: @grey-light;
+				grid-column-start: 3;
+				padding-bottom: 0.75em;
+			}
+		}
+	}
 }
 
 .media-below-tiny-recipe{
-  #intro {
-    #flavor-text{
-      text-align: initial;
-      hyphens: initial;
-    }
-  }
-  #steps{
-    .step{
-      .description-container {
-        .step-description{
-          text-align: initial;
-          hyphens: initial;
-        }
-      }
-    }
-  }
+	#intro {
+		#flavor-text{
+			text-align: initial;
+			hyphens: initial;
+		}
+	}
+	#steps{
+		.step{
+			.description-container {
+				.step-description{
+					text-align: initial;
+					hyphens: initial;
+				}
+			}
+		}
+	}
 }
 
 .media-print-recipe{
-  #intro{
-    img{
-      display: none;
-    }
-    #flavor-text{
-      text-align: justify;
-      hyphens: auto;
-    }
-  }
-  #steps{
-    .step{
-      page-break-inside: avoid;
-      background: initial;
-      .step-time-container{
-        background: initial;
-      }
-      .ingredient-container{
-        background: initial;
-        &:nth-child(2){
-          // Don't display separator between step-time and ingredients overview for step on print.
-          // It sort of adds a lot of visual nocie, is too thick, feels wasteful.
-          border-top: none;
-        }
-      }
-      .description-container {
-        background: initial;
-        .step-description{
-          text-align: justify;
-          hyphens: auto;
-        }
-      }
-    }
-  }
+	#intro{
+		img{
+			display: none;
+		}
+		#flavor-text{
+			text-align: justify;
+			hyphens: auto;
+		}
+	}
+	#steps{
+		.step{
+			page-break-inside: avoid;
+			background: initial;
+			.step-time-container{
+				background: initial;
+			}
+			.ingredient-container{
+				background: initial;
+				&:nth-child(2){
+					// Don't display separator between step-time and ingredients overview for step on print.
+					// It sort of adds a lot of visual nocie, is too thick, feels wasteful.
+					border-top: none;
+				}
+			}
+			.description-container {
+				background: initial;
+				.step-description{
+					text-align: justify;
+					hyphens: auto;
+				}
+			}
+		}
+	}
 }

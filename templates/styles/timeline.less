@@ -1,39 +1,39 @@
 #timeline{
-  margin-top: 1em;
+	margin-top: 1em;
 
-  svg {
-    width: 100%;
-    margin: 0 auto;
-    line {
-      stroke-width: 0.3em; /* 0.5em */
-      stroke: @svg-bright-green;
-      &.hot      {stroke: @red-dark;}
-      &.warm     {stroke: @orange-dark;}
-      &.room     {stroke: @yellow-dark;}
-      &.cold     {stroke: @lightblue-dark;}
-      &.freezing {stroke: @blue-dark;}
-      &.done     {stroke: @green-dark;}
-    }
-    .dark-line {
-      stroke-width: 0em;
-      stroke: @grey;
-    }
-    .svg-icon { transform: translate(-1em,-1em);}
-  }
+	svg {
+		width: 100%;
+		margin: 0 auto;
+		line {
+			stroke-width: 0.3em; /* 0.5em */
+			stroke: @svg-bright-green;
+			&.hot      {stroke: @red-dark;}
+			&.warm     {stroke: @orange-dark;}
+			&.room     {stroke: @yellow-dark;}
+			&.cold     {stroke: @lightblue-dark;}
+			&.freezing {stroke: @blue-dark;}
+			&.done     {stroke: @green-dark;}
+		}
+		.dark-line {
+			stroke-width: 0em;
+			stroke: @grey;
+		}
+		.svg-icon { transform: translate(-1em,-1em);}
+	}
 }
 .media-below-almost-cutoff-timeline {
-  #timeline{
-    font-size: 14pt;
-  }
+	#timeline{
+		font-size: 14pt;
+	}
 }
 .media-below-tiny-timeline {
-  #timeline{
-    font-size: 10pt;
-  }
+	#timeline{
+		font-size: 10pt;
+	}
 }
 
 .media-print-timeline{
-  #timeline{
-    page-break-inside: avoid;
-  }
+	#timeline{
+		page-break-inside: avoid;
+	}
 }
