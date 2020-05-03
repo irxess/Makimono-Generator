@@ -44,7 +44,12 @@
   .nav;
 }
 
-.media-above-cutuoff-nav-desktop {
+.mobile-nav {
+  .nav;
+  font-family: @serif-fonts;
+}
+
+.media-above-cutuoff-nav {
   .desktop-nav {
     box-shadow: @nav-box-shadow;
     ul {
@@ -62,19 +67,15 @@
       }
     }
   }
-}
-.media-below-almost-cutoff-nav-desktop {
-  .desktop-nav{
+  .mobile-nav {
     display: none;
   }
 }
 
-.mobile-nav {
-  .nav;
-  font-family: @serif-fonts;
-}
-
-.media-below-almost-cutoff-nav-mobile {
+.media-below-almost-cutoff-nav {
+  .desktop-nav{
+    display: none;
+  }
   .mobile-nav {
     box-shadow: @nav-box-shadow;
     ul {
@@ -96,12 +97,6 @@
         }
       }
     }
-  }
-}
-
-.media-above-cutuoff-nav-mobile {
-  .mobile-nav {
-    display: none;
   }
 }
 
