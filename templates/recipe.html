@@ -121,7 +121,7 @@
         <fieldset name="by-ingredient">
           <legend>By ingredient</legend>
           <label for="ingredient-select">Ingredient:</label>
-          <select id="ingredient-select">
+          <select id="ingredient-select" oninput="makeScaleByIngredientValueMatchIngredient()">
             {% for ingredient in r.ingredients %}
               {% if ingredient.total_amount %}
                 <option value="{{ingredient.total_amount}}">

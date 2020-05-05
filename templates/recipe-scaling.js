@@ -44,6 +44,12 @@ function scaleByIngredient(){
 	updateScaling(percentageToScaleBy);
 }
 
+function makeScaleByIngredientValueMatchIngredient(){
+	var displayPercentValue = document.getElementById('percent-number').value;
+	var percentageToScaleBy = displayPercentValue/100;
+	adjustScaleByIngredientToMatchPercentageScale(percentageToScaleBy);
+}
+
 function updateScaling(percentageToScaleBy){
 	adjustAllScalingFieldsToMatchPercentageScale(percentageToScaleBy);
 	applyScalingToIngredients(percentageToScaleBy);
