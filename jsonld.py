@@ -17,7 +17,8 @@ f"""
     if recipe.result:
         jsonld += f'  "recipeYield": "{recipe.result.amount} {recipe.result.name}",\n'
     return jsonld
-# TODO add author?
+# TODO add author (@type Persons , can I add us both?)
+# TODO remove newlines from description
 # TODO add time, keywords, category, cuisine
 #    "prepTime": "PT20M",
 #    "cookTime": "PT30M",
@@ -43,14 +44,16 @@ def add_ingredients(recipe, jsonld):
     return jsonld
 
 def add_steps(recipe, jsonld):
+    # If we ever get multiple part recipes, look at adding HowToSections
     jsonld += '  "recipeInstructions": [\n'
     steps = []
     for step in recipe.steps:
-        step_string = '    {\n      "@type": "HowToStep",\n      "text": '
+        step_string = '    {\n      "@type": "HowToStep",\n'
         if step.long != '':
-            step_string += f'"{step.long}"'
+            step_string += f'      "name": "{step.short}"\n'
+            step_string += f'      "text": "{step.long}"'
         else:
-            step_string += f'"{step.short}"'
+            step_string += f'      "text": "{step.short}"'
         step_string += '\n    }'
         steps.append(step_string)
     jsonld += ',\n'.join(steps)

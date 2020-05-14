@@ -78,8 +78,6 @@ def generate_files_for_recipe(name):
     timeline.generate_timeline_svg(recipe)
     recipe.url_name = get_url_friendly_name(name)
     jsonld = generate_jsonld(recipe)
-    with open('publish/js/recipes/' + recipe.url_name + '.json', 'w', encoding='utf-8') as f:
-        print(jsonld, file=f)
 
     if not os.path.isdir('publish/recipes'):
         os.makedirs('publish/recipes')
@@ -89,6 +87,7 @@ def generate_files_for_recipe(name):
 
     output = template.render(
         r=recipe,
+        jsonld=jsonld,
         path_to_base='..',
         recipes_path='all/page-1.html',
         all_recipes_overview_path='all-recipes-overview.html',
