@@ -32,7 +32,7 @@ steps:
   }
   - {
     short: "Serve with butter",
-    long: "Brown sugar and cinnamon are also good addittions.",
+    long: "Brown sugar and cinnamon are also good additions.",
     dependencies: [-1],
     active-time: 1,
     passive-time: 0,

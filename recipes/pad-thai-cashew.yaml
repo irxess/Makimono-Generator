@@ -1,8 +1,8 @@
-recipe: Cashew Pad Thai
+recipe: Pad Thai with Cashews
 
 description: ""
 date_created: 2020-04-13
-last_updated: 2020-04-13
+last_updated: 2020-05-16
 image: ''
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
@@ -80,7 +80,7 @@ steps:
     short: "Fry carrot and garlic until fragrant",
     long: "",
     ingredients: [
-      {name: palin cooking oil, amount: 3, unit: tbsp, comment: ''},
+      {name: plain cooking oil, amount: 3, unit: tbsp, comment: ''},
       {name: sesame oil, amount: 0.5, unit: tbsp, comment: ''},
     ],
     dependencies: [-2, -3],

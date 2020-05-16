@@ -2,7 +2,7 @@ recipe: BBQ Sauce
 
 description: ""
 date_created: 2020-04-13
-last_updated: 2020-04-13
+last_updated: 2020-05-16
 image: ''
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
@@ -15,7 +15,7 @@ steps:
       {name: black pepper, amount: 0.5, unit: g, comment: 'Ground. 0.5 g is approximately 1 tsp of whole pepper conrns.'},
       {name: tomato ketchup, amount: 100, unit: g, comment: ''},
       {name: worchestershire sauce, amount: 1.0, unit: g, comment: ''},
-      {name: set honney, amount: 10.3, unit: g, comment: ''},
+      {name: set honey, amount: 10.3, unit: g, comment: ''},
       {name: liquid smoke, amount: 0.7, unit: g, comment: ''},
       {name: cayenne pepper, amount: 0.5, unit: tsp, comment: ''},
       {name: onion powder, amount: 0.4, unit: g, comment: ''},

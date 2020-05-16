@@ -2,7 +2,7 @@ recipe: Sichuan Boiled Fish
 
 description: ""
 date_created: 2019-09-01
-last_updated: 2020-04-06
+last_updated: 2020-05-16
 image: sichuan_boiled_fish
 
 result: {
@@ -136,7 +136,7 @@ steps:
   }
   - {
     short: "Prepare the soup base",
-    long: "Add a tablespoon of the chili oil you made previosly to the wok pan, while the pan is still hot. Add the bean paste, and fry it for about 30 seconds. Then add the chicken broth, and bring it to a boil.",
+    long: "Add a tablespoon of the chili oil you made previously to the wok pan, while the pan is still hot. Add the bean paste, and fry it for about 30 seconds. Then add the chicken broth, and bring it to a boil.",
     ingredients: [ {name: hot bean paste, amount: 50, unit: g, comment: '50 g is approximately 1 tbsp. Often used in Chinese cooking. Can usually be found in jars, is red-ish in color, and can also be found with other names such as «hot bean paste» or «chili bean sauce».'} ],
     dependencies: [-3, -7],
     active-time: 1,

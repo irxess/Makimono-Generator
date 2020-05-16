@@ -1,6 +1,6 @@
 recipe: Mapo Tofu
 
-description: "A flavorful and spicy dish. A vegetarian (vegan?) variation can be made if you drop the minced meat. If you do so, you will probably want to add more tofu, and possibly use some vegetable buillion or msg to boost the umami."
+description: "A flavorful and spicy dish. A vegetarian (or vegan) variation can be made if you drop the minced meat. If you do so, you will probably want to add more tofu or some mushrooms, and possibly use some vegetable buillion or MSG to boost the umami."
 date_created: 2019-09-08
 last_updated: 2020-05-16
 image: 'mapo-tofu'
@@ -59,7 +59,7 @@ steps:
     short: "Season meat",
     long: "Mix the meat with the sesame oil and a bit of salt, and set it aside.",
     ingredients: [
-      {name: minced meat, amount: 100, unit: g, comment: 'Beef or pork.'},
+      {name: minced meat, amount: 400, unit: g, comment: 'Beef or pork.'},
       {name: sesame oil, amount: 0.5, unit: tbsp, comment: ''},
       {name: salt, amount: 1, unit: pinch, comment: ''},
     ],
@@ -83,7 +83,7 @@ steps:
   - {
     short: "Cut tofu in cubes",
     long: "Cut the tofu into square cubes, the sides can be about 2cm.",
-    ingredients: [ {name: tofu, amount: 450, unit: g, comment: "Silken tofu is recommended, what's most important is that it is firm so that it doesn't disintegreate into a mush while working with it." } ],
+    ingredients: [ {name: tofu, amount: 300, unit: g, comment: "Silken tofu is recommended, what's most important is that it is firm so that it doesn't disintegreate into a mush while working with it." } ],
     active-time: 1,
     passive-time: 0,
     type: cut,
