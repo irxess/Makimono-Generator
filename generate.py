@@ -246,8 +246,6 @@ if __name__ == "__main__":
     if not os.path.isdir('publish/js'):
         os.makedirs('publish/js')
     shutil.copy('templates/recipe-scaling.js', 'publish/js/')
-    if not os.path.isdir('publish/js/recipes'):
-        os.makedirs('publish/js/recipes')
 
     for filename in os.listdir('recipes'):
         if filename[0] != '.':

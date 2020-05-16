@@ -7,22 +7,27 @@ f"""
   "@context": "http://schema.org/",
   "@type": "Recipe",
   "name": "{recipe.name}",
+  "datePublished": "{recipe.date_created}",
+  "description": "{recipe.description}",
+"""
+    if recipe.image:
+        jsonld += \
+f"""
   "image": [
     "https://makimo.no/images/{recipe.image}",
     "https://makimo.no/images/thumbnails/{recipe.image}"
-    ],
-  "datePublished": "{recipe.date_created}",
-  "description": "{recipe.description}",
+  ],
 """
     if recipe.result:
         jsonld += f'  "recipeYield": "{recipe.result.amount} {recipe.result.name}",\n'
     return jsonld
+
 # TODO add author (@type Persons , can I add us both?)
 # TODO remove newlines from description
 # TODO add time, keywords, category, cuisine
-#    "prepTime": "PT20M",
+#    "prepTime": "PT40M",
 #    "cookTime": "PT30M",
-#    "totalTime": "PT50M",
+#    "totalTime": "PT1H10M",
 #    "keywords": "cake for a party, coffee",
 #    "recipeCategory": "Dessert",
 #    "recipeCuisine": "American",
@@ -50,7 +55,7 @@ def add_steps(recipe, jsonld):
     for step in recipe.steps:
         step_string = '    {\n      "@type": "HowToStep",\n'
         if step.long != '':
-            step_string += f'      "name": "{step.short}"\n'
+            step_string += f'      "name": "{step.short}",\n'
             step_string += f'      "text": "{step.long}"'
         else:
             step_string += f'      "text": "{step.short}"'
@@ -64,6 +69,6 @@ def generate_jsonld(recipe):
     jsonld_string = initialize_jsonld(recipe)
     jsonld_string = add_ingredients(recipe, jsonld_string)
     jsonld_string = add_steps(recipe, jsonld_string)
-    jsonld_string += "}\n"
+    jsonld_string += "}"
     return jsonld_string
 
