@@ -2,8 +2,8 @@ recipe: Beer bread
 
 description: ""
 date_created: 2020-04-13
-last_updated: 2020-04-13
-image: ''
+last_updated: 2020-05-16
+image: 'beer-bread'
 
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
