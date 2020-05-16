@@ -113,7 +113,7 @@ class PaginationElement:
     current = False
 
 def split_thumbnail_list_into_pages(thumbnails):
-    chunk_size = 4 # This is the number of recipes that will be shown on the "All recipes"-page
+    chunk_size = 10 # This is the number of recipes that will be shown on the "All recipes"-page
     list_of_thumbnail_chunks = []
     pagination_list = []
     chunk_number = 1
