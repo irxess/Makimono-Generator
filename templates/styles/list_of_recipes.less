@@ -1,0 +1,37 @@
+#list-of-recipes {
+	list-style: none; // Remove numbering from ordered list of recipes
+	padding-left: 0;
+	text-align: center;
+	li {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		a {
+			text-decoration: none;
+			color: @text-color-dark;
+			h1 {
+				padding: 0;
+				margin: 0;
+			}
+		}
+		p {
+			padding-top: 0;
+			margin-top: 0;
+			color: @grey;
+		}
+	}
+}
+
+.media-above-cutoff-list-of-recipes {
+	#list-of-recipes {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		li{
+			margin-left: 1em;
+			margin-right: 1em;
+			width: 15em;
+		}
+	}
+}
