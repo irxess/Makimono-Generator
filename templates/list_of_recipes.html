@@ -11,7 +11,11 @@
       <li class="recipe-in-list">
         {% if (thumbnail.image is defined) and thumbnail.image %}
         <a href="{{path_to_base}}/{{ thumbnail.url }}">
-            <img src="{{path_to_base}}/{{ thumbnail.image }}" alt="Thumbnail image for the {{ thumbnail.name }} recipe.">
+            <img
+              src="{{path_to_base}}/{{ thumbnail.image }}"
+              alt="Thumbnail image for the {{ thumbnail.name }} recipe."
+              height="200"
+              width="200">
         </a>
         {% endif %}
         <a href="{{path_to_base}}/{{ thumbnail.url }}">
