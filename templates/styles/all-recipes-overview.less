@@ -16,3 +16,27 @@
 		}
 	}
 }
+
+.media-below-tiny-all-recipes-overview {
+	#all_recipes_table {
+		border-collapse: separate;
+		border-spacing: 0.5em;
+		tbody {
+			tr {
+				th {
+					&:not(:first-child){
+						display: none;
+					}
+				}
+				td {
+					&:not(:first-child) {
+						display: none;
+					}
+					&:not(:last-child) {
+						padding-right: initial;
+					}
+				}
+			}
+		}
+	}
+}
