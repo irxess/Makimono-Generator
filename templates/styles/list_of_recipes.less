@@ -1,6 +1,6 @@
 #list-of-recipes {
 	list-style: none; // Remove numbering from ordered list of recipes
-	padding-left: 0;
+	padding-left: 0; // I don't know what else adds the padding that makes us need this. It bothers me.
 	text-align: center;
 	li {
 		display: flex;
@@ -32,6 +32,14 @@
 			margin-left: 1em;
 			margin-right: 1em;
 			width: 15em;
+		}
+	}
+}
+
+.media-below-almost-cutoff-list-of-recipes {
+	#list-of-recipes {
+		li{
+			margin-bottom: 2em;
 		}
 	}
 }
