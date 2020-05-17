@@ -1,7 +1,13 @@
 #all_recipes_table {
 	margin: auto;
+	padding-bottom: 1em;
 	tbody {
 		tr {
+			th {
+				&:not(:first-child){
+					text-align: left; // Because on the wider views the "Created on" and "Updated on" headers looked weirdly mis aligned with the columns below without, but the first child, "Recipe", looked fine/possibly even better as it was.
+				}
+			}
 			td {
 				&:not(:last-child) {
 					padding-right: 1em;
