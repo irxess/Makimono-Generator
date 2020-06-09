@@ -27,6 +27,34 @@ def calculate_time(step, calculated_time):
         for child in step.depends_on:
             calculate_time(child, calculated_time)
 
+
+# To get sum of slowest possible execution:
+# - sum all active and passive time for all steps
+
+# To get time needed for fastets possible execution:
+# - sum all active and passive time for longes chain (in terms of needed time) of dependent steps
+# For each step:
+# Add it's passive and active time to the larges of the ones from it's children
+
+def calculate_time_for_slowest_chain(step_id, steps)
+    step = get_step_with_id_from_recipe(step_id, steps)
+    current_step_required_time = step.time.active + step.time.passive
+    if step.depends_on == []:
+        return current_step_required_time
+
+    child_times = set()
+    for child_id in step.depends_on:
+        child_time = calculate_time_for_slowest_chain(child_id, steps)
+        child_times.add(child_time)
+
+    child_path_needing_most_time = max(child_times)
+    return child_path_needing_most_time + current_step_required_time
+
+
+
+
+
+
 def get_leaf_node_ids(steps):
     leaf_node_ids = []
     for step in steps:
