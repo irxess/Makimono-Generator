@@ -22,32 +22,6 @@ def get_leaf_node_ids(recipe):
     return leaf_node_ids
 
 def get_root_node_ids(recipe):
-    # ToDo
-    root_node_ids = []
-    for step in recipe.steps:
-        is_root = True
-        for other_step in recipe.steps:
-            if step.id in other_step.depends_on:
-                is_root = False
-                break
-        if is_root:
-            root_node_ids.append(step.id)
-    return root_node_ids
-
-def get_root_node_ids_linear(recipe):
-    root_node_ids = []
-
-    for step in recipe.steps:
-        root_node_ids.append(step.id)
-
-    for step in recipe.steps:
-        for child in step.depends_on:
-            if child.id in root_node_ids:
-                root_node_ids.remove(child.id)
-
-    return root_node_ids
-
-def get_root_node_ids_linear_set(recipe):
     root_node_ids = set()
 
     for step in recipe.steps:
