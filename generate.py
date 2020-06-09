@@ -10,6 +10,7 @@ from read_from_yaml import read_recipe_into_data
 from data import *
 from jsonld import generate_jsonld
 from sitemap import create_sitemap
+from total_time_needed_for_recipe import calculate_total_time_needed
 
 # TODO:
 # Check that each ingredient is used at least once
@@ -77,6 +78,7 @@ def generate_files_for_recipe(name):
     prepare_image(recipe)
     timeline.generate_timeline_svg(recipe)
     recipe.url_name = get_url_friendly_name(name)
+    calculate_total_time_needed(recipe)
     jsonld = generate_jsonld(recipe)
 
     if not os.path.isdir('publish/recipes'):
