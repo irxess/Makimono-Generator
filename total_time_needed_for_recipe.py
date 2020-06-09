@@ -1,40 +1,15 @@
 from data import *
 
 def calculate_total_time_needed(recipe):
-    # for step in recipe.steps:
-    #     step_sum = step.time.active + step.time.passive
     root_node_ids = get_root_node_ids(recipe.steps)
-    time_if_all_steps_done_consecutively = 0
-    time_if_execution_perfectly_paralell = 0
 
+    upper_bound_needed_time = calculate_total_time_needed_for_all_steps(recipe.steps)
+
+    slowest_chain_times = set()
     for root in root_node_ids:
-        calculate_time(root, time_if_all_steps_done_consecutively, time_if_execution_perfectly_paralell, recipe.steps)
+        slowest_chain_times.add(calculate_time_for_slowest_chain(root, recipe.steps))
 
-def calculate_time(step_id, most_time, least_time, steps):
-    step = get_step_with_id_from_recipe(step_id, steps)
-    most_time += step.time.active + step.time.passive
-
-    for child_id in step.depends_on:
-        calculate_time(child_id, most_time, least_time, recipe)
-
-
-
-def calculate_time(step, calculated_time):
-    calculated_time += step.time.active + step.time.passive
-    if step.depends_on == []:
-        return
-    else:
-        for child in step.depends_on:
-            calculate_time(child, calculated_time)
-
-
-# To get sum of slowest possible execution:
-# - sum all active and passive time for all steps
-
-# To get time needed for fastets possible execution:
-# - sum all active and passive time for longes chain (in terms of needed time) of dependent steps
-# For each step:
-# Add it's passive and active time to the larges of the ones from it's children
+    lower_bound_needed_time = max(slowest_chain_times)
 
 def calculate_time_for_slowest_chain(step_id, steps)
     step = get_step_with_id_from_recipe(step_id, steps)
@@ -50,17 +25,12 @@ def calculate_time_for_slowest_chain(step_id, steps)
     child_path_needing_most_time = max(child_times)
     return child_path_needing_most_time + current_step_required_time
 
-
-
-
-
-
-def get_leaf_node_ids(steps):
-    leaf_node_ids = []
+def calculate_total_time_needed_for_all_steps(steps):
+    """ToDo: Describe that this is done simplistic to handle cycles without a lot of complexity"""
+    time_needed = 0
     for step in steps:
-        if step.depends_on == []:
-            leaf_node_ids.append(step.id)
-    return leaf_node_ids
+        time_needed += step.time.active + step.time.passive
+    return time_needed
 
 def get_root_node_ids(steps):
     root_node_ids = set()
@@ -78,9 +48,3 @@ def get_step_by_id(step_id, steps):
         if step.id == step_id:
             return step
     return None
-
-# def is_direct_child_of(child, parent):
-#   return child.id in parent.depends_on
-
-# def is_child_of(child_id, parent_id, recipe):
-#   # don't need this, fun to think of though
