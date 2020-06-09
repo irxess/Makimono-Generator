@@ -29,7 +29,7 @@ def calculate_total_time_needed_for_all_steps(steps):
         time_needed += step.time.active + step.time.passive
     return time_needed
 
-def calculate_time_for_slowest_chain(step_id, steps_dictionary)
+def calculate_time_for_slowest_chain(step_id, steps_dictionary):
     step = steps_dictionary[step_id]
     current_step_required_time = step.time.active + step.time.passive
     if step.depends_on == []:
