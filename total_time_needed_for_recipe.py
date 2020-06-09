@@ -1,8 +1,21 @@
 from data import *
 
 def calculate_total_time_needed(recipe):
-    for step in recipe.steps:
-        step_sum = step.time.active + step.time.passive
+    # for step in recipe.steps:
+    #     step_sum = step.time.active + step.time.passive
+    root_node_ids = get_root_node_ids(recipe)
+    time_if_all_steps_done_consecutively = 0
+    time_if_execution_perfectly_paralell = 0
+
+    for root in root_node_ids:
+        calculate_time(root, time_if_all_steps_done_consecutively, time_if_execution_perfectly_paralell, recipe)
+
+def calculate_time(step_id, most_time, least_time, recipe):
+    step = get_step_with_id_from_recipe(step_id, recipe)
+    most_time += step.time.active + step.time.passive
+
+    for child_id in step.depends_on:
+        calculate_time(child_id, most_time, least_time, recipe)
 
 
 
@@ -30,13 +43,13 @@ def get_root_node_ids(recipe):
     for step in recipe.steps:
         root_node_ids -= set(step.depends_on)
 
-    return list(root_node_ids)
+    return root_node_ids
 
-
-
-# root_node_ids = recipe.steps(step => recipe.steps.All(other_steps => step.id not in recipe.steps.depends_on))
-#       if all(!is_direct_child_of(step.id, other_steps) for other_steps in recipe.steps):
-#           root_node_ids.append(step.id)
+def get_step_with_id_from_recipe(step_id, recipe):
+    for steps in recipe.steps:
+        if step.id == step_id:
+            return step
+    return None
 
 # def is_direct_child_of(child, parent):
 #   return child.id in parent.depends_on
