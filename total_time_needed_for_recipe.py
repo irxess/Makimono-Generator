@@ -6,20 +6,21 @@ def calculate_total_time_needed(recipe):
     upper_bound_needed_time = calculate_total_time_needed_for_all_steps(recipe.steps)
 
     slowest_chain_times = set()
+    steps_dictionary = make_step_dictionary(recipe.steps)
     for root in root_node_ids:
-        slowest_chain_times.add(calculate_time_for_slowest_chain(root, recipe.steps))
+        slowest_chain_times.add(calculate_time_for_slowest_chain(root, steps_dictionary))
 
     lower_bound_needed_time = max(slowest_chain_times)
 
-def calculate_time_for_slowest_chain(step_id, steps)
-    step = get_step_with_id_from_recipe(step_id, steps)
+def calculate_time_for_slowest_chain(step_id, steps_dictionary)
+    step = steps_dictionary[step_id]
     current_step_required_time = step.time.active + step.time.passive
     if step.depends_on == []:
         return current_step_required_time
 
     child_times = set()
     for child_id in step.depends_on:
-        child_time = calculate_time_for_slowest_chain(child_id, steps)
+        child_time = calculate_time_for_slowest_chain(child_id, steps_dictionary)
         child_times.add(child_time)
 
     child_path_needing_most_time = max(child_times)
@@ -43,8 +44,8 @@ def get_root_node_ids(steps):
 
     return root_node_ids
 
-def get_step_by_id(step_id, steps):
+def make_step_dictionary(steps):
+    steps_dictionary = dict()
     for step in steps:
-        if step.id == step_id:
-            return step
-    return None
+        steps_dictionary[step.id] = step
+    return steps_dictionary
