@@ -14,7 +14,7 @@
 }
 
 #metadata {
-	.recipe-date, .recipe-source {
+	.recipe-date, .recipe-source, .recipe-total-time {
 		margin-left: 0.75em;
 		font-size: 0.85em;
 	}
@@ -193,6 +193,13 @@ svg {
 		#flavor-text {
 			text-align: initial;
 			hyphens: initial;
+		}
+	}
+	#metadata{
+		.recipe-total-time{
+			span{
+				display: block;
+			}
 		}
 	}
 	#steps {
