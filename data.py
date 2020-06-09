@@ -94,6 +94,11 @@ class Yield:
     name: str
 
 @dataclass
+class RecipeTime:
+    lower_bound: int = 0
+    upper_bound: int = 0
+
+@dataclass
 class Recipe:
     name: str
     date_created: str
@@ -106,3 +111,4 @@ class Recipe:
     image: str = ""
     result: Optional[Yield] = None
     url_name: str = ""
+    time: RecipeTime = RecipeTime()

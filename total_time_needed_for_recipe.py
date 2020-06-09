@@ -4,6 +4,7 @@ def calculate_total_time_needed(recipe):
     root_node_ids = get_root_node_ids(recipe.steps)
 
     upper_bound_needed_time = calculate_total_time_needed_for_all_steps(recipe.steps)
+    recipe.time.upper_bound = upper_bound_needed_time
 
     slowest_chain_times = set()
     steps_dictionary = make_step_dictionary(recipe.steps)
@@ -11,6 +12,7 @@ def calculate_total_time_needed(recipe):
         slowest_chain_times.add(calculate_time_for_slowest_chain(root, steps_dictionary))
 
     lower_bound_needed_time = max(slowest_chain_times)
+    recipe.time.lower_bound = lower_bound_needed_time
 
 def calculate_total_time_needed_for_all_steps(steps):
     """
