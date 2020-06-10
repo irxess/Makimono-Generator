@@ -187,8 +187,12 @@ hr {
 	header {
 		display: none;
 	}
+	#three-col {
+		display: block; // Workaround to make print work in firefox. Probably due to https://bugzilla.mozilla.org/show_bug.cgi?id=939897
+		background-color: initial;
+	}
 	body {
-		display: block;
+		display: block; // Workaround to make print work in firefox
 		background-color: initial;
 		#content {
 			background-color: initial;

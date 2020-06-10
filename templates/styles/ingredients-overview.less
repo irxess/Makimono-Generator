@@ -61,6 +61,21 @@
 				tr, td {
 						page-break-inside: avoid;
 				}
+				// Below is workaround to make Firefox handle printing better.
+				// Has a nice side-effect of making printing more consistent in general.
+				width: 100%;
+				tr {
+					border-bottom: 0.10em solid @background-dark;
+					&:last-child {
+						border-bottom: none;
+					}
+					td {
+						display: inline-block;
+						&.comment {
+							margin-left: 1em;
+						}
+					}
+				}
 			}
 		}
 	}
