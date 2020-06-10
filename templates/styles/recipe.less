@@ -18,8 +18,12 @@
 		margin-left: 0.75em;
 		font-size: 0.85em;
 	}
+	// Reduce line spacing in metadata summary.
+	// Because the margins can overlap, set both top and bottom for relevant elements.
+	// This prevents one of the elements' default 1em line spacing margin to win over the other elements 0.5em margin.
 	.recipe-date { margin-bottom: 0.5em; }
-	.recipe-source { margin-top: 0.5em; }
+	.recipe-source { margin-top: 0.5em; margin-bottom: 0.5em; }
+	.recipe-total-time{ margin-top: 0.5em; }
 }
 
 svg {
@@ -125,21 +129,23 @@ svg {
 	}
 	#metadata {
 		display: grid;
-		grid-template-columns: 2fr 1fr;
+		grid-template-columns: 1fr 3fr 1fr;
 		column-gap: 1em;
 		margin-left: 1em;
 		margin-right: 1em;
 		.recipe-date{
-			grid-column: 1;
+			// Reset line spacing and remove not needed margin to section below
+			margin-bottom: 0;
 		}
 		.recipe-source {
-			grid-column: 1;
+			// Reset line spacing and remove not needed margin to section below
+			margin-top: 1em;
+			margin-bottom: 0;
 		}
 		.recipe-total-time {
-			grid-column: 2;
-			grid-row-start: 1;
-			grid-row-end: 3;
-			text-align: center;
+			// Reset line spacing and remove not needed margin to section below
+			margin-top: 1em;
+			margin-bottom: 0;
 			span{
 				display: block;
 			}
