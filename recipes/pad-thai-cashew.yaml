@@ -13,10 +13,10 @@ steps:
     long: "Mix the ingredients together and set aside. You can adjust the ratios to taste. If it is hard to combine you could add some water.",
     ingredients: [
       {name: tamarind paste, amount: 60, unit: g, comment: '60 g is ≈ 3 tbsp of tamarind paste.'},
-      {name: brown sugar, amount: 38, unit: g, comment: '38 g is ≈ 3 tbsp of brown sugar.'},
-      {name: chili paste or red thai cury paste, amount: 9.5, unit: g, comment: '10 g is ≈ 1 tsp of cury paste.'},
+      {name: brown sugar, amount: 40, unit: g, comment: '38 g is ≈ 3 tbsp of brown sugar.'},
+      {name: chili paste or red thai cury paste, amount: 10, unit: g, comment: '10 g is ≈ 1 tsp of cury paste.'},
       {name: soy sauce, amount: 10, unit: g, comment: '10 g is ≈ 1 tbsp of soy sauce.'},
-      {name: fish sauce, amount: 6.8, unit: g, comment: '6.8 g is ≈ 1 tbsp of fish sauce.'}
+      {name: fish sauce, amount: 7, unit: g, comment: '6.8 g is ≈ 1 tbsp of fish sauce.'}
     ],
     active-time: 1,
     passive-time: 1,
