@@ -7,7 +7,7 @@ Make sure python (at least v 3.7) and the neccessary python packages are install
 
 ## Windows
 
-### Using python virtual environment
+### Using python's virtual environment
 
 Official docs per 2020-02-15 for venv can be found here:
 https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
@@ -34,7 +34,27 @@ To install the packages specified in the requirements-file:
 
 > python -m pip install pyyaml jinja2 lesscpy pillow
 
-## Other OSs
+## Other OSs (tested on Linux)
+
+### Using python's virtual environment
+
+To set up the virtual environment:
+
+`python -m venv venv_name`
+
+To start the virtual environment:
+
+`source venv_name/bin/activate`
+
+To install the packages specified in the requirements-file:
+
+`pip install -r requirements.txt`
+
+After you are done working with the project, you can exit the virtual environment by running:
+
+`deactivate`
+
+### When not using virtual environments
 
 > pip install pyyaml jinja2 lesscpy pillow
 
