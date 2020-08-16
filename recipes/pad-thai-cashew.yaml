@@ -2,7 +2,7 @@ recipe: Pad Thai with Cashews
 
 description: ""
 date_created: 2020-04-13
-last_updated: 2020-08-09
+last_updated: 2020-08-16
 image: ''
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
@@ -10,7 +10,7 @@ image: ''
 steps:
   - {
     short: "Make sauce",
-    long: "Mix the ingredients together and set aside. You can adjust the ratios to taste. If it is hard to combine you could add some water.",
+    long: "Mix the ingredients together and set aside. You can adjust the ratios to taste. If it is difficult to combine you can add some water.",
     ingredients: [
       {name: tamarind paste, amount: 60, unit: g, comment: '60 g is ≈ 3 tbsp.'},
       {name: brown sugar, amount: 40, unit: g, comment: '40 g is ≈ 3 tbsp.'},
@@ -18,8 +18,8 @@ steps:
       {name: soy sauce, amount: 10, unit: g, comment: '10 g is ≈ 1 tbsp.'},
       {name: fish sauce, amount: 7, unit: g, comment: '7 g is ≈ 1 tbsp.'}
     ],
-    active-time: 1,
-    passive-time: 1,
+    active-time: 3,
+    passive-time: 0,
     type: bowl,
     temp: room,
   }
