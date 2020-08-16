@@ -3,7 +3,7 @@ recipe: Nachos - Vegetarian
 description: ""
 date_created: 2020-04-13
 last_updated: 2020-04-13
-image: ''
+image: nachos_vegetarian
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
