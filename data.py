@@ -8,6 +8,7 @@ class Ingredient:
     amount: Union[float, int]
     unit: str = ''
     comment: Optional[str] = None
+    recipe: Optional[str] = None
 
 @dataclass
 class RefinedIngredient:

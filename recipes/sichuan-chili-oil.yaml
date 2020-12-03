@@ -1,0 +1,48 @@
+recipe: Sichuan chili oil
+
+description: ""
+date_created: 2020-12-03
+last_updated: 2020-12-03
+image: ''
+
+result: {
+  amount: ,
+  name: ,
+}
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: '【田园时光美食】水煮鱼Fish filets in hot chili oil', # recipe name or whole citation
+  type: 'adapted',
+  author: '田园时光Garden Time homemade cuisine',
+  publication: 'YouTube',
+  url: 'https://www.youtube.com/watch?v=etix0NGyYuc',
+  date: 2019-08-31
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Boil chili oil",
+    long: "Add the oil to the saucepan, and stir inn the sichuan pepper, chili powder, and dried chilies. Mix it all unitl it is even. Place it over medium heat unitl the oil begins to boil. Then turn down to low heat, and let it simmer for about 20 minutes. It is possible to burn it, so stir occasionally.",
+    ingredients: [
+      {name: oil, amount: 214, unit: g, comment: '214g is approximately 2.5 dl. Should be neutral and capable of sustaining high heat'},
+      {name: sichuan pepper, amount: 8.4, unit: g, comment: '4.2g is approximately 1 tbsp. Whole conrs, not preground powder. Black pepper is not really a substitute here'},
+      {name: Korean chili powder, amount: 15, unit: g, comment: ''},
+      {name: dried chili, amount: 10, unit: g, comment: 'whole'},
+    ],
+    active-time: 1,
+    passive-time: 25,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Strain the chili oil",
+    long: "Once the chili oil is done, run it through a strainer and discard everything besides the oil, which you set aside for later. Beware that the oil is very hot at this point, and that both the strainer, and dish/container you pour the oil over into, should be heat resistant.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: saucepan,
+    temp: hot,
+  }
