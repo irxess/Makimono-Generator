@@ -95,7 +95,7 @@
                 {% endif %}
               </td>
               <td class="name">
-                {% if ingredient.recipe_link %}<a href="./{{ingredient.recipe_link}}.html">{% endif %}
+                {% if ingredient.recipe_link %}<a href="{{path_to_base}}/recipes/{{ingredient.recipe_link}}.html">{% endif %}
                 {{ingredient.name}}
                 {% if ingredient.recipe_link %}</a>{% endif %}
               </td>
