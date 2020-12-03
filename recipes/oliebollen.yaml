@@ -113,7 +113,7 @@ steps:
 # heat oil to 180 degrees
   - {
     short: "Heat oil in pan",
-    long: "Fill a large pan with oil. Heat the oil to 180 degrees Celsius. Our target deep frying temperature is 175, but the oil will cool down when batter is added.",
+    long: "Fill a large pan with oil. Heat the oil to 180 ℃. Our target deep frying temperature is 175, but the oil will cool down when batter is added.",
     ingredients: [
       {amount: 2, unit: l, name: vegetable oil, comment: ''},
     ],
@@ -125,7 +125,7 @@ steps:
 # deepfry one icecreem spoon per oliebol, oil temp should be around 175
   - {
     short: "Deepfry the doughnuts",
-    long: "When your oil is the right temperature and the batter has risen enough, it is time to deep fry. Fill an ice cream spoon (or normal spoon) with batter. Then scrape the batter off, into the oil, using a spoon. If everything is going great, the balls will turn themselves when ready. If not, just use your skimmer to turn them when one side gets golden brown. Try to fry about 4 doughnuts (or less) at a time, and check once it a while that the temperature is around 175 degrees Celsius. You can also check whether your temperature and time are good by cutting through one of your first batch doughnuts. If it is too greasy, turn up the heat a little.",
+    long: "When your oil is the right temperature and the batter has risen enough, it is time to deep fry. Fill an ice cream spoon (or normal spoon) with batter. Then scrape the batter off, into the oil, using a spoon. If everything is going great, the balls will turn themselves when ready. If not, just use your skimmer to turn them when one side gets golden brown. Try to fry about 4 doughnuts (or less) at a time, and check once it a while that the temperature is around 175 ℃. You can also check whether your temperature and time are good by cutting through one of your first batch doughnuts. If it is too greasy, turn up the heat a little.",
     dependencies: [-1, -2],
     active-time: 20,
     passive-time: 5,

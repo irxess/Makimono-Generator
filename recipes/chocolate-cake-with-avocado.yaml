@@ -73,7 +73,7 @@ steps:
   }
   - {
     short: "Preheat oven",
-    long: "Turn on the oven to 150 degrees Celsius (convection). You can use 175 degrees if you don't have a convection oven.",
+    long: "Turn on the oven to 150 ℃ (convection). You can use 175 degrees if you don't have a convection oven.",
     active-time: 0,
     passive-time: 10,
     type: oven,

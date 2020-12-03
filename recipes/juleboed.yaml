@@ -118,7 +118,7 @@ steps:
   }
   - {
     short: "Preheat the oven",
-    long: "If you're using convection, set it to approximately 175 degrees Celsius. Otherwise, if you're using the conventional heating mode (top and bottom element heating), set it to 200 degrees Celsius.",
+    long: "If you're using convection, set it to approximately 175 ℃. Otherwise, if you're using the conventional heating mode (top and bottom element heating), set it to 200 ℃.",
     active-time: 1,
     passive-time: 10,
     type: oven,

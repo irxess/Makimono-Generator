@@ -20,7 +20,7 @@ source: {
 steps:
   - {
     short: "Pre-heat oven and cast iron pot",
-    long: "225 °C, convection. Place the cast iron pot you are going to use in there as well so that it is hot when you add the dough later. Keep the lid on in the oven so that it is warm as well.",
+    long: "225 ℃, convection. Place the cast iron pot you are going to use in there as well so that it is hot when you add the dough later. Keep the lid on in the oven so that it is warm as well.",
     active-time: 1,
     passive-time: 5,
     type: oven,

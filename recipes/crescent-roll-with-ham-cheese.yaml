@@ -99,7 +99,7 @@ steps:
   }
   - {
     short: "Preheat the oven",
-    long: "A few minutes before the rolls are done proofing, turn on the oven to 180 degrees Celsius (convection). You can use 200 degrees if you don't have a convection oven.",
+    long: "A few minutes before the rolls are done proofing, turn on the oven to 180 ℃ (convection). You can use 200 ℃ if you don't have a convection oven.",
     active-time: 1,
     passive-time: 0,
     type: oven,

@@ -70,7 +70,7 @@ steps:
   }
   - {
     short: "Forvarm ovnen",
-    long: "Skru ovnen på 175°C.",
+    long: "Skru ovnen på 175 ℃.",
     ingredients: [
     ],
     dependencies: [],

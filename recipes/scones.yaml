@@ -63,7 +63,7 @@ steps:
   }
   - {
     short: Preheat oven,
-    long: "Preheat the oven to 200 degrees Celsius.",
+    long: "Preheat the oven to 200 ℃.",
     active-time: 0,
     type: 'oven',
     temp: 'room',
@@ -78,7 +78,7 @@ steps:
   }
   - {
     short: Bake,
-    long: "Put the scones into the oven, and bake at 200 degrees C with convection on. The scones are done when they have a nice, golden color on top. This should take about 14 minutes.",
+    long: "Put the scones into the oven, and bake at 200 ℃ with convection on. The scones are done when they have a nice, golden color on top. This should take about 14 minutes.",
     passive-time: 14,
     type: 'oven',
     temp: 'hot',

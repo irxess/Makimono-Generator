@@ -77,7 +77,7 @@ steps:
   }
   - {
     short: "Pre-heat oven",
-    long: "175 °C, convection.",
+    long: "175 ℃, convection.",
     type: oven,
     temp: room,
     active-time: 1

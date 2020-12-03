@@ -53,7 +53,7 @@ steps:
   }
   - {
     short: "Pre-heat oven",
-    long: "180 °C",
+    long: "180 ℃",
     active-time: 1,
     passive-time: 5,
     type: oven,

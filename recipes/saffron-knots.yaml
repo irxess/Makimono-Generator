@@ -112,7 +112,7 @@ steps:
     temp: room,
   }
   - {
-    short: "Preheat the oven to 220 degrees Celsius (not using convection).",
+    short: "Preheat the oven to 220 ℃ (not using convection).",
     dependencies: [],
     active-time: 1,
     passive-time: 0,

@@ -70,7 +70,7 @@ steps:
    }
   - {
     short: Preheat the oven,
-    long: "Preheat the oven to 160 degrees Celsius.",
+    long: "Preheat the oven to 160 ℃.",
     active-time: 1,
     type: 'oven',
     temp: 'room',
