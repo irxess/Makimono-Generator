@@ -138,7 +138,7 @@ steps:
     long: "When the doughnuts are done deep frying, lift them out of the oil with the skimmer. Put them on a paper towel to let some oil drip off. After a few minutes, move to a cooling rack, so the oliebollen remain crisp on the outside. Serve with powdered sugar.",
     dependencies: [-1],
     active-time: 1,
-    passive-time: 1,
+    passive-time: 5,
     type: bowl,
     temp: room,
   }

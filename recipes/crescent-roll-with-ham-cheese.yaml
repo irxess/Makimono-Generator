@@ -83,8 +83,8 @@ steps:
       {amount: 16, unit: slices, name: cheese, comment: ''},
     ],
     dependencies: [-1],
-    active-time: 1,
-    passive-time: 1,
+    active-time: 10,
+    passive-time: 0,
     type: shape,
     temp: room,
   }
@@ -122,7 +122,7 @@ steps:
     long: "Bake the rolls in the oven for about 10 minutes, until the outside has a golden brown color.",
     dependencies: [-1, -2],
     active-time: 1,
-    passive-time: 1,
+    passive-time: 10,
     type: oven,
     temp: hot,
   }

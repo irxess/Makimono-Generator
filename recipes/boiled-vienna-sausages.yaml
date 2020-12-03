@@ -17,7 +17,7 @@ steps:
     long: "",
     ingredients: [ {name: onion, amount: 200, unit: 'g', comment: 'about 1 large one'}],
     active-time: 1,
-    passive-time: 1,
+    passive-time: 0,
     type: bowl,
     temp: room,
   }

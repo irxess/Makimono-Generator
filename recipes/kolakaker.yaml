@@ -111,8 +111,7 @@ steps:
     ingredients: [
     ],
     dependencies: [-1],
-    active-time: 1,
-    passive-time: 1,
+    active-time: 2,
     type: 'cut',
     temp: 'warm',
   }

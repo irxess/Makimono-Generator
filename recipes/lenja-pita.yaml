@@ -137,7 +137,7 @@ steps:
   }
   - {
     short: "Bake the cake",
-    long: "For about 40 minutes. If you want, you can turn up the heat a bit the last 5 - 10 minutes.",
+    long: "For about 40 minutes. If you want, you can turn up the heat a bit for the last 5 - 10 minutes.",
     active-time: 0,
     passive-time: 40,
     type: oven,
