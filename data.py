@@ -8,7 +8,7 @@ class Ingredient:
     amount: Union[float, int]
     unit: str = ''
     comment: Optional[str] = None
-    recipe: Optional[str] = None
+    recipe_link: Optional[str] = None
 
 @dataclass
 class RefinedIngredient:
@@ -56,6 +56,7 @@ class IngredientsOverview:
     total_amount: Union[int, float]
     unit: str = ''
     comment: Optional[str] = None
+    recipe_link: Optional[str] = None
 
 @dataclass
 class Point:

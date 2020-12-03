@@ -68,7 +68,7 @@ steps:
     short: "Make hot oil sauce",
     long: "In a saucepan, add sichuan chili oil, and a few of the dried chilies. Heat it up, and when the oil is boling, pour in the sichuan green pepper powder you made previously. Stir it around, and after a few seconds (10 - 20 after you added the pepper powder), it should be done. Set it aside for later.",
     ingredients: [
-      {name: sichuan chili oil, amount: 4, unit: tbsp, comment: '', recipe: sichuan-chili-oil},
+      {name: sichuan chili oil, amount: 4, unit: tbsp, comment: '', recipe-link: sichuan-chili-oil},
       {name: dried chili, amount: 1, unit: g, comment: ''},
     ],
     dependencies: [-1],
@@ -107,7 +107,7 @@ steps:
     long: "Heat up a couple of tablespoons of sichuan chili oil in a wok pan, add the vegetables, a bit of salt, and stir fry it until you are satisfied that they are done. Place them in the serving bowl.",
     ingredients: [
       {name: salt, amount: 5.7, unit: g, comment: ''},
-      {name: sichuan chili oil, amount: 2, unit: tbsp, comment: '', recipe: sichuan-chili-oil},
+      {name: sichuan chili oil, amount: 2, unit: tbsp, comment: '', recipe-link: sichuan-chili-oil},
     ],
     dependencies: [-1],
     active-time: 5,
@@ -120,7 +120,7 @@ steps:
     long: "Add sichuan chili oil to the wok pan, while the pan is still hot. Add the bean paste, and fry it for about 30 seconds. Then add the chicken broth, and bring it to a boil.",
     ingredients: [
       {name: hot bean paste, amount: 50, unit: g, comment: '50 g is approximately 1 tbsp. Often used in Chinese cooking. Can usually be found in jars, is red-ish in color, and can also be found with other names such as «hot bean paste» or «chili bean sauce».'},
-      {name: sichuan chili oil, amount: 1, unit: tbsp, comment: '', recipe: sichuan-chili-oil},
+      {name: sichuan chili oil, amount: 1, unit: tbsp, comment: '', recipe-link: sichuan-chili-oil},
     ],
     dependencies: [-1, -3],
     active-time: 1,

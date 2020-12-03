@@ -94,7 +94,11 @@
                   {{ingredient.unit}}
                 {% endif %}
               </td>
-              <td class="name">{{ingredient.name}}</td>
+              <td class="name">
+                {% if ingredient.recipe_link %}<a href="./{{ingredient.recipe_link}}.html">{% endif %}
+                {{ingredient.name}}
+                {% if ingredient.recipe_link %}</a>{% endif %}
+              </td>
               <td class="comment">
                 {% if ingredient.comment %}
                   {{ingredient.comment}}

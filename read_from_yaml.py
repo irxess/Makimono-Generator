@@ -14,13 +14,16 @@ def create_sorted_ingredient_overview(recipe):
             comment = ''
             if ingr.comment:
                 comment = ingr.comment
+            recipe_link = ''
+            if ingr.recipe_link:
+                recipe_link = ingr.recipe_link
             if not name in ingredients:
-                ingredients[name] = [(amount, unit, comment)]
+                ingredients[name] = [(amount, unit, comment, recipe_link)]
             else:
                 added = False
                 for index,item in enumerate(ingredients[name]):
                     if unit == item[1]:
-                        ingredients[name][index] = (item[0]+amount, unit, item[2]+comment)
+                        ingredients[name][index] = (item[0]+amount, unit, item[2]+comment, recipe_link)
                         added = True
                 if not added:
                     index = 0
@@ -29,7 +32,7 @@ def create_sorted_ingredient_overview(recipe):
                             index += 1
                         else:
                             break
-                    ingredients[name].insert(index, (amount, unit, comment))
+                    ingredients[name].insert(index, (amount, unit, comment, recipe_link))
 
     sorted_ingredients = sorted(ingredients.items(), key=lambda kv: kv[1][0], reverse=True)
 
@@ -39,7 +42,7 @@ def create_sorted_ingredient_overview(recipe):
             amount = value[0]
             if amount == 0:
                 amount = ''
-            ingr_overview = IngredientsOverview(name=name, total_amount=amount, unit=value[1], comment=value[2])
+            ingr_overview = IngredientsOverview(name=name, total_amount=amount, unit=value[1], comment=value[2], recipe_link=value[3])
             recipe.ingredients.append(ingr_overview)
 
 def read_steps(yaml, recipe):
@@ -85,6 +88,8 @@ def add_ingredients_from_step_to_step_data(step, step_data):
         if 'comment' in ingr:
             ingredient.comment = ingr['comment']
             #ingredients[name].comment = ingredient.comment
+        if 'recipe-link' in ingr:
+            ingredient.recipe_link = ingr['recipe-link']
         step_data.ingredients_used.append(ingredient)
 
 def add_refined_ingredients_from_step_to_step_data(step, step_data):
