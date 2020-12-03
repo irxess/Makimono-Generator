@@ -87,7 +87,7 @@ steps:
     long: "Chill your balls in the refridgerator for 2 hours. This is so that they better retain their shape during frying. Because they'll be there for a while you'll probably want to cover them so that they don't soak up all that delicious refridgerator taste.",
     dependencies: [-1],
     active-time: 3,
-    passive-time: 180,
+    passive-time: 120,
     type: bowl,
     temp: cold,
   }
