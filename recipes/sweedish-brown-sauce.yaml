@@ -1,0 +1,78 @@
+recipe: Sweedish brown sauce
+
+description: ""
+date_created: 2020-12-03
+last_updated: 2020-12-03
+image: ''
+
+result: {
+  amount: ,
+  name: ,
+}
+
+source: {
+  name: IKEA MEATBALLS AT HÖME - CREAM SAUCE, # recipe name or whole citation
+  type: 'adapted',
+  author: 'IKEA UK',
+  publication: 'Twitter',
+  url: 'https://twitter.com/IKEAUK/status/1252269467515617280/photo/1',
+  date: 2020-12-03
+}
+
+steps:
+  - {
+    short: "Melt butter",
+    long: "",
+    ingredients: [ {name: butter, amount: 40, unit: g, comment: ''} ],
+    active-time: 2,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Add flour and brown",
+    long: "Whisk in the flour and brown it for 2 minutes (while whisking).",
+    ingredients: [ {name: flour, amount: 40, unit: g, comment: ''} ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: saucepan,
+    temp: hot,
+  }
+  - {
+    short: "Add stock",
+    long: "While continuing to stir, add vegetable and beef stock. (The original recipe called for 150 ml of beef stock and 150 ml of vegetable stock. However, it's easier for us to scale it when it's given in terms of bouillon, which we can readily obtain in cubes or granulated. The amounts here assume 50 g bouillon (1 cube) per 500 ml water to get stock.)",
+    ingredients: [
+      {name: vegetable bouillon, amount: 15, unit: g, comment: ''},
+      {name: beef bouillon, amount: 15, unit: g, comment: ''},
+      {name: water, amount: 300, unit: g, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Add cream and seasoning",
+    long: "",
+    ingredients: [
+      {name: double cream, amount: 150, unit: ml, comment: 'approximately 37 % fat'},
+      {name: soy sauce, amount: 2, unit: tsp, comment: ''},
+      {name: Dijon mustard, amount: 1, unit: tsp, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Bring to simmer and allow to thicken",
+    long: "",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
