@@ -22,7 +22,7 @@ steps:
     short: 'Chop garlic and chilli',
     long: "Finely chop the garlic (peel it first?) and chilli. You can put them aside in the frying pan and let them wait there.",
     ingredients: [
-      {name: garlic, amount: 2, unit: 'cloves'},
+      {name: garlic, amount: 14, unit: g, comment: '1 clove of garlic is about 7 g.'},
       {name: chilli pepper, amount: 1, unit: 'piece', comment: 'optional'}
     ],
     active-time: 4,
