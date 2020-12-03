@@ -1,0 +1,129 @@
+recipe: Swedish meatballs
+
+description: ""
+date_created: 2020-12-03
+last_updated: 2020-12-03
+image: ''
+
+result: {
+  amount: ,
+  name: ,
+}
+
+source: {
+  name: IKEA MEATBALLS AT HÖME - MEATBALLS, # recipe name or whole citation
+  type: 'adapted',
+  author: 'IKEA UK',
+  publication: 'Twitter',
+  url: 'https://twitter.com/IKEAUK/status/1252269467515617280/photo/1',
+  date: 2020-12-03
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Chop vegetables",
+    long: "Finely chop the onion and garlic.",
+    ingredients: [
+      {name: onion, amount: 150, unit: g, comment: '150 g is about 1 medium sized onion.'},
+      {name: garlic, amount: 7, unit: g, comment: '7 g is about 1 clove of garlic'},
+    ],
+    active-time: 1,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Combine minced meat",
+    long: "Mix with your fingers and break up any lumps.",
+    ingredients: [
+      {name: beef mince, amount: 500, unit: g, comment: ''},
+      {name: pork mince, amount: 250, unit: g, comment: ''},
+    ],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Add onion, garlic, breadcrumbs, and eggs and mix",
+    long: "Mix the onion and garlic you previously chopped up in with the meat together with some breadcrumbs and the egg.",
+    ingredients: [
+      {name: breadcrumbs, amount: 100, unit: g, comment: ''},
+      {name: egg, amount: 50, unit: g, comment: '1 mid sized egg is about 50 g.'},
+    ],
+    dependencies: [-1, -2],
+    active-time: 3,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Add milk, salt, and pepper.",
+    long: "Mix in the milk and generous amounts of salt and pepper.",
+    ingredients: [
+      {name: whole milk, amount: 85, unit: g, comment: 'Approximately 3.5 % fat. 1 tbsp is about 17 g.'},
+      {name: salt, amount: 15, unit: g, comment: '1 tsp is about 5 g.'},
+      {name: pepper, amount: 5, unit: g, comment: 'Black. 1 tsp is about 2.5 g.'},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Shape balls",
+    long: "Shape the meat mixture into small round balls.",
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Refridgerate balls",
+    long: "Chill your balls in the refridgerator for 2 hours. This is so that they better retain their shape during frying. Because they'll be there for a while you'll probably want to cover them so that they don't soak up all that delicious refridgerator taste.",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 180,
+    type: bowl,
+    temp: cold,
+  }
+  - {
+    short: "Pre-heat oven",
+    long: "Pre-heat the oven to 160 ℃ convection or 180 ℃ conventional.",
+    active-time: 1,
+    passive-time: 0,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Heat oil on medium heat",
+    long: "Get out the frying pan and pre-heat some oil in it.",
+    ingredients: [ {name: frying oil, amount: 30, unit: ml, comment: '1 tbsp is about 15 ml.'} ],
+    dependencies: [-2],
+    active-time: 2,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Fry meatballs",
+    long: "Once the pan is hot, carefully add the meatballs and brown them on all sides.",
+    dependencies: [-1],
+    active-time: 10,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Bake fired balls",
+    long: "Once the meatballs have been browned to your satisfaction, place them in a ovenproof dish and cover them. Put it in the oven, and bake for 30 minutes.",
+    dependencies: [-1, -3],
+    active-time: 2,
+    passive-time: 30,
+    type: oven,
+    temp: hot,
+  }
