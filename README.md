@@ -76,3 +76,5 @@ Note that if you are using virtual environments, this should be executed while t
 Note that the images referenced in the recipe files have to be places in the `publish/images/` folder.
 You can create the `publish/images/` directory before you do the first generating.
 The reason for this is that we do not want to bloat the git repository with binaries, and you will need to sort out the storage when you push the generated content anywhere anyways.
+
+Beware that the referenced images have to be present before you run the generation, otherwise the thumbnail generating code will fail.
