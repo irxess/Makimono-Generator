@@ -1,6 +1,6 @@
 recipe: Sichuan chili oil
 
-description: ""
+description: "Rich, but very spicy oil, used in a lot of sichuan style chinese cooking. It is more powerful when it's completely fresh, but keeps up well enough for a couple of weeks/months in the refrigerator in our experience."
 date_created: 2020-12-03
 last_updated: 2020-12-03
 image: ''
@@ -25,7 +25,7 @@ source: {
 steps:
   - {
     short: "Boil chili oil",
-    long: "Add the oil to the saucepan, and stir inn the sichuan pepper, chili powder, and dried chilies. Mix it all unitl it is even. Place it over medium heat unitl the oil begins to boil. Then turn down to low heat, and let it simmer for about 20 minutes. It is possible to burn it, so stir occasionally.",
+    long: "Add the oil to the saucepan, and stir inn the sichuan pepper, chili powder, and dried chilies. Mix it all until it is even. Place it over medium heat until the oil begins to boil. Then turn down to low heat, and let it simmer for about 20 minutes. It is possible to burn it, so stir occasionally.",
     ingredients: [
       {name: oil, amount: 214, unit: g, comment: '214g is approximately 2.5 dl. Should be neutral and capable of sustaining high heat'},
       {name: sichuan pepper, amount: 8.4, unit: g, comment: '4.2g is approximately 1 tbsp. Whole conrs, not preground powder. Black pepper is not really a substitute here'},
