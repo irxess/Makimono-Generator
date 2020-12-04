@@ -1,6 +1,6 @@
 recipe: Rødkål
 
-description: A traditional norwegian dish, usually made for christmas. Pickled red cabbage works well as a side-dish for heavy and savory food. The recipe is very forgiving. You can make many and large substitutions, and you don't really have to be that precise with the measurements to still get a result that is firmely in "tastes good" territory. It might be because it has a lot of "christmasy" flavors? Also note that this is one of the recipes where you'll most likely end up buying 1 red cabbage, because that's the only quantity you can buy it in, and you don't have any real good plans for the leftovers. In that case I recommend scaling the recipe for the amount of cabbage you have, and freezing any leftovers you end up with in portion batches.
+description: A traditional norwegian dish, usually made for christmas. Pickled red cabbage works well as a side-dish for heavy and savory food. The recipe is very forgiving. You can make many and large substitutions, and you don't really have to be that precise with the measurements, and you'll still get a result that is firmly in "tastes good" territory. Maybe because it has a lot of "christmasy" flavors? Also note that this is one of the recipes where you will most likely end up buying 1 red cabbage, because that's the only quantity you can buy it in, and you don't have any real good plans for the leftovers. In that case I recommend scaling the recipe for the amount of cabbage you have, and freezing any leftovers you end up with in portion batches.
 date_created: 2019-12-19
 last_updated: 2019-12-19
 image: 'roedkaal'
@@ -121,7 +121,7 @@ steps:
   }
   - {
     short: "Season",
-    long: "When you feel that the cabbage is done, season with salt, freshly ground black pepper and honey until you're pleased with the taste. Give it a good stir, and let it have a couple of minutes to balance out before tasing again or serving. Remember, as this is usually a side dish, you might want it to for instance be more distinctly sweet, or less salty, depnding on what you're serving it with (not everything has to have a completely rounded taste when served with other things).",
+    long: "When you feel that the cabbage is done, season with salt, freshly ground black pepper and honey until you're pleased with the taste. Give it a good stir, and let it have a couple of minutes to balance out before tasting again or serving. Remember, as this is usually a side dish, you might want it to for instance be more distinctly sweet, or less salty, depending on what you're serving it with (not everything has to have a completely rounded taste when served with other things).",
     ingredients: [
       {name: Salt, amount: 2, unit: tsp, comment: ''},
       {name: Black pepper, amount: 1, unit: tsp, comment: ''},
