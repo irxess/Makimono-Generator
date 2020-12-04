@@ -100,7 +100,7 @@ steps:
   }
   - {
     short: "Roast for 25 minutes",
-    long: "Put the muffins into the oven that you have pre-heated to 175 °C and set to convection. They should be done after about 25 minutes.",
+    long: "Put the muffins into the oven that you have pre-heated to 175 ℃ and set to convection. They should be done after about 25 minutes.",
     dependencies: [-1, -3],
     type: bake,
     temp: hot,

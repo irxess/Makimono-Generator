@@ -54,7 +54,7 @@ steps:
   }
   - {
     short: "fry the burgers",
-    long: "It's time to fry the burgers! I like my burgers fried swiftly over high heat to get a nice crust while preserving a juicy inside. Make sure to prepare somewhere to place the burgers as they come out of the pan and you want to put new ones in. If you are making really many you can consider placing the finished ones in the oven under some aluminum foil at about 50 C. Optionally, add cheese after turning them to maximize melting time.",
+    long: "It's time to fry the burgers! I like my burgers fried swiftly over high heat to get a nice crust while preserving a juicy inside. Make sure to prepare somewhere to place the burgers as they come out of the pan and you want to put new ones in. If you are making really many you can consider placing the finished ones in the oven under some aluminum foil at about 50 ℃. Optionally, add cheese after turning them to maximize melting time.",
     active-time: 15,
     type: 'fry',
     temp: 'hot',

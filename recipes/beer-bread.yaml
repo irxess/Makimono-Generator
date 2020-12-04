@@ -60,7 +60,7 @@ steps:
   }
   - {
     short: "Remove the lid and reduce temperature",
-    long: "Remove the lid, and reduce the temperature to 190 °C. Bake for about 25 minutes more, and it should be done.",
+    long: "Remove the lid, and reduce the temperature to 190 ℃. Bake for about 25 minutes more, and it should be done.",
     dependencies: [-1],
     active-time: 1,
     passive-time: 25,
