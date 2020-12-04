@@ -2,7 +2,7 @@ recipe: Swedish brown sauce
 
 description: ""
 date_created: 2020-12-03
-last_updated: 2020-12-03
+last_updated: 2020-12-04
 image: ''
 
 result: {
@@ -41,10 +41,10 @@ steps:
   }
   - {
     short: "Add stock",
-    long: "While continuing to stir, add vegetable and beef stock. (The original recipe called for 150 ml of beef stock and 150 ml of vegetable stock. However, it's easier for us to scale it when it's given in terms of bouillon, which we can readily obtain in cubes or granulated. The amounts here assume 50 g bouillon (1 cube) per 500 ml water to get stock.)",
+    long: "While continuing to stir, add vegetable and beef stock. (The original recipe called for 150 ml of beef stock and 150 ml of vegetable stock. However, it's easier for us to scale it when it's given in terms of bouillon, which we can readily obtain in cubes or granulated. The amounts here assume 10 g bouillon (1 cube) per 500 ml water to get stock.)",
     ingredients: [
-      {name: vegetable bouillon, amount: 15, unit: g, comment: ''},
-      {name: beef bouillon, amount: 15, unit: g, comment: ''},
+      {name: vegetable bouillon, amount: 3, unit: g, comment: ''},
+      {name: beef bouillon, amount: 3, unit: g, comment: ''},
       {name: water, amount: 300, unit: g, comment: ''},
     ],
     dependencies: [-1],
