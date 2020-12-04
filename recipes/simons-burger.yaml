@@ -18,7 +18,7 @@ steps:
       {name: garlic, amount: 3, unit: 'cloves'},
       {name: capers, amount: 1, unit: 'tbsp'},
       {name: pickled beetroot, amount: 2, unit: 'slices'},
-      {name: chilli pepper, amount: 1, unit: 'piece'}
+      {name: chili pepper, amount: 1, unit: 'piece'}
     ],
     active-time: 10,
     type: 'cut',

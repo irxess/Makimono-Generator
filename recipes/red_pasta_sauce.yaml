@@ -19,11 +19,11 @@ steps:
     temp: room,
   }
   - {
-    short: 'Chop garlic and chilli',
-    long: "Finely chop the garlic (peel it first?) and chilli. You can put them aside in the frying pan and let them wait there.",
+    short: 'Chop garlic and chili',
+    long: "Finely chop the garlic (peel it first?) and chili. You can put them aside in the frying pan and let them wait there.",
     ingredients: [
       {name: garlic, amount: 14, unit: g, comment: '1 clove of garlic is about 7 g.'},
-      {name: chilli pepper, amount: 1, unit: 'piece', comment: 'optional'}
+      {name: chili pepper, amount: 1, unit: 'piece', comment: 'optional'}
     ],
     active-time: 4,
     type: cut,
@@ -45,8 +45,8 @@ steps:
     temp: room,
   }
   - {
-    short: 'Fry the garlic and chilli',
-    long: "Start up the frying process with the garlic and the chilli so that they begin giving off some of their awesome fragnance. Be careful though, garlic easily burns, and the taste of burnt garlic penetrates everything and is really hard to get rid of, so it's better to err on the side of caution and fry it too little rather than too much.\n\nAlso note that I like using really good nonstick pans and not adding excess fat, so even though I don't, you might want to add perhaps a tablespoon or so of butter or olive oil for this step.",
+    short: 'Fry the garlic and chili',
+    long: "Start up the frying process with the garlic and the chili so that they begin giving off some of their awesome fragrance. Be careful though, garlic easily burns, and the taste of burnt garlic penetrates everything and is really hard to get rid of, so it's better to err on the side of caution and fry it too little rather than too much.\n\nAlso note that I like using really good nonstick pans and not adding excess fat, so even though I don't, you might want to add perhaps a tablespoon or so of butter or olive oil for this step.",
     ingredients: [ {name: 'olive oil', amount: 2, unit: 'tbsp'} ],
     active-time: 2,
     type: fry,

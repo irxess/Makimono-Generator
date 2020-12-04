@@ -114,8 +114,8 @@ steps:
   }
   - {
     short: "Fry the bean paste",
-    long: "Over low heat, fry the chilli bean paste for about 1 minute.",
-    ingredients: [ {name: chilli bean paste, amount: 1.5, unit: tbsp, comment: "Also known as Doubanjiang. Can be very salty, there is a lot of variation. This will impact whether you'll want to add more salt later or not."} ],
+    long: "Over low heat, fry the chili bean paste for about 1 minute.",
+    ingredients: [ {name: chili bean paste, amount: 1.5, unit: tbsp, comment: "Also known as Doubanjiang. Can be very salty, there is a lot of variation. This will impact whether you'll want to add more salt later or not."} ],
     dependencies: [-1],
     active-time: 1,
     passive-time: 0,
