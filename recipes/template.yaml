@@ -28,7 +28,7 @@ steps:
   - {
     short: "",
     long: "",
-    ingredients: [ {name: , amount: , unit: , comment: ''} ],
+    ingredients: [ {name: , amount: , unit: g, comment: ''} ],
     active-time: 1,
     passive-time: 1,
     type: bowl,
@@ -38,8 +38,8 @@ steps:
     short: "",
     long: "",
     ingredients: [
-      {name: , amount: , unit: , comment: ''},
-      {amount: , unit: , name: , comment: ''},
+      {name: , amount: , unit: g, comment: ''},
+      {amount: , unit: g, name: , comment: ''},
     ],
     dependencies: [-1],
     active-time: 1,
