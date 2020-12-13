@@ -57,9 +57,9 @@ steps:
     short: "Add cream and seasoning",
     long: "",
     ingredients: [
-      {name: double cream, amount: 150, unit: ml, comment: 'approximately 37 % fat'},
-      {name: soy sauce, amount: 2, unit: tsp, comment: ''},
-      {name: Dijon mustard, amount: 1, unit: tsp, comment: ''},
+      {name: double cream, amount: 150, unit: ml, comment: 'approximately 37 % fat, 150 ml is about 165 g.'},
+      {name: soy sauce, amount: 2, unit: tsp, comment: '1 tsp is about 4 g.'},
+      {name: Dijon mustard, amount: 1, unit: tsp, comment: '1 tsp is about 7 g.'},
     ],
     dependencies: [-1],
     active-time: 1,
