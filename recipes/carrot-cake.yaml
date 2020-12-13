@@ -1,0 +1,168 @@
+recipe: Carrot Cake
+
+description: "This carrot cake is very moist, because of the brown sugar. It has enough carrots to notice them, but not so much that overwhelms the other flavors."
+date_created: 2020-12-12
+last_updated: 2020-12-12
+image: ''
+
+result: {
+  amount: 14,
+  name: cake slices,
+}
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Carrot Cake, # recipe name or whole citation
+  type: 'adapted',
+  author: Laura Kieft,
+  publication: "Laura's Bakery",
+  url: 'https://www.laurasbakery.nl/carrot-cake/',
+  date: 2020-12-02
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+steps:
+  - {
+    short: "Grate carrots",
+    long: "Peel or wash the carrots, and chop off the top. Then grate the carrots, either using a kitchen machine attachment, a grater or a peeler. Don't squeeze the juice out of the grated carrots, because we want the carrot juice in the cake as well.",
+    ingredients: [ {name: carrots, amount: 450, unit: g, comment: '450 g is about 7 carrots'} ],
+    active-time: 12,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Mix liquid ingredients and sugar",
+    long: "Put the eggs and oil to a bowl, and stir them together. Add the sugar, and mix until combined.",
+    ingredients: [
+      {name: eggs, amount: 4, unit: '', comment: ''},
+      {name: vegetable oil, amount: 175, unit: g, comment: 'we use sunflower oil'},
+      {name: vanilla extract, amount: 1, unit: tbsp, comment: ''},
+      {name: brown sugar, amount: 175, unit: g, comment: ''},
+      {name: white sugar, amount: 30, unit: g, comment: ''},
+    ],
+    active-time: 3,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Add dry ingredients",
+    long: "Add the flour, baking powder and soda and spices to the bowl, and stir to combine.",
+    ingredients: [
+      {name: flour, amount: 300, unit: g, comment: 'glutenfree flour works as well'},
+      {name: baking powder, amount: 2, unit: tsp, comment: ''},
+      {name: baking soda, amount: 1, unit: tsp, comment: ''},
+      {name: ground cinnamon, amount: 1.5, unit: tbsp, comment: ''},
+      {name: ground nutmeg, amount: 1, unit: tsp, comment: ''},
+      {name: ground ginger, amount: 0.5, unit: tsp, comment: ''},
+      {name: ground clove, amount: 0.5, unit: tsp, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Chop the nuts",
+    long: "Chop the cashews into small pieces, roughly the size of peppercorns.",
+    ingredients: [
+      {name: cashew nuts, amount: 75, unit: g, comment: 'feel free to substitute with you favorite nuts or fruits, or leave it out all together'},
+    ],
+    active-time: 3,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Prehead oven",
+    long: "175 degrees Celsius, no convection",
+    active-time: 1,
+    passive-time: 0,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Add carrots and nuts to cake batter, and stir",
+    long: "",
+    dependencies: [-2, -3, -5],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Batter into cake tin, into oven",
+    long: "Pour the batter into a 22cm cake tin, and put it in the oven. The cake is done when a skewer comes out clean. This should take about 75 minutes. If you think the top of the cake is starting to get too brown, turn down the temperature by 10-20 degrees Celsius.",
+    dependencies: [-1, -2],
+    active-time: 2,
+    passive-time: 75,
+    type: oven,
+    temp: hot,
+  }
+  - {
+    short: "Beat the butter",
+    long: "While the cake is in the oven, we make the frosting. Start by adding room temperature butter to a bowl. Use the kitchen machine or hand mixer to beat the butter until it looks a bit more pale compared to when you started. This should take about 3 minutes.",
+    ingredients: [
+      {name: unsalted butter, amount: 250, unit: g, comment: 'room temperature'},
+    ],
+    active-time: 1,
+    passive-time: 3,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Add more ingredients",
+    long: "Add the cream cheese and vanilla extract to the butter, and mix it together.",
+    ingredients: [
+      {name: cream cheese, amount: 400, unit: g, comment: ''},
+      {name: vanilla extract, amount: 1, unit: tsp, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 2,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Add powdered sugar",
+    long: "To sweeten and stiffen the buttercream frosting, add powdered sugar to the mixture. You can add a bit less if you want a less sweet cream, or more to make it stiffer and sweeter.",
+    ingredients: [
+      {name: powdered sugar, amount: 300, unit: g, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 1,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Cool the buttercream frosting",
+    long: "Put the frosting in the fridge while waiting for the cake to be baked and cool down. It is important that the cake is cooled down enough before adding the frosting.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 1,
+    type: bowl,
+    temp: cold,
+  }
+  - {
+    short: "Cut the cake",
+    long: "When the cake has cooled down to room temperature, slice it in two to create two cake layers.",
+    dependencies: [-5],
+    active-time: 1,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Assemble cake",
+    long: "Place the bottom cake layer onto your serving plate. Add between 1/4th and 1/3rd of the frosting on the layer. Use a knife to spread it out evenly. Then place the other cake layer on top. Use some of the frosting to barely cover the entire cake. There will be some crumble coming off the cake. Be careful to not get too much of it into the bowl with frosting. Place the cake into the fridge to stiffen up the frosting before continueing, if needed. Add enough frosting on the size of the cake before using the rest to cover the top.",
+    dependencies: [-1, -2],
+    active-time: 10,
+    passive-time: 1,
+    # or try pipe / shape type
+    type: pipe,
+    temp: room,
+  }
