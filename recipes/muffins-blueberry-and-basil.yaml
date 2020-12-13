@@ -4,6 +4,11 @@ date_created: 2018-11-26
 date_updated: 2018-11-26
 image: muffins_blueberry_basil
 
+result: {
+  amount: 12,
+  name: muffins,
+}
+
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
   type: 'inspired',
