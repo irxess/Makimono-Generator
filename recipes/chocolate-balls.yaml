@@ -16,9 +16,9 @@ steps:
   }
   - {
     short: Add butter and spices,
-    long: softening the butter beforehand might be a good idea,
+    long: "Softening the butter beforehand might be a good idea. Make sure the coffee isn't so warm it would melt the butter.",
     ingredients: [
-      {name: butter, amount: 200, unit: g, comment: 'softened?'},
+      {name: butter, amount: 200, unit: g, comment: 'softened, not melted'},
       {name: vanilla extract, amount: 1, unit: tsp, comment: ''},
       {name: strong coffee, amount: 2, unit: tbsp, comment: ''},
     ],
@@ -29,7 +29,7 @@ steps:
   }
   - {
     short: Knead,
-    long: By hand, untill you have an even dough.,
+    long: "By hand, until you have an even dough.",
     dependencies: [-1],
     type: bowl,
     temp: room,

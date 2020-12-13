@@ -78,13 +78,13 @@ steps:
     ingredients: [{name: game stock, amount: 3, unit: 'tbsp'}],
   }
   - {
-    short: Stir in the corn starch,
-    long: "Stir in the cornstarch. Make sure there are no lumps",
+    short: Stir in the cornstarch,
+    long: "Stir in the cornstarch. Make sure there are no lumps.",
     active-time: 2,
     type: 'saucepan',
     temp: 'warm',
     dependencies: [-1],
-    ingredients: [{name: corn starch, amount: 1, unit: 'tsp', comment: 'Optional'}],
+    ingredients: [{name: cornstarch, amount: 1, unit: 'tsp', comment: 'Optional'}],
     optional: true
   }
   - {

@@ -32,46 +32,46 @@ steps:
     passive-time: 5
   }
   - {
-    short: "Pour mixture over into kitchen machine bowl",
-    dependencies: [-1],
+    short: "Wash basil and berries",
+    ingredients: [{name: basil, amount: 1, unit: plant}, {name: blueberries, amount: 350, unit: g}],
     type: bowl,
+    temp: cold,
+    active-time: 3
+  }
+  - {
+    short: "Pour mixture over into kitchen machine bowl",
+    dependencies: [-2],
+    type: km,
     temp: room,
     active-time: 1
   }
   - {
     short: "Add egg",
     long: "Make sure you've let the butter and milk cool down a bit so that you don't end up with chunks of boiled eggs in the dough.",
-    ingredients: [{name: egg, amount: 2}],
+    ingredients: [{name: eggs, amount: 2}],
     dependencies: [-1],
     type: add,
     temp: room,
     active-time: 1
   }
   - {
-    short: "Wash basil and berries",
-    ingredients: [{name: basil, amount: 1, unit: plant}, {name: blueberries, amount: 2, unit: cups}],
-    type: wash,
-    temp: cold,
-    active-time: 3
-  }
-  - {
     short: "Add basil, berries, and lemon zest",
     ingredients: [{name: "lemon zest", amount: 1, unit: tbsp}],
     refined_ingredients: [{name: washed basil}, {name: washed berries}],
-    dependencies: [-1, -2],
+    dependencies: [-1, -3],
     type: add,
     temp: room,
     active-time: 4
   }
   - {
-    short: "In separate bow, mix the dry ingredients",
+    short: "In a separate bow, mix the dry ingredients",
     ingredients: [
       {name: flour, amount: 230, unit: g},
       {name: sugar, amount: 150, unit: g},
       {name: baking powder, amount: 2, unit: tsp},
       {name: salt, amount: 1, unit: tsp}
     ],
-    type: add,
+    type: bowl,
     temp: room,
     active-time: 5
   }
@@ -91,7 +91,7 @@ steps:
     active-time: 5
   }
   - {
-    short: "Pour in fomrs",
+    short: "Pour into forms",
     long: "With the amounts specified here you should get a decent size on the muffins if you divide the dough on approximately 12 muffin forms.",
     dependencies: [-1],
     type: shape,
@@ -99,10 +99,10 @@ steps:
     active-time: 10
   }
   - {
-    short: "Roast for 25 minutes",
+    short: "Bake for 25 minutes",
     long: "Put the muffins into the oven that you have pre-heated to 175 ℃ and set to convection. They should be done after about 25 minutes.",
     dependencies: [-1, -3],
-    type: bake,
+    type: oven,
     temp: hot,
     active-time: 2,
     passive-time: 25

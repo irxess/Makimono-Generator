@@ -14,7 +14,7 @@ result: {
 source: {
   name: "SAFTIG JULEBRØD (ELLER JULEKAKE, OM DU VIL)", # recipe name or whole citation
   type: 'adapted',
-  author: "Trine?",
+  author: "Trine Sandberg",
   publication: 'Trines matblogg',
   url: 'https://trinesmatblogg.no/recipe/saftig-julebrod-eller-julekake-om-du-vil/',
   date: 2019-12-08
@@ -24,7 +24,7 @@ source: {
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
   - {
-    short: "Put raisins in warm water.",
+    short: "Put raisins in warm water",
     long: "The water should just barely cover the raisins, so the amount you need may vary with the size and shape of container you're using. Set them aside to soak for about 15 minutes.",
     ingredients: [
       {name: Raisins, amount: 300, unit: g, comment: ''},
@@ -86,7 +86,7 @@ steps:
     dependencies: [-1],
     active-time: 1,
     passive-time: 0,
-    type: shape,
+    type: cut,
     temp: room,
   }
   - {

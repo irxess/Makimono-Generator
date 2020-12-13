@@ -1,6 +1,6 @@
 recipe: Carrot Cake
 
-description: "This carrot cake is very moist, because of the brown sugar. It has enough carrots to notice them, but not so much that overwhelms the other flavors."
+description: "This carrot cake is very moist, because of the brown sugar. It has enough carrots to notice them, but not so much that it overwhelms the other flavors."
 date_created: 2020-12-12
 last_updated: 2020-12-12
 image: ''
@@ -34,7 +34,7 @@ steps:
   }
   - {
     short: "Mix liquid ingredients and sugar",
-    long: "Put the eggs and oil to a bowl, and stir them together. Add the sugar, and mix until combined.",
+    long: "Put the eggs and oil into a bowl, and stir them together. Add the sugar, and mix until combined.",
     ingredients: [
       {name: eggs, amount: 4, unit: '', comment: ''},
       {name: vegetable oil, amount: 175, unit: g, comment: 'we use sunflower oil'},
@@ -51,7 +51,7 @@ steps:
     short: "Add dry ingredients",
     long: "Add the flour, baking powder and soda and spices to the bowl, and stir to combine.",
     ingredients: [
-      {name: flour, amount: 300, unit: g, comment: 'glutenfree flour works as well'},
+      {name: flour, amount: 300, unit: g, comment: 'gluten-free flour works as well'},
       {name: baking powder, amount: 2, unit: tsp, comment: ''},
       {name: baking soda, amount: 1, unit: tsp, comment: ''},
       {name: ground cinnamon, amount: 1.5, unit: tbsp, comment: ''},
@@ -77,8 +77,8 @@ steps:
     temp: room,
   }
   - {
-    short: "Prehead oven",
-    long: "175 degrees Celsius, no convection",
+    short: "Preheat oven",
+    long: "175 ℃, no convection.",
     active-time: 1,
     passive-time: 0,
     type: oven,
@@ -95,7 +95,7 @@ steps:
   }
   - {
     short: "Batter into cake tin, into oven",
-    long: "Pour the batter into a 22cm cake tin, and put it in the oven. The cake is done when a skewer comes out clean. This should take about 75 minutes. If you think the top of the cake is starting to get too brown, turn down the temperature by 10-20 degrees Celsius.",
+    long: "Pour the batter into a 22cm cake tin, and put it in the oven. The cake is done when a skewer comes out clean. This should take about 75 minutes. If you think the top of the cake is starting to get too brown, turn down the temperature by 10-20 ℃.",
     dependencies: [-1, -2],
     active-time: 2,
     passive-time: 75,
@@ -140,7 +140,7 @@ steps:
   }
   - {
     short: "Cool the buttercream frosting",
-    long: "Put the frosting in the fridge while waiting for the cake to be baked and cool down. It is important that the cake is cooled down enough before adding the frosting.",
+    long: "Place the frosting in the fridge while you wait for the cake to finish baking and cool down. It is important that the cake has cooled down enough before adding the frosting so that the frosting doesn't melt. Do not add the frosting to the cake just yet.",
     dependencies: [-1],
     active-time: 1,
     passive-time: 1,
@@ -149,7 +149,7 @@ steps:
   }
   - {
     short: "Cut the cake",
-    long: "When the cake has cooled down to room temperature, slice it in two to create two cake layers.",
+    long: "When the cake has cooled down to room temperature, slice it in two horizontally to create two distinct cake layers.",
     dependencies: [-5],
     active-time: 1,
     passive-time: 0,
@@ -158,7 +158,7 @@ steps:
   }
   - {
     short: "Assemble cake",
-    long: "Place the bottom cake layer onto your serving plate. Add between 1/4th and 1/3rd of the frosting on the layer. Use a knife to spread it out evenly. Then place the other cake layer on top. Use some of the frosting to barely cover the entire cake. There will be some crumble coming off the cake. Be careful to not get too much of it into the bowl with frosting. Place the cake into the fridge to stiffen up the frosting before continueing, if needed. Add enough frosting on the size of the cake before using the rest to cover the top.",
+    long: "Place the bottom cake layer onto your serving plate. Add between a 1/4th and a 1/3rd of the frosting on the layer. Use a knife to spread it out evenly. Then place the other cake layer on top. Cover the entire cake with a thin layer of frosting, using as little frosting as you can. There will be some crumble coming off the cake. Be careful to not get too much of it into the bowl with frosting. Place the cake in the fridge to stiffen up the frosting before continuing, if needed. Add enough frosting to cover the side of the cake before covering the top with the rest.",
     dependencies: [-1, -2],
     active-time: 10,
     passive-time: 1,

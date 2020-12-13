@@ -13,7 +13,7 @@ steps:
     long: "Fry chickpeas over medium to medium-high heat with some oil until they are nice and soft.",
     ingredients: [
       {name: chickpeas, amount: 250, unit: g, comment: '1 can of 400 g should be about 250 g actual chickpeas'},
-      {name: oil, amount: 2, unit: tbsp, comment: 'For frying the chickpeas, should be capable of sustaining high heat.'},
+      {name: oil, amount: 2, unit: tbsp, comment: 'for frying the chickpeas, should be capable of sustaining high heat'},
     ],
     active-time: 5,
     passive-time: 5,
@@ -41,7 +41,7 @@ steps:
       {name: tomato beans, amount: 400, unit: g, comment: ''},
       {name: sweet corn, amount: 150, unit: g, comment: ''},
       {name: paprika, amount: 0.5, unit: pieces, comment: ''},
-      {name: onion, amount: 75, unit: g, comment: '1 medium sized onion is about 150 g.'},
+      {name: onion, amount: 75, unit: g, comment: '1 medium sized onion is about 150 g'},
       {name: garlic, amount: 2, unit: cloves, comment: ''},
       {name: cayenne pepper, amount: 0.5, unit: tsp, comment: ''}
     ],
@@ -64,7 +64,7 @@ steps:
     long: "Cover baking sheet with baking paper or grease it. Spread out about half to two thirds of the nachos and roughly crush it by pressing down with your palms. Pour over the vegetable mixture. Stab in a pleasing amout of nachos. Spread cheese over.",
     ingredients: [
       {name: nacho chips, amount: 400, unit: g, comment: ''},
-      {name: cheese, amount: 100, unit: g, comment: 'Cheddar seems to work well'},
+      {name: cheese, amount: 100, unit: g, comment: 'cheddar seems to work well'},
     ],
     dependencies: [-2],
     active-time: 5,
@@ -83,9 +83,9 @@ steps:
   }
   - {
     short: "Make avocado sauce",
-    long: "Blend the avocados with an immersion blender untill creamy (if you don't have an immersion blender or similar tool I guess you could just crush them). Chop the garlic, and stir it in together with the avocado and the rest of the ingredients.",
+    long: "Blend the avocados with an immersion blender until creamy. If you don't have an immersion blender or similar tool, you can just crush them with a fork. Chop the garlic, and stir it in together with the avocado and the rest of the ingredients.",
     ingredients: [
-      {name: avocado, amount: 2, unit: pieces, comment: ''},
+      {name: avocados, amount: 2, unit: '', comment: ''},
       {name: garlic, amount: 2, unit: cloves, comment: ''},
       {name: salsa verde, amount: 100, unit: g, comment: ''},
       {name: lemon juice, amount: 2, unit: tbsp, comment: ''},
@@ -96,9 +96,9 @@ steps:
     temp: room,
   }
   - {
-    short: "Serve with sourcream",
+    short: "Serve with sour cream",
     long: "",
-    ingredients: [ {name: sourcream, amount: 100, unit: g, comment: 'For serving, can be substituted with creme fraiche'} ],
+    ingredients: [ {name: sour cream, amount: 100, unit: g, comment: 'for serving, can be substituted with creme fraiche'} ],
     dependencies: [-1, -2],
     active-time: 1,
     passive-time: 0,

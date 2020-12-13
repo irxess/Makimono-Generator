@@ -1,6 +1,6 @@
 recipe: Chocolate Cake with Avocado
 
-description: "A delicious and moist chocolate cake, that's reasonably simple to make. For those days that you don't feel like making brownies because you want something more firm, cake, but you still want the depth of chocolate and non-dryness you typically see in brownies. The original recipe details how you could make it gluten free as well as vegan."
+description: "A delicious and moist chocolate cake, that's reasonably simple to make. For those days that you don't feel like making brownies because you want something more firm, cake, but you still want the depth of chocolate and non-dryness you typically see in brownies."
 date_created: 2019-10-12
 last_updated: 2019-12-07
 image: ''
@@ -27,7 +27,7 @@ steps:
     short: "Grease the cake pan",
     long: "You can also use neutral cooking oil, but I prefer the taste of butter. The base amount of this recipe should fill a sheet pan, but if you want to use a taller pan (or more smaller pans) you can do that as well. Just remember, the thicker you make it, the longer it will take to cook all the way through.",
     # 6 cm x 20 cm x 25 cm = 3L was too large, layers got too thin.
-    ingredients: [ {name: butter, amount: 15, unit: g, comment: 'About 1 tbsp'} ],
+    ingredients: [ {name: butter, amount: 15, unit: g, comment: 'About 1 tbsp, replaceble with vegetable oil'} ],
     active-time: 3,
     passive-time: 0,
     type: bowl,
@@ -36,7 +36,7 @@ steps:
   - {
     short: "Melt chocolate",
     long: "Melt the chocolate in a microwave oven, or in a saucepan over low heat",
-    ingredients: [ {name: Cooking chocolate, amount: 40, unit: g, comment: 'Can be dark or milk chocolate, depends on how much chocolate taste you feel for'} ],
+    ingredients: [ {name: cooking chocolate, amount: 40, unit: g, comment: 'Can be dark or milk chocolate, depends on how much chocolate taste you feel for'} ],
     active-time: 2,
     passive-time: 0,
     type: saucepan,
@@ -55,10 +55,10 @@ steps:
     short: "Add all ingredients together",
     long: "In a bowl if you're using an immersion blender, or to the food processor if you're using a food processor. Remember the avocado and melted chocolate.",
     ingredients: [
-      {name: chocolate milk, amount: 400, unit: ml, comment: 'preferrably chocolate oatmeal milk'},
-      {name: flour, amount: 350, unit: g, comment: 'both gluten free or plain wheat should work fine'},
-      {name: Brown Sugar, amount: 300, unit: g, comment: 'Muscovado sugar'},
-      {name: vegetable oil, amount: 150, unit: ml, comment: 'Can be substituted with butter'},
+      {name: chocolate milk, amount: 400, unit: ml, comment: 'I tend to use chocolate oatmeal milk, as I think the oat flavor goes really well with this cake.'},
+      {name: flour, amount: 350, unit: g, comment: 'both glutenfree and plain wheat flour should work fine'},
+      {name: brown sugar, amount: 300, unit: g, comment: ''},
+      {name: vegetable oil, amount: 150, unit: ml, comment: ''},
       {name: cocoa powder, amount: 50, unit: g, comment: ''},
       {name: bicarbonate of soda, amount: 1, unit: tsp, comment: ''},
       {name: baking powder, amount: 2, unit: tsp, comment: ''},
@@ -73,7 +73,7 @@ steps:
   }
   - {
     short: "Preheat oven",
-    long: "Turn on the oven to 150 ℃ (convection). You can use 175 degrees if you don't have a convection oven.",
+    long: "Turn on the oven to 150 ℃ (convection). You can use 175 ℃ if you don't have a convection oven.",
     active-time: 0,
     passive-time: 10,
     type: oven,
