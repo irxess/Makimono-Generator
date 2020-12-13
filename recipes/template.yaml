@@ -13,7 +13,7 @@ result: {
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
   name: , # recipe name or whole citation
-  type: 'adapted',
+  type: 'adapted', # or inspired
   author: ,
   publication: '',
   url: '',
@@ -22,6 +22,8 @@ source: {
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
 steps:
   - {
     short: "",
