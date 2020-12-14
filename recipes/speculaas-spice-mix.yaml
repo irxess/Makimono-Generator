@@ -1,0 +1,41 @@
+recipe: Speculaas Spice Mix
+
+description: "The Dutch variety of gingerbread spice. It is known as speculaas in Dutch, and sometimes also called speculoos. It can be used in any dessert, but the flavor really shines when it has been baked."
+date_created: 2020-12-14
+last_updated: 2020-12-14
+image: 'speculaas_spice_mix'
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Grind spices",
+    long: "Grind any of the spices that you don't have ground yet. I like to use cloves, anise seeds and pepper fresh, but feel free to use any of the other ingredients fresh instead.",
+    ingredients: [
+      {name: clove, amount: 4.3, unit: g, comment: '1 tsp is about 2.6 g'},
+      {name: anise seeds, amount: 2.5, unit: g, comment: '1 tsp is about 1.7 g'},
+      {name: white pepper, amount: 2.5, unit: g, comment: '1 tsp is about 3 g'},
+    ],
+    active-time: 1,
+    passive-time: 1,
+    type: mortar,
+    temp: room,
+  }
+  - {
+    short: "Mix everything together",
+    long: "Mix all the spices (which should be ground by now) together in a bowl.",
+    ingredients: [
+      {name: ground cinnamon, amount: 20, unit: g, comment: '1 tbsp is about 7.8 g'},
+      {name: ground nutmeg, amount: 4.4, unit: g, comment: '1 tsp is about 2.6 g'},
+      {name: ground cardemom, amount: 2, unit: g, comment: '1 tsp is about 2 g'},
+      {name: ground ginger, amount: 1.6, unit: g, comment: '1 tsp is about 2 g'},
+      {name: dried orange zest, amount: 0.6, unit: g, comment: 'Optional, zest from about half an orange'},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 1,
+    type: bowl,
+    temp: room,
+  }
