@@ -1,0 +1,151 @@
+recipe: Gevulde Speculaas
+
+description: "This Dutch treat is a thick gingerbread cookie filled with a sweet almond paste. It is usually eaten during the holiday season in December."
+date_created: 2020-12-13
+last_updated: 2020-12-13
+image: ''
+
+result: {
+  amount: ,
+  name: ,
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Boil and peel the almonds",
+    long: "Boil the almonds for about 30 seconds if you want to peel them before grinding. Cool in cold water. Peel and let dry.",
+    ingredients: [ {name: almonds, amount: 200, unit: g, comment: 'alternatively use almond flour, and only use a few almonds for decorating'} ],
+    active-time: 5,
+    passive-time: 5,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Add ingredients to a bowl",
+    long: "Add the dry ingredients and butter to a bowl. Knead until well combined. The mixture should feel a bit like sand.",
+    ingredients: [
+      {amount: 500, unit: g, name: flour, comment: ''},
+      {amount: 16, unit: g, name: baking powder, comment: ''},
+      {amount: 250, unit: g, name: brown sugar, comment: ''},
+      {amount: 250, unit: g, name: butter, comment: ''},
+      {amount: 20, unit: g, name: speculaas spice mix, comment: '', recipe-link: speculaas-spice-mix},
+    ],
+    active-time: 3,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Gradually add milk",
+    long: "Add milk until everything comes together. You might not need all the milk, so be careful and don't add everything at once.",
+    ingredients: [
+      {amount: 75, unit: g, name: milk, comment: 'or use buttermilk, kefir or any other more sour milk'},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 1,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Knead and cool",
+    long: "Knead the cookie dough for a few minutes. Shape it into a ball. Cover and let rest in the fridge.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 10,
+    type: bowl,
+    temp: cold,
+  }
+  - {
+    short: "Grind the almonds",
+    long: "Remember to save a few almonds for decorating the top of the cookies. It might be a good idea to roughly chop the almonds before grinding them, depending on what kind of equipment you use to grind the almonds. The grinding is done when the almonds look like a coarse flour.",
+    dependencies: [-4],
+    active-time: 6,
+    passive-time: 0,
+    type: mortar,
+    temp: room,
+  }
+  - {
+    short: "Mix the almond filling ingredients",
+    long: "Mix the almond flour together with superfine sugar, egg and the lemon zest, until well combined.",
+    ingredients: [
+      {amount: 160, unit: g, name: superfine sugar, comment: ''},
+      {amount: 0.5, unit: '', name: egg, comment: ''},
+      {amount: 0.5, unit: lemon, name: zest, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Prehead the oven",
+    long: "180 ℃, not convection",
+    active-time: 1,
+    passive-time: 0,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Shape the almond filling",
+    long: "Roll out the almond filling to be slightly smaller than the shape you'd like to have. Anything from half a finger to a thumb in thickness is common.",
+    dependencies: [-2],
+    active-time: 3,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Shape the cookie dough",
+    long: "Take the cookie dough out of the fridge. Divide it into two pieces. Roll out both pieces to be slightly larger than the almond filling shape.",
+    dependencies: [-5],
+    active-time: 6,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Assemble the layers",
+    long: "If using a pan, put one of the cookie dough layers into the pan (with a baking sheet or butter underneath to prevent it from sticking). Otherwise, put it onto a baking sheet on a baking tray. Cover this cookie dough layer with the almond filling, and put the other piece of cookie dough on top of that. Press around the edges to make the cookie dough layers stick to each other.",
+    dependencies: [-1, -2],
+    active-time: 3,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Decorate with almonds and egg wash",
+    long: "Cut the almonds into two to make them as flat as possible. Push the half-almonds into to cookie dough, in a pattern you like. Beat the egg, and brush it oven the cookie with almonds.",
+    ingredients: [
+      {amount: 18, unit: g, name: almonds, comment: ''},
+      {amount: 0.5, unit: '', name: egg, comment: 'some of the egg is for an egg wash'},
+    ],
+    dependencies: [-1],
+    active-time: 4,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Bake",
+    long: "This should take about 40 minutes, until the cookie has a darker color. It will still be a little soft when it comes out of the oven, and will get harder as it cools down.",
+    dependencies: [-1, -5],
+    active-time: 1,
+    passive-time: 40,
+    type: oven,
+    temp: hot,
+  }
+  - {
+    short: "Cut into pieces while the cookie is still warm",
+    long: "Optional",
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: cut,
+    temp: warm,
+  }
