@@ -1,24 +1,26 @@
 import json
 from data import *
 
+jsonIndent = '  '
+
 def initialize_jsonld(recipe):
     jsonld = '{'
     # print(json.dumps(recipe.name))
     jsonld += \
 f"""
-  "@context": "http://schema.org/",
-  "@type": "Recipe",
-  "name": {json.dumps(recipe.name)},
-  "datePublished": "{recipe.date_created}",
-  "description": {json.dumps(recipe.description)},
+{jsonIndent}"@context": "http://schema.org/",
+{jsonIndent}"@type": "Recipe",
+{jsonIndent}"name": {json.dumps(recipe.name)},
+{jsonIndent}"datePublished": "{recipe.date_created}",
+{jsonIndent}"description": {json.dumps(recipe.description)},
 """
     if recipe.image:
         jsonld += \
 f"""
-  "image": [
-    "https://makimo.no/images/{recipe.image}",
-    "https://makimo.no/images/thumbnails/{recipe.image}"
-  ],
+{jsonIndent}"image": [
+{2*jsonIndent}"https://makimo.no/images/{recipe.image}",
+{2*jsonIndent}"https://makimo.no/images/thumbnails/{recipe.image}"
+{jsonIndent}],
 """
     if recipe.yields:
         yield_as_string = ''
@@ -27,7 +29,7 @@ f"""
                 yield_as_string += f' {yield_data.qualification}:'
             yield_as_string += f' {yield_data.amount} {yield_data.unit}.'
         yield_as_string = json.dumps(yield_as_string.strip())
-        jsonld += f'  "recipeYield": {yield_as_string},\n'
+        jsonld += f'{jsonIndent}"recipeYield": {yield_as_string},\n'
     return jsonld
 
 # TODO add author (@type Persons , can I add us both?)
@@ -42,7 +44,7 @@ f"""
 
 
 def add_ingredients(recipe, jsonld):
-    jsonld += '  "recipeIngredient": [\n'
+    jsonld += f'{jsonIndent}"recipeIngredient": [\n'
     ingredients = []
     for ingredient in recipe.ingredients:
         ingr_string = ''
@@ -51,9 +53,9 @@ def add_ingredients(recipe, jsonld):
         if ingredient.unit != '':
             ingr_string += f'{ingredient.unit} '
         ingr_string += f'{ingredient.name}'
-        ingredients.append(f'    {json.dumps(ingr_string)}')
+        ingredients.append(f'{2*jsonIndent}{json.dumps(ingr_string)}')
     jsonld += ',\n'.join(ingredients)
-    jsonld += '\n  ],\n'
+    jsonld += f'\n{jsonIndent}],\n'
     return jsonld
 
 def add_steps(recipe, jsonld):
@@ -61,16 +63,16 @@ def add_steps(recipe, jsonld):
     jsonld += '  "recipeInstructions": [\n'
     steps = []
     for step in recipe.steps:
-        step_string = '    {\n      "@type": "HowToStep",\n'
+        step_string = f'{2*jsonIndent}' + '{\n' + f'{3*jsonIndent}"@type": "HowToStep",\n'
         if step.long != '':
-            step_string += f'      "name": {json.dumps(step.short)},\n'
-            step_string += f'      "text": {json.dumps(step.long)}'
+            step_string += f'{3*jsonIndent}"name": {json.dumps(step.short)},\n'
+            step_string += f'{3*jsonIndent}"text": {json.dumps(step.long)}'
         else:
-            step_string += f'      "text": {json.dumps(step.short)}'
-        step_string += '\n    }'
+            step_string += f'{3*jsonIndent}"text": {json.dumps(step.short)}'
+        step_string += '\n' + f'{2*jsonIndent}' + '}'
         steps.append(step_string)
     jsonld += ',\n'.join(steps)
-    jsonld += '\n  ]\n'
+    jsonld += f'\n{jsonIndent}]\n'
     return jsonld
 
 def generate_jsonld(recipe):
