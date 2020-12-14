@@ -23,14 +23,6 @@ def convert_minutes_to_iso8601_duration(minutes_int):
     hours = hours % 24
     return f'P{days}DT{hours}H{minutes}M'
 
-def make_yield_string(yield_data):
-    yield_as_string = ''
-    if yield_data.qualification:
-        yield_as_string += f' {yield_data.qualification}:'
-    yield_as_string += f' {yield_data.amount} {yield_data.unit}.'
-    yield_as_string = yield_as_string.strip()
-    return escape_json(yield_as_string)
-
 def initialize_jsonld(recipe):
     # print(f'Recipe URL name: {recipe.url_name}')
     jsonld = '{'
@@ -51,15 +43,13 @@ f"""
 {jsonIndent}],
 """
     if recipe.yields:
-        if len(recipe.yields) == 1:
-            jsonld += f'{jsonIndent}"recipeYield": "{make_yield_string(recipe.yields[0])}",\n'
-        else:
-            jsonld += f'{jsonIndent}"recipeYield": [\n'
-            for yield_data in recipe.yields[:-1]:
-                make_yield_string(yield_data)
-                jsonld += f'{2*jsonIndent}"{make_yield_string(yield_data)}",\n'
-            jsonld += f'{2*jsonIndent}"{make_yield_string(recipe.yields[-1])}"\n'
-            jsonld += f'{jsonIndent}],\n'
+        yield_as_string = ''
+        for yield_data in recipe.yields:
+            if yield_data.qualification:
+                yield_as_string += f' {yield_data.qualification}:'
+            yield_as_string += f' {yield_data.amount} {yield_data.unit}.'
+        yield_as_string = escape_json(yield_as_string.strip())
+        jsonld += f'{jsonIndent}"recipeYield": "{yield_as_string}",\n'
 
     if recipe.time:
         jsonld += f'{jsonIndent}"totalTime":' + ' {\n'
