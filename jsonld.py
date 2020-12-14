@@ -24,7 +24,6 @@ def convert_minutes_to_iso8601_duration(minutes_int):
     return f'P{days}DT{hours}H{minutes}M'
 
 def initialize_jsonld(recipe):
-    # print(f'Recipe URL name: {recipe.url_name}')
     jsonld = '{'
     jsonld += \
 f"""
