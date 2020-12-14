@@ -11,6 +11,17 @@ def escape_json(string_to_escape):
     escaped_string = escaped_string.replace("'", "\\'")
     return escaped_string
 
+def convert_minutes_to_iso8601_duration(minutes_int):
+    if minutes_int < 60:
+        return f'PT{minutes_int}M'
+    hours = int(minutes_int / 60)
+    minutes = minutes_int % 60
+    if hours < 24:
+        return f'PT{hours}H{minutes}M'
+    days = int(hours / 24)
+    hours = hours % 24
+    return f'P{days}DT{hours}H{minutes}M'
+
 def initialize_jsonld(recipe):
     # print(f'Recipe URL name: {recipe.url_name}')
     jsonld = '{'
@@ -41,8 +52,8 @@ f"""
 
     if recipe.time:
         jsonld += f'{jsonIndent}"totalTime":' + ' {\n'
-        jsonld += f'{2*jsonIndent}"min": "PT{recipe.time.lower_bound}M",\n'
-        jsonld += f'{2*jsonIndent}"max": "PT{recipe.time.upper_bound}M"\n'
+        jsonld += f'{2*jsonIndent}"min": "{convert_minutes_to_iso8601_duration(recipe.time.lower_bound)}",\n'
+        jsonld += f'{2*jsonIndent}"max": "{convert_minutes_to_iso8601_duration(recipe.time.upper_bound)}"\n'
         jsonld += f'{jsonIndent}' + "},\n"
 
     return jsonld
@@ -83,7 +94,7 @@ def add_steps(recipe, jsonld):
             step_string += f'{3*jsonIndent}"text": "{escape_json(step.short)}"'
         timeRequired = step.time.active + step.time.passive
         if timeRequired > 0:
-            step_string += f',\n{3*jsonIndent}"timeRequired": "PT{timeRequired}M"'
+            step_string += f',\n{3*jsonIndent}"timeRequired": "{convert_minutes_to_iso8601_duration(timeRequired)}"'
         step_string += '\n' + f'{2*jsonIndent}' + '}'
         steps.append(step_string)
     jsonld += ',\n'.join(steps)
@@ -96,4 +107,3 @@ def generate_jsonld(recipe):
     jsonld_string = add_steps(recipe, jsonld_string)
     jsonld_string += "}"
     return jsonld_string
-
