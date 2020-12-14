@@ -15,7 +15,9 @@ date_created: 2018-12-17
 last_updated: 2018-12-17
 image: 'saffron_knots'
 
-result: {amount: 15, name: knots}
+yield: [
+  {amount: 15, unit: knots},
+]
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)

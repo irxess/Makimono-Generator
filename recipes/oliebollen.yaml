@@ -5,10 +5,9 @@ date_created: 2020-04-13
 last_updated: 2020-04-17
 image: 'oliebollen'
 
-result: {
-  amount: 20,
-  name: oliebollen,
-}
+yield: [
+  {amount: 20, unit: oliebollen},
+]
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)

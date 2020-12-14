@@ -6,10 +6,9 @@ last_updated: 2020-12-03
 image: 'swedish_meatballs'
 
 # 20 per person, enough for 4 people
-result: {
-  amount: 80,
-  name: small meatballs,
-}
+yield: [
+  {amount: 80, unit: small meatballs},
+]
 
 source: {
   name: IKEA MEATBALLS AT HÖME - MEATBALLS, # recipe name or whole citation

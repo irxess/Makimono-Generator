@@ -5,11 +5,6 @@ date_created: 2020-12-03
 last_updated: 2020-12-04
 image: ''
 
-result: {
-  amount: ,
-  name: ,
-}
-
 source: {
   name: IKEA MEATBALLS AT HÖME - CREAM SAUCE, # recipe name or whole citation
   type: 'adapted',

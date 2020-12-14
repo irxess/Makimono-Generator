@@ -5,11 +5,6 @@ date_created: 2019-09-01
 last_updated: 2020-12-03
 image: sichuan_boiled_fish
 
-result: {
-  amount: ,
-  name: ,
-}
-
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
   name: '【田园时光美食】水煮鱼Fish filets in hot chili oil', # recipe name or whole citation

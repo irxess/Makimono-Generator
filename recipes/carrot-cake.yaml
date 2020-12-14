@@ -5,10 +5,9 @@ date_created: 2020-12-12
 last_updated: 2020-12-12
 image: ''
 
-result: {
-  amount: 14,
-  name: cake slices,
-}
+yield: [
+  {amount: 14, unit: cake slices},
+]
 
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {

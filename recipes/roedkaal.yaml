@@ -5,11 +5,6 @@ date_created: 2019-12-19
 last_updated: 2019-12-19
 image: 'roedkaal'
 
-result: {
-  amount: ,
-  name: ,
-}
-
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
   name: Rødkål, # recipe name or whole citation

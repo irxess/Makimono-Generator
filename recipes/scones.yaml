@@ -16,7 +16,9 @@ source: {
   date: 2018-12-19,
 }
 
-result: {amount: 8, name: scones}
+yield: [
+  {amount: 8, unit: scones},
+]
 
 steps:
   - {
