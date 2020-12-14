@@ -70,7 +70,7 @@
       {% for yield in r.yields %}
       <span class="yield">
         {% if yield.qualification %}
-        {{ yield.qualification }}:
+        {{ yield.qualification }}&nbsp;–
         {% endif %}
         <span class="yield-amount" data-original-amount="{{ yield.amount }}">{{ yield.amount }}</span>
         {{ yield.unit }}.
