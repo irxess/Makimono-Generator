@@ -1,5 +1,7 @@
 import glob
 
+xmlIndent = '  '
+
 def fix_path_when_broken_by_windows(path):
     path = path.replace("\\", "/")
     return path
@@ -7,12 +9,12 @@ def fix_path_when_broken_by_windows(path):
 def create_xml_url_from_glob(name, modified=""):
     url_xml = \
 f"""
-  <url>
-    <loc>https://www.makimo.no/{name}</loc>
+{xmlIndent}<url>
+{2*xmlIndent}<loc>https://www.makimo.no/{name}</loc>
 """
     if modified != "":
-        url_xml += f"    <lastmod>{modified}</lastmod>\n"
-    url_xml += "  </url>"
+        url_xml += f"{2*xmlIndent}<lastmod>{modified}</lastmod>\n"
+    url_xml += f"{xmlIndent}</url>"
     return url_xml
 
 def create_sitemap(recipes):
