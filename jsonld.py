@@ -1,6 +1,7 @@
 from data import *
 
 jsonIndent = '  '
+base_url = 'https://makimo.no'
 
 def escape_json(string_to_escape):
     # Because we only have to consider these cases (I'm actually unsure about whether we need the backslash handling),
@@ -45,8 +46,8 @@ f"""
         jsonld += \
 f"""
 {jsonIndent}"image": [
-{2*jsonIndent}"https://makimo.no/images/{recipe.image}",
-{2*jsonIndent}"https://makimo.no/images/thumbnails/{recipe.image}"
+{2*jsonIndent}"{base_url}/images/{recipe.image}",
+{2*jsonIndent}"{base_url}/images/thumbnails/{recipe.image}"
 {jsonIndent}],
 """
     if recipe.yields:
@@ -98,10 +99,10 @@ def add_steps(recipe, jsonld):
         step_string = f'{2*jsonIndent}' + '{\n' + f'{3*jsonIndent}"@type": "HowToStep",\n'
         if step.long != '':
             step_string += f'{3*jsonIndent}"name": "{escape_json(step.short)}",\n'
-            step_string += f'{3*jsonIndent}"url": "https://makimo.no/recipes/{recipe.url_name}.html#step_{step.id}",\n'
             step_string += f'{3*jsonIndent}"text": "{escape_json(step.long)}"'
         else:
             step_string += f'{3*jsonIndent}"text": "{escape_json(step.short)}"'
+        step_string += f',\n{3*jsonIndent}"url": "{base_url}/recipes/{recipe.url_name}.html#step_{step.id}"'
         timeRequired = step.time.active + step.time.passive
         if timeRequired > 0:
             step_string += f',\n{3*jsonIndent}"timeRequired": "{convert_minutes_to_iso8601_duration(timeRequired)}"'
