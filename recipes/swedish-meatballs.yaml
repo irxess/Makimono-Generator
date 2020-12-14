@@ -3,11 +3,12 @@ recipe: Swedish meatballs
 description: ""
 date_created: 2020-12-03
 last_updated: 2020-12-03
-image: ''
+image: 'swedish_meatballs'
 
+# 20 per person, enough for 4 people
 result: {
-  amount: ,
-  name: ,
+  amount: 80,
+  name: small meatballs,
 }
 
 source: {
@@ -38,8 +39,8 @@ steps:
     short: "Combine minced meat",
     long: "Mix with your fingers and break up any lumps.",
     ingredients: [
-      {name: beef mince, amount: 500, unit: g, comment: ''},
-      {name: pork mince, amount: 250, unit: g, comment: ''},
+      {name: beef mince, amount: 400, unit: g, comment: ''},
+      {name: pork mince, amount: 400, unit: g, comment: ''},
     ],
     active-time: 1,
     passive-time: 0,
