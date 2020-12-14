@@ -92,8 +92,13 @@ class Source:
 
 @dataclass
 class Yield:
-    amount: Union[int,str]
-    name: str
+    amount: Union[int, float]
+    unit: str
+    qualification: Optional[str] = None
+
+# @dataclass
+# class ResultingAmounts:
+#     yields: List[Yield] = field(default_factory=lambda: [])
 
 @dataclass
 class RecipeTime:
@@ -111,6 +116,6 @@ class Recipe:
     description: str = ""
     source: Optional[Source] = None
     image: str = ""
-    result: Optional[Yield] = None
+    yields: List[Yield] = field(default_factory=lambda: [])
     url_name: str = ""
     time: RecipeTime = RecipeTime()

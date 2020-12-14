@@ -137,8 +137,13 @@ def read_recipe(yaml):
         recipe.description = yaml['description']
     if 'source' in yaml:
         recipe.source = read_source(yaml['source'])
-    if 'result' in yaml:
-        recipe.result = Yield(yaml['result']['amount'], yaml['result']['name'])
+    if 'yield' in yaml:
+        # recipe.yields = Yield(yaml['yield']['amount'], yaml['yield']['name'])
+        for yield_data_source in yaml['yield']:
+            yield_data = Yield(yield_data_source['amount'], yield_data_source['unit'])
+            if 'qualification' in yield_data_source:
+                yield_data.qualification = yield_data_source['qualification']
+            recipe.yields.append(yield_data)
     return recipe
 
 def read_recipe_into_data(name):

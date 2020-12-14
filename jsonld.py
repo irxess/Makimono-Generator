@@ -1,3 +1,4 @@
+import json
 from data import *
 
 def initialize_jsonld(recipe):
@@ -18,8 +19,14 @@ f"""
     "https://makimo.no/images/thumbnails/{recipe.image}"
   ],
 """
-    if recipe.result:
-        jsonld += f'  "recipeYield": "{recipe.result.amount} {recipe.result.name}",\n'
+    if recipe.yields:
+        yield_as_string = ''
+        for yield_data in recipe.yields:
+            if yield_data.qualification:
+                yield_as_string += f' {yield_data.qualification}:'
+            yield_as_string += f' {yield_data.amount} {yield_data.unit}.'
+        yield_as_string = json.dumps(yield_as_string.strip())
+        jsonld += f'  "recipeYield": {yield_as_string},\n'
     return jsonld
 
 # TODO add author (@type Persons , can I add us both?)
