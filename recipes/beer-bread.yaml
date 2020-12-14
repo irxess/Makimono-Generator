@@ -28,7 +28,7 @@ steps:
   }
   - {
     short: "Mix ingredients",
-    long: "Combine all the ingredients to a smooth dough.",
+    long: "Combine all the ingredients to a smooth dough. It will be very sticky, but that's fine.",
     ingredients: [
       {name: beer, amount: 330, unit: ml, comment: ''},
       {name: flour, amount: 370, unit: g, comment: ''},

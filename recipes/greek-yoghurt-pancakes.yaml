@@ -38,7 +38,7 @@ steps:
     temp: 'room',
     dependencies: [-1],
     ingredients: [
-      {name: lemon juice, amount: 5, unit: 'g', comment: 'Optional. 5g lemon juice is about 1 tsp.'},
+      {name: lemon juice, amount: 5, unit: 'g', comment: 'optional, 5g lemon juice is about 1 tsp'},
       {name: milk, amount: 22, unit: 'g'}
     ],
   }
@@ -49,5 +49,5 @@ steps:
     type: 'fry',
     temp: 'warm',
     dependencies: [-1],
-    ingredients: [{name: coconut oil, amount: , unit: '', comment: 'Or any other oil or butter'}],
+    ingredients: [{name: coconut oil, amount: , unit: '', comment: 'or any other oil or butter'}],
   }

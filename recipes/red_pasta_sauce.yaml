@@ -11,7 +11,7 @@ steps:
     short: 'Cut paprika and mushrooms',
     long: "Chop and set aside the paprika and the mushrooms. Do these first, because they survive laying around the longes amount of time (should you get distracted).",
     ingredients: [
-      {name: mushrooms, amount: 1, unit: 'handfull', comment: 'optional'},
+      {name: mushrooms, amount: 1, unit: 'handful', comment: 'optional'},
       {name: paprika, amount: 1, unit: 'piece', comment: 'bell pepper'}
     ],
     active-time: 5,
@@ -33,8 +33,8 @@ steps:
     short: "Wash the spinach",
     ingredients: [ {name: spinach leaves, amount: 100, unit: 'g'} ],
     active-time: 1,
-    type: wash,
-    temp: room,
+    type: bowl,
+    temp: cold,
   }
   - {
     short: 'Chop the onion',
@@ -55,7 +55,7 @@ steps:
   }
   - {
     short: 'Add minced meat and onion',
-    long: "Fry untill meat is brown. If you've started higher I'd turn it down to medium heat at this point.",
+    long: "Fry until meat is brown. If you've started higher I'd turn it down to medium heat at this point.",
     ingredients: [ {name: minced meat, amount: 400, unit: 'g'} ],
     active-time: 7,
     type: fry,
@@ -63,7 +63,7 @@ steps:
     dependencies: [-1, -2],
   }
   - {
-    short: 'Add shrooms and paprika',
+    short: 'Add mushrooms and paprika',
     active-time: 4,
     type: fry,
     temp: hot,
@@ -104,7 +104,7 @@ steps:
   }
   - {
     short: 'Stir in the spinach',
-    long: "Adding a fistfull at a time, watch how spinach like other leafy things simply seems to dissolve and don't fill up space at when it's added to a warm mass.",
+    long: "Adding a fistful at a time, watch how spinach like other leafy things simply seems to dissolve and don't fill up space at when it's added to a warm mass.",
     active-time: 5,
     type: fry,
     temp: hot,

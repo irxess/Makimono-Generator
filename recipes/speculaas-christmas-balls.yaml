@@ -21,8 +21,8 @@ steps:
     active-time: 10
   }
   - {
-    short: Remove cream from heat and stir in the chockolate,
-    long: "Adding the chockolate in chunks makes the dissolving go smoother. You can alternatively grate the chockolate before you add it, but it's usually more work and the end result is the same.",
+    short: Remove cream from heat and stir in the chocolate,
+    long: "Adding the chocolate in chunks makes the dissolving go smoother. You can alternatively grate the chocolate before you add it, but it's usually more work and the end result is the same.",
     ingredients: [ {name: white chocolate, amount: 90, unit: g} ],
     dependencies: [-1],
     type: saucepan,
@@ -66,7 +66,7 @@ steps:
     active-time: 20
   }
   - {
-    short: roughly chop white chockolate and mix with almonds for rolling the balls in,
+    short: roughly chop white chocolate and mix with almonds for rolling the balls in,
     ingredients: [
       {name: almond flour, amount: 10, unit: g},
       {name: white chocolate, amount: 10, unit: g}
@@ -76,7 +76,7 @@ steps:
     active-time: 3
   }
   - {
-    short: Roll the balls in the white chockolate and aldmon crumb,
+    short: Roll the balls in the white chocolate and almond crumb,
     dependencies: [-1, -2],
     type: shape,
     temp: room,

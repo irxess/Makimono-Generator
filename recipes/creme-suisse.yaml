@@ -1,6 +1,7 @@
 recipe: Crème Suisse
 
-description: A light and fluffy cream created by mixing together custard and whipped cream.
+description: A light and fluffy cream created by mixing together custard and whipped cream. It can be used to serve with waffles or pancakes, as a cake or tart filling or to fill doughnuts.
+
 date_created: 2018-03-25
 last_updated: 2018-12-18
 image: waffles
@@ -44,7 +45,7 @@ steps:
     type: 'saucepan',
     temp: 'warm',
     ingredients: [
-      {name: whole milk, amount: 460, unit: 'ml', comment: 'The fat in the milk is important to thicken the custard.'},
+      {name: whole milk, amount: 460, unit: 'ml', comment: ''},
       {name: vanilla bean, amount: 1, unit: '', comment: "Vanilla bean gives a much better taste than other vanilla products. If you really can't use it, consider using vanilla essence."},
       {name: sugar, amount: 80, unit: 'g'}
     ],

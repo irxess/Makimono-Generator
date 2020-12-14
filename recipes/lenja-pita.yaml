@@ -35,8 +35,8 @@ steps:
   }
   - {
     short: "Fry the apples",
-    long: "This has two purposes. Firstly it will draw out water from the apples, so that the dough around the apples doesn't become soggy. Secondly, depending on how finely you chopped the apples, they will become very soft, perhaps almost a smooth mass. It also helps the sugar and spices draw a bit better in. Depending on your frying pan you might need some fat to make this go smoother, in which case I recoment using some butter.",
-    ingredients: [ {name: butter, amount: 15, unit: g, comment: 'Optional, for frying, about 1 tbsp'} ],
+    long: "This has two purposes. Firstly it will draw out water from the apples, so that the dough around the apples doesn't become soggy. Secondly, depending on how finely you chopped the apples, they will become very soft, perhaps almost a smooth mass. It also helps the sugar and spices draw a bit better in. Depending on your frying pan you might need some fat to make this go smoother, in which case I recoment using some butter. One tbsp of butter is about 15 g.",
+    ingredients: [ {name: butter, amount: 15, unit: g, comment: ''} ],
     active-time: 7,
     passive-time: 0,
     type: fry,
@@ -46,7 +46,7 @@ steps:
   - {
     short: "Soften butter",
     long: "Soften the butter so that you can easily mix it with the egg yolks and sugar. Make sure that it is not too hot when you add it, or you will be eating cake with chunks of boiled egg.",
-    ingredients: [ {name: butter, amount: 250, unit: g, comment: 'Some people swear to using unsalted butter for this recipe, personally I like using salted butter for the flavor enhancing effect of the salt in addittion to the somewhat flavor.'} ],
+    ingredients: [ {name: butter, amount: 250, unit: g, comment: 'Some people swear to using unsalted butter for this recipe, personally I like using salted butter for the flavor enhancing effect of the salt.'} ],
     active-time: 1,
     passive-time: 1,
     type: bowl,
@@ -82,7 +82,7 @@ steps:
   }
   - {
     short: "Add flour",
-    long: "Mix in flour untill you have a smooth dough",
+    long: "Mix in flour until you have a smooth dough",
     ingredients: [ {name: flour, amount: 300, unit: g,} ],
     active-time: 1,
     passive-time: 0,
@@ -92,7 +92,7 @@ steps:
   }
   - {
     short: "Beat eggwhites",
-    long: "Beat the eggwhites as good as you can, preferrably untill they are stiff (usually not achievable if you are not using a machine for the beating). This step is important, because most of the fluffyness in the resulting cake will come from the air trapped in the eggwhites in this step.",
+    long: "Beat the eggwhites as good as you can, preferrably until they are stiff (usually not achievable if you are not using a machine for the beating). This step is important, because most of the fluffyness in the resulting cake will come from the air trapped in the eggwhites in this step.",
     active-time: 3,
     passive-time: 0,
     type: km,
@@ -118,9 +118,9 @@ steps:
   }
   - {
     short: "Butter cake pan",
-    long: "You can also use neutral cooking oil, but I preffer the taste of butter. A pan of about 2.5L should be a good size. Deeper pans will make the assembly easier.",
+    long: "You can also use neutral cooking oil, but I prefer the taste of butter. 15 g of butter is about 1 tbsp. A pan of about 2.5L should be a good size. Deeper pans will make the assembly easier.",
     # 6 cm x 20 cm x 25 cm = 3L was too large, layers got too thin.
-    ingredients: [ {name: butter, amount: 15, unit: g, comment: 'About 1 tbsp'} ],
+    ingredients: [ {name: butter, amount: 15, unit: g, comment: ''} ],
     active-time: 3,
     passive-time: 0,
     type: bowl,

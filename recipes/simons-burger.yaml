@@ -46,7 +46,7 @@ steps:
   }
   - {
     short: "shape the burgers",
-    long: "Shape burgers out of the dough/paste you've just made. Try to make them as thin as you can so that you don't end up with ginormous meatballs. Note that this is a bit hard because of all the filling. I find it easyest to go for about 70 grams per burger and try to make them about as thich as a finger.",
+    long: "Shape burgers out of the dough/paste you've just made. Try to make them as thin as you can so that you don't end up with ginormous meatballs. Note that this is a bit hard because of all the filling. I find it easiest to go for about 70 grams per burger and try to make them about as thich as a finger.",
     active-time: 10,
     type: 'shape',
     temp: 'room',

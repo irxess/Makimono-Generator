@@ -13,7 +13,7 @@ result: {
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
   name: , # recipe name or whole citation
-  type: 'adapted',
+  type: 'adapted', # or inspired
   author: ,
   publication: '',
   url: '',
@@ -22,11 +22,13 @@ source: {
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
 steps:
   - {
     short: "",
     long: "",
-    ingredients: [ {name: , amount: , unit: , comment: ''} ],
+    ingredients: [ {name: , amount: , unit: g, comment: ''} ],
     active-time: 1,
     passive-time: 1,
     type: bowl,
@@ -36,8 +38,8 @@ steps:
     short: "",
     long: "",
     ingredients: [
-      {name: , amount: , unit: , comment: ''},
-      {amount: , unit: , name: , comment: ''},
+      {name: , amount: , unit: g, comment: ''},
+      {amount: , unit: g, name: , comment: ''},
     ],
     dependencies: [-1],
     active-time: 1,

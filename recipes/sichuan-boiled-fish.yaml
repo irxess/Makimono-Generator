@@ -47,16 +47,16 @@ steps:
     temp: room,
   }
   - {
-    short: "Fry sichuan green pepper",
-    long: "In a dry pan, fry the green sichuan peppers until the become crispy. Note that the heating step is important even if the pepper you have is dried, it will release more flavor.",
-    ingredients: [ {name: green sichuan pepper, amount: 4.2, unit: g, comment: ''} ],
+    short: "Fry sichuan pepper",
+    long: "In a dry pan, fry the sichuan peppers until the become crispy. Note that the heating step is important even if the pepper you have is dried, it will release more flavor.",
+    ingredients: [ {name: sichuan pepper, amount: 4.2, unit: g, comment: ''} ],
     active-time: 2,
     passive-time: 0,
     type: fry,
     temp: warm,
   }
   - {
-    short: "Make sichuan green pepper powder",
+    short: "Make sichuan pepper powder",
     long: "Pour them over in a mortar and crush them to a powder. (Be aware that if you don't have a mortar and pestle you could crush the pepper on a cutting board under the backside of a spoon. But seriously, get a mortar and pestle.)",
     dependencies: [-1],
     active-time: 1,
@@ -66,7 +66,7 @@ steps:
   }
   - {
     short: "Make hot oil sauce",
-    long: "In a saucepan, add sichuan chili oil, and a few of the dried chilies. Heat it up, and when the oil is boling, pour in the sichuan green pepper powder you made previously. Stir it around, and after a few seconds (10 - 20 after you added the pepper powder), it should be done. Set it aside for later.",
+    long: "In a saucepan, add sichuan chili oil, and a few of the dried chilies. Heat it up, and when the oil is boling, pour in the sichuan pepper powder you made previously. Stir it around, and after a few seconds (10 - 20 after you added the pepper powder), it should be done. Set it aside for later.",
     ingredients: [
       {name: sichuan chili oil, amount: 4, unit: tbsp, comment: '', recipe-link: sichuan-chili-oil},
       {name: dried chili, amount: 1, unit: g, comment: ''},

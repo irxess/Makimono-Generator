@@ -1,6 +1,6 @@
 recipe: Satay sauce without peanuts
 
-description: ""
+description: "For anyone who'd like to eat peanut sauce, but can't use peanuts."
 date_created: 2020-04-13
 last_updated: 2020-04-13
 image: ''
@@ -9,8 +9,8 @@ image: ''
 # colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
 steps:
   - {
-    short: "Grind cashews",
-    long: "Grind the cashews until they are slightly chunky. Do it together with the coconut milk and tamarind to go easier on your blender, if you are using one. If not I guess you could always just chop the cashews finely with a knife.",
+    short: "Grind cashews and add liquids",
+    long: "Grind the cashews until they are slightly chunky. Then put them in a bowl and mix with the coconut milk and tamarind. If you want to use a blender, add the coconut milk and tamarind to go easier on your blender. If you only have a knife, chop the cashews finely before putting them in a bowl with the other ingredients.",
     ingredients: [
       {name: cashews, amount: 70, unit: g, comment: ''},
       {name: coconut milk, amount: 4, unit: dl, comment: ''},
@@ -46,7 +46,7 @@ steps:
       {name: brown sugar, amount: 1, unit: tbsp, comment: ''},
     ],
     dependencies: [-1, -2],
-    active-time: 5,
+    active-time: 3,
     passive-time: 0,
     type: add,
     temp: room,
