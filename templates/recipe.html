@@ -64,18 +64,6 @@
       {% endif %}
     {% endif %}
 
-    {% if r.time.lower_bound > 0 or r.time.upper_bound > 0 %}
-    <p class="recipe-total-time">
-      Estimated time needed:
-      {% if r.time.lower_bound > 0 %}
-      <span class="recipe-total-time-lower-bound">At least {{r.time.lower_bound}} minutes.</span>
-      {% endif %}
-      {% if r.time.upper_bound > 0 %}
-      <span class="recipe-total-time-upper-bound">At most {{r.time.upper_bound}} minutes.</span>
-      {% endif %}
-    </p>
-    {% endif %}
-
     {% if r.yields is defined and r.yields %}
     <p class="recipe-yields">
       Recipe should yield this much:
@@ -88,6 +76,18 @@
         {{ yield.unit }}.
       </span>
       {% endfor %}
+    </p>
+    {% endif %}
+
+    {% if r.time.lower_bound > 0 or r.time.upper_bound > 0 %}
+    <p class="recipe-total-time">
+      Estimated time needed:
+      {% if r.time.lower_bound > 0 %}
+      <span class="recipe-total-time-lower-bound">At least {{r.time.lower_bound}} minutes.</span>
+      {% endif %}
+      {% if r.time.upper_bound > 0 %}
+      <span class="recipe-total-time-upper-bound">At most {{r.time.upper_bound}} minutes.</span>
+      {% endif %}
     </p>
     {% endif %}
   </section>
