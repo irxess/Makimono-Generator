@@ -54,7 +54,6 @@ f"""
 #    "recipeCategory": "Dessert",
 #    "recipeCuisine": "American",
 
-
 def add_ingredients(recipe, jsonld):
     jsonld += f'{jsonIndent}"recipeIngredient": [\n'
     ingredients = []
@@ -82,6 +81,9 @@ def add_steps(recipe, jsonld):
             step_string += f'{3*jsonIndent}"text": "{escape_json(step.long)}"'
         else:
             step_string += f'{3*jsonIndent}"text": "{escape_json(step.short)}"'
+        timeRequired = step.time.active + step.time.passive
+        if timeRequired > 0:
+            step_string += f',\n{3*jsonIndent}"timeRequired": "PT{timeRequired}M"'
         step_string += '\n' + f'{2*jsonIndent}' + '}'
         steps.append(step_string)
     jsonld += ',\n'.join(steps)
