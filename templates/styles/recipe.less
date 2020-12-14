@@ -14,7 +14,7 @@
 }
 
 #metadata {
-	.recipe-date, .recipe-source, .recipe-total-time {
+	.recipe-date, .recipe-source, .recipe-total-time, .recipe-yields {
 		margin-left: 0.75em;
 		font-size: 0.85em;
 	}
@@ -23,7 +23,8 @@
 	// This prevents one of the elements' default 1em line spacing margin to win over the other elements 0.5em margin.
 	.recipe-date { margin-bottom: 0.5em; }
 	.recipe-source { margin-top: 0.5em; margin-bottom: 0.5em; }
-	.recipe-total-time{ margin-top: 0.5em; }
+	.recipe-total-time { margin-top: 0.5em; margin-bottom: 0.5em; }
+	.recipe-yields { margin-top: 0.5em; }
 }
 
 svg {
@@ -129,24 +130,40 @@ svg {
 	}
 	#metadata {
 		display: grid;
-		grid-template-columns: 1fr 3fr 1fr;
+		// ToDo: get rid of the e("") wrapping once the less library has been fixed.
+		grid-template-columns: e("[recipe-date-grid-start]") 2fr e("[recipe-date-grid-end source-grid-start]") 3fr e("[source-grid-end total-time-grid-start]") 1fr e("[total-time-grid-end yield-start]") 2fr e("[yield-end]");
 		column-gap: 1em;
 		margin-left: 1em;
 		margin-right: 1em;
 		.recipe-date{
+			grid-column-start: recipe-date-grid-start;
+			grid-column-end: recipe-date-grid-end;
 			// Reset line spacing and remove not needed margin to section below
 			margin-bottom: 0;
 		}
 		.recipe-source {
+			grid-column-start: source-grid-start;
+			grid-column-end: source-grid-end;
 			// Reset line spacing and remove not needed margin to section below
 			margin-top: 1em;
 			margin-bottom: 0;
 		}
 		.recipe-total-time {
+			grid-column-start: total-time-grid-start;
+			grid-column-end: total-time-grid-end;
 			// Reset line spacing and remove not needed margin to section below
 			margin-top: 1em;
 			margin-bottom: 0;
-			span{
+			span {
+				display: block;
+			}
+		}
+		.recipe-yields {
+			grid-column-start: yield-start;
+			grid-column-end: yield-end;
+			margin-top: 1em;
+			margin-bottom: 0;
+			.yield {
 				display: block;
 			}
 		}

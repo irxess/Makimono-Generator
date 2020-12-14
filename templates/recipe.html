@@ -75,6 +75,21 @@
       {% endif %}
     </p>
     {% endif %}
+
+    {% if r.yields is defined and r.yields %}
+    <p class="recipe-yields">
+      Recipe should yield this much:
+      {% for yield in r.yields %}
+      <span class="yield">
+        {% if yield.qualification %}
+        {{ yield.qualification }}:
+        {% endif %}
+        <span class="yield-amount" data-original-amount="{{ yield.amount }}">{{ yield.amount }}</span>
+        {{ yield.unit }}.
+      </span>
+      {% endfor %}
+    </p>
+    {% endif %}
   </section>
 
   <div id="recipe-ingredients-and-scaling-group">
