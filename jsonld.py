@@ -3,13 +3,14 @@ from data import *
 
 def initialize_jsonld(recipe):
     jsonld = '{'
+    # print(json.dumps(recipe.name))
     jsonld += \
 f"""
   "@context": "http://schema.org/",
   "@type": "Recipe",
-  "name": "{recipe.name}",
+  "name": {json.dumps(recipe.name)},
   "datePublished": "{recipe.date_created}",
-  "description": "{recipe.description}",
+  "description": {json.dumps(recipe.description)},
 """
     if recipe.image:
         jsonld += \
@@ -44,13 +45,13 @@ def add_ingredients(recipe, jsonld):
     jsonld += '  "recipeIngredient": [\n'
     ingredients = []
     for ingredient in recipe.ingredients:
-        ingr_string = '    "'
+        ingr_string = ''
         if ingredient.total_amount:
             ingr_string += f'{ingredient.total_amount} '
         if ingredient.unit != '':
             ingr_string += f'{ingredient.unit} '
-        ingr_string += f'{ingredient.name}"'
-        ingredients.append(ingr_string)
+        ingr_string += f'{ingredient.name}'
+        ingredients.append(f'    {json.dumps(ingr_string)}')
     jsonld += ',\n'.join(ingredients)
     jsonld += '\n  ],\n'
     return jsonld
@@ -62,10 +63,10 @@ def add_steps(recipe, jsonld):
     for step in recipe.steps:
         step_string = '    {\n      "@type": "HowToStep",\n'
         if step.long != '':
-            step_string += f'      "name": "{step.short}",\n'
-            step_string += f'      "text": "{step.long}"'
+            step_string += f'      "name": {json.dumps(step.short)},\n'
+            step_string += f'      "text": {json.dumps(step.long)}'
         else:
-            step_string += f'      "text": "{step.short}"'
+            step_string += f'      "text": {json.dumps(step.short)}'
         step_string += '\n    }'
         steps.append(step_string)
     jsonld += ',\n'.join(steps)
