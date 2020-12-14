@@ -1,18 +1,25 @@
-import json
 from data import *
 
 jsonIndent = '  '
 
+def escape_json(string_to_escape):
+    # Because we only have to consider these cases (I'm actually unsure about whether we need the backslash handling),
+    # forgo all the work of maintaining an external dependency and just do it ourselves like this.
+    escaped_string = string_to_escape
+    escaped_string = escaped_string.replace('\\', '\\\\')
+    escaped_string = escaped_string.replace('"', '\\"')
+    escaped_string = escaped_string.replace("'", "\\'")
+    return escaped_string
+
 def initialize_jsonld(recipe):
     jsonld = '{'
-    # print(json.dumps(recipe.name))
     jsonld += \
 f"""
 {jsonIndent}"@context": "http://schema.org/",
 {jsonIndent}"@type": "Recipe",
-{jsonIndent}"name": {json.dumps(recipe.name)},
+{jsonIndent}"name": "{escape_json(recipe.name)}",
 {jsonIndent}"datePublished": "{recipe.date_created}",
-{jsonIndent}"description": {json.dumps(recipe.description)},
+{jsonIndent}"description": "{escape_json(recipe.description)}",
 """
     if recipe.image:
         jsonld += \
@@ -28,8 +35,8 @@ f"""
             if yield_data.qualification:
                 yield_as_string += f' {yield_data.qualification}:'
             yield_as_string += f' {yield_data.amount} {yield_data.unit}.'
-        yield_as_string = json.dumps(yield_as_string.strip())
-        jsonld += f'{jsonIndent}"recipeYield": {yield_as_string},\n'
+        yield_as_string = escape_json(yield_as_string.strip())
+        jsonld += f'{jsonIndent}"recipeYield": "{yield_as_string}",\n'
     return jsonld
 
 # TODO add author (@type Persons , can I add us both?)
@@ -53,7 +60,7 @@ def add_ingredients(recipe, jsonld):
         if ingredient.unit != '':
             ingr_string += f'{ingredient.unit} '
         ingr_string += f'{ingredient.name}'
-        ingredients.append(f'{2*jsonIndent}{json.dumps(ingr_string)}')
+        ingredients.append(f'{2*jsonIndent}"{escape_json(ingr_string)}"')
     jsonld += ',\n'.join(ingredients)
     jsonld += f'\n{jsonIndent}],\n'
     return jsonld
@@ -65,10 +72,10 @@ def add_steps(recipe, jsonld):
     for step in recipe.steps:
         step_string = f'{2*jsonIndent}' + '{\n' + f'{3*jsonIndent}"@type": "HowToStep",\n'
         if step.long != '':
-            step_string += f'{3*jsonIndent}"name": {json.dumps(step.short)},\n'
-            step_string += f'{3*jsonIndent}"text": {json.dumps(step.long)}'
+            step_string += f'{3*jsonIndent}"name": "{escape_json(step.short)}",\n'
+            step_string += f'{3*jsonIndent}"text": "{escape_json(step.long)}"'
         else:
-            step_string += f'{3*jsonIndent}"text": {json.dumps(step.short)}'
+            step_string += f'{3*jsonIndent}"text": "{escape_json(step.short)}"'
         step_string += '\n' + f'{2*jsonIndent}' + '}'
         steps.append(step_string)
     jsonld += ',\n'.join(steps)
