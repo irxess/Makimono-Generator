@@ -6,7 +6,7 @@ last_updated: 2020-05-16
 image: 'norwegian-pancakes'
 
 yield: [
-  {qualification: using a 28 cm diameter pan, amount: 13, unit: Pancakes},
+  {qualification: Using a 28 cm diameter pan, amount: 13, unit: pancakes},
   {amount: 925, unit: g},
 ]
 
