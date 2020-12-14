@@ -131,7 +131,16 @@ svg {
 	#metadata {
 		display: grid;
 		// ToDo: get rid of the e("") wrapping once the less library has been fixed.
-		grid-template-columns: e("[recipe-date-grid-start]") 2fr e("[recipe-date-grid-end source-grid-start]") 3fr e("[source-grid-end yield-start]") 2fr e("[yield-end total-time-grid-start]") 1fr e("[total-time-grid-end]");
+		grid-template-columns:
+			e("[recipe-date-grid-start]") /* Name of line before first column. */
+			2fr /* Size (width) of first column. */
+			e("[recipe-date-grid-end source-grid-start]") /* Name of line between first and second column. */
+			3fr /* Size (width) of second column. */
+			e("[source-grid-end yield-start]")
+			2fr
+			e("[yield-end total-time-grid-start]")
+			1fr
+			e("[total-time-grid-end]");
 		column-gap: 1em;
 		margin-left: 1em;
 		margin-right: 1em;
