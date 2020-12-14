@@ -12,10 +12,11 @@ def escape_json(string_to_escape):
     return escaped_string
 
 def initialize_jsonld(recipe):
+    # print(f'Recipe URL name: {recipe.url_name}')
     jsonld = '{'
     jsonld += \
 f"""
-{jsonIndent}"@context": "http://schema.org/",
+{jsonIndent}"@context": "https://schema.org/",
 {jsonIndent}"@type": "Recipe",
 {jsonIndent}"name": "{escape_json(recipe.name)}",
 {jsonIndent}"datePublished": "{recipe.date_created}",
@@ -37,14 +38,18 @@ f"""
             yield_as_string += f' {yield_data.amount} {yield_data.unit}.'
         yield_as_string = escape_json(yield_as_string.strip())
         jsonld += f'{jsonIndent}"recipeYield": "{yield_as_string}",\n'
+
+    if recipe.time:
+        jsonld += f'{jsonIndent}"totalTime":' + ' {\n'
+        jsonld += f'{2*jsonIndent}"min": "PT{recipe.time.lower_bound}M",\n'
+        jsonld += f'{2*jsonIndent}"max": "PT{recipe.time.upper_bound}M"\n'
+        jsonld += f'{jsonIndent}' + "},\n"
+
     return jsonld
 
 # TODO add author (@type Persons , can I add us both?)
 # TODO remove newlines from description
-# TODO add time, keywords, category, cuisine
-#    "prepTime": "PT40M",
-#    "cookTime": "PT30M",
-#    "totalTime": "PT1H10M",
+# TODO add keywords, category, cuisine
 #    "keywords": "cake for a party, coffee",
 #    "recipeCategory": "Dessert",
 #    "recipeCuisine": "American",
@@ -67,12 +72,13 @@ def add_ingredients(recipe, jsonld):
 
 def add_steps(recipe, jsonld):
     # If we ever get multiple part recipes, look at adding HowToSections
-    jsonld += '  "recipeInstructions": [\n'
+    jsonld += f'{jsonIndent}"recipeInstructions": [\n'
     steps = []
     for step in recipe.steps:
         step_string = f'{2*jsonIndent}' + '{\n' + f'{3*jsonIndent}"@type": "HowToStep",\n'
         if step.long != '':
             step_string += f'{3*jsonIndent}"name": "{escape_json(step.short)}",\n'
+            step_string += f'{3*jsonIndent}"url": "https://makimo.no/recipes/{recipe.url_name}.html#step_{step.id}",\n'
             step_string += f'{3*jsonIndent}"text": "{escape_json(step.long)}"'
         else:
             step_string += f'{3*jsonIndent}"text": "{escape_json(step.short)}"'

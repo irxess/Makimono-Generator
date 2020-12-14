@@ -188,7 +188,7 @@
   <section id="steps">
     <h2>Directions</h2>
     {% for step in r.steps %}
-    <div class="step">
+    <div class="step" id="step_{{ step.id }}">
       {% if step.time.active > 0 or step.time.passive > 0 %}
         <div class="step-time-container">
           <p>
