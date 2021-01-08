@@ -1,0 +1,154 @@
+recipe: Sweet Potato Buns
+
+description: "Awesome for savory foods such as burgers."
+date_created: 2021-01-08
+last_updated: 2021-01-08
+image: ''
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: 'Sweet Potato Buns – Great for Burgers, and Learning How to Bake Without Fear', # recipe name or whole citation
+  type: 'adapted', # or inspired
+  author: Chef John,
+  publication: 'blogspot.com',
+  url: 'https://foodwishes.blogspot.com/2015/06/sweet-potato-buns-great-for-burgers-and.html',
+  date: 2021-01-08
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Peel and chop sweet potatoes",
+    long: "The potatoes will later be mashed, so cut them as small as possible to reduce cooking time, but not so small that you have trouble mashing them.",
+    ingredients: [ {name: sweet potato, amount: 300, unit: g, comment: 'Original recipe calls for 1 cup of mashed orange sweet potatoes.'} ],
+    active-time: 3,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Boild sweet potatoes",
+    long: "Boil the sweet potatoes with some salt until you are satisified with that they are soft enough to mash.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 10,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Drain and mash sweet potatoes",
+    long: "Drain the water from the sweet potatoes and mash them into a mash.",
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: mortar,
+    temp: warm,
+  }
+  - {
+    short: "Drain and mash sweet potatoes",
+    long: "Drain the water from the sweet potatoes and mash them into a mash.",
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: mortar,
+    temp: warm,
+  }
+  - {
+    short: "Set sweet potato mash aside to cool",
+    long: "The sweet potato mash need to cool down to be just a bit hotter than room temperature before you can use it so that it doesn't mess up the yeast. How long this will take depends greatly on how thin you spread it out, how deep the snow is outside, etc, so the time given here is a very rough estimate.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 30,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Melt butter",
+    long: "Melt the butter so that it is ready to add to the dough later. Also give it some time to cool down so that it doesn't mess up the eggs and yeast in the dough.",
+    ingredients: [ {name: butter, amount: 50, unit: g, comment: ''} ],
+    active-time: 5,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Combine yeast, water, and flour",
+    long: "Because you will shortly have to add the sweet potato mash, wait with this step until the mash has reached a satisfactory temperature. When combined, wait for 5 minutes to see if the yeast activates (starts to bubble).",
+    ingredients: [
+      {name: active dry yeast, amount: 12, unit: g, comment: '12g is approximately 1 package, which should be equivalent to 55g normal yeast.'},
+      {name: water, amount: 120, unit: g, comment: ''},
+      {name: flour, amount: 75, unit: g, comment: ''},
+    ],
+    dependencies: [-2],
+    active-time: 2,
+    passive-time: 5,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Add rest of ingredients to dough",
+    long: "Take the sweet potato mash you previously prepared, the melted butter, and add it to the yeast/water/flour sponge you just made, together with some honey, salt, egg, and flour. Note that you might not need all of the flour. When you've added about 450 g (85%), you should start considering whether you actually need more.",
+    ingredients: [
+      {name: honey, amount: 18, unit: g, comment: ''},
+      {name: salt, amount: 6, unit: g, comment: '6 g is approximately 1 tsp.'},
+      {name: egg, amount: 50, unit: g, comment: '50 g is approximately 1 medium sized egg.'},
+      {name: flour, amount: 525, unit: g, comment: ''},
+    ],
+    dependencies: [-1, -2],
+    active-time: 5,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Proof dough for 2 hours",
+    long: "",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 180,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Shape buns",
+    long: "Shape the dough into buns of desired size (for instance the same size as the burgers you're making to go with them?).",
+    dependencies: [-1],
+    active-time: 10,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Proof shaped buns for 40 minutes",
+    long: "",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 40,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Egg wash and sprinkle with sesame seeds",
+    long: "Optionally egg was and sprinkle the buns with sesame seeds before they go into the oven.",
+    ingredients: [
+      {name: egg, amount: 50, unit: g, comment: ''},
+      {name: sesame seeds, amount: 10, unit: g, comment: '10 g is approximately 1 tbsp.'},
+    ],
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Bake the buns",
+    long: "Roast the buns in the oven at 200 ℃ for about 15 minutes.",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 15,
+    type: bake,
+    temp: hot,
+  }
