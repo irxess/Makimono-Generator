@@ -1,0 +1,158 @@
+recipe: Semifreddo with Apple and Cinnamon
+
+description: ""
+date_created: 2021-01-08
+last_updated: 2021-01-08
+image: ''
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Nutella Semifreddo, # recipe name or whole citation
+  type: 'inspired',
+  author: ,
+  publication: '',
+  url: 'https://laurainthekitchen.com/recipes/nutella-semifreddo/',
+  date: 2021-01-08
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Peel and dice apples",
+    long: "We are currently debating whether using fresh apples leads to too much crystalization in the result, and that it might be better to try using dried apples instead.",
+    ingredients: [ {name: apple, amount: 300, unit: g, comment: '150 g is approximately 1 apple.'} ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Fry apples",
+    long: "Over medium heat until soft. If neccessary to grease the pan, butter should yield the best results?",
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 3,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Mix eggs and sugar",
+    long: "Whip the egg yolks, egg, sugar, and a pinch of salt until they become fluffy and you can draw an \"8\".",
+    ingredients: [
+      {name: egg yolk, amount: 36, unit: g, comment: '18 g is approximately 1 egg yolk.'},
+      {name: egg, amount: 150, unit: g, comment: '50g is approximately 1 egg.'},
+      {name: sugar, amount: 140, unit: g, comment: ''},
+      {name: salt, amount: 3, unit: g, comment: '5.9 g is approximately 1 tsp.'},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Transfer egg and sugar fluff to bowl suitable for water bath.",
+    long: "",
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Heat egg and sugar mixture over water bath to make custard",
+    long: "Place the bowl with the mixture over a pot with water, so that the bowl does not touch the water. Heat it gently, while stirring, until you have a nice thick custard that holds about 60℃ to 70℃. If you are uncertain, err on the side of caution and take it of the heat once it's reached 60℃.",
+    dependencies: [-1],
+    active-time: 10,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Make cinnamon paste",
+    long: "Combine brown sugar (muscovado) with water until it's almost dissolved. Heat it up gently so that it doesn't burn. While it's hot, stir in the cinnamon. You might want to stop at 23.7 g (75%) and taste it to chekc whether you want to add the rest or if it's too much for you. Set aside to cool.",
+    ingredients: [
+      {name: brown sugar (muscovado), amount: 50, unit: g, comment: ''},
+      {name: cinnamon, amount: 31.6, unit: g, comment: '7.9 g is approximately 1 tbsp.'}
+    ],
+    active-time: 5,
+    passive-time: 10,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Whip cream",
+    long: "Whip it until it's fluffy, but not so much that it starts forming butter.",
+    ingredients: [
+      {name: heavy cream, amount: 660, unit: g, comment: 'approximately 37 % fat, 660 g is approximately 6dl.'},
+      {name: vanilla powder, amount: 8.4, unit: g, comment: '4.20 g is approximately 1 tsp.'}
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Combine cinnamon paste with some cream and custard",
+    long: "Once the cinnamon paste has cooled down sufficently so that it doesn't mess up the cream and custard, combine the cinnamon paste with 60 ml (4 tbsp) of the cream and 60 ml of the custard. (The ratio is: by volume 1 part original amount of cinnamon, to 1 part cream, to 1 part custard.) Also add some of the apples.",
+    dependencies: [-1, -2, -3, -6],
+    active-time: 4,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Combine rest of cream and custard",
+    long: "Gently fold the rest of the custard and cream together to make your custard cream filling for the semifreddo.",
+    dependencies: [-2, -4],
+    active-time: 4,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Cover cake tin in plastic wrap",
+    long: "Make sure that the cake mold you select can be used in the freezer. Also consider that not all springform pans are made to effectively hold liquids for prolonged time. Cover the bottom of the cake tin in standard plasict cling wrap for kitchen use. Beware that the plastic wrapping should go all the way around on top of the semifreddo once you've added it, so use a generous amount keeping that in mind.",
+    active-time: 2,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Fill cake tin with layers of apples, cinnamon, and custard cream",
+    long: "Start with a layer of apples, so that when you turn the cake tin upside down for serving, you get a pretty pattern of swirly apples on the top. Then add a couple of dollops of the cinnamon paste on top of the apples. Don't spread the cinnamon paste out, you want pockeds of cinnamon awesomness in the final product. Next, cover with a layer of the custard cream. Continue layering apple, cinnamon paste, and custard cream like this until the tin is full and everything is spent.",
+    dependencies: [-1, -2, -3, -9],
+    active-time: 10,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Make swirls in the semifreddo",
+    long: "Using a pin, dinner knife, or another similar implement, stick it in the semifreddo and run some swirls around in the cake tin, so that you get a fancy pattern later when it's served.",
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Cover semifreddo in plastic wrap",
+    long: "Fold the plastic wrap sticking out over the edges of the cake tin, from when you covered the inside, over the semifreddo so that it is covered.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Put semifreddo in freezer until done",
+    long: "About 8 hours seemed to work for us. Serving tips: Take it out of the freezer some 5 - 10 minutes before serving. Turn it upside down on a plate when you take it out of the freezer for serving.",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 480,
+    type: oven,
+    temp: freeze,
+  }
