@@ -149,6 +149,6 @@ steps:
     dependencies: [-1],
     active-time: 0,
     passive-time: 15,
-    type: bake,
+    type: oven,
     temp: hot,
   }
