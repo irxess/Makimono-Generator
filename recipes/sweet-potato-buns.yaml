@@ -48,15 +48,6 @@ steps:
     temp: warm,
   }
   - {
-    short: "Drain and mash sweet potatoes",
-    long: "Drain the water from the sweet potatoes and mash them into a mash.",
-    dependencies: [-1],
-    active-time: 5,
-    passive-time: 0,
-    type: mortar,
-    temp: warm,
-  }
-  - {
     short: "Set sweet potato mash aside to cool",
     long: "The sweet potato mash need to cool down to be just a bit hotter than room temperature before you can use it so that it doesn't mess up the yeast. How long this will take depends greatly on how thin you spread it out, how deep the snow is outside, etc, so the time given here is a very rough estimate.",
     dependencies: [-1],
