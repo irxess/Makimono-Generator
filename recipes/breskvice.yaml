@@ -1,0 +1,142 @@
+recipe: Breskvice - Peach Balls
+
+description: ""
+date_created: 2021-01-09
+last_updated: 2021-01-09
+image: ''
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Breskvice – Jam Filled, Peach Shaped Cookies, # recipe name or whole citation
+  type: 'adapted', # or inspired
+  author: Ansh,
+  publication: '',
+  url: 'https://www.spiceroots.com/breskvice-jam-filled-peach-shaped-cookies/',
+  date: 2017-02-26
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Whip sugar and butter",
+    long: "Beat the sugar and butter into a buttercream, for about 5 minutes. Make pauses during the beating to scrape the sides of the bowl. This might be easier if you soften the butter before you start out.",
+    ingredients: [
+      {name: butter, amount: 150, unit: g, comment: ''},
+      {name: sugar, amount: 110, unit: g, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Add eggs and combine",
+    long: "Add eggs to the buttercream, and mix until it's all well combined.",
+    ingredients: [ {name: egg, amount: 100, unit: g, comment: '50 g is approximately 1 medium egg.'} ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Add rest of ingredients to dough and combine.",
+    long: "Take care to sift in the flour. Note that the salt can be skipped if you're using salted butter. Combining might be easier if you sift in the flour and mix before adding the alcohol.",
+    ingredients: [
+      {name: baking powder, amount: 5, unit: g, comment: '5 g is approximately 1 tsp.'},
+      {name: cinnamon, amount: 2.6, unit: g, comment: '2.6 g is approximately 1 tsp.'},
+      {name: peach alcohol (pálinka), amount: 10, unit: ml, comment: '4.9 ml is approximately 1 tsp.'},
+      {name: flour, amount: 400, unit: g, comment: ''},
+      {name: salt, amount: 0.4, unit: g, comment: 'Optional, not needed if using salted butter.'},
+    ],
+    dependencies: [-1],
+    active-time: 6,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Refridgerate for at least half an hour",
+    long: "We left it overnight and it turned out fine.",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 30,
+    type: bowl,
+    temp: cold,
+  }
+  - {
+    short: "Divide dough into balls",
+    long: "For the unscaled amount, we got about 40 balls at this point. You might want to use a scale to divide them by weight, as each ball will be one half of each peach when you're done, and it works best if they're more or less equally sized. Therefore also try to make an even number.",
+    dependencies: [-1],
+    active-time: 15,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Bake balls",
+    long: "Bake the balls for about 15 minutes at 150℃ over and under heat (at least we got better results with over and under heat rather than convection for theese, if using convection adjust the roasting temperature to 115℃). The balls will melt into half-peaches in the oven. Check for brownness beneath them to determin whether they're done. They should have a medium-light brownness, not be dark.",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 15,
+    type: oven,
+    temp: hot,
+  }
+  - {
+    short: "Cool balls",
+    long: "Alow the balls to cool down slightly so that the after-baking finishes and they are comfortable to work with.",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 15,
+    type: bowl,
+    temp: warm,
+  }
+  - {
+    short: "Hollow out balls",
+    long: "From the bottom, hollow out each ball. Be careful so thtat you do not break them on the other side. Keep the crumble you dig out for use later in the filling. If you want you can use an apple corer and remove no more than than the core.",
+    dependencies: [-1],
+    active-time: 20,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Make filling",
+    long: "Using the crumble you carved out from the balls, combine with peach jam, peach alcohol and a bit of cocoa powder to make the filling. It should be somewhat tick and sticky, so that it can be used to glue the halves of the peaches together.",
+    ingredients: [
+      {name: peach jam, amount: 150, unit: g, comment: ''},
+      {name: peach alcohol (pálinka), amount: 5, unit: ml, comment: ''},
+      {name: cocoa powder, amount: 2.5, unit: g, comment: '2.5 g is approximately 1 tsp.'},
+    ],
+    dependencies: [-1],
+    active-time: 10,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Assemble peaches",
+    long: "Taking two hollowed out balls, fill them with the filling you just made, and stick them together.",
+    dependencies: [-1],
+    active-time: 20,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Color the peaches and cover with sugar",
+    long: "Coloring the peaches is optional, but will make them look awesomer. To color the peaches, make a mix with red and yellow food coloring. Then, take a brush and paint some on the peaches, or just roll the peaches in the coloring a bit. Beware that for this recipe you should not use regular food coloring, but rather the cheap watery kind you find in convenience stores. After you have colored each peach, grently roll it around in some sugar to coat it. If you're not coloring them, you should moisturize the peaches in some other way before rolling them in the sugar. You could for instance use some water, or leftovers of the peach alcohol.",
+    ingredients: [
+      {name: sugar, amount: 100, unit: g, comment: ''},
+      {name: red food coloring, amount: 15, unit: ml, comment: 'optional, the watery kind, 15 ml is approximately 1 tbsp'},
+      {name: yellow food coloring, amount: 15, unit: ml, comment: 'optional, the watery kind, 15 ml is approximately 1 tbsp'},
+    ],
+    dependencies: [-1],
+    active-time: 15,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
