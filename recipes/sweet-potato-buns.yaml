@@ -104,7 +104,7 @@ steps:
     long: "Should take about 2 hours.",
     dependencies: [-1],
     active-time: 0,
-    passive-time: 180,
+    passive-time: 120,
     type: bowl,
     temp: room,
   }
