@@ -5,6 +5,11 @@ date_created: 2021-01-08
 last_updated: 2021-01-08
 image: ''
 
+yield: [
+  {amount: 982, unit: g },
+  {qualification: "12 cm diameter", amount: 12, unit: buns }
+]
+
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
   name: 'Sweet Potato Buns – Great for Burgers, and Learning How to Bake Without Fear', # recipe name or whole citation
@@ -81,7 +86,7 @@ steps:
   }
   - {
     short: "Add rest of ingredients to dough",
-    long: "Take the sweet potato mash you previously prepared, the melted butter, and add it to the yeast/water/flour sponge you just made, together with some honey, salt, egg, and flour. Note that you might not need all of the flour. When you've added about 450 g (85%), you should start considering whether you actually need more.",
+    long: "Take the sweet potato mash you previously prepared, the melted butter, and add it to the yeast/water/flour sponge you just made, together with some honey, salt, egg, and flour. Note that you might not need all of the flour. When you've added about 450 g (85%), you should start considering whether you actually need more. You should add just enough flour so that it's no longer stick/you're comfortable with rolling it into buns.",
     ingredients: [
       {name: honey, amount: 18, unit: g, comment: ''},
       {name: salt, amount: 6, unit: g, comment: '6 g is approximately 1 tsp.'},
@@ -95,8 +100,8 @@ steps:
     temp: room,
   }
   - {
-    short: "Proof dough for 2 hours",
-    long: "",
+    short: "Proof dough until doubled in size",
+    long: "Should take about 2 hours.",
     dependencies: [-1],
     active-time: 0,
     passive-time: 180,
@@ -105,7 +110,7 @@ steps:
   }
   - {
     short: "Shape buns",
-    long: "Shape the dough into buns of desired size (for instance the same size as the burgers you're making to go with them?).",
+    long: "Shape the dough into buns of desired size (for instance the same size as the burgers you're making to go with them?). Note that they will probably rise quite a lot when they're proofing after they have been shaped, and then some more in the oven, so don't be afraid to make them rather flat.",
     dependencies: [-1],
     active-time: 10,
     passive-time: 0,
