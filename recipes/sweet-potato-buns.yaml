@@ -2,7 +2,7 @@ recipe: Sweet Potato Buns
 
 description: "Awesome for savory foods such as burgers."
 date_created: 2021-01-08
-last_updated: 2021-01-08
+last_updated: 2021-01-09
 image: ''
 
 yield: [
@@ -110,7 +110,7 @@ steps:
   }
   - {
     short: "Shape buns",
-    long: "Shape the dough into buns of desired size (for instance the same size as the burgers you're making to go with them?). Note that they will probably rise quite a lot when they're proofing after they have been shaped, and then some more in the oven, so don't be afraid to make them rather flat.",
+    long: "Shape the dough into buns of desired size. Note that they will probably rise quite a lot when they're proofing after they have been shaped, and then some more in the oven, so don't be afraid to make them rather flat.",
     dependencies: [-1],
     active-time: 10,
     passive-time: 0,
