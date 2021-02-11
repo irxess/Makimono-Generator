@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block title %}Weight and volume ratio calculator{% endblock %}
+{% block meta_description %}Weight and volume ratio calculator{% endblock %}
+{% block page_specific_scripts %}
+	<script type="text/javascript">
+		function updateDerivedAmountsBasedOnFirst() {
+			var b1 = document.getElementById('base_amount_first_kind');
+			var b2 = document.getElementById('base_amount_second_kind');
+			var d1 = document.getElementById('derived_amount_first_kind');
+			var d2 = document.getElementById('derived_amount_second_kind');
+
+			if(invalidInput(b1.value, b2.value, d1.value)) {
+				return;
+			}
+
+			var ratioSecondToFirst = b2.value / b1.value;
+			var amountSecond = d1 * ratioSecondToFirst;
+			d2.value = roundNumber(amountSecond, 2);
+		}
+		function updateDerivedAmountsBasedOnSecond() {
+			var b1 = document.getElementById('base_amount_first_kind');
+			var b2 = document.getElementById('base_amount_second_kind');
+			var d1 = document.getElementById('derived_amount_first_kind');
+			var d2 = document.getElementById('derived_amount_second_kind');
+
+			if(invalidInput(b1.value, b2.value, d2.value)) {
+				return;
+			}
+
+			var ratioFirstToSecond = b1.value / b2.value;
+			var amountFirst = d2 * ratioFirstToSecond;
+			d1.value = roundNumber(amountFirst, 2);
+		}
+		function invalidInput() {
+			for (var i = 0; i < arguments.length; i++) {
+				if (arguments[i].length === 0) {
+					return true;
+				}
+				if (arguments[i] == 0) {
+					return;
+				}
+			}
+			return false;
+		}
+		function roundNumber(number, decimalPlaces) {
+			return +(Math.round(number + "e+" + decimalPlaces)  + "e-" + decimalPlaces);
+		}
+	</script>
+{% endblock %}
+{% block content %}
+	<section id="weight-and-volume-ratio-calculator">
+		<h1>Weight and volume ratio calculator</h1>
+		<p>
+			This is a simple tool for scaling up and down amounts when you know a base ratio.
+			Say for instance that you have a recipe calling for 36 yak tears.
+			After measuring out 1 yak tear to be 4.9 g, you figure that it's much easier to just measure it out in g rather than adding 1 tear at a time, and you don't really want to do the math.
+			Then this tool helps you figure out that 36 yak tears are 176.4 g.
+		</p>
+		<form>
+			<fieldset>
+				<legend>Known/measured/base ratio</legend>
+				<div class="input-label-combination">
+					<label for="base_amount_first_kind">Amount</label>
+					<input
+						id="base_amount_first_kind"
+						type="number"
+						min="0"
+						step="any"
+					 />
+				</div>
+				<div class="input-label-combination">
+					<label for="name" hidden>Unit name (optional)</label>
+					<input type="text" id="name" placeholder="ml (optional label)">
+				</div>
+				<div class="ratio-separator">:</div>
+				<div class="input-label-combination">
+					<label for="base_amount_second_kind">Amount</label>
+					<input
+						id="base_amount_second_kind"
+						type="number"
+						min="0"
+						step="any"
+					/>
+				</div>
+				<div class="input-label-combination">
+					<label for="name" hidden>Unit name (optional)</label>
+					<input type="text" id="name" placeholder="g (optional label)">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Derived amounts</legend>
+				<div class="input-label-combination">
+					<label for="derived_amount_first_kind">Amount</label>
+					<input
+						id="derived_amount_first_kind"
+						type="number"
+						min="0"
+						step="any"
+						oninput="updateDerivedAmountsBasedOnFirst()"
+					/>
+				</div>
+				<div class="input-label-combination">
+					<label for="name" hidden>Unit name (optional)</label>
+					<input type="text" id="name" placeholder="ml (optional label)">
+				</div>
+				<div class="ratio-separator">:</div>
+				<div class="input-label-combination">
+					<label for="derived_amount_second_kind">Amount</label>
+					<input
+						id="derived_amount_second_kind"
+						type="number"
+						min="0"
+						step="any"
+						oninput="updateDerivedAmountsBasedOnSecond()"
+					/>
+				</div>
+				<div class="input-label-combination">
+					<label for="name" hidden>Unit name (optional)</label>
+					<input type="text" id="name" placeholder="g (optional label)">
+				</div>
+			</fieldset>
+		</form>
+	</section>
+{% endblock %}
