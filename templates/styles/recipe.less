@@ -120,6 +120,59 @@ svg {
 	}
 }
 
+.media-above-superwide-recipe {
+	#content {
+		display: grid;
+		// ToDo: get rid of the e("") wrapping once the less library has been fixed.
+		grid-template-columns:
+			e("[left-column-grid-start]")
+			1fr
+			e("[left-column-grid-end center-column-grid-start]")
+			1fr
+			e("[center-column-grid-end right-column-grid-start]")
+			2fr
+			e("[right-column-grid-end]");
+		grid-template-rows:
+			e("[first-row-grid-start]")
+			auto
+			e("[first-row-grid-end second-row-grid-start]")
+			auto
+			e("[second-row-grid-end third-row-grid-start]")
+			1fr
+			e("[third-row-grid-end]");
+	}
+	#intro {
+		grid-column-start: left-column-grid-start;
+		grid-column-end: left-column-grid-end;
+		grid-row-start: first-row-grid-start;
+		grid-row-end: first-row-grid-end;
+	}
+	#metadata {
+		grid-column-start: left-column-grid-start;
+		grid-column-end: left-column-grid-end;
+		grid-row-start: second-row-grid-start;
+		grid-row-end: second-row-grid-end;
+	}
+	#recipe-ingredients-and-scaling-group {
+		grid-column-start: center-column-grid-start;
+		grid-column-end: center-column-grid-end;
+		grid-row-start: first-row-grid-start;
+		grid-row-end: second-row-grid-end;
+	}
+	#timeline {
+		grid-column-start: left-column-grid-start;
+		grid-column-end: center-column-grid-end;
+		grid-row-start: third-row-grid-start;
+		grid-row-end: third-row-grid-end;
+	}
+	#steps {
+		grid-column-start: right-column-grid-start;
+		grid-column-end: right-column-grid-end;
+		grid-row-start: first-row-grid-start;
+		grid-row-end: third-row-grid-end;
+	}
+}
+
 .media-above-wider-recipe {
 	#recipe-ingredients-and-scaling-group {
 		display: grid;
