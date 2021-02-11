@@ -37,6 +37,10 @@
 			var at = document.getElementById('amount_target');
 			var cf = document.getElementById('concentration_final');
 
+			if (notAllNumberValuesAreSet(c1.value, c2.value, at.value, cf.value)) {
+				return;
+			}
+
 			a1.value = calculateAmountIfTargetFixed({concentration: c1.value, concentrationOther: c2.value, concentrationFinal: cf.value, amountTotal: at.value });
 			a2.value = calculateAmountIfTargetFixed({concentration: c2.value, concentrationOther: c1.value, concentrationFinal: cf.value, amountTotal: at.value });
 		}
@@ -55,6 +59,14 @@
 						field.value = '';
 					}
 				);
+		}
+		function notAllNumberValuesAreSet() {
+			for (var i = 0; i < arguments.length; i++) {
+				if (arguments[i].length === 0) {
+					return true;
+				}
+			}
+			return false;
 		}
 	</script>
 {% endblock %}
