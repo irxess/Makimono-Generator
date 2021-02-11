@@ -37,7 +37,7 @@
 			var at = document.getElementById('amount_target');
 			var cf = document.getElementById('concentration_final');
 
-			if (notAllNumberValuesAreSet(c1.value, c2.value, at.value, cf.value)) {
+			if (invalidInput(c1.value, c2.value, at.value, cf.value)) {
 				return;
 			}
 
@@ -60,7 +60,7 @@
 					}
 				);
 		}
-		function notAllNumberValuesAreSet() {
+		function invalidInput() {
 			for (var i = 0; i < arguments.length; i++) {
 				if (arguments[i].length === 0) {
 					return true;
