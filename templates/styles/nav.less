@@ -1,12 +1,12 @@
 .nav {
 	font-weight: bold;
 	font-size: 1.2em;
+	background-color: @green;
 	ul {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		background-color: @green;
 		li {
 			ul {
 				display: none;
@@ -47,6 +47,25 @@
 .mobile-nav {
 	.nav;
 	font-family: @serif-fonts;
+}
+
+.media-above-wider-nav {
+	.desktop-nav {
+		display: grid;
+		// ToDo: get rid of the e("") wrapping once the less library has been fixed.
+		grid-template-columns:
+			e("[left-column-grid-start]")
+			1fr
+			e("[left-column-grid-end center-column-grid-start]")
+			5fr
+			e("[center-column-grid-end right-column-grid-start]")
+			1fr
+			e("[right-column-grid-end]");
+		ul {
+			grid-column-start: center-column-grid-start;
+			grid-column-end: center-column-grid-end;
+		}
+	}
 }
 
 .media-above-cutoff-nav {
