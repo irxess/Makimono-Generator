@@ -1,6 +1,6 @@
 recipe: Pancakes - Norwegian
 
-description: ""
+description: "Thin-ish like crepes. Works well with both sweet and savory things (toppings?). Pro-tip for ensuring a completely smooth batter without any lumps: Use an immersion blender for the mixing."
 date_created: 2020-04-13
 last_updated: 2020-05-16
 image: 'norwegian-pancakes'
@@ -36,7 +36,7 @@ steps:
   }
   - {
     short: "Add four",
-    long: "",
+    long: "To ensure that the mixture ends up completely smooth using an immersion blender works amazingly well.",
     ingredients: [ {name: flour, amount: 250, unit: g, comment: ''} ],
     dependencies: [-1],
     active-time: 3,
