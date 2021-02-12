@@ -53,14 +53,15 @@
 .media-above-wider-nav {
 	.desktop-nav {
 		display: grid;
+		// Try to approximately mathch the `.three-col` setup in main.less.
 		// ToDo: get rid of the e("") wrapping once the less library has been fixed.
 		grid-template-columns:
 			e("[left-column-grid-start]")
-			1fr
+			8%
 			e("[left-column-grid-end center-column-grid-start]")
-			5fr
+			auto
 			e("[center-column-grid-end right-column-grid-start]")
-			1fr
+			8%
 			e("[right-column-grid-end]");
 		ul {
 			grid-column-start: center-column-grid-start;
