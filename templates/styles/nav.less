@@ -1,12 +1,13 @@
 .nav {
 	font-weight: bold;
 	font-size: 1.2em;
-	background-color: @green;
+	background-color: @green; // Makes sure potential padding to the sides of the list gets the same color.
 	ul {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
+		background-color: @green; // Ensures that the dorp-down choices get the right color.
 		li {
 			ul {
 				display: none;
