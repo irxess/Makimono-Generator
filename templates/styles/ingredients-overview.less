@@ -6,11 +6,11 @@
 // 	display: inline-block;
 // }
 
-#ingredients-table-shopping-list-column {
-	visibility: collapse;
+.shopping-list-checkbox {
+	display: none;
 }
-#toggle-shopping-list-mode:checked ~ * #ingredients-table-shopping-list-column {
-	visibility: visible;
+#toggle-shopping-list-mode:checked ~ * .shopping-list-checkbox {
+	display: initial;
 }
 
 #ingredients {
@@ -90,7 +90,10 @@
 			background: initial;
 			table {
 				#ingredients-table-shopping-list-column {
-					visibility: collapse;
+					display: none;
+				}
+				.shopping-list-checkbox {
+					display: none;
 				}
 				tr, td {
 					page-break-inside: avoid;
@@ -111,9 +114,9 @@
 							// Do not apply the inline style to the .shopping-list-checkbox column, because when it's set to collapse it will make all the other items invisible as well.
 							display: inline-block;
 						}
-						&.shopping-list-checkbox {
-							visibility: hidden;
-						}
+						// &.shopping-list-checkbox {
+						// 	display: none;
+						// }
 						&.comment {
 							margin-left: 1em;
 						}
