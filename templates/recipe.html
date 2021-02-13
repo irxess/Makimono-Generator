@@ -95,10 +95,29 @@
   <div id="recipe-ingredients-and-scaling-group">
     <section id="ingredients">
       <h2>Ingredients</h2>
+      <label for="toggle-shopping-list-mode" class="shopping-list-toggle">Toggle shopping list mode:</label>
+      <input
+        id="toggle-shopping-list-mode"
+        class="shopping-list-toggle"
+        type="checkbox"
+        name="toggle-shopping-list-mode" />
       <div id="ingredients-table">
         <table>
+          <colgroup>
+            <col id="ingredients-table-shopping-list-column">
+            <col id="ingredients-table-amount-column">
+            <col id="ingredients-table-unit-column">
+            <col id="ingredients-table-name-column">
+            <col id="ingredients-table-description-column">
+          </colgroup>
           {% for ingredient in r.ingredients %}
             <tr>
+              <td class="shopping-list-checkbox">
+                <input
+                  type="checkbox"
+                  name="shopping-list-selected-{{ingredient.name}}" />
+                <label for="shopping-list-selected-{{ingredient.name}}" hidden>Ingredient {{ingredient.name}} checked of in shopping list.</label>
+              </td>
               <td class="amount" data-original-amount="{{ingredient.total_amount}}" >
                 {% if ingredient.total_amount %}
                   {{ingredient.total_amount}}

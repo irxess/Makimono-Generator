@@ -1,3 +1,18 @@
+// This works:
+// .shopping-list-checkbox {
+// 	display: none;
+// }
+// #toggle-shopping-list-mode:checked ~ * .shopping-list-checkbox {
+// 	display: inline-block;
+// }
+
+#ingredients-table-shopping-list-column {
+	visibility: collapse;
+}
+#toggle-shopping-list-mode:checked ~ * #ingredients-table-shopping-list-column {
+	visibility: visible;
+}
+
 #ingredients {
 	#ingredients-table {
 		width: 100%;
@@ -31,6 +46,12 @@
 }
 
 .media-below-tiny-ingredients-table {
+	// .shopping-list-checkbox {
+	// 	visibility: collapse;
+	// }
+	// #toggle-shopping-list-mode:checked ~ * .shopping-list-checkbox {
+	// 	visibility: visible;
+	// }
 	#ingredients {
 		#ingredients-table {
 			table {
@@ -41,11 +62,18 @@
 						border-bottom: none;
 					}
 					td {
-						display: inline-block;
+						&:not(.shopping-list-checkbox) {
+							// Do not apply the inline style to the .shopping-list-checkbox column, because when it's set to collapse it will make all the other items invisible as well.
+							display: inline-block;
+						}
 						&.comment {
 							// display: none;
 							margin-left: 1em;
 						}
+						// This works for hiding in mobile, but doesn't get hit by the selector enable =/
+						// &.shopping-list-checkbox{
+						// 	display: none;
+						// }
 					}
 				}
 			}
@@ -55,12 +83,21 @@
 
 .media-print-ingredients-table {
 	#ingredients {
+		.shopping-list-toggle {
+			display: none;
+		}
 		#ingredients-table {
 			background: initial;
 			table {
-				tr, td {
-						page-break-inside: avoid;
+				#ingredients-table-shopping-list-column {
+					visibility: collapse;
 				}
+				tr, td {
+					page-break-inside: avoid;
+				}
+				// .shopping-list-checkbox {
+				// 	display: none;
+				// }
 				// Below is workaround to make Firefox handle printing better.
 				// Has a nice side-effect of making printing more consistent in general.
 				width: 100%;
@@ -70,7 +107,13 @@
 						border-bottom: none;
 					}
 					td {
-						display: inline-block;
+						&:not(.shopping-list-checkbox) {
+							// Do not apply the inline style to the .shopping-list-checkbox column, because when it's set to collapse it will make all the other items invisible as well.
+							display: inline-block;
+						}
+						&.shopping-list-checkbox {
+							visibility: hidden;
+						}
 						&.comment {
 							margin-left: 1em;
 						}
