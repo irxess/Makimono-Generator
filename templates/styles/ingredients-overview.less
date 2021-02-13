@@ -1,14 +1,11 @@
-// This works:
-// .shopping-list-checkbox {
-// 	display: none;
-// }
-// #toggle-shopping-list-mode:checked ~ * .shopping-list-checkbox {
-// 	display: inline-block;
-// }
+.shopping-list-toggle{
+	padding-left: 1em;
+}
 
 .shopping-list-checkbox {
 	display: none;
 }
+
 #toggle-shopping-list-mode:checked ~ * .shopping-list-checkbox {
 	display: initial;
 }
@@ -46,12 +43,6 @@
 }
 
 .media-below-tiny-ingredients-table {
-	// .shopping-list-checkbox {
-	// 	visibility: collapse;
-	// }
-	// #toggle-shopping-list-mode:checked ~ * .shopping-list-checkbox {
-	// 	visibility: visible;
-	// }
 	#ingredients {
 		#ingredients-table {
 			table {
@@ -70,10 +61,6 @@
 							// display: none;
 							margin-left: 1em;
 						}
-						// This works for hiding in mobile, but doesn't get hit by the selector enable =/
-						// &.shopping-list-checkbox{
-						// 	display: none;
-						// }
 					}
 				}
 			}
@@ -92,15 +79,13 @@
 				#ingredients-table-shopping-list-column {
 					display: none;
 				}
+				// Declare the shopping list display removal here, because it completely removes the content of the lines when placed next to the td:not(.shoppin...) inline block display rule.
 				.shopping-list-checkbox {
 					display: none;
 				}
 				tr, td {
 					page-break-inside: avoid;
 				}
-				// .shopping-list-checkbox {
-				// 	display: none;
-				// }
 				// Below is workaround to make Firefox handle printing better.
 				// Has a nice side-effect of making printing more consistent in general.
 				width: 100%;
@@ -114,9 +99,6 @@
 							// Do not apply the inline style to the .shopping-list-checkbox column, because when it's set to collapse it will make all the other items invisible as well.
 							display: inline-block;
 						}
-						// &.shopping-list-checkbox {
-						// 	display: none;
-						// }
 						&.comment {
 							margin-left: 1em;
 						}
