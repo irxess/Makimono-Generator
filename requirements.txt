@@ -9,7 +9,7 @@
 PyYAML==5.3.1
 
 # Library for producing html files from the jinja-templates (.html files) in the `templates/` folder
-Jinja2==2.11.2
+Jinja2==2.11.3
 
 # Library for compiling the less files in the the `templates/` folder to css
 lesscpy==0.14.0
