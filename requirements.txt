@@ -6,7 +6,7 @@
 # pip 20.0.2
 
 # Library for parsing the yaml files with the recipes and so on
-PyYAML==5.3.1
+PyYAML==5.4
 
 # Library for producing html files from the jinja-templates (.html files) in the `templates/` folder
 Jinja2==2.11.2
