@@ -2,6 +2,7 @@
 {% block title %}{{ r.name }} Recipe{% endblock %}
 {% block meta_description %}{{ r.description }}{% endblock %}
 {% block page_specific_scripts %}
+  <script type="text/javascript" src="{{path_to_base}}/js/ingredient-list-shopping-list-mode-enhancements.js" async></script>
   <script type="text/javascript" src="{{path_to_base}}/js/recipe-scaling.js" async></script>
   <script type="application/ld+json">
 {{ jsonld }}
@@ -109,7 +110,8 @@
                 <td class="shopping-list-checkbox">
                   <input
                     type="checkbox"
-                    name="shopping-list-selected-{{ingredient.name}}" />
+                    name="shopping-list-selected-{{ingredient.name}}"
+                    id="shopping-list-selected-{{ingredient.name}}" />
                   <label for="shopping-list-selected-{{ingredient.name}}" hidden>Ingredient {{ingredient.name}} checked of in shopping list.</label>
                 </td>
                 <td class="amount" data-original-amount="{{ingredient.total_amount}}" >
