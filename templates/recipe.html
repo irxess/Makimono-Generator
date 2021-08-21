@@ -10,260 +10,260 @@
 
 {% block content %}
   <div id="recipe-outer-wrapper">
-  <section id="intro">
-    <h1>{{ r.name }}</h1>
+    <section id="intro">
+      <h1>{{ r.name }}</h1>
 
-   {% if (r.description is defined) and r.description %}
-    <p id="flavor-text">
-      {{ r.description }}
-    </p>
-    {% endif %}
+     {% if (r.description is defined) and r.description %}
+      <p id="flavor-text">
+        {{ r.description }}
+      </p>
+      {% endif %}
 
-    {% if (r.image is defined) and r.image %}
-        <img src="{{path_to_base}}/images/{{ r.image }}" alt="{{r.name}}">
-    {% endif %}
-  </section>
+      {% if (r.image is defined) and r.image %}
+          <img src="{{path_to_base}}/images/{{ r.image }}" alt="{{r.name}}">
+      {% endif %}
+    </section>
 
-  <section id="metadata">
-    <h2 hidden>metadata</h2>
-    {% if r.date_updated != '' and r.date_updated != r.date_created %}
-    <p class="recipe-date">
-        Created on {{ r.date_created }}</br>
-        Last updated on {{ r.date_updated }}
-    </p>
-    {% else %}
-    <p class="recipe-date">Created on {{ r.date_created }}</p>
-    {% endif %}
-
-    {% if r.source is defined and r.source %}
-      {% if r.source.originality == 'source' %}
-      <p class="recipe-source">
-          Source: {{r.source.name}}
+    <section id="metadata">
+      <h2 hidden>metadata</h2>
+      {% if r.date_updated != '' and r.date_updated != r.date_created %}
+      <p class="recipe-date">
+          Created on {{ r.date_created }}</br>
+          Last updated on {{ r.date_updated }}
       </p>
       {% else %}
-      <p class="recipe-source">
-        {% if r.source.originality == 'inspired' %}
-          Inspired by
+      <p class="recipe-date">Created on {{ r.date_created }}</p>
+      {% endif %}
+
+      {% if r.source is defined and r.source %}
+        {% if r.source.originality == 'source' %}
+        <p class="recipe-source">
+            Source: {{r.source.name}}
+        </p>
         {% else %}
-          Adapted from
+        <p class="recipe-source">
+          {% if r.source.originality == 'inspired' %}
+            Inspired by
+          {% else %}
+            Adapted from
+          {% endif %}
+          {% if r.source.url %}
+            <a href="{{r.source.url}}">{{r.source.name}}</a>
+          {% else %}
+            {{r.source.name}}
+          {% endif %}
+          {% if r.source.author %}
+            by {{r.source.author}}
+          {% endif %}
+          {% if r.source.publication %}
+            @ {{r.source.publication}}
+           {% endif %}
+          {% if r.source.date != '' %}
+            <i>({{r.source.date}})</i>
+          {% endif %}
+        </p>
         {% endif %}
-        {% if r.source.url %}
-          <a href="{{r.source.url}}">{{r.source.name}}</a>
-        {% else %}
-          {{r.source.name}}
+      {% endif %}
+
+      {% if r.yields is defined and r.yields %}
+      <p class="recipe-yields">
+        Recipe should yield this much:
+        {% for yield in r.yields %}
+        <span class="yield">
+          {% if yield.qualification %}
+          {{ yield.qualification }}&nbsp;–
+          {% endif %}
+          <span class="yield-amount amount" data-original-amount="{{ yield.amount }}">{{ yield.amount }}</span>
+          {{ yield.unit }}.
+        </span>
+        {% endfor %}
+      </p>
+      {% endif %}
+
+      {% if r.time.lower_bound > 0 or r.time.upper_bound > 0 %}
+      <p class="recipe-total-time">
+        Estimated time needed:
+        {% if r.time.lower_bound > 0 %}
+        <span class="recipe-total-time-lower-bound">At least {{r.time.lower_bound}} minutes.</span>
         {% endif %}
-        {% if r.source.author %}
-          by {{r.source.author}}
-        {% endif %}
-        {% if r.source.publication %}
-          @ {{r.source.publication}}
-         {% endif %}
-        {% if r.source.date != '' %}
-          <i>({{r.source.date}})</i>
+        {% if r.time.upper_bound > 0 %}
+        <span class="recipe-total-time-upper-bound">At most {{r.time.upper_bound}} minutes.</span>
         {% endif %}
       </p>
       {% endif %}
-    {% endif %}
-
-    {% if r.yields is defined and r.yields %}
-    <p class="recipe-yields">
-      Recipe should yield this much:
-      {% for yield in r.yields %}
-      <span class="yield">
-        {% if yield.qualification %}
-        {{ yield.qualification }}&nbsp;–
-        {% endif %}
-        <span class="yield-amount amount" data-original-amount="{{ yield.amount }}">{{ yield.amount }}</span>
-        {{ yield.unit }}.
-      </span>
-      {% endfor %}
-    </p>
-    {% endif %}
-
-    {% if r.time.lower_bound > 0 or r.time.upper_bound > 0 %}
-    <p class="recipe-total-time">
-      Estimated time needed:
-      {% if r.time.lower_bound > 0 %}
-      <span class="recipe-total-time-lower-bound">At least {{r.time.lower_bound}} minutes.</span>
-      {% endif %}
-      {% if r.time.upper_bound > 0 %}
-      <span class="recipe-total-time-upper-bound">At most {{r.time.upper_bound}} minutes.</span>
-      {% endif %}
-    </p>
-    {% endif %}
-  </section>
-
-  <div id="recipe-ingredients-and-scaling-group">
-    <section id="ingredients">
-      <h2>Ingredients</h2>
-      <label for="toggle-shopping-list-mode" class="shopping-list-toggle">Toggle shopping list mode:</label>
-      <input
-        id="toggle-shopping-list-mode"
-        class="shopping-list-toggle"
-        type="checkbox"
-        name="toggle-shopping-list-mode" />
-      <div id="ingredients-table">
-        <table>
-          {% for ingredient in r.ingredients %}
-            <tr>
-              <td class="shopping-list-checkbox">
-                <input
-                  type="checkbox"
-                  name="shopping-list-selected-{{ingredient.name}}" />
-                <label for="shopping-list-selected-{{ingredient.name}}" hidden>Ingredient {{ingredient.name}} checked of in shopping list.</label>
-              </td>
-              <td class="amount" data-original-amount="{{ingredient.total_amount}}" >
-                {% if ingredient.total_amount %}
-                  {{ingredient.total_amount}}
-                {% endif %}
-              </td>
-              <td class="unit">
-                {% if ingredient.unit %}
-                  {{ingredient.unit}}
-                {% endif %}
-              </td>
-              <td class="name">
-                {% if ingredient.recipe_link %}<a href="{{path_to_base}}/recipes/{{ingredient.recipe_link}}.html">{% endif %}
-                {{ingredient.name}}
-                {% if ingredient.recipe_link %}</a>{% endif %}
-              </td>
-              <td class="comment">
-                {% if ingredient.comment %}
-                  {{ingredient.comment}}
-                {% endif %}
-              </td>
-            </tr>
-          {% endfor %}
-        </table>
-      </div>
     </section>
 
-    <section id="scaling">
-      <h2>Scaling</h2>
-      <form id="scaling-form">
-        <button type="button" id="reset-button" onclick="resetScaling()">Reset</button>
-        <fieldset name="by-percent">
-          <legend>Percent</legend>
-          <label for="percent-number" hidden>Enter percentage number to scale all the amounts in the recipe by</label>
-          <input
-            type="number"
-            id="percent-number"
-            min="0"
-            step="any"
-            value="100"
-            oninput="scaleByPercentNumber()"
-            />%
-          <label for="percent-slider" hidden>Drag the slider to the percentage number you wish to scale all the amounts in the recipe by</label>
-          <input
-            type="range"
-            id="percent-slider"
-            value="100"
-            min="10"
-            max="500"
-            step="5"
-            oninput="scaleByPercentSlider()"
-            />
-        </fieldset>
-        <fieldset name="by-ingredient">
-          <legend>By ingredient</legend>
-          <label for="ingredient-select">Ingredient:</label>
-          <select id="ingredient-select" oninput="makeScaleByIngredientValueMatchIngredient()">
+    <div id="recipe-ingredients-and-scaling-group">
+      <section id="ingredients">
+        <h2>Ingredients</h2>
+        <label for="toggle-shopping-list-mode" class="shopping-list-toggle">Toggle shopping list mode:</label>
+        <input
+          id="toggle-shopping-list-mode"
+          class="shopping-list-toggle"
+          type="checkbox"
+          name="toggle-shopping-list-mode" />
+        <div id="ingredients-table">
+          <table>
             {% for ingredient in r.ingredients %}
-              {% if ingredient.total_amount %}
-                <option value="{{ingredient.total_amount}}">
-                  {{ingredient.name}}
+              <tr>
+                <td class="shopping-list-checkbox">
+                  <input
+                    type="checkbox"
+                    name="shopping-list-selected-{{ingredient.name}}" />
+                  <label for="shopping-list-selected-{{ingredient.name}}" hidden>Ingredient {{ingredient.name}} checked of in shopping list.</label>
+                </td>
+                <td class="amount" data-original-amount="{{ingredient.total_amount}}" >
+                  {% if ingredient.total_amount %}
+                    {{ingredient.total_amount}}
+                  {% endif %}
+                </td>
+                <td class="unit">
                   {% if ingredient.unit %}
-                    ({{ingredient.unit}})
-                  {% endif %}
-                </option>
-              {% endif %}
-            {% endfor %}
-          </select>
-          <label for="ingredient-inputted-amount">amount:</label>
-          <input
-            type="number"
-            id="ingredient-inputted-amount"
-            step="any"
-            oninput="scaleByIngredient()"
-            />
-        </fieldset>
-      </form>
-    </section>
-  </div>
-
-  <section id="timeline">
-    {% if (r.timeline is defined) %}
-      <h2>Timeline</h2>
-      {% include 'timeline.html' %}
-    {% endif %}
-  </section>
-
-  <section id="steps">
-    <h2>Directions</h2>
-    {% for step in r.steps %}
-    <div class="step" id="step_{{ step.id }}">
-      {% if step.time.active > 0 or step.time.passive > 0 %}
-        <div class="step-time-container">
-          <p>
-            ⌛
-            {% if step.time.active > 0 %}
-              <span class="step-active-time">
-                <span class="step-time-name">Active time</span>
-                <span class="step-time-amount">{{step.time.active}}</span>
-                <span class="step-time-unit">minutes</span>
-              </span>
-            {% endif %}
-            {% if step.time.active > 0 and step.time.passive > 0 %}
-              <span class="step-time-separator">|</span>
-            {% endif %}
-            {% if step.time.passive > 0 %}
-              <span class="step-passive-time">
-                <span class="step-time-name">Passive time</span>
-                <span class="step-time-amount">{{step.time.passive}}</span>
-                <span class="step-time-unit">minutes</span>
-              </span>
-            {% endif %}
-          </p>
-        </div>
-      {% endif %}
-      {% if step.ingredients_used %}
-      <div class="ingredient-container">
-        <div class="step-ingredient-list">
-            <ul>
-              {% for ingredient in step.ingredients_used %}
-                <li>
-                  <b>
-                    {% if ingredient.amount %}
-                      <span class="amount" data-original-amount="{{ ingredient.amount }}">{{ ingredient.amount }}</span>
-                    {% endif %}
                     {{ingredient.unit}}
-                  </b>
-                  {{ ingredient.name }}
-                  {% if ingredient.comment %}
-                    <span class="comment">| {{ingredient.comment}}</span>
                   {% endif %}
-                </li>
+                </td>
+                <td class="name">
+                  {% if ingredient.recipe_link %}<a href="{{path_to_base}}/recipes/{{ingredient.recipe_link}}.html">{% endif %}
+                  {{ingredient.name}}
+                  {% if ingredient.recipe_link %}</a>{% endif %}
+                </td>
+                <td class="comment">
+                  {% if ingredient.comment %}
+                    {{ingredient.comment}}
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </section>
+
+      <section id="scaling">
+        <h2>Scaling</h2>
+        <form id="scaling-form">
+          <button type="button" id="reset-button" onclick="resetScaling()">Reset</button>
+          <fieldset name="by-percent">
+            <legend>Percent</legend>
+            <label for="percent-number" hidden>Enter percentage number to scale all the amounts in the recipe by</label>
+            <input
+              type="number"
+              id="percent-number"
+              min="0"
+              step="any"
+              value="100"
+              oninput="scaleByPercentNumber()"
+              />%
+            <label for="percent-slider" hidden>Drag the slider to the percentage number you wish to scale all the amounts in the recipe by</label>
+            <input
+              type="range"
+              id="percent-slider"
+              value="100"
+              min="10"
+              max="500"
+              step="5"
+              oninput="scaleByPercentSlider()"
+              />
+          </fieldset>
+          <fieldset name="by-ingredient">
+            <legend>By ingredient</legend>
+            <label for="ingredient-select">Ingredient:</label>
+            <select id="ingredient-select" oninput="makeScaleByIngredientValueMatchIngredient()">
+              {% for ingredient in r.ingredients %}
+                {% if ingredient.total_amount %}
+                  <option value="{{ingredient.total_amount}}">
+                    {{ingredient.name}}
+                    {% if ingredient.unit %}
+                      ({{ingredient.unit}})
+                    {% endif %}
+                  </option>
+                {% endif %}
               {% endfor %}
-            </ul>
-        </div>
-      </div>
-      {% endif %}
-      <div class="description-container">
-        <div class="step-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2em 2em" height="2em" width="2em">
-            <circle class="{{ step.temperature }}" cx="1em" cy="1em" r="1em" />
-            <image class="svg-icon" xlink:href="{{path_to_base}}/images/icons/{{ step.step_type }}-light.svg"
-                   x="0.25em" y="0.25em"
-                   width="1.5em" height="1.5em" />
-          </svg>
-        </div>
-        <div class="step-description">
-            <h3>{{ step.short }}{% if step.long %}: {% endif %}</h3>
-            <p>{{ step.long }}</p>
-        </div>
-      </div>
+            </select>
+            <label for="ingredient-inputted-amount">amount:</label>
+            <input
+              type="number"
+              id="ingredient-inputted-amount"
+              step="any"
+              oninput="scaleByIngredient()"
+              />
+          </fieldset>
+        </form>
+      </section>
     </div>
-    {% endfor %}
-  </section>
+
+    <section id="timeline">
+      {% if (r.timeline is defined) %}
+        <h2>Timeline</h2>
+        {% include 'timeline.html' %}
+      {% endif %}
+    </section>
+
+    <section id="steps">
+      <h2>Directions</h2>
+      {% for step in r.steps %}
+      <div class="step" id="step_{{ step.id }}">
+        {% if step.time.active > 0 or step.time.passive > 0 %}
+          <div class="step-time-container">
+            <p>
+              ⌛
+              {% if step.time.active > 0 %}
+                <span class="step-active-time">
+                  <span class="step-time-name">Active time</span>
+                  <span class="step-time-amount">{{step.time.active}}</span>
+                  <span class="step-time-unit">minutes</span>
+                </span>
+              {% endif %}
+              {% if step.time.active > 0 and step.time.passive > 0 %}
+                <span class="step-time-separator">|</span>
+              {% endif %}
+              {% if step.time.passive > 0 %}
+                <span class="step-passive-time">
+                  <span class="step-time-name">Passive time</span>
+                  <span class="step-time-amount">{{step.time.passive}}</span>
+                  <span class="step-time-unit">minutes</span>
+                </span>
+              {% endif %}
+            </p>
+          </div>
+        {% endif %}
+        {% if step.ingredients_used %}
+        <div class="ingredient-container">
+          <div class="step-ingredient-list">
+              <ul>
+                {% for ingredient in step.ingredients_used %}
+                  <li>
+                    <b>
+                      {% if ingredient.amount %}
+                        <span class="amount" data-original-amount="{{ ingredient.amount }}">{{ ingredient.amount }}</span>
+                      {% endif %}
+                      {{ingredient.unit}}
+                    </b>
+                    {{ ingredient.name }}
+                    {% if ingredient.comment %}
+                      <span class="comment">| {{ingredient.comment}}</span>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+          </div>
+        </div>
+        {% endif %}
+        <div class="description-container">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2em 2em" height="2em" width="2em">
+              <circle class="{{ step.temperature }}" cx="1em" cy="1em" r="1em" />
+              <image class="svg-icon" xlink:href="{{path_to_base}}/images/icons/{{ step.step_type }}-light.svg"
+                     x="0.25em" y="0.25em"
+                     width="1.5em" height="1.5em" />
+            </svg>
+          </div>
+          <div class="step-description">
+              <h3>{{ step.short }}{% if step.long %}: {% endif %}</h3>
+              <p>{{ step.long }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
   </div>
 {% endblock %}
