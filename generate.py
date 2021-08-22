@@ -135,7 +135,6 @@ def generate_browse_page(thumbnails):
         os.makedirs('publish/all')
 
     thumbnail_chunks, pagination_list = split_thumbnail_list_into_pages(thumbnails)
-    prev_page = PaginationElement('#', 1)
 
     # Make first page in list main landing page:
     current_page = pagination_list[0]
@@ -143,7 +142,7 @@ def generate_browse_page(thumbnails):
     output = template.render(
         chunk_of_thumbnails = thumbnail_chunks[0],
         paginated_pages = pagination_list,
-        previous_page = prev_page,
+        previous_page = pagination_list[-1],
         next_page = pagination_list[1],
         path_to_base='.',
         recipes_path='all/page-1.html',
@@ -159,10 +158,11 @@ def generate_browse_page(thumbnails):
         thumbnails = thumbnail_chunks[i]
         current_page = pagination_list[i]
         current_page.current = True
+        prev_page = pagination_list[i-1]
         if (i<len(pagination_list)-1):
             next_page = pagination_list[i+1]
         else:
-            next_page = PaginationElement('#', len(pagination_list))
+            next_page = pagination_list[0]
         output = template.render(
             chunk_of_thumbnails = thumbnails,
             paginated_pages = pagination_list,
@@ -178,7 +178,6 @@ def generate_browse_page(thumbnails):
         with open('publish/all/page-'+str(i+1)+'.html', 'w', encoding='utf-8') as f:
             print(output, file=f)
         current_page.current = False
-        prev_page = current_page
 
 
 def generate_all_recipes_overview_page(thumbnails):
