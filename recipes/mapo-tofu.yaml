@@ -140,7 +140,7 @@ steps:
     temp: hot,
   }
   - {
-    short: "Add tofu and meat",
+    short: "Add tofu, meat, and soy sauce",
     long: "Carefully slide in the tofu, and add the meat you previously prepared and the soy sauce. Reduce the heat, and let it simmer for about 6 to 8 minutes.",
     ingredients: [ {name: light soy sauce, amount: 1, unit: tbsp, comment: ''} ],
     dependencies: [-1, -4, -5],
