@@ -1,4 +1,7 @@
 @size-superwide: 315em;
+@size-superwide-almost: 314.99em;
+@size-ultrawide: 160em;
+// @size-ultrawide-almost: 159.99em;
 @size-wider: 120em;
 @size-wider-almost: 119.99em;
 @size-cutoff: 70em;
@@ -8,6 +11,10 @@
 
 @media (min-width: @size-superwide) {
 	.media-above-superwide-recipe;
+}
+
+@media (min-width: @size-ultrawide) and (max-width: @size-superwide-almost) {
+	.media-ultrawide-recipe;
 }
 
 @media (min-width: @size-wider) {
