@@ -15,7 +15,7 @@ Jinja2==2.11.2
 lesscpy==0.14.0
 
 # Library for resizing and producing thumbnails from the recipe images.
-Pillow==8.0.1
+Pillow==8.3.2
 
 # Not sure where these came from, but `pip freeze` outputted them in a venv, so I guess they should be included
 MarkupSafe==1.1.1
