@@ -1,0 +1,86 @@
+recipe: Emulsion - butter with egg yolk
+
+description: "Simons take on the Béarnaise/Hollandaise Sauce using an immersion blender."
+date_created: 2021-10-18
+last_updated: 2021-10-18
+image: ''
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: 'How to Make Foolproof Béarnaise Sauce | The Food Lab', # recipe name or whole citation
+  type: 'inspired', # or inspired
+  author: 'James Kenji López-Alt',
+  publication: "Serious Eats'",
+  url: 'https://www.seriouseats.com/food-lab-foolproof-bearnaise-sauce',
+  date: 2021-10-18
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Separate egg yolks",
+    long: "Separate egg yolks from whites, you only need the yolks.",
+    ingredients: [ {name: eggs, amount: 2, unit: '', comment: ''} ],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Add egg yolks to bowl/container you want to mix in",
+    long: "The container should ideally snuggly fit your immersion blender to minimize mess and generally make things easier, but in a pinch any tall container like a pot will do the trick.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Add vinegar to bowl/container you want to mix in",
+    long: "What kind of vinegar you use affects the taste. I've found a mixture of 2 parts white wine vinegar to 1 part lemon juice works well.",
+    ingredients: [ {name: 'vinegar', amount: 22.5, unit: ml, comment: '22.5 ml is approximately 1.5 tablespoon. 1 tablespoon is 15 ml.'} ],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Mix egg yolks and vinegar",
+    long: "Using an immersion blender, mix the egg yolks and vinegar.",
+    dependencies: [-1, -2],
+    active-time: 1,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Melt butter",
+    long: "Because the heat of the butter contributes to the cooking, use it once it's in the 90 - 95 ℃ temperature range. I like to use the standard Norwegian butter unclarified, which is salted (approximately 1.1% salt) and sligtly accidic. Note that the base recipe here calls for 85 g butter per egg yolk, but I've seen other recipes go as high as 115 g butter per yolk, so there should be room for some variance here.",
+    ingredients: [ {name: 'butter', amount: 170, unit: g, comment: 'salted'} ],
+    active-time: 3,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Drizzle in butter to egg yolk and vinegar mixture while mixing",
+    long: "Using an immersion blender, mix the egg yolk and vinegar mixture while slowly pouring in a steady stream of the hot butter. If the container snuggly fits the blender, move it up and down while you mix to ensure a even result.",
+    dependencies: [-1, -2],
+    active-time: 2,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Optional: Add seasoning",
+    long: "The sauce works as is, but if you want you can stir in some seasoning to spice it up. Things I've tried that works well are estragon/tarragon, black pepper, ramsons/wild garlic (Allium ursinum). If you use unsalted butter, also add a pinch of salt. I guesstimate that between 0.5 to 1 tsp is a fine amount for the base recipe, this step is mostly added to ease scaling the recipe.",
+    ingredients: [ {name: 'seasoning', amount: 0.75, unit: tsp, comment: 'Optional'} ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
