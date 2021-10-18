@@ -5,6 +5,11 @@ date_created: 2019-12-19
 last_updated: 2019-12-19
 image: 'julebroed'
 
+yield: [
+  {amount: 4, unit: loaves },
+  {amount: 2100, unit: 'g' }
+]
+
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
   name: "SAFTIG JULEBRØD (ELLER JULEKAKE, OM DU VIL)", # recipe name or whole citation
