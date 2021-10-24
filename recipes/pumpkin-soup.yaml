@@ -1,0 +1,102 @@
+recipe: Pumpkin Soup
+
+description: "You can probably make this work with various kinds of pumpkin. Due to the variability in size of pumpkins, you probably want to scale the recipe to whatever amount of pumpkin you managet to get a hold of or want to use. Works well served with bread, butter, and bacon."
+date_created: 2020-10-31
+last_updated: 2021-10-24
+image: ''
+
+# yield: [
+#   {qualification: , amount: , unit: },
+#   {amount: , unit: },
+#   {qualification: , amount: , unit: }
+# ]
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+# source: {
+#   name: , # recipe name or whole citation
+#   type: 'adapted', # or inspired
+#   author: ,
+#   publication: '',
+#   url: '',
+#   date: 20YY-mm-dd
+# }
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Prepare vegetables - peel and chop",
+    long: "Because the recipe is meant to be smoothed with an immersion blender, you can do the chopping relatively rough, just be aware that the size will affect the cooking time (smaller pieces will be done faster), and that you might get better results in this recipe with smaller pieces, especially for the larger vegetables. We only use the flesh of the pumpkin after it's peeled, not the soft mushy part with the seeds. If you want you can try to use it and the seeds, or you can save them for later if you want to use them in some baking or something.",
+    ingredients: [
+      {name: pumpkin, amount: 1610, unit: g, comment: 'We used butternut squash'},
+      {name: onion, amount: 180, unit: g, comment: ''},
+      {name: potato, amount: 140, unit: g, comment: ''},
+      {name: carrot, amount: 114, unit: g, comment: ''},
+      {name: garlic, amount: 20, unit: g, comment: ''},
+    ],
+    active-time: 15,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Cook vegetables with wine until they are soft",
+    long: "If you want to optimize the details rather than just dump everything into the pot and stir occationally, you can do the following. Start with melting the butter in the bottom of the pot you will be cooking in. Then add the garlic, and fry for about 30 seconds until it becomes fragnant. Then add onions and carrots, and fry until the onion is soft and has released a bit of fluid. Then add the pumpkin and potato. At this point you can either just add the wine immediately, or you can try to fry them for a couple of minutes (in that case you probably want to add som more butter, so that the vegetables don't start to stick) before you add the wine. Once you've added the wine, bring to a boil while stirring, put on a lid, and turn down the heat to somewhere between medium and low. Stir once in a while so that it doesn't stick or get burned.",
+    ingredients: [
+      {name: white wine, amount: 206, unit: g, comment: 'We had luck with a Soalheiro Alvarinho 2019 vintage in october 2020.'},
+      {name: butter, amount: 20, unit: g, comment: 'Optional, for frying, can be substituted with oil if you want a '},
+    ],
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 15,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Season",
+    long: "",
+    ingredients: [
+      {name: vegetable bouillon, amount: 30, unit: g, comment: '7.6% salt'},
+      {name: black pepper, amount: 1.6, unit: g, comment: ''},
+      {name: muskat, amount: 1.0, unit: g, comment: 'ground nut'},
+      {name: estragon/tarragon, amount: 0.3, unit: g, comment: ''},
+      {name: salt, amount: 16, unit: g, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: warm,
+  }
+  - {
+    short: "Blend",
+    long: "Using an immersion blender, blend until it's smooth.",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: km,
+    temp: warm,
+  }
+  - {
+    short: "Add cream",
+    long: "Add cream and mix.",
+    ingredients: [
+      {name: cream, amount: 297, unit: g, comment: '297 g is approximately 3 dl. We used a 38% fat cream. Can be substituted for coconut milk if you want to make it vegan.'},
+    ],
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: warm,
+  }
+  - {
+    short: "Bring to a boil",
+    long: "Once everythings mixed, bring it to a boil to ensure everything is nice and hot. Be careful to stir so that the cream doesn't burn.",
+    dependencies: [-1],
+    active-time: 10,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
