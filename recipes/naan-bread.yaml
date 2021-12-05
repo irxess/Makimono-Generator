@@ -1,0 +1,87 @@
+recipe: Naan bread
+
+description: ""
+date_created: 2021-12-05
+last_updated: 2021-12-05
+image: ''
+
+yield: [
+  {qualification: Using a 28 cm diameter pan, amount: 2, unit: naan breads},
+  {amount: 925, unit: g},
+]
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Herb & Garlic Homemade Vegan Naan, # recipe name or whole citation
+  type: 'inspired', # or inspired
+  author: '',
+  publication: 'Pick Up Limes',
+  url: 'https://www.pickuplimes.com/recipe/herb-garlic-homemade-vegan-naan-64',
+  date: 2020-06-13
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Melt butter",
+    long: "Set aside for later",
+    ingredients: [ {name: butter, amount: 50, unit: g, comment: ''} ],
+    active-time: 2,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Combine ingredients to make a dough",
+    long: "",
+    ingredients: [
+      {name: flour, amount: 120, unit: g, comment: ''},
+      {name: milk, amount: 60, unit: g, comment: ''},
+      {name: sour cream, amount: 50, unit: g, comment: ''},
+      {name: liquid honey, amount: 4, unit: g, comment: 'optional'},
+      {name: baking powder, amount: 2, unit: g, comment: ''},
+      {name: salt, amount: 2.5, unit: g, comment: '2.5g salt is approximately 0.5 teaspoons.'},
+    ],
+    active-time: 10,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Knead dough until smooth",
+    long: "We just do it on the kitchen bench. If things get sticky just flour your hands and the bench lightly.",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Divide dough into buns and roll them out.",
+    long: "The base recipe amounts should be good for 2 buns. But if you want you could make more smaller breads, or 1 gigantic bread if you make it in a pizza oven or something.",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Preheat frying pan.",
+    long: "Make sure the pan is pre-heated before you start frying the naans. Medium high heat should do the trick.",
+    active-time: 1,
+    passive-time: 1,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Fry the naan breads.",
+    long: "Brush the side of the naan you put down in the pan with butter. Fry for about a minute, brush on some more butter, turn over, and fry for about another minute.",
+    dependencies: [-1, -2, -5],
+    active-time: 5,
+    passive-time: 0,
+    type: fry,
+    temp: hot,
+  }
