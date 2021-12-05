@@ -7,7 +7,6 @@ image: ''
 
 yield: [
   {qualification: Using a 28 cm diameter pan, amount: 2, unit: naan breads},
-  {amount: 925, unit: g},
 ]
 
 # {adapted from} {name} by {author} @ {publication} ({date})
