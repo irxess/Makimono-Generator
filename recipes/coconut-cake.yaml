@@ -1,0 +1,50 @@
+recipe: Coconut cake
+
+not_ready_for_publish: true
+
+description: ""
+date_created: 2021-12-05
+last_updated: 2021-12-05
+image: ''
+
+# yield: [
+#   {qualification: , amount: , unit: },
+#   {amount: , unit: },
+#   {qualification: , amount: , unit: }
+# ]
+
+# # {adapted from} {name} by {author} @ {publication} ({date})
+# source: {
+#   name: , # recipe name or whole citation
+#   type: 'adapted', # or inspired
+#   author: ,
+#   publication: '',
+#   url: '',
+#   date: 20YY-mm-dd
+# }
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Add ingredients",
+    long: "",
+    ingredients: [
+      {name: flour, amount: 500, unit: g, comment: ''},
+      {name: sugar, amount: 400, unit: g, comment: ''},
+      {name: baking powder, amount: 10, unit: g, comment: ''},
+      {name: baking soda, amount: 6, unit: g, comment: ''},
+      {name: salt, amount: 7, unit: g, comment: ''},
+      {name: coconut milk, amount: 480, unit: ml, comment: 'not fat'},
+      {name: coconut oil, amount: 250, unit: ml, comment: ''},
+      {name: apple cider vinegar, amount: 8, unit: g, comment: ''},
+      {name: vanilla extract, amount: , unit: g, comment: ''},
+      {name: shredded coconut, amount: 216, unit: g, comment: ''},
+    ],
+    active-time: 1,
+    passive-time: 1,
+    type: add,
+    temp: room,
+  }
