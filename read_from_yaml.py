@@ -125,12 +125,21 @@ def read_source(yaml_source):
 
 def read_recipe(yaml):
     name = yaml['recipe']
+
+
     created = yaml['date_created']
     if 'last_updated' in yaml:
         updated = yaml['last_updated']
     else:
         updated = created
+
     recipe = Recipe(name, created, updated)
+
+    if 'not_ready_for_publish' in yaml:
+        recipe.not_ready_for_publish = yaml['not_ready_for_publish']
+    else:
+        recipe.not_ready_for_publish = False
+
     if 'image' in yaml:
         recipe.image = yaml['image']
     if 'description' in yaml:

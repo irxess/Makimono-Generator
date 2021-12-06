@@ -1,5 +1,7 @@
 recipe: Name
 
+not_ready_for_publish: true
+
 description: ""
 date_created: 20YY-mm-dd
 last_updated: 20YY-mm-dd

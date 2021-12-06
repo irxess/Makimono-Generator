@@ -108,6 +108,7 @@ class RecipeTime:
 @dataclass
 class Recipe:
     name: str
+    not_ready_for_publish: Optional[bool] = field(init=False)
     date_created: str
     date_updated: str
     steps: List[Step] = field(default_factory=lambda: [])

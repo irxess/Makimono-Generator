@@ -74,6 +74,9 @@ def prepare_image(recipe):
 
 def generate_files_for_recipe(name):
     recipe = read_recipe_into_data(name)
+    if recipe.not_ready_for_publish:
+        print('Recipe not ready for publishing, skipping')
+        return 'Skipped generating because not ready flag is set'
 
     prepare_image(recipe)
     timeline.generate_timeline_svg(recipe)
@@ -255,7 +258,8 @@ if __name__ == "__main__":
             if name != 'template' and extension == 'yaml':
                 print("Generating files for", filename)
                 t = generate_files_for_recipe(name)
-                thumbnails.append(t)
+                if t != 'Skipped generating because not ready flag is set':
+                    thumbnails.append(t)
 
     print("Generating browse pages")
     if not os.path.isdir('publish/all'):
