@@ -1,7 +1,7 @@
 # General python
 __pycache__
 
-# Python virtual environment catalogs for binary files
+# Python virtual environment catalogs for binary files on windows
 pyvenv.cfg
 Lib
 Scripts
