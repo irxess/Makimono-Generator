@@ -99,10 +99,10 @@ steps:
     type: bowl,
     temp: room,
   }
-# 1x doorslaan, proof for 15 more minuts
+# 1x doorslaan, proof for 15 more minutes
   - {
     short: "Beat once, proof 15 minutes",
-    long: "Using a large spoon, beat the dough once. Just go all the way down to the bottom of the bowl, and lift the spoon again, using a circular motion. The batter should shrink a bit. Now cover the bowl again and let it rise for 10 more minuts.",
+    long: "Using a large spoon, beat the dough once. Just go all the way down to the bottom of the bowl, and lift the spoon again, using a circular motion. The batter should shrink a bit. Now cover the bowl again and let it rise for 15 more minutes.",
     dependencies: [-1],
     active-time: 1,
     passive-time: 15,
