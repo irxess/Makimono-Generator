@@ -97,6 +97,7 @@ def generate_files_for_recipe(name):
         recipes_path='all/page-1.html',
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
+        sous_vide_temperature_path='sous_vide_temperatures.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -151,6 +152,7 @@ def generate_browse_page(thumbnails):
         recipes_path='all/page-1.html',
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
+        sous_vide_temperature_path='sous_vide_temperatures.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -175,6 +177,7 @@ def generate_browse_page(thumbnails):
             recipes_path='all/page-1.html',
             all_recipes_overview_path='all-recipes-overview.html',
             dilution_calculator_path='dilution_calculator.html',
+            sous_vide_temperature_path='sous_vide_temperatures.html',
             about_path='about.html'
         )
         output = remove_empty_lines(output)
@@ -194,6 +197,7 @@ def generate_all_recipes_overview_page(thumbnails):
         recipes_path='all/page-1.html',
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
+        sous_vide_temperature_path='sous_vide_temperatures.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -213,6 +217,7 @@ def generate_about_page():
         recipes_path='all/page-1.html',
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
+        sous_vide_temperature_path='sous_vide_temperatures.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -231,10 +236,30 @@ def generate_dilution_calculator():
         recipes_path='all/page-1.html',
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
+        sous_vide_temperature_path='sous_vide_temperatures.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
     with open('publish/dilution_calculator.html', 'w', encoding='utf-8') as f:
+        print(output, file=f)
+
+def generate_sous_vide_temperatures():
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+    template = env.get_template('sous_vide_temperatures.html')
+    if not os.path.isdir('publish'):
+        os.makedirs('publish')
+
+    output = template.render(
+        path_to_base='.',
+        recipes_path='all/page-1.html',
+        all_recipes_overview_path='all-recipes-overview.html',
+        dilution_calculator_path='dilution_calculator.html',
+        sous_vide_temperature_path='sous_vide_temperatures.html',
+        about_path='about.html'
+    )
+    output = remove_empty_lines(output)
+    with open('publish/sous_vide_temperatures.html', 'w', encoding='utf-8') as f:
         print(output, file=f)
 
 
@@ -274,6 +299,9 @@ if __name__ == "__main__":
 
     print("Generating dilution calculator page")
     generate_dilution_calculator()
+
+    print("Generating sous vide temperatures page")
+    generate_sous_vide_temperatures()
 
     print("Generating CSS")
     if not os.path.isdir('publish/css'):
