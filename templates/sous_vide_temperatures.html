@@ -29,16 +29,61 @@
 	}
 	/* End Time calculator styling */
 	/* Begin Overview of temps styling */
-	#sous-vide-timing-and-temperatures-section > table {
-		border: 3px solid #616161;
+	#sous-vide-timing-and-temperatures-section {
+		margin-bottom: 1em;
 	}
-
-	#sous-vide-timing-and-temperatures-section > tbody tr:nth-child(even) {
-		background-color: #9E9E9E;
+	.tg {
+		margin-bottom: 1em;
+		background-color: #f5f5f5;
+		border-collapse:collapse;
+		border-spacing:0;
 	}
-
-	#sous-vide-timing-and-temperatures-section > th, td {
-		padding: 1em;
+	.tg td{
+		border-color:black;
+		border-style:solid;
+		border-width:1px;
+		/* font-family:Arial, sans-serif; */
+		/* font-size:14px; */
+		/* overflow:hidden; */
+		padding:10px 5px;
+		/* word-break:normal; */
+	}
+	.tg th{
+		border-color:black;
+		border-style:solid;
+		border-width:1px;
+		/* font-family:Arial, sans-serif; */
+		/* font-size:14px; */
+		/* font-weight:normal; */
+		/* overflow:hidden; */
+		padding:10px 5px;
+		/* word-break:normal; */
+	}
+	.tg .tg-tl4i{
+		background-color:#e0e0e0;
+		border-color:inherit;
+		text-align:left;
+		vertical-align:top
+	}
+	.tg .tg-0lax{
+		text-align:left;
+		vertical-align:top
+	}
+	.tg .tg-0pky{
+		border-color:inherit;
+		text-align:left;
+		vertical-align:top
+	}
+	.tg .tg-za14{
+		border-color:inherit;
+		text-align:left;
+		vertical-align:bottom
+	}
+	.tg .tg-k7ng{
+		background-color:#e0e0e0;
+		border-color:inherit;
+		text-align:left;
+		vertical-align:bottom
 	}
 	/* End Overview of temps styling */
 </style>
@@ -1747,52 +1792,1183 @@ var SPHERICAL_DATA = {
 			<h2>Overview of core temperatures and sous vide cooking times</h2>
 			<p>Here are a few tables of sous vide cooking temperatures and times for some foods. I found it annoying to look up at varius places all the time, so here is a compilation.</p>
 			<p>Note that there are various concerns when cooking sous vide, this is mainly a reference for convenience, it assumes you know the basics and have read the usual disclaimers I can't be bothered restating.</p>
-			<table id="sous-vide-table-beef">
-				<caption>Beef</caption>
+			<h3>Meat</h3>
+			<h4>Beef</h4>
+			<table class="tg">
 				<thead>
-					<tr>
-						<th>Cut</th>
-						<th>Doneness</th>
-						<th>Core temperature</th>
-						<th>Time</th>
-					</tr>
+				<tr>
+					<!-- <th class="tg-0lax">Type</th> -->
+					<th class="tg-0lax">Cut</th>
+					<th class="tg-0lax" colspan="6">Instructions</th>
+				</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="21">Beef</td> -->
+					<td class="tg-0pky" rowspan="2">Brisket</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">60 ℃</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 50 mm thick</td>
+					<td class="tg-0pky">24 to 48 hours</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="3">Flank steak</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-tl4i">Rare</td>
+					<td class="tg-tl4i">Medium rare</td>
+					<td class="tg-tl4i">Pink</td>
+					<td class="tg-tl4i">Medium</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">51 ℃</td>
+					<td class="tg-tl4i">54 ℃</td>
+					<td class="tg-tl4i">57 ℃</td>
+					<td class="tg-tl4i">60 ℃</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 30 mm thick</td>
+					<td class="tg-tl4i">2 to 10 hours</td>
+					<td class="tg-tl4i">2 to 10 hours</td>
+					<td class="tg-tl4i">2 to 10 hours</td>
+					<td class="tg-tl4i">2 to 10 hours</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Hamburgers</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Rare</td>
+					<td class="tg-0pky">Medium rare</td>
+					<td class="tg-0pky">Medium</td>
+					<td class="tg-0pky">Medium well</td>
+					<td class="tg-0pky">Well</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">52 ℃</td>
+					<td class="tg-0pky">54 ℃</td>
+					<td class="tg-0pky">60 ℃</td>
+					<td class="tg-0pky">63 ℃</td>
+					<td class="tg-0pky">65 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="2">Short Ribs</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">75 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">24 to 36 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Sirloin, Rib Eye</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Rare</td>
+					<td class="tg-0pky">Medium rare</td>
+					<td class="tg-0pky">Pink</td>
+					<td class="tg-0pky">Medium</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">51 ℃</td>
+					<td class="tg-0pky">54 ℃</td>
+					<td class="tg-0pky">57 ℃</td>
+					<td class="tg-0pky">60 ℃</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">1 to 6 hours</td>
+					<td class="tg-0pky">1 to 6 hours</td>
+					<td class="tg-0pky">1 to 6 hours</td>
+					<td class="tg-0pky">1 to 6 hours</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="3">Tenderloin (Fillet Mignon)</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-tl4i">Rare</td>
+					<td class="tg-tl4i">Medium rare</td>
+					<td class="tg-tl4i">Pink</td>
+					<td class="tg-tl4i">Medium</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">51 ℃</td>
+					<td class="tg-tl4i">54 ℃</td>
+					<td class="tg-tl4i">57 ℃</td>
+					<td class="tg-tl4i">60 ℃</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 35 mm thick</td>
+					<td class="tg-tl4i">1 to 6 hours</td>
+					<td class="tg-tl4i">1 to 6 hours</td>
+					<td class="tg-tl4i">1 to 6 hours</td>
+					<td class="tg-tl4i">1 to 6 hours</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Tenderloin Roast</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Rare</td>
+					<td class="tg-0pky">Medium rare</td>
+					<td class="tg-0pky">Pink</td>
+					<td class="tg-0pky">Medium</td>
+					<td class="tg-za14"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">55 ℃</td>
+					<td class="tg-0pky">57 ℃</td>
+					<td class="tg-0pky">57 ℃</td>
+					<td class="tg-0pky">60 ℃</td>
+					<td class="tg-za14"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 75 mm thick</td>
+					<td class="tg-0pky">3 to 6 hours</td>
+					<td class="tg-0pky">3 to 6 hours</td>
+					<td class="tg-0pky">3 to 6 hours</td>
+					<td class="tg-0pky">3 to 6 hours</td>
+					<td class="tg-za14"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="2">Veal Shank</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">75 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 30 mm thick</td>
+					<td class="tg-tl4i">24 to 36 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+			</tbody>
+		</table>
+		<h4>Lamb</h4>
+		<table class="tg">
+			<thead>
+				<tr>
+					<!-- <th class="tg-0lax">Type</th> -->
+					<th class="tg-0lax">Cut</th>
+					<th class="tg-0lax" colspan="5">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="11">Lamb</td> -->
+					<td class="tg-0pky" rowspan="3">Chops</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Rare</td>
+					<td class="tg-0pky">Medium rare</td>
+					<td class="tg-0pky">Pink</td>
+					<td class="tg-0pky">Medium</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">52&nbsp;&nbsp;℃</td>
+					<td class="tg-0pky">55 ℃</td>
+					<td class="tg-0pky">57 ℃</td>
+					<td class="tg-0pky">60 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="3">Leg with bone</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-tl4i">Medium rare</td>
+					<td class="tg-tl4i">Medium</td>
+					<td class="tg-tl4i">Medium well</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">54 ℃</td>
+					<td class="tg-tl4i">60 ℃</td>
+					<td class="tg-k7ng">65 ℃</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">18 to 24 hours</td>
+					<td class="tg-tl4i">18 to 24 hours</td>
+					<td class="tg-tl4i">18 to 24 hours</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Rack</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Rare</td>
+					<td class="tg-0pky">Medium rare</td>
+					<td class="tg-0pky">Pink</td>
+					<td class="tg-0pky">Medium</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-za14">68 ℃</td>
+					<td class="tg-za14">68 ℃</td>
+					<td class="tg-za14">68 ℃</td>
+					<td class="tg-za14">68 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">2 to 3 hours</td>
+					<td class="tg-0pky">2 to 3 hours</td>
+					<td class="tg-0pky">2 to 3 hours</td>
+					<td class="tg-0pky">2 to 3 hours</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="2">Shank</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">75 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">24 to 26 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+			</tbody>
+		</table>
+		<h4>Pork</h4>
+		<table class="tg">
+			<thead>
+				<tr>
+					<!-- <th class="tg-0lax">Type</th> -->
+					<th class="tg-0lax">Cut</th>
+					<th class="tg-0lax" colspan="4">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="22">Pork</td> -->
+					<td class="tg-0pky" rowspan="3">Belly</td>
+					<td class="tg-za14">Approach</td>
+					<td class="tg-za14">Fast</td>
+					<td class="tg-0pky">Slow</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-za14">Temperature</td>
+					<td class="tg-0pky">85 ℃</td>
+					<td class="tg-0pky">75 ℃</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-za14">Time for 50 mm thick</td>
+					<td class="tg-za14">5 to 8 hours</td>
+					<td class="tg-za14">24 - 72 hours</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="2">Chops with bone</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">55 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 25 mm thick</td>
+					<td class="tg-tl4i">1 to 3 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Chops without bone</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">52 ℃</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="2">Ribs</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">59 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-k7ng">Time for 25 mm thick</td>
+					<td class="tg-k7ng">24 - 48 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Ribs, Baby Back</td>
+					<td class="tg-za14">Temperature</td>
+					<td class="tg-0pky">74 ℃</td>
+					<td class="tg-za14"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-za14">Time</td>
+					<td class="tg-za14">4 to 24 hours</td>
+					<td class="tg-za14"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="2">Ribs, Spare</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">71 - 80  ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 70 mm thick</td>
+					<td class="tg-tl4i">12 to 30 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Roast</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">71 - 80&nbsp;&nbsp;℃</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 70 mm thick</td>
+					<td class="tg-0pky">12 to 30 hours</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="2">Sausage</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">74 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">18 to 24 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Shoulder</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">80 ℃</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 75 mm thick</td>
+					<td class="tg-0pky">12 to 24 hours</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="3">Tenderloin</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-tl4i">Medium rare</td>
+					<td class="tg-tl4i">Pink</td>
+					<td class="tg-tl4i">Medium</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-k7ng">56 ℃</td>
+					<td class="tg-k7ng">59 ℃</td>
+					<td class="tg-k7ng">61 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">1.5 to 4 hours</td>
+					<td class="tg-tl4i">1.5 to 4 hours</td>
+					<td class="tg-tl4i">1.5 to 4 hours</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>Poultry</h3>
+		<h4>Chicken</h4>
+		<table class="tg">
+			<thead>
+				<tr>
+					<!-- <th class="tg-0lax">Category</th> -->
+					<!-- <th class="tg-0lax">Type</th> -->
+					<th class="tg-0lax">Cut</th>
+					<th class="tg-0lax" colspan="3">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="20">Poultry</td> -->
+					<!-- <td class="tg-0pky" rowspan="12">Chicken</td> -->
+					<td class="tg-0pky" rowspan="3">Breast without bone</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-za14">Medium rare</td>
+					<td class="tg-0pky">Medium</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">58 ℃</td>
+					<td class="tg-0pky">60 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-za14">30 minutes</td>
+					<td class="tg-0pky">1 to 3 hours</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="3">Chicken Thighs with bone</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-k7ng">Tender</td>
+					<td class="tg-tl4i">Flaky</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">64 ℃</td>
+					<td class="tg-tl4i">74 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-k7ng">1 to 2 hours</td>
+					<td class="tg-tl4i">2 to 6 hours</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Chicken Thighs without bone</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-za14">Tender</td>
+					<td class="tg-0pky">Flaky</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-za14">62 ℃</td>
+					<td class="tg-za14">70 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-za14">15 hours</td>
+					<td class="tg-0pky">4 to 8 hours</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i" rowspan="3">Chicken Wings</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-k7ng">Tender</td>
+					<td class="tg-tl4i">Flaky</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-k7ng">62 ℃</td>
+					<td class="tg-tl4i">72 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-k7ng">12 hours</td>
+					<td class="tg-tl4i">8 to 18 hours</td>
+				</tr>
+			</tbody>
+		</table>
+		<h4>Duck</h4>
+		<table class="tg">
+			<thead>
+				<tr>
+					<!-- <th class="tg-0lax">Type</th> -->
+					<th class="tg-0lax">Cut</th>
+					<th class="tg-0lax" colspan="4">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="8">Duck</td> -->
+					<td class="tg-0pky" rowspan="3">Breast</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-za14">Rare</td>
+					<td class="tg-0pky">Medium rare</td>
+					<td class="tg-0pky">Pink</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">52 ℃</td>
+					<td class="tg-0pky">54 ℃</td>
+					<td class="tg-0pky">58 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">1.5 to 4 hours</td>
+					<td class="tg-0pky">1.5 to 4 hours</td>
+					<td class="tg-0pky">1.5 to 4 hours</td>
+				</tr>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="2">Duck</td> -->
+					<td class="tg-tl4i" rowspan="2">Confit</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-k7ng">70 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">16 to 24 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="3">Duck</td> -->
+					<td class="tg-0pky" rowspan="3">Legs</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-za14">Tender</td>
+					<td class="tg-0pky">Flaky</td>
+					<td class="tg-0pky">Fast</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-za14">62 ℃</td>
+					<td class="tg-za14">68 ℃</td>
+					<td class="tg-za14">65 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">12 hours</td>
+					<td class="tg-0pky">8 hours</td>
+					<td class="tg-0pky">1.5 to 4 hours</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>Game</h3>
+		<table class="tg">
+			<thead>
+				<tr>
+					<th class="tg-0lax">Type</th>
+					<th class="tg-0lax">Cut</th>
+					<th class="tg-0lax" colspan="5">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Deer</td>
+					<td class="tg-0lax" rowspan="2">Roast</td>
+					<td class="tg-0lax">Temperature</td>
+					<td class="tg-0lax">57 ℃</td>
+					<td class="tg-0lax"></td>
+					<td class="tg-0lax"></td>
+					<td class="tg-0lax"></td>
+				</tr>
+				<tr>
+					<td class="tg-0lax">Time for 100 mm thick</td>
+					<td class="tg-0lax">3 hours</td>
+					<td class="tg-0lax"></td>
+					<td class="tg-0lax"></td>
+					<td class="tg-0lax"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Grouse</td>
+					<td class="tg-tl4i" rowspan="3">Breast</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-tl4i">Rare</td>
+					<td class="tg-tl4i">Medium rare</td>
+					<td class="tg-tl4i">Pink</td>
+					<td class="tg-tl4i">General</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">50 ℃</td>
+					<td class="tg-tl4i">52 ℃</td>
+					<td class="tg-tl4i">58 ℃</td>
+					<td class="tg-tl4i">60 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">60 minutes</td>
+					<td class="tg-tl4i">60 minutes</td>
+					<td class="tg-tl4i">60 minutes</td>
+					<td class="tg-tl4i">60 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Moose</td>
+					<td class="tg-0pky">Same as beef</td>
+					<td class="tg-0pky">-</td>
+					<td class="tg-0pky">-</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="4">Reindeer</td>
+					<td class="tg-tl4i" rowspan="2">Sirloin</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">53 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">2.5 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Tenderloin</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">52 ℃</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">80 minutes</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>Seafood</h3>
+		<table class="tg">
+			<thead>
+				<tr>
+					<!-- <th class="tg-0lax">Category</th> -->
+					<th class="tg-0lax">Type</th>
+					<th class="tg-0lax">Cut</th>
+					<th class="tg-0lax" colspan="5">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="22">Seafood</td> -->
+					<td class="tg-0pky" rowspan="3">Cod</td>
+					<td class="tg-0pky" rowspan="3">Filet</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Barely cooked</td>
+					<td class="tg-0pky">Tender</td>
+					<td class="tg-0pky">Firm</td>
+					<td class="tg-0pky">Flaky</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">38 ℃</td>
+					<td class="tg-0pky">41 ℃</td>
+					<td class="tg-0pky">45 ℃</td>
+					<td class="tg-0pky">49 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">20 to 25 minutes</td>
+					<td class="tg-0pky">20 to 25 minutes</td>
+					<td class="tg-0pky">24 to 30 minutes</td>
+					<td class="tg-0pky">24 to 30 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Crab</td>
+					<td class="tg-tl4i" rowspan="2">-</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">54 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">30 to 90 minutes</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Lobster</td>
+					<td class="tg-0pky" rowspan="3">Tail</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Barely cooked</td>
+					<td class="tg-0pky">Tender</td>
+					<td class="tg-0pky">Firm</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">46 ℃</td>
+					<td class="tg-0pky">54 ℃</td>
+					<td class="tg-0pky">59 ℃</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">15 - 35 minutes</td>
+					<td class="tg-0pky">15 - 35 minutes</td>
+					<td class="tg-0pky">15 - 35 minutes</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Octopus</td>
+					<td class="tg-tl4i" rowspan="2">-</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">77 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">TIme for 37 mm thick</td>
+					<td class="tg-tl4i">4 to 7 hours</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Salmon</td>
+					<td class="tg-0pky" rowspan="3">Filet</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Barely cooked</td>
+					<td class="tg-0pky">Tender</td>
+					<td class="tg-0pky">Firm</td>
+					<td class="tg-0pky">Flaky</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">38 ℃</td>
+					<td class="tg-0pky">41 ℃</td>
+					<td class="tg-0pky">43 ℃</td>
+					<td class="tg-0pky">46 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">20 to 25 minutes</td>
+					<td class="tg-0pky">20 to 25 minutes</td>
+					<td class="tg-0pky">24 to 30 minutes</td>
+					<td class="tg-0pky">24 to 30 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Scallops</td>
+					<td class="tg-tl4i" rowspan="3">-</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-tl4i">Barely cooked</td>
+					<td class="tg-tl4i">Tender</td>
+					<td class="tg-tl4i">Firm</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">48 ℃</td>
+					<td class="tg-tl4i">50 ℃</td>
+					<td class="tg-k7ng">54 ℃</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 25 mm thick</td>
+					<td class="tg-tl4i">15 - 35 minutes</td>
+					<td class="tg-tl4i">15 - 35 minutes</td>
+					<td class="tg-tl4i">15 - 35 minutes</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Shripm</td>
+					<td class="tg-0pky" rowspan="3">-</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Barely cooked</td>
+					<td class="tg-0pky">Tender</td>
+					<td class="tg-0pky">Firm</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">48 ℃</td>
+					<td class="tg-0pky">60 ℃</td>
+					<td class="tg-0pky">80 ℃</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-za14">12 minutes</td>
+					<td class="tg-0pky">7 minutes</td>
+					<td class="tg-0pky">4 minutes</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Tuna</td>
+					<td class="tg-tl4i" rowspan="3">Steak</td>
+					<td class="tg-tl4i">Doneness</td>
+					<td class="tg-tl4i">Rare</td>
+					<td class="tg-tl4i">Medium rare</td>
+					<td class="tg-tl4i">Medium</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">40 ℃</td>
+					<td class="tg-tl4i">43 ℃</td>
+					<td class="tg-tl4i">46 ℃</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 25 mm thick</td>
+					<td class="tg-tl4i">30 to 60 minutes</td>
+					<td class="tg-tl4i">30 to 60 minutes</td>
+					<td class="tg-tl4i">30 to 60 minutes</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>Vegetables</h3>
+		<table class="tg">
+			<thead>
+				<tr>
+					<!-- <th class="tg-0lax">Category</th> -->
+					<th class="tg-0lax">Type</th>
+					<th class="tg-0lax" colspan="2">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!-- <td class="tg-0pky" rowspan="25">Vegetables</td> -->
+					<td class="tg-0pky" rowspan="2">Artichoke Hearts</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">88 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">60 to 120 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Asparagus</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">84 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">20 to 45 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Beets</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">90 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 20 mm thick</td>
+					<td class="tg-0pky">90 to 120 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Broccoli Florets</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">84 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">20 to 30 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Brussel Sprouts halved</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">85 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">40 to 60 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Carrots</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">85 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 20 mm thick</td>
+					<td class="tg-tl4i">30 to 60 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Cauliflower Florets</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">85 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">25 to 35 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Eggplant</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">84 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 25 mm thick</td>
+					<td class="tg-tl4i">30 to 45 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Generic root vegetables</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">84 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">20 minutes to 4 hours</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 50 mm thick</td>
+					<td class="tg-0pky">45 minutes to 4 hours</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Parsnips</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">85 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 20 mm thick</td>
+					<td class="tg-tl4i">30 to 60 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Potatoes</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">85 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 20 mm thick</td>
+					<td class="tg-0pky">30 to 120 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Squash</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">90 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time for 25 mm thick</td>
+					<td class="tg-tl4i">30 to 45 minutes</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>Fruit</h3>
+		<table class="tg">
+			<thead>
+				<tr>
+					<th class="tg-0lax">Type</th>
+					<th class="tg-0lax" colspan="2">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Apples</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">84 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 25 mm thick</td>
+					<td class="tg-0pky">35 to 60 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Bananas</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">84 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">25 to 35 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Pear wedges</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">83 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time for 38 mm thick</td>
+					<td class="tg-0pky">25 to 45 minutes</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>Dairy</h3>
+		<table class="tg">
+			<thead>
+				<tr>
+					<th class="tg-0lax">Type</th>
+					<th class="tg-0lax" colspan="3">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Creme Anglaise</td>
+					<td class="tg-0pky">Approach</td>
+					<td class="tg-0pky">Fast</td>
+					<td class="tg-0pky">Slow</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">82 ℃</td>
+					<td class="tg-0pky">78 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">20 minutes</td>
+					<td class="tg-0pky">60 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Custard</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">80 ℃</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">60 minutes</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Pudding</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">80 ℃</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">60 minutes</td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Yogurt</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">43 ℃</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">12 to 24 hours</td>
+					<td class="tg-tl4i"></td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>Eggs</h3>
+		<table class="tg">
+			<thead>
+				<tr>
+					<th class="tg-0lax">Type</th>
+					<th class="tg-0lax" colspan="6">Instructions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tg-0pky" rowspan="3">General</td>
+					<td class="tg-0pky">Doneness</td>
+					<td class="tg-0pky">Whites semi transparent</td>
+					<td class="tg-0pky">Yolk runny</td>
+					<td class="tg-0pky">Yolk runny and creamy</td>
+					<td class="tg-0pky">Yolk firm and creamy</td>
+					<td class="tg-0pky">Whites firm and yolk soft</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">60 ℃</td>
+					<td class="tg-0pky">62 ℃</td>
+					<td class="tg-0pky">63 ℃</td>
+					<td class="tg-0pky">64 ℃</td>
+					<td class="tg-0pky">65 ℃</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">60 minutes</td>
+					<td class="tg-0pky">60 minutes</td>
+					<td class="tg-0pky">60 minutes</td>
+					<td class="tg-0pky">60 minutes</td>
+					<td class="tg-0pky">60 minutes</td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Hard boiled</td>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">71 ℃ to 75 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">45 to 90 minutes</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="2">Pasteurized raw</td>
+					<td class="tg-0pky">Temperature</td>
+					<td class="tg-0pky">57 ℃</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky">Time</td>
+					<td class="tg-0pky">75 to 120 minutes</td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+					<td class="tg-0pky"></td>
+				</tr>
+				<tr>
+					<td class="tg-0pky" rowspan="3">Soft bolied</td>
+					<td class="tg-tl4i">Approach</td>
+					<td class="tg-tl4i">Fast</td>
+					<td class="tg-tl4i">Slow</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Temperature</td>
+					<td class="tg-tl4i">75 ℃</td>
+					<td class="tg-tl4i">63 ℃</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
+				<tr>
+					<td class="tg-tl4i">Time</td>
+					<td class="tg-tl4i">15 to 18 minutes</td>
+					<td class="tg-tl4i">45 to 90 minutes</td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+					<td class="tg-tl4i"></td>
+				</tr>
 				</tbody>
-			</table>
-			<table id="sous-vide-table-chicken">
-				<caption>Chicken</caption>
-			</table>
-			<table id="sous-vide-table-duck">
-				<caption>Duck</caption>
-				<thead>
-					<tr>
-						<th>Cut</th>
-						<th>Doneness</th>
-						<th>Core temperature</th>
-						<th>Time</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Breast</td>
-						<td>medium rare</td>
-						<td>54℃</td>
-						<td>2 hours</td>
-					</tr>
-				</tbody>
-			</table>
-			<table id="sous-vide-table-lamb">
-				<caption>Lamb</caption>
-			</table>
-			<table id="sous-vide-table-pork">
-				<caption>Pork</caption>
 			</table>
 		</section>
 	</section>
