@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% block title %}Dilution/mixing calcluator{% endblock %}
+{% block meta_description %}Dilution/mixing calcluator{% endblock %}
+{% block page_specific_scripts %}
+	<style>
+		#content {
+			padding-left: 0.75em;
+			padding-right: 0.75em;
+		}
+		table {
+			margin-top: 1em;
+			/* text-align: center; */
+			border-collapse: collapse;
+			padding: 0.25em;
+			background-color: #f5f5f5; /* Add background color so that table remains ledgible even if it in tiny views should overflow to darker three col side background. */
+		}
+		thead {
+			/* border-collapse:separate; */
+			border-bottom: 1px solid #212121;
+			background-color: #aed581;
+		}
+		/* tr td:first-child {
+			padding-left: 0.33em;
+		}
+		tr td:last-child {
+			padding-right: 0.33em;
+		} */
+		td {
+			/* padding-left: 0.33em;
+			padding-right: 0.33em; */
+			padding: 0.33em;
+		}
+		thead tr:last-child th:nth-last-child(2) {
+			/* Table header specific thicknesses */
+			border-left: 1px dashed #212121;
+			border-right: 1px dashed #212121;
+		}
+		tbody tr td:nth-last-child(4) {
+			/* First child in regular row, thickening agent */
+			text-align: center;
+		}
+		tbody td:nth-last-child(2) {
+			/* Middle thickness child in regular row, medium thickness */
+			border-left: 1px dashed #212121;
+			border-right: 1px dashed #212121;
+		}
+		.table_row_darker_background {
+			background-color: #e0e0e0;
+		}
+		/* .table_starch_type_row_header {
+			text-align: center;
+		} */
+		/* Doesn't work when entries not spanning multiple rows are introduced =(
+		tbody tr:nth-child(3n) {
+			background-color: #e0e0e0;
+		}
+		tbody tr:nth-child(4n) {
+			background-color: #e0e0e0;
+		} */
+	</style>
+	<script type="text/javascript">
+		let defaultAmount = 300;
+
+		window.addEventListener('load', function() {
+			// Because the ingredient values reset at load to the default values embedded in the html the scaling should reflect that as well.
+			// Do not reset resulting amounts here,
+			// because all the amounts are already set to their default value,
+			// and there is no need to traverse the entire document to update them to the value they already have.
+			// adjustAllScalingFieldsToMatchPercentageScale(1);
+			var displayLiquidToScaleForAmountMl = document.getElementById('sauce-thickening-liquid-amount-ml-number').value = defaultAmount;
+		});
+
+		function roundNumber(number, decimalPlaces) {
+			return +(Math.round(number + "e+" + decimalPlaces)  + "e-" + decimalPlaces);
+		}
+
+		function scaleThickeningByAmountLiquidMl() {
+			var displayLiquidToScaleForAmountMl = document.getElementById('sauce-thickening-liquid-amount-ml-number').value;
+			if(displayLiquidToScaleForAmountMl >= 0){
+				var percentageToScaleBy = displayLiquidToScaleForAmountMl/defaultAmount;
+				updateScaling(percentageToScaleBy);
+			}
+		}
+
+		function updateScaling(percentageToScaleBy) {
+			if(percentageToScaleBy == 1){
+				resetAmounts();
+				return;
+			}
+
+			var amountElements = document.getElementsByClassName('amount');
+			for (var i = 0; i < amountElements.length; i++) {
+				var calculatedValue = percentageToScaleBy * amountElements[i].getAttribute('data-original-amount');
+				var roundedResult = roundNumber(calculatedValue, 2);
+				amountElements[i].textContent = roundedResult;
+			}
+		}
+
+		function resetAmounts(){
+			var amountElements = document.getElementsByClassName('amount');
+			for (var i = 0; i < amountElements.length; i++) {
+				amountElements[i].textContent = amountElements[i].getAttribute('data-original-amount');
+			}
+		}
+
+	</script>
+{% endblock %}
+{% block content %}
+	<section id="sauce-thickening-main-section">
+		<h1>Sauce thickening calculator</h1>
+		<p>
+			There are several ways to thicken sauces, many of them rely on the ratio of thickening agents to liquid you use.
+			Because I'm lazy, this is a tool for calculating how much you need for a given amount of liquid depending on how thick you want the result.
+		</p>
+		<p>Note that the default amount is scaled to 300 ml the regular sized cream/heavy cream packages in Norway as the are (were?) in 2022.</p>
+		<fieldset name="sauce-thickening-liquid-amount">
+			<legend>Amount of liqud</legend>
+			<label for="sauce-thickening-liquid-amount-ml-number" hidden>Enter amount of liquid in ml that you want to thicken</label>
+			<input
+				type="number"
+				id="sauce-thickening-liquid-amount-ml-number"
+				min="0"
+				step="any"
+				value="300"
+				oninput="scaleThickeningByAmountLiquidMl()"
+				/> ml
+		</fieldset>
+		<table>
+			<thead>
+				<tr>
+					<th rowspan="2" style="padding-left: 0.33em;">Thickening agent</th>
+					<th colspan="3" style="padding-top: 0.5em;">Thickness</th>
+				</tr>
+				<tr>
+					<th>Thin</th>
+					<th>Medium</th>
+					<th>Thick</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="2" class="table_starch_type_row_header">Roux - light</td>
+					<td>Flour: <span class="amount" data-original-amount="13.5">13.5</span>&nbsp;g</td>
+					<td>Flour: <span class="amount" data-original-amount="18">18</span>&nbsp;g</td>
+					<td>Flour: <span class="amount" data-original-amount="27">27</span>&nbsp;g</td>
+				</tr>
+				<!-- For alignment of value "Flour: value" and "Fat: value" using 1 Em Space (&emsp; supposed to be 1 em wide) and 1 Thin Space (&thinsp; supposed to be one-sixth of em wide). Consider also the En Space (&ensp; supposed to be half an em wide). -->
+				<tr>
+					<td>Fat:&emsp;&thinsp;<span class="amount" data-original-amount="13.5">13.5</span>&nbsp;g</td>
+					<td>Fat:&emsp;&thinsp;<span class="amount" data-original-amount="18">18</span>&nbsp;g</td>
+					<td>Fat:&emsp;&thinsp;<span class="amount" data-original-amount="27">27</span>&nbsp;g</td>
+				</tr>
+				<tr class="table_row_darker_background">
+					<td rowspan="2" class="table_starch_type_row_header">Roux - dark</td>
+					<td>Flour: <span class="amount" data-original-amount="27">27</span>&nbsp;g</td>
+					<td>Flour: <span class="amount" data-original-amount="36">36</span>&nbsp;g</td>
+					<td>Flour: <span class="amount" data-original-amount="54">54</span>&nbsp;g</td>
+				</tr>
+				<tr class="table_row_darker_background">
+					<td>Fat:&emsp;&thinsp;<span class="amount" data-original-amount="27">27</span>&nbsp;g</td>
+					<td>Fat:&emsp;&thinsp;<span class="amount" data-original-amount="36">36</span>&nbsp;g</td>
+					<td>Fat:&emsp;&thinsp;<span class="amount" data-original-amount="54">54</span>&nbsp;g</td>
+				</tr>
+				<!-- <tr>
+					<td rowspan="2">Beurre manié</td>
+					<td>Flour: ToDo g</td>
+					<td>Flour: ToDo g</td>
+					<td>Flour: ToDo g</td>
+				</tr>
+				<tr>
+					<td>Fat: ToDo g</td>
+					<td>Fat: ToDo g</td>
+					<td>Fat: ToDo g</td>
+				</tr>
+				<tr>
+					<td>Agar agar</td>
+					<td>ToDo g</td>
+					<td>ToDo g</td>
+					<td>ToDo g</td>
+				</tr>
+				<tr>
+					<td>Corn starch</td>
+					<td>ToDo g</td>
+					<td>ToDo g</td>
+					<td>ToDo g</td>
+				</tr>
+				<tr>
+					<td>Potato starch</td>
+					<td>ToDo g</td>
+					<td>ToDo g</td>
+					<td>ToDo g</td>
+				</tr> -->
+			</tbody>
+		</table>
+		<!-- Resulting table: -->
+		<!-- | agent        | thin        | medium | thick |
+		| roux         | fat: x g    |
+		|              | flour y g   |
+		| agar agar    | amount: z g |
+		| beurre manié | -->
+		<h1>Notes</h1>
+		<h2>Roux</h2>
+		<p>Roux is the combination of fat and flour, cooked before adding cold liquid, or prepared ahead of time and added cold to warm liquid.</p>
+		<p>Pre-cook it for a longer time on higher heat to get a brown/dark roux. Note that if you cook it longer and/or hotter the starch breaks down more and you need to use more flour to achieve the same effect.</p>
+		<p>If you prepare it ahead of time, you can cook it untill it is only light/blond, and brown it further by reheating just before you use it.</p>
+		<p>Starch is what does the magic, so high protein/bread flours result in less thickening.</p>
+		<p>Much of the thickening is due to the starch absorbing water, so higher moisture/more damp climate calls for more starch/flour.</p>
+	</section>
+{% endblock %}
