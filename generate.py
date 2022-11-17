@@ -98,6 +98,7 @@ def generate_files_for_recipe(name):
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
         sous_vide_temperature_path='sous_vide_temperatures.html',
+        sause_thickening_calculator_path='sause-thickening-calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -153,6 +154,7 @@ def generate_browse_page(thumbnails):
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
         sous_vide_temperature_path='sous_vide_temperatures.html',
+        sause_thickening_calculator_path='sause-thickening-calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -178,6 +180,7 @@ def generate_browse_page(thumbnails):
             all_recipes_overview_path='all-recipes-overview.html',
             dilution_calculator_path='dilution_calculator.html',
             sous_vide_temperature_path='sous_vide_temperatures.html',
+            sause_thickening_calculator_path='sause-thickening-calculator.html',
             about_path='about.html'
         )
         output = remove_empty_lines(output)
@@ -198,6 +201,7 @@ def generate_all_recipes_overview_page(thumbnails):
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
         sous_vide_temperature_path='sous_vide_temperatures.html',
+        sause_thickening_calculator_path='sause-thickening-calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -218,6 +222,7 @@ def generate_about_page():
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
         sous_vide_temperature_path='sous_vide_temperatures.html',
+        sause_thickening_calculator_path='sause-thickening-calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -237,6 +242,7 @@ def generate_dilution_calculator():
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
         sous_vide_temperature_path='sous_vide_temperatures.html',
+        sause_thickening_calculator_path='sause-thickening-calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
@@ -256,10 +262,31 @@ def generate_sous_vide_temperatures():
         all_recipes_overview_path='all-recipes-overview.html',
         dilution_calculator_path='dilution_calculator.html',
         sous_vide_temperature_path='sous_vide_temperatures.html',
+        sause_thickening_calculator_path='sause-thickening-calculator.html',
         about_path='about.html'
     )
     output = remove_empty_lines(output)
     with open('publish/sous_vide_temperatures.html', 'w', encoding='utf-8') as f:
+        print(output, file=f)
+
+def generate_sauce_thickening_calculator():
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+    template = env.get_template('sause-thickening-calculator.html')
+    if not os.path.isdir('publish'):
+        os.makedirs('publish')
+
+    output = template.render(
+        path_to_base='.',
+        recipes_path='all/page-1.html',
+        all_recipes_overview_path='all-recipes-overview.html',
+        dilution_calculator_path='dilution_calculator.html',
+        sous_vide_temperature_path='sous_vide_temperatures.html',
+        sause_thickening_calculator_path='sause-thickening-calculator.html',
+        about_path='about.html'
+    )
+    output = remove_empty_lines(output)
+    with open('publish/sause-thickening-calculator.html', 'w', encoding='utf-8') as f:
         print(output, file=f)
 
 
@@ -302,6 +329,9 @@ if __name__ == "__main__":
 
     print("Generating sous vide temperatures page")
     generate_sous_vide_temperatures()
+
+    print("Generating sauce thickening calculator page")
+    generate_sauce_thickening_calculator()
 
     print("Generating CSS")
     if not os.path.isdir('publish/css'):
