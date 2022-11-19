@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}Dilution/mixing calcluator{% endblock %}
-{% block meta_description %}Dilution/mixing calcluator{% endblock %}
+{% block title %}Sauce thickening calculator{% endblock %}
+{% block meta_description %}Sauce thickening calculator{% endblock %}
 {% block page_specific_scripts %}
 	<style>
 		#content {
@@ -168,6 +168,24 @@
 					<td>Fat:&emsp;&thinsp;<span class="amount" data-original-amount="36">36</span>&nbsp;g</td>
 					<td>Fat:&emsp;&thinsp;<span class="amount" data-original-amount="54">54</span>&nbsp;g</td>
 				</tr>
+				<tr>
+					<td>Cornstarch</td>
+					<!-- 1 tbsp cornstarch is about 7.5 grams? -->
+					<!-- 1 cup = 236.6 ml -->
+					<!-- 7.5g / 236.6ml = 0.03169907016060862 g/ml  -->
+					<!-- 0.03169907016060862 g/ml * 300 ml = 9.5 g -->
+					<!-- Nevermind all of that above, just use half of flour -->
+					<td><span class="amount" data-original-amount="9.5">6.75</span>&nbsp;g</td>
+					<td><span class="amount" data-original-amount="9.5">9.5</span>&nbsp;g</td>
+					<td><span class="amount" data-original-amount="9.5">13.5</span>&nbsp;g</td>
+				</tr>
+				<tr class="table_row_darker_background">
+					<td>Potato starch</td>
+					<!-- Supposedly 1 to 1 with corn? -->
+					<td><span class="amount" data-original-amount="9.5">6.75</span>&nbsp;g</td>
+					<td><span class="amount" data-original-amount="9.5">9.5</span>&nbsp;g</td>
+					<td><span class="amount" data-original-amount="9.5">13.5</span>&nbsp;g</td>
+				</tr>
 				<!-- <tr>
 					<td rowspan="2">Beurre manié</td>
 					<td>Flour: ToDo g</td>
@@ -185,26 +203,46 @@
 					<td>ToDo g</td>
 					<td>ToDo g</td>
 				</tr>
-				<tr>
-					<td>Corn starch</td>
-					<td>ToDo g</td>
-					<td>ToDo g</td>
-					<td>ToDo g</td>
-				</tr>
-				<tr>
-					<td>Potato starch</td>
-					<td>ToDo g</td>
-					<td>ToDo g</td>
-					<td>ToDo g</td>
-				</tr> -->
+			 -->
 			</tbody>
 		</table>
+
 		<h2>Notes</h2>
+
 		<h3>Roux</h3>
+		<p>Gelation temperature: 52&nbsp;℃ to 85&nbsp;℃</p>
 		<p>Roux is the combination of fat and flour, cooked before adding cold liquid, or prepared ahead of time and added cold to warm liquid.</p>
 		<p>Pre-cook it for a longer time on higher heat to get a brown/dark roux. Note that if you cook it longer and/or hotter the starch breaks down more and you need to use more flour to achieve the same effect.</p>
 		<p>If you prepare it ahead of time, you can cook it untill it is only light/blond, and brown it further by reheating just before you use it.</p>
 		<p>Starch is what does the magic, so high protein/bread flours result in less thickening.</p>
 		<p>Much of the thickening is due to the starch absorbing water, so higher moisture/more damp climate calls for more starch/flour.</p>
+
+		<h3>Corn starch</h3>
+		<p>Gelation temperature: 62&nbsp;℃ to 82&nbsp;℃</p>
+		<p>Usage: Mix 1 to 1 with cold water before mixing into the hot sauce.</p>
+		<p>
+			You can use more water, it will thicken more slowly, reducing the chances of lumps.
+			1 part cornstarch to to 2 parts water is sometimes recommended as a safer amount.
+			But, beware that increasing the amount of water for the slurry not only increases cooking time, but if using substantially more you also should stop and consider if it will dilute the taste.
+		</p>
+		<p>Some sources say that cornstarch will loose thickening power over time as it is cooked.</p>
+		<p>
+			Generally cornstarch is supposed ot have about twice the thickening power of flour.
+			However, thickening happens most effectively at about 80&nbsp;℃ - 85&nbsp;℃, which is a lot more than the about 50&nbsp;℃ to 55&nbsp;℃ where the thickening power of flour realy starts to kick in.
+		</p>
+
+		<h3>Potato starch</h3>
+		<p>Gelation temperature: 58&nbsp;℃ to 66&nbsp;℃</p>
+		<p>Stringy</p>
+		<p>Breaks down and looses thickening power if stirred much.</p>
+
+		<h3>Tapioca (cassava)</h3>
+		<p>Gelation temperature: 52&nbsp;℃ to 65&nbsp;℃</p>
+		<p>Stringy, clear glossy.</p>
+		<p>Lumps and dries in contact with hot air.</p>
+
+		<h3>Arrowroot</h3>
+		<p>Gelation temperature: 60&nbsp;℃ to 86&nbsp;℃</p>
+		<p>Not stringy, but works poorly with dairy.</p>
 	</section>
 {% endblock %}
