@@ -64,6 +64,31 @@
 		tbody tr:nth-child(4n) {
 			background-color: #e0e0e0;
 		} */
+
+		.ingredient-properties-table table {
+			border-collapse: collapse;
+			border: 2px solid #212121;
+		}
+		/* .ingredient-properties-table tr {
+			border: 2px solid #212121;
+		} */
+		.ingredient-properties-table th {
+			text-align: right;
+			max-width: 15em;
+			padding-right: 0.33em;
+			border-right: 1px dotted #212121;
+		}
+		.ingredient-properties-table tr:nth-child(even) {
+			background-color: #e0e0e0;
+		}
+		.ingredient-properties-table td {
+			/* border: 2px solid #212121; */
+			text-align: center;
+		}
+		.ingredient-properties-table caption {
+			caption-side: top;
+			text-align: left;
+		}
 	</style>
 	<script type="text/javascript">
 		let defaultAmount = 300;
@@ -222,10 +247,13 @@
 		</p>
 
 		<h3>Effects of properties of other ingredients on thickening</h3>
+
 		<h4>Salt</h4>
 		<p>Salt (slightly) lowers gelation temperature.</p>
+
 		<h4>Sugar</h4>
 		<p>Sugar (slightly) increases gelation temperature.</p>
+
 		<h4>Acidis and alcohol</h4>
 		<p>
 			Acids and alcohols break down starch significantly.
@@ -236,19 +264,59 @@
 		</p>
 
 		<h3>Roux</h3>
-		<p>Gelation temperature: 52&nbsp;℃ to 85&nbsp;℃</p>
-		<p>Works well with acidis: Yes.</p>
-		<p>Works well for being frozen and reheated: Yes.</p>
+		<table class="ingredient-properties-table">
+			<caption>Properties for roux (wheat)</caption>
+			<tr>
+				<th>Gelation temperature</th>
+				<td>52&nbsp;℃ to 85&nbsp;℃</td>
+			</tr>
+			<tr>
+				<th>Works well with acidis</th>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th>Works well for being frozen and reheated</th>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th>Can be cooked for a long time</th>
+				<td>Yes (stable)</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>Grain starch</td>
+			</tr>
+		</table>
 		<p>Roux is the combination of fat and flour, cooked before adding cold liquid, or prepared ahead of time and added cold to warm liquid.</p>
 		<p>Pre-cook it for a longer time on higher heat to get a brown/dark roux. Note that if you cook it longer and/or hotter the starch breaks down more and you need to use more flour to achieve the same effect.</p>
 		<p>If you prepare it ahead of time, you can cook it untill it is only light/blond, and brown it further by reheating just before you use it.</p>
 		<p>Starch is what does the magic, so high protein/bread flours result in less thickening.</p>
 		<p>Much of the thickening is due to the starch absorbing water, so higher moisture/more damp climate calls for more starch/flour.</p>
 
-		<h3>Corn starch</h3>
-		<p>Gelation temperature: 62&nbsp;℃ to 82&nbsp;℃</p>
-		<p>Works well with acidis: No.</p>
-		<p>Works well for being frozen and reheated: No.</p>
+		<h3>Cornstarch</h3>
+		<table class="ingredient-properties-table">
+			<caption>Properties for cornstarch</caption>
+			<tr>
+				<th>Gelation temperature</th>
+				<td>62&nbsp;℃ to 80&nbsp;℃</td>
+			</tr>
+			<tr>
+				<th>Works well with acidis</th>
+				<td>No</td>
+			</tr>
+			<tr>
+				<th>Works well for being frozen and reheated</th>
+				<td>No</td>
+			</tr>
+			<tr>
+				<th>Can be cooked for a long time</th>
+				<td>Eh (somewhat stable)</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>Grain starch</td>
+			</tr>
+		</table>
 		<p>Usage: Mix 1 to 1 with cold water before mixing into the hot sauce.</p>
 		<p>
 			You can use more water, it will thicken more slowly, reducing the chances of lumps.
@@ -262,21 +330,81 @@
 		</p>
 
 		<h3>Potato starch</h3>
-		<p>Gelation temperature: 58&nbsp;℃ to 66&nbsp;℃</p>
-		<p>Stringy</p>
+		<table class="ingredient-properties-table">
+			<caption>Properties for potato starch</caption>
+			<tr>
+				<th>Gelation temperature</th>
+				<td>62&nbsp;℃ to 65&nbsp;℃</td>
+			</tr>
+			<tr>
+				<th>Works well with acidis</th>
+				<td>No</td>
+			</tr>
+			<!-- <tr>
+				<th>Works well for being frozen and reheated</th>
+				<td>no</td>
+			</tr> -->
+			<tr>
+				<th>Can be cooked for a long time</th>
+				<td>No (unstable)</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>Root starch</td>
+			</tr>
+		</table>
 		<p>Breaks down and looses thickening power if stirred much.</p>
 
 		<h3>Tapioca (cassava)</h3>
-		<p>Gelation temperature: 52&nbsp;℃ to 65&nbsp;℃</p>
-		<p>Works well with acidis: Yes.</p>
-		<p>Works well for being frozen and reheated: Yes.</p>
-		<p>Stringy, clear glossy.</p>
+		<table class="ingredient-properties-table">
+			<caption>Properties for tapioca derived from cassava</caption>
+			<tr>
+				<th>Gelation temperature</th>
+				<td>52&nbsp;℃ to 65&nbsp;℃</td>
+			</tr>
+			<!-- <tr>
+				<th>Works well with acidis</th>
+				<td>No</td>
+			</tr> -->
+			<!-- <tr>
+				<th>Works well for being frozen and reheated</th>
+				<td>Yes</td>
+			</tr> -->
+			<tr>
+				<th>Can be cooked for a long time</th>
+				<td>No (unstable)</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>Root starch</td>
+			</tr>
+		</table>
 		<p>Lumps and dries in contact with hot air.</p>
 
 		<h3>Arrowroot</h3>
-		<p>Gelation temperature: 60&nbsp;℃ to 86&nbsp;℃</p>
-		<p>Works well with acidis: Yes.</p>
-		<p>Works well for being frozen and reheated: Yes.</p>
-		<p>Not stringy, but works poorly with dairy.</p>
+		<table class="ingredient-properties-table">
+			<caption>Properties for arrowroot</caption>
+			<tr>
+				<th>Gelation temperature</th>
+				<td>60&nbsp;℃ to 86&nbsp;℃</td>
+			</tr>
+			<!-- <tr>
+				<th>Works well with acidis</th>
+				<td>No</td>
+			</tr> -->
+			<!-- <tr>
+				<th>Works well for being frozen and reheated</th>
+				<td>Yes</td>
+			</tr> -->
+			<tr>
+				<th>Can be cooked for a long time</th>
+				<td>No (unstable)</td>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<td>Root starch</td>
+			</tr>
+		</table>
+		<p>Works poorly with dairy.</p>
 	</section>
 {% endblock %}
