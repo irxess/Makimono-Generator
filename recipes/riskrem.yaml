@@ -1,0 +1,55 @@
+recipe: Riskrem (rice cream)
+
+not_ready_for_publish: false
+
+description: "A norwegian dessert made of rice porridge and whipped cream. Often served with a red syrup sauce or berry sauce (just some berries and optionally some sugar briefly boiled). Note that because it's often made with leftovers from rice porridge served a day or two earlier (it would be a bit too much to have a cristmas dinner with rice porridge and then have this for dessert), and that it's readily available pre-cooked in stores in Norway, this recipe ommits the making of the porridge (basically short grained rice cooked in milk)."
+date_created: 2022-12-04
+last_updated: 2022-12-04
+image: ''
+
+yield: [
+  {qualification: , amount: , unit: },
+  {amount: , unit: },
+  {qualification: , amount: , unit: }
+]
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Riskrem, # recipe name or whole citation
+  type: 'adapted', # or inspired
+  author: ,
+  publication: 'matprat.no',
+  url: 'https://www.matprat.no/oppskrifter/tradisjon/riskrem/',
+  date: 2022-12-04
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Whip cream",
+    long: "Whip together cream, which you will later fold the rice porridge gently into. Note that this recipe assumes that the porridge is without sugar, so if you've made a sweetened version you are using the leftovers of, or are using a premade one with added sugar, consider reducing the amounts of sugar that you add in this step. Also note that while you can omitt the vanilla sugar, I would substitute it with plain powdered sugar if the reason for the substitution being that you don't have vanilla sugar at hand, or prefer using vanilla extract. The reason for this is that powdered sugar adds a different kind of sweetness than regular sugar, and this benefits from that.",
+    ingredients: [
+      {name: cream, amount: 6, unit: dl, comment: 'The one we use is about 37% fat.'},
+      {name: sugar, amount: 100, unit: g, comment: ''},
+      {name: vanilla sugar, amount: 5, unit: g, comment: '1 teaspoon of vanilla sugar (basically powdered sugar with vanilla taste) is aobut 2.6 g.'},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Fold rice porridge into the cream",
+    long: "Gently fold in the rice porridge, so that the cream doesn't deflate.",
+    ingredients: [
+      {name: rice porridge, amount: 1000, unit: g, comment: 'without added sugar'},
+    ],
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
