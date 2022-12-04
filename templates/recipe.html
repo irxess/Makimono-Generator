@@ -2,7 +2,7 @@
 {% block title %}{{ r.name }} Recipe{% endblock %}
 {% block meta_description %}{{
   r.description
-    | replace('\n', '')
+    | replace('\n', ' ')
     | replace('\r', '')
     | escape
   }}{% endblock %}
