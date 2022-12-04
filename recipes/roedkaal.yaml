@@ -80,7 +80,7 @@ steps:
   - {
     short: "Finely chop onion",
     long: "",
-    ingredients: [ {name: onion, amount: 200, unit: g, comment: 'about 1 large one'} ],
+    ingredients: [ {name: onion, amount: 200, unit: g, comment: '1 large onion is about 200 g'} ],
     active-time: 2,
     passive-time: 0,
     type: cut,
