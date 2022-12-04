@@ -1,8 +1,15 @@
 recipe: Rødkål
 
-description: A traditional norwegian dish, usually made for christmas. Pickled red cabbage works well as a side-dish for heavy and savory food. The recipe is very forgiving. You can make many and large substitutions, and you don't really have to be that precise with the measurements, and you'll still get a result that is firmly in "tastes good" territory. Maybe because it has a lot of "christmasy" flavors? Also note that this is one of the recipes where you will most likely end up buying 1 red cabbage, because that's the only quantity you can buy it in, and you don't have any real good plans for the leftovers. In that case I recommend scaling the recipe for the amount of cabbage you have, and freezing any leftovers you end up with in portion batches.
+description: |
+  A traditional norwegian dish, usually made for christmas. Pickled red cabbage works well as a side-dish for heavy and savory food.
+  The recipe is very forgiving.
+  You can make many and large substitutions, and you don't really have to be that precise with the measurements, and you'll still get a result that is firmly in "tastes good" territory.
+  Maybe because it has a lot of "christmasy" flavors?
+  Also note that this is one of the recipes where you will most likely end up buying 1 red cabbage, because that's the only quantity you can buy it in, and you don't have any real good plans for the leftovers.
+  In that case I recommend scaling the recipe for the amount of cabbage you have, and freezing any leftovers you end up with in portion batches.
+  Note that with approximately 1.4 kg of cabbage we filled a 5.3 L pot to the brim when we added everything and started cooking.
 date_created: 2019-12-19
-last_updated: 2019-12-19
+last_updated: 2022-12-04
 image: 'roedkaal'
 
 # {adapted from} {name} by {author} @ {publication} ({date})
