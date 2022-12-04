@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}{{ r.name }} Recipe{% endblock %}
-{% block meta_description %}{{ r.description | e }}{% endblock %}
+{% block meta_description %}{{
+  r.description
+    | replace('\n', '')
+    | replace('\r', '')
+    | e
+  }}{% endblock %}
 {# Piping content through the `e` filter (`{{ content | e }}`) escapes html content. Because this goes into a dumb/unrendered attribute on a tag, ensure we have the freedom to put html content into the section that will be rendered. #}
 {% block page_specific_scripts %}
   <script type="text/javascript" src="{{path_to_base}}/js/ingredient-list-shopping-list-mode-enhancements.js" async></script>
