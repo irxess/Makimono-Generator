@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html.jinja' %}
 {% block title %}{{ r.name }} Recipe{% endblock %}
 {% block meta_description %}{{
   r.description
@@ -78,7 +78,7 @@
         {% for yield in r.yields %}
         <span class="yield">
           {% if yield.qualification %}
-          {{ yield.qualification }}&nbsp;–
+          {{ yield.qualification }}&nbsp;&ndash;
           {% endif %}
           <span class="yield-amount amount" data-original-amount="{{ yield.amount }}">{{ yield.amount }}</span>
           {{ yield.unit }}.
@@ -202,7 +202,7 @@
     <section id="timeline">
       {% if (r.timeline is defined) %}
         <h2>Timeline</h2>
-        {% include 'timeline.html' %}
+        {% include 'timeline.html.jinja' %}
       {% endif %}
     </section>
 

@@ -22,8 +22,8 @@
   <header>
     Makimono
   </header>
-  {% with nav_type='desktop-nav' %}{% include 'nav.html' %}{% endwith %}
-  {% with nav_type='mobile-nav' %}{% include 'nav.html' %}{% endwith %}
+  {% with nav_type='desktop-nav' %}{% include 'nav.html.jinja' %}{% endwith %}
+  {% with nav_type='mobile-nav' %}{% include 'nav.html.jinja' %}{% endwith %}
 
   <div id="three-col">
     <div id="empty-col-left"></div>
@@ -36,7 +36,7 @@
     <div id="empty-col-right"></div>
 
   </div> <!-- end three-col -->
-  {% with nav_type='mobile-nav' %}{% include 'nav.html' %}{% endwith %}
-  {% include 'footer.html' %}
+  {% with nav_type='mobile-nav' %}{% include 'nav.html.jinja' %}{% endwith %}
+  {% include 'footer.html.jinja' %}
 </body>
 </html>

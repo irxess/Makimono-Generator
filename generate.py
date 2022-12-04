@@ -88,7 +88,7 @@ def generate_files_for_recipe(name):
         os.makedirs('publish/recipes')
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    template = env.get_template('recipe.html')
+    template = env.get_template('recipe.html.jinja')
 
     output = template.render(
         r=recipe,
@@ -135,7 +135,7 @@ def generate_browse_page(thumbnails):
     thumbnails.sort(key=lambda t: t.updated, reverse=True) # Newest first
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    template = env.get_template('list_of_recipes.html')
+    template = env.get_template('list_of_recipes.html.jinja')
     if not os.path.isdir('publish/all'):
         os.makedirs('publish/all')
 
@@ -193,7 +193,7 @@ def generate_all_recipes_overview_page(thumbnails):
     thumbnails.sort(key=lambda t: t.name)
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    template = env.get_template('all_recipes_overview.html')
+    template = env.get_template('all_recipes_overview.html.jinja')
     output = template.render(
         thumbnails = thumbnails,
         path_to_base='.',
@@ -212,7 +212,7 @@ def generate_all_recipes_overview_page(thumbnails):
 def generate_about_page():
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    template = env.get_template('about.html')
+    template = env.get_template('about.html.jinja')
     if not os.path.isdir('publish'):
         os.makedirs('publish')
 
@@ -232,7 +232,7 @@ def generate_about_page():
 def generate_dilution_calculator():
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    template = env.get_template('dilution_calculator.html')
+    template = env.get_template('dilution_calculator.html.jinja')
     if not os.path.isdir('publish'):
         os.makedirs('publish')
 
@@ -252,7 +252,7 @@ def generate_dilution_calculator():
 def generate_sous_vide_temperatures():
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    template = env.get_template('sous_vide_temperatures.html')
+    template = env.get_template('sous_vide_temperatures.html.jinja')
     if not os.path.isdir('publish'):
         os.makedirs('publish')
 
@@ -272,7 +272,7 @@ def generate_sous_vide_temperatures():
 def generate_sauce_thickening_calculator():
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    template = env.get_template('sause-thickening-calculator.html')
+    template = env.get_template('sause-thickening-calculator.html.jinja')
     if not os.path.isdir('publish'):
         os.makedirs('publish')
 
