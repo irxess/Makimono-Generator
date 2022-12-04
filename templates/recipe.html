@@ -15,14 +15,14 @@
     <section id="intro">
       <h1>{{ r.name }}</h1>
 
-     {% if (r.description is defined) and r.description %}
+      {% if (r.description is defined) and r.description %}
       <p id="flavor-text">
         {{ r.description }}
       </p>
       {% endif %}
 
       {% if (r.image is defined) and r.image %}
-          <img src="{{path_to_base}}/images/{{ r.image }}" alt="{{r.name}}">
+      <img src="{{path_to_base}}/images/{{ r.image }}" alt="{{r.name}}">
       {% endif %}
     </section>
 
