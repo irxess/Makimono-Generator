@@ -3,6 +3,24 @@
 {% block meta_description %}All recipes{% endblock %}
 
 {% block content %}
+  <ul id="all_recipes_list">
+    <li class="all_recipes_list_letter_heading">
+      {{ thumbnails[0].name[0] }}
+    </li>
+    {% for thumbnail in thumbnails %}
+      <li class="all_recipes_list_recipe_entry">
+          <a href="{{path_to_base}}/{{ thumbnail.url }}">{{ thumbnail.name }}</a>
+      </li>
+      {% if (loop.nextitem is defined) and thumbnail.name[0] != loop.nextitem.name[0] %}
+      <li class="all_recipes_list_letter_heading">
+        {{loop.nextitem.name[0]}}
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{# {% block content %}
   <table id="all_recipes_table">
     <tr>
       <th>Recipe</th><th>Created on</th><th>Updated on</th>
@@ -25,4 +43,4 @@
       </tr>
     {% endfor %}
   </table>
-{% endblock %}
+{% endblock %} #}
