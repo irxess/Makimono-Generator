@@ -1,15 +1,9 @@
 recipe: "Waffles – Rømmevafler"
 
-description: "The alternative Norwegian style of waffles where you use rømme (sour cream) as the liquid for the dough. Beware that you can get several varietes of rømme these days, and although they are similar in texture and taste, the reduced fat version tend to have a more sour after-taste and less smooth texture the lower the fat content. So I'd recommend sticking to the proper full fat version (about 39% fat)."
+description: "The alternative Norwegian style of waffles where you use rømme (cultured sour cream) as the main liquid for the dough. Beware that you can get several varietes of rømme these days, and although they are similar in texture and taste, the reduced fat version tend to have a more sour after-taste and less smooth texture the lower the fat content."
 date_created: 2023-08-13
 last_updated: 2023-08-13
 image: ''
-
-yield: [
-  {qualification: , amount: , unit: },
-  {amount: , unit: },
-  {qualification: , amount: , unit: }
-]
 
 # {adapted from} {name} by {author} @ {publication} ({date})
 source: {
@@ -30,8 +24,8 @@ steps:
   short: "Mix wet ingredients",
   long: "Mix together rømme and water. Note that the full fat rømme you should use for this recipe is about 39% fat, and the density is roughly equal to water (980 grams per liter)",
   ingredients: [
-    {name: rømme, amount: 750, unit: g, comment: '750 g is approximately 7.5 dL.'},
-    {name: water, amount: 250, unit: g, comment: ''}
+    {name: rømme, amount: 250, unit: g, comment: '39% fat (seterrømme), 250 g ≈ 2.5 dL.'},
+    {name: water, amount: 85, unit: g, comment: ''}
   ],
   active-time: 1,
   passive-time: 0,
@@ -42,9 +36,9 @@ steps:
   short: "Add dry ingredients",
   long: "To ensure that the mixture ends up completely smooth, using an immersion blender works amazingly well.",
   ingredients: [
-    {name: flour, amount: 300, unit: g, comment: ''},
-    {name: sugar, amount: 3, unit: tbsp, comment: ''},
-    {name: baking powder, amount: 1.5, unit: tsp, comment: ''}
+    {name: flour, amount: 100, unit: g, comment: ''},
+    {name: sugar, amount: 1, unit: tbsp, comment: ''},
+    {name: baking powder, amount: 0.5, unit: tsp, comment: ''}
   ],
   dependencies: [-1],
   active-time: 3,
