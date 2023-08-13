@@ -1,0 +1,72 @@
+recipe: "Waffles – Rømmevafler"
+
+description: "The alternative Norwegian style of waffles where you use rømme (sour cream) as the liquid for the dough. Beware that you can get several varietes of rømme these days, and although they are similar in texture and taste, the reduced fat version tend to have a more sour after-taste and less smooth texture the lower the fat content. So I'd recommend sticking to the proper full fat version (about 39% fat)."
+date_created: 2023-08-13
+last_updated: 2023-08-13
+image: ''
+
+yield: [
+  {qualification: , amount: , unit: },
+  {amount: , unit: },
+  {qualification: , amount: , unit: }
+]
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: 'The Nordic Baking Book 2018, First edition, ISBN 978 0 7148 7684 9, page 234',
+  type: 'adapted', # or inspired
+  author: Magnus Nilsson,
+  publication: '',
+  url: 'https://www.phaidon.com/store/cookbooks-food-and-drink/the-nordic-baking-book-9780714876849/',
+  date: 2023-08-13
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+- {
+  short: "Mix wet ingredients",
+  long: "Mix together rømme and water. Note that the full fat rømme you should use for this recipe is about 39% fat, and the density is roughly equal to water (980 grams per liter)",
+  ingredients: [
+    {name: rømme, amount: 750, unit: g, comment: '750 g is approximately 7.5 dL.'},
+    {name: water, amount: 250, unit: g, comment: ''}
+  ],
+  active-time: 1,
+  passive-time: 0,
+  type: bowl,
+  temp: room,
+}
+- {
+  short: "Add dry ingredients",
+  long: "To ensure that the mixture ends up completely smooth, using an immersion blender works amazingly well.",
+  ingredients: [
+    {name: flour, amount: 300, unit: g, comment: ''},
+    {name: sugar, amount: 3, unit: tbsp, comment: ''},
+    {name: baking powder, amount: 1.5, unit: tsp, comment: ''}
+  ],
+  dependencies: [-1],
+  active-time: 3,
+  passive-time: 0,
+  type: add,
+  temp: room,
+}
+- {
+  short: "Let batter rest for 30 minutes",
+  long: "For the best results, the batter should get some time to rest before frying. However, I'm often lazy and impatient (bad for baking), so I tend to skip this step, and the results are usually serviceable.",
+  dependencies: [-1],
+  active-time: 0,
+  passive-time: 30,
+  type: bowl,
+  temp: room,
+}
+- {
+  short: "Fry waffles in waffle iron",
+  long: "Note that this assumes a Norwegian (Scandinavian?) style waffle iron, which makes signifficantly thinner (about 1 cm at the thickest, and heart shaped) waffles compared to the beligain ones, but not the extremely thin kind of iron used for making leaf thick pastries like krumkaker.",
+  dependencies: [-1],
+  active-time: 30,
+  passive-time: 0,
+  type: fry,
+  temp: hot,
+}
