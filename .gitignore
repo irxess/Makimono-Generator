@@ -6,5 +6,8 @@ pyvenv.cfg
 Lib
 Scripts
 
+# Other venv
+venv
+
 # Output directory
-publish/*
+publish
