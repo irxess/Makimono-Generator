@@ -1,0 +1,154 @@
+recipe: 'Quark Crumble Cake with Lemon and Blueberries'
+
+not_ready_for_publish: false
+
+description: ""
+date_created: 2023-06-27
+last_updated: 2023-08-13
+image: 'quark-crumble'
+
+yield: [
+  {qualification: Using a 34x24 cm form, amount: 1, unit: cake}
+]
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: Käsekuchen mit Streusel, # recipe name or whole citation
+  type: 'adapted', # or inspired
+  author: Kathrin Runge,
+  publication: 'Backen macht glücklich',
+  url: 'https://www.backenmachtgluecklich.de/rezepte/kaese-streusel-kuchen-vom-blech.html',
+  date: 2023-06-26
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Mix together",
+    long: 'Weight and mix together the dry ingredients in a bowl. Add the butter, and try to "push the butter through the flour mixture" (mixing it). After a little while, you should end up with a dough in one piece.',
+    ingredients: [
+      {name: butter, amount: 300, unit: g, comment: ''},
+      {name: flour, amount: 500, unit: g, comment: ''},
+      {name: baking powder, amount: 3, unit: tsp, comment: ''},
+      {name: sugar, amount: 200, unit: g, comment: ''},
+    ],
+    active-time: 7,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  # step: take 2/3, press into baking tray
+  - {
+    short: "Press 2/3rd into baking tray",
+    long: "Cover a 40x30cm baking tray with a baking sheet. Take 2/3 of the dough and press it into the tray.",
+    active-time: 3,
+    passive-time: 0,
+    dependencies: [-1],
+    type: shape,
+    temp: room,
+  }
+  # step: oven for 10 minutes, 175 deg
+  - {
+    short: "Bake for 10 minutes, 175 ℃",
+    long: "Take in out of the oven to cool when done.",
+    active-time: 1,
+    passive-time: 10,
+    dependencies: [-1],
+    type: oven,
+    temp: hot,
+  }
+  # step: take 1/3, into fridge
+  - {
+    short: "Refridgerate remaining dough",
+    long: "Store the remaining third of the dough in an airtight container, and transfer this container to the fridge",
+    active-time: 1,
+    passive-time: 10,
+    #dependencies: [-2],
+    type: bowl,
+    temp: cold,
+  }
+  # step: whip heavy cream
+  - {
+    short: "Whip the cream",
+    long: "Use a kitcher machine or hand mixer to whip the cream stiff-ish.",
+    active-time: 5,
+    passive-time: 0,
+    ingredients: [
+      {name: heavy cream, amount: 3, unit: dl, comment: '37% fat'},
+    ],
+    type: km,
+    temp: room,
+  }
+  # step: mix other ingredients, blender
+  - {
+    short: "Mix together",
+    long: "Find a bowl (reuse the  dough one?) and weight the ingredients in it. Use a blender to mix together the ingredients. Follow the package instructions of your whipped cream stabilizer (pretending quark is water).",
+    active-time: 5,
+    passive-time: 0,
+    #dependencies: [-1],
+    ingredients: [
+      {name: quark, amount: 600, unit: g, comment: 'We use a variety with vanilla flavor'},
+      {name: butter, amount: , unit: g, comment: 'Melted, lukewarm-ish or colder'},
+      {name: whipped cream stabilizer, amount: 75, unit: g, comment: '"Fromasjpulver" in Norwegian. Any custard powder would probably be okay too.'},
+      {name: organic lemon, amount: 1, unit: , comment: 'Zest and juice'},
+      {name: sugar, amount: 100, unit: g, comment: ''},
+     # {name: , amount: , unit: g, comment: ''},
+    ],
+    type: bowl,
+    temp: room,
+  }
+  # step: add lemon zest + juice
+  # step: fold in heavy cream
+  - {
+    short: "Fold in cream",
+    long: "Gently mix the whipped cream with the rest of the filling.",
+    active-time: 3,
+    passive-time: 0,
+    dependencies: [-1, -2],
+    type: add,
+    temp: room,
+  }
+  # step: spread onto bottom
+  - {
+    short: "Pour filling onto the cake",
+    long: "Once the bottom has cooled down, spread the filling on top.",
+    active-time: 1,
+    passive-time: 0,
+    dependencies: [-1, -5],
+    type: add,
+    temp: room,
+  }
+  # step: add blueberries
+  - {
+    short: "Add blueberries",
+    long: "Add blueberries on top of the filling, pushing a bit into the filling if needed.",
+    active-time: 4,
+    passive-time: 0,
+    dependencies: [-1],
+    ingredients: [ {name: blueberries, amount: 225, unit: g, comment: ''} ],
+    type: add,
+    temp: room,
+  }
+  # step: use grater to add rest of dough
+  - {
+    short: "Add remaining dough",
+    long: "Use a grater to sprinkle the remaining dough on top of the cake.",
+    active-time: 1,
+    passive-time: 10,
+    dependencies: [-1,-6],
+    type: shape,
+    temp: room,
+  }
+  # step: bake 45 minutes ish
+  - {
+    short: "Bake for 45 minutes",
+    long: "At 175 ℃, bake the cake until the top is golden brown.",
+    active-time: 1,
+    passive-time: 45,
+    dependencies: [-1],
+    type: oven,
+    temp: hot,
+  }
