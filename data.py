@@ -41,7 +41,7 @@ class Step:
     id: int
     step_type: Type
     temperature: Temperature
-    time: StepTime = StepTime()
+    time: StepTime = field(default_factory=lambda: StepTime())
     ingredients_used: List[Ingredient] = field(default_factory=lambda: [])
     refined_ingredients_used: List[RefinedIngredient] = field(default_factory=lambda: [])
     depends_on: List[int] = field(default_factory=lambda: [])
@@ -113,10 +113,11 @@ class Recipe:
     date_updated: str
     steps: List[Step] = field(default_factory=lambda: [])
     ingredients: List[IngredientsOverview] = field(default_factory=lambda: [])
-    timeline: Timeline = Timeline()
+    timeline: Timeline = field(default_factory=lambda: Timeline())
+    # field(default_factory=lambda: StepTime(active = 0, passive = 0))
     description: str = ""
     source: Optional[Source] = None
     image: str = ""
     yields: List[Yield] = field(default_factory=lambda: [])
     url_name: str = ""
-    time: RecipeTime = RecipeTime()
+    time: RecipeTime = field(default_factory=lambda: RecipeTime())
