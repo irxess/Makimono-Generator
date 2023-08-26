@@ -1,7 +1,5 @@
 recipe: Bánh mì – Norwegian style in 5 minutes
 
-not_ready_for_publish: true
-
 description: "What if you want Bánh mì, but are stuck in Norway, are feeling lazy, and don't want to spend a lot of time? This recipe takes the concept of Bánh mì, but uses ingredients that are easy to source in Norway, and forgoes a lot of the meat prep by using various hams. What carries this recipe is the Pâté and mayo at the bottom, so don't skip over it. Also note that due to the nature of this recipe, precise amounts make little sense."
 date_created: 2023-08-26
 last_updated: 2023-08-26
@@ -51,8 +49,7 @@ steps:
   }
   - {
     short: "Assemble everything",
-    long: |>
-      Take the sliced bread. Spread your pâté over the bread, about 1 to 3 slices of meat in thickness. While liver pâté is the easiest to source in Norway, I'd recommend first trying one of the meat based ones, preferrably one that is not too heavily spiced with garlic or similar. A lot of the perception of the flavor in this dish will be ruled by the pâté you choose. If you want to experiment with this dish" a good place to start would be different pates and spice mixes. After the pâté, spread some mayo over it. Again, probably between about 1 to 3 slices of meat in thickness, but maybe a bit less than the pâté depending on how much you like mayonnaise. If you've sliced the bread completely in half, apply the pâté and mayo to top and bottom. Sprinkle on the choped spring onions. Put on the hams, 1 to 2 slices in thickness of each. Add the cucumbers you chopped on top. Finally add the coriander, close up the bread and serve.
+    long: "Take the sliced bread. Spread your pâté over the bread, about 1 to 3 slices of meat in thickness. While liver pâté is the easiest to source in Norway, I'd recommend first trying one of the meat based ones, preferrably one that is not too heavily spiced with garlic or similar. A lot of the perception of the flavor in this dish will be ruled by the pâté you choose. If you want to experiment with this dish a good place to start would be different pates and spice mixes. After the pâté, spread some mayo over it. Again, probably between about 1 to 3 slices of meat in thickness, but maybe a bit less than the pâté depending on how much you like mayonnaise. If you've sliced the bread completely in half, apply the pâté and mayo to top and bottom. Sprinkle on the choped spring onions. Put on the hams, 1 to 2 slices in thickness of each. Add the cucumbers you chopped on top. Finally add the coriander, close up the bread and serve.",
     ingredients: [
       {name: "pâté", amount: 1, unit: spoonfull, comment: ''},
       {name: "mayonnaise", amount: 1, unit: spoonfull, comment: ''},
