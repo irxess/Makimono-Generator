@@ -68,7 +68,7 @@ def prepare_image(recipe):
     )
 
     # resize the square image
-    img_thumbnail = img_thumbnail.resize((200,200), Image.ANTIALIAS)
+    img_thumbnail = img_thumbnail.resize((200,200), Image.LANCZOS) # Note that Image.LANCZOS actually is Image.ANTIALIAS, they renamed it to be less descriptive for no good reason in pillow 10.0.0
     img_thumbnail.save("publish/images/thumbnails/" + file_name)
 
 
