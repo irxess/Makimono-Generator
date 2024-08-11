@@ -1,0 +1,72 @@
+recipe: Hot Chocolate – White
+
+description: "Serving with whipped cream on top can look nice"
+date_created: 2024-08-11
+last_updated: 2024-08-11
+image: ''
+
+# yield: [
+#   {qualification: , amount: , unit: },
+#   {amount: , unit: },
+#   {qualification: , amount: , unit: }
+# ]
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: 'Pelaprat Veliki Kuvar, ISBN 978 86 7710 1589, page 584', # recipe name or whole citation
+  type: 'adapted', # or inspired
+  author: 'Sandra Knežević, Uroš Petrović, Dario Grimoldi',
+  publication: 'Vulkan Izdavaštvo',
+  url: 'https://www.knjizare-vulkan.rs/kulinarstvo/18425-pelapratov-kuvar-sveta',
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Melt chocolate with rum and vanilla extract",
+    long: "Over a water bath (or just boringly low heat on your stove if you're feeling lazy), melt white chocolate with dark rum or cognac and vanilla extract.",
+    ingredients: [
+      {name: 'white chocolate', amount: 100, unit: g, comment: ''},
+      {name: 'dark rum', amount: 60, unit: g, comment: 'can be substituted with cognac'},
+      {name: 'vanilla extract', amount: 1.25, unit: ml, comment: '1.25 ml is about 1/4 teaspoon'},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Stir inn egg yolk",
+    long: "Still over the water bath/low heat, stir inn egg yolks until completely combined",
+    dependencies: [-1],
+    ingredients: [
+      {name: 'egg yolk', amount: 30, unit: g, comment: '2 egg yolks are approximately 30 g'},
+    ],
+    active-time: 2,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Heat up milk",
+    long: "Separately from the chocolate mixture, heat up milk. It should be warm, not boiling",
+    ingredients: [
+      {name: 'milk', amount: 500, unit: g, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: saucepan,
+    temp: warm,
+  }
+  - {
+    short: "Add milk to chocolate",
+    long: "Carefully pour the milk into the chocolate mixture",
+    dependencies: [-1, -2],
+    active-time: 1,
+    passive-time: 0,
+    type: add,
+    temp: warm,
+  }
