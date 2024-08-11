@@ -91,10 +91,18 @@
       <p class="recipe-total-time">
         Estimated time needed:
         {% if r.time.lower_bound > 0 %}
-        <span class="recipe-total-time-lower-bound">At least {{r.time.lower_bound}} minutes.</span>
+          {% if r.time.lower_bound > 60 %}
+          <span class="recipe-total-time-lower-bound">At least {{r.time.lower_bound // 60}} hours {{r.time.lower_bound % 60}} minutes.</span>
+          {% else %}
+          <span class="recipe-total-time-lower-bound">At least {{r.time.lower_bound}} minutes.</span>
+          {% endif %}
         {% endif %}
         {% if r.time.upper_bound > 0 %}
-        <span class="recipe-total-time-upper-bound">At most {{r.time.upper_bound}} minutes.</span>
+          {% if r.time.upper_bound > 60 %}
+          <span class="recipe-total-time-upper-bound">At most {{r.time.upper_bound// 60}} hours {{r.time.upper_bound % 60}} minutes.</span>
+          {% else %}
+          <span class="recipe-total-time-upper-bound">At most {{r.time.upper_bound}} minutes.</span>
+          {% endif %}
         {% endif %}
       </p>
       {% endif %}
