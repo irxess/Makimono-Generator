@@ -1,0 +1,223 @@
+recipe: Bread – Pain axu Céréales
+
+description: "Bread with seeds"
+date_created: 2024-08-11
+last_updated: 2024-08-11
+image: ''
+
+yield: [
+  {qualification: Each loaf should be 500g, amount: 2, unit: loaves},
+  {amount: 1000, unit: g},
+]
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: 'The Fundamental Techniques of Classic Bread Baking, ISBN 978 1 58479 934 4, page 111',
+  type: 'adapted', # or inspired
+  author: French Culinary Institute,
+  publication: 'Stewart, Tabori and Chang',
+  url: '',
+  date: 2011-11-01
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Make pâte fermentée",
+    long: "Combine the ingredients in a kitchen machine with a dough hook. Mix on low speed until it is completely blended. The resulting dough should be stiff. Ideally the water should be 25 ℃.",
+    ingredients: [
+      {name: flour, amount: 97, unit: g, comment: ''},
+      {name: water, amount: 66, unit: g, comment: ''},
+      {name: 'fresh yeast', amount: 2, unit: g, comment: ''},
+      {name: salt, amount: 2, unit: g, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Refridgerate pâte fermentée over night",
+    long: "Transfer the pâte fermentée to a lightly oiled mixing bowl, cover with plastic film, and refrigerate for 8 hours (or just overnight)",
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 480,
+    type: bowl,
+    temp: cold,
+  }
+  - {
+    short: "Start mixing dough",
+    long: "Combine the flour and water in a kitchen machine with a dough hook on low speed until blended. After it's blended let it rest/autolyze for 15 minutes.",
+    ingredients: [
+      {name: flour, amount: 443, unit: g, comment: ''},
+      {name: water, amount: 310, unit: g, comment: ''},
+    ],
+    active-time: 5,
+    passive-time: 15,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Add pâte fermentée, yeast, salt, and diastatic malt to dough",
+    long: "Add the pâte fermentée which you previously prepared. Concerning the diastatic malt, in addition to boosting the sweetness and giving a darker color like non-diastatic malt powder and barley malt syrup, it should speed up the rising time. We substituted barley malt syrup because it was easier to obtain, and the result was fine.",
+    dependencies: [-1, -2],
+    ingredients: [
+      {name: 'diastatic malt', amount: 18, unit: g, comment: ''},
+      {name: 'salt', amount: 9, unit: g, comment: ''},
+      {name: 'fresh yeast', amount: 4, unit: g, comment: ''},
+    ],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Mix on low for 5 minutes",
+    long: "",
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Mix on medium until just slightly sticky",
+    long: "This should take about 8 minutes. Pull a window by pinching 2 somewhat close points and pulling them up to see if the dough forms a thin window, indicating the gluten has developed.",
+    dependencies: [-1],
+    active-time: 8,
+    passive-time: 0,
+    type: km,
+    temp: room,
+  }
+  - {
+    short: "Set speed to low and add seeds",
+    long: "Mix until the seeds are integrated",
+    dependencies: [-1],
+    ingredients: [
+      {name: 'sesame seeds', amount: 27, unit: g, comment: ''},
+      {name: 'flax seeds', amount: 22, unit: g, comment: ''},
+    ],
+    active-time: 3,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Oil larger bowl for rising",
+    long: "",
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Transfer dough to oiled bowl for rising and cover with plastic film",
+    long: "",
+    dependencies: [-1, -2],
+    active-time: 1,
+    passive-time: 0,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Let ferment for 45 minutes",
+    long: "",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 45,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Uncover and fold the dough, then cover it up again",
+    long: "",
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Let ferment again for another 45 minutes",
+    long: "",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 45,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Split dought into 2 balls of 500 g each",
+    long: "On a clean, floured surface, divide the dough into balls of 500 g each (the base recipe should yield 2 balls of 500 g)",
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Cover the balls and let them bench rest for 15 minutes",
+    long: "",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 15,
+    type: bowl,
+    temp: room,
+  }
+  - {
+    short: "Shape loaves from balls",
+    long: "On a slightly floured surface, gently press the dough to degass it, and shape it in to regular oval loaves.",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Add seeds to top",
+    long: "Put some sesame and flax seeds on a plate. Lightly spray the tops of the loaves with water, and gently press the loaves on the plate with the seeds. The moisture should help the sees stick to the top as the bread bakes.",
+    dependencies: [-1],
+    active-time: 4,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Proof loaves and prepare oven",
+    long: "Put the shaped loaves on a linen cloth (maybe fold it up a bit between them so that they don't grow together), cover them with plastic film, and set aside for an hour for the final proof. At the same time, about an hour before you start baking, put baking stones or the tray you'll bake on inside the oven, and being pre-heating it to 230 ℃. Should you be using a small pot/pan with ise cubes for making steam also place it at the bottom of the oven at this time, so that the ice cubes swiftly turn to steam when you toss them in as you start baking.",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 60,
+    type: oven,
+    temp: room,
+  }
+  - {
+    short: "Score the loaves",
+    long: "Uncover the loaves and score them/make cuts into them. Use a very sharp knife or razor. This helps with giving the dough room to rise instead of staying small and dense because the outer crust forms early and there is nowhere to expand. Be quick, don't give the loaves a couple of minutes to dry out because you got distracted.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: shape,
+    temp: room,
+  }
+  - {
+    short: "Put loaves in oven",
+    long: "Put the loaves on the pre heated baking stones/tray in the oven. Also if you're using ice cubes for steam, add one cup to the pan you put in the bottom of the oven when you started pre heating.",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 0,
+    type: oven,
+    temp: hot,
+  }
+  - {
+    short: "Bake for 40 minutes",
+    long: "Bake until the loaves have a deep reddish brown color, the sides feel firm, and the bottom makes a hollow sound when knocked on.",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 40,
+    type: oven,
+    temp: hot,
+  }
