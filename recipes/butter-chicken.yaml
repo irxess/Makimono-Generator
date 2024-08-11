@@ -1,0 +1,224 @@
+recipe: Butter Chicken
+
+description: ""
+date_created: 2024-08-11
+last_updated: 2024-08-11
+image: ''
+
+# yield: [
+#   {qualification: , amount: , unit: },
+#   {amount: , unit: },
+#   {qualification: , amount: , unit: }
+# ]
+
+# {adapted from} {name} by {author} @ {publication} ({date})
+source: {
+  name: 'Butter chicken - indisk smørkylling', # recipe name or whole citation
+  type: 'adapted', # or inspired
+  author: ,
+  publication: 'MatPrat',
+  url: 'https://www.matprat.no/oppskrifter/gjester/butter-chicken---indisk-smorkylling/',
+  date: 2024-08-11
+}
+
+# types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, add, mortar
+# colors: freeze (dark blue), cold (light blue), room (yellow), warm (orange), hot (red)
+# ℃
+
+steps:
+  - {
+    short: "Prepare rub for chicken",
+    long: "Finely chop garlic, shred ginger, and combine with lemon juice.",
+    ingredients: [
+      {name: garlic, amount: 28, unit: g, comment: '1 clove of garlic is about 7 g.'},
+      {name: ginger, amount: 7.5, unit: ml, comment: ''},
+      {name: 'lemon juice', amount: 30, unit: ml, comment: '30 ml is approximately 2 tablespoons'},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Prep chicken meat",
+    long: "If using files, pat it dry, cube it in big chunks (but not larger than what you'll comfortably fit on a spoon with more other stuff). If using whole chicken, we assume a ratio of 60% meat, so the base recipe amount of 400 g would call for a rather small chicken of about 666 g. A practical solution would be to use a more easily obtained chicken of about 1300 g, and doubling the amount of sauce. Should you be using whole chicken, remove the skin, pat it dry, and cut deep scores in the meat all over the chicken.",
+    ingredients: [ {name: 'chicken meat', amount: 400, unit: g, comment: ''} ],
+    active-time: 5,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Rub chicken",
+    long: "With the rub you prepared, rub in the whole chicken, and sprinkle over some salt to taste.",
+    dependencies: [-1, -2],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Let chicken rest for 20 minutes",
+    long: "Put the chicken somewhere cold and let it rest for 20 minutes",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 20,
+    type: bowl,
+    temp: cold,
+  }
+  - {
+    short: "Prepare marinade",
+    long: "Combine the ingredients into a paste.",
+    ingredients: [
+      {name: 'greek yoghurt', amount: 1, unit: dl, comment: ''},
+      {name: 'rapeseed oil', amount: 15, unit: ml, comment: '15 ml is approximately 1 tablespoon'},
+      {name: 'garam masala', amount: 15, unit: ml, comment: '15 ml is approximately 1 tablespoon'},
+      {name: 'chilli powder', amount: 7.5, unit: ml, comment: '7.5 ml is approximately 0.5 tablespoons'},
+    ],
+    active-time: 3,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Apply the marinade",
+    long: "Once again pat the chicken dry, and rub in the marinade",
+    dependencies: [-1, -2],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Let chicken rest for 4 to 6 hours, or overnight",
+    long: "Most recipes indicate that storing it overnight gives the best results. If you like us only have a refrigerator to store it in I'd probably try to cover it with some plastic film.",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 240,
+    type: bowl,
+    temp: cold,
+  }
+  - {
+    short: "Roast the chicken",
+    long: "Roast the chicken at 200 ℃, or grill it until it's golden brown and cooked through. If you used whole chicken, pluck the meat in large chunks of the bones after it's done.",
+    dependencies: [-1],
+    active-time: 3,
+    passive-time: 50,
+    type: oven,
+    temp: hot,
+  }
+  - {
+    short: "Soak cashews",
+    long: "Soak the cashews in lukewarm water for at least 30 minutes. This is important for the texture when blending",
+    ingredients: [
+      {name: 'cashews', amount: 50, unit: g, comment: ''},
+    ],
+    active-time: 0,
+    passive-time: 30,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Blend cashews",
+    long: "Discard the soaking water, and blend/mash the cashews",
+    dependencies: [-1],
+    active-time: 0,
+    passive-time: 30,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Prepare vegetables for frying",
+    long: "Roughly chop the tomatoes, finely chop the garlic, shred the ginger, and chop the fenugreek",
+    ingredients: [
+      {name: 'tomato', amount: 600, unit: g, comment: '1 tomato is approximately 150 g'},
+      {name: garlic, amount: 28, unit: g, comment: '1 clove of garlic is about 7 g.'},
+      {name: ginger, amount: 7.5, unit: ml, comment: ''},
+      {name: 'fenugreek greens', amount: 1, unit: tsp, comment: 'Can be substituted with fennel seeds'},
+    ],
+    active-time: 5,
+    passive-time: 0,
+    type: add,
+    temp: room,
+  }
+  - {
+    short: "Fry greens and spices",
+    long: "In a frying pan, add some oil, heat it up, add the greens and spices, then fry until the tomatoes are soft.",
+    ingredients: [
+      {name: 'oil', amount: 15, unit: ml, comment: '15 ml is approximately 1 tablespoon'},
+      {name: 'cardamom', amount: 1, unit: pod, comment: ''},
+      {name: 'chilli powder', amount: 1.23, unit: ml, comment: '1.23 ml is 0.25 teaspoon'},
+    ],
+    dependencies: [-1],
+    active-time: 5,
+    passive-time: 0,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Add cashew paste and blend",
+    long: "Add the cashew paste you previously prepared to the tomatoes and vegetables and blend them using an immersion blender. If you want the sauce to be very smooth strain it through a rough sieve/mesh to filter out remnants of shells.",
+    dependencies: [-1, -3],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: warm,
+  }
+  - {
+    short: "Simmer sauce for a couple of minutes",
+    long: "After you've blended the sauce, get it back in the pan/pot and let it simmer for a couple of minutes",
+    dependencies: [-1],
+    active-time: 1,
+    passive-time: 3,
+    type: fry,
+    temp: warm,
+  }
+  - {
+    short: "Finely chop green chillies",
+    long: "Finely chop some green chilli for the last round of spices before the end",
+    ingredients: [
+      {name: 'green chillies', amount: 1, unit: piece, comment: '1 piece is approximately 1 piece'},
+    ],
+    active-time: 2,
+    passive-time: 0,
+    type: cut,
+    temp: room,
+  }
+  - {
+    short: "Add final spices and whisk in cream",
+    long: "Add the green chilli you just chopped, some honey, salt and pepper to taste. Then whisk in the cream and butter",
+    ingredients: [
+      {name: 'honey', amount: 21.6, unit: g, comment: '21.6 g is approximately 1 tablespoon'},
+      {name: 'salt', amount: 5, unit: ml, comment: '5 ml is approximately 1 teaspoon'},
+      {name: 'pepper', amount: 5, unit: ml, comment: '5 ml is approximately 1 teaspoon'},
+      {name: 'cream', amount: 55, unit: g, comment: 'approximately 37 % fat, 50 ml is about 55 g.'},
+      {name: 'butter', amount: 15, unit: g, comment: '15 g is approximately 1 tablespoon'},
+    ],
+    dependencies: [-1, -2],
+    active-time: 3,
+    passive-time: 0,
+    type: add,
+    temp: warm,
+  }
+  - {
+    short: "Add chicken and simmer until everything is warm",
+    long: "",
+    dependencies: [-1, -9],
+    active-time: 1,
+    passive-time: 4,
+    type: add,
+    temp: warm,
+  }
+
+  - {
+    short: "Garnish with fresh cilantro and serve",
+    long: "For the base recipe use about a half of one of the small bushes you get at the store. The 20g packages are also a fine amount. Remember to wash it.",
+    ingredients: [
+      {name: 'fresh cilantro', amount: 20, unit: g, comment: ''},
+    ],
+    dependencies: [-1],
+    active-time: 2,
+    passive-time: 0,
+    type: add,
+    temp: warm,
+  }
