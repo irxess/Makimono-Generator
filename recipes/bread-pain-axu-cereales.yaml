@@ -187,7 +187,7 @@ steps:
   }
   - {
     short: "Proof loaves and prepare oven",
-    long: "Put the shaped loaves on a linen cloth (maybe fold it up a bit between them so that they don't grow together), cover them with plastic film, and set aside for an hour for the final proof. At the same time, about an hour before you start baking, put baking stones or the tray you'll bake on inside the oven, and being pre-heating it to 230 ℃. Should you be using a small pot/pan with ise cubes for making steam also place it at the bottom of the oven at this time, so that the ice cubes swiftly turn to steam when you toss them in as you start baking.",
+    long: "Put the shaped loaves on a linen cloth lightly dusted with flour (maybe fold it up a bit between them so that they don't grow together), cover them with plastic film, and set aside for an hour for the final proof. At the same time, about an hour before you start baking, put baking stones or the tray you'll bake on inside the oven, and being pre-heating it to 230 ℃. Should you be using a small pot/pan with ise cubes for making steam also place it at the bottom of the oven at this time, so that the ice cubes swiftly turn to steam when you toss them in as you start baking.",
     dependencies: [-1],
     active-time: 3,
     passive-time: 60,
