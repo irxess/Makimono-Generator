@@ -291,7 +291,7 @@ svg {
 		.step {
 			background: @super-light-grey;
 			display: grid;
-			grid-template-columns: 11em 1fr 3fr;
+			grid-template-columns: minmax(max-content, 13em) 1fr 3fr;
 			// Attempts at making all the elements in the column fit to the same width,
 			// which should have been the width of the largest element.
 			// Instead got some monstrosity where each row in the column was the size of the content.
