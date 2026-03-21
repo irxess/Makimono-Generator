@@ -1,12 +1,12 @@
-recipe: Havregrøt (Oatmeal)
+recipe: Oatmeal (Havregrøt)
 
-description: ""
+description: "An interesting variant is using steel cut oats. In that case take half of the liquid, substitute it with water, and soak the oats in for 24 hours. The day after give them a stir to distribute the starch a bit, add the other half of the liquid, and bring it to a boil. Towards the end add the salt."
 date_created: 2020-04-13
-last_updated: 2020-05-16
+last_updated: 2026-03-21
 image: 'oatmeal'
 
 yield: [
-  {amount: 648, unit: g},
+  {amount: 658, unit: g},
 ]
 
 # types: bowl, fry, saucepan, pipe, oven, km (kitchen machine), cut, shape, bake, add, mortar
@@ -25,8 +25,8 @@ steps:
     short: "Add oats",
     long: "Add oats and a pinch of salt. Stir and let thicken until you reach a consistency you like.",
     ingredients: [
-      {name: oats, amount: 140, unit: g, comment: 'Rolled or instant oats. Use instant oats if you want a more mushy result, or rolled oats if you want the resulting porridge to have more texture/be more chewy.'},
-      {name: salt, amount: 1.5, unit: g, comment: '1.5 g is about a quarter of a teaspoon (assuming 1 tsp ≈ 6 g).'},
+      {name: oats, amount: 150, unit: g, comment: 'Rolled or instant oats. Use instant oats if you want a more mushy result, or rolled oats if you want the resulting porridge to have more texture/be more chewy.'},
+      {name: salt, amount: 3, unit: g, comment: '1.5 g is about a half teaspoon (assuming 1 tsp ≈ 6 g).'},
     ],
     dependencies: [-1],
     active-time: 5,
@@ -36,7 +36,7 @@ steps:
   }
   - {
     short: "Serve with butter",
-    long: "Brown sugar and cinnamon are also good additions.",
+    long: "Brown sugar and cinnamon are also good additions, or you can try with some dark syrup.",
     dependencies: [-1],
     active-time: 1,
     passive-time: 0,
