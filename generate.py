@@ -142,24 +142,24 @@ def generate_browse_page(thumbnails):
     thumbnail_chunks, pagination_list = split_thumbnail_list_into_pages(thumbnails)
 
     # Make first page in list main landing page:
-    current_page = pagination_list[0]
-    current_page.current = True
-    output = template.render(
-        chunk_of_thumbnails = thumbnail_chunks[0],
-        paginated_pages = pagination_list,
-        previous_page = pagination_list[-1],
-        next_page = pagination_list[1],
-        path_to_base='.',
-        recipes_path='all/page-1.html',
-        all_recipes_overview_path='all-recipes-overview.html',
-        dilution_calculator_path='dilution_calculator.html',
-        sous_vide_temperature_path='sous_vide_temperatures.html',
-        sause_thickening_calculator_path='sause-thickening-calculator.html',
-        about_path='about.html'
-    )
-    output = remove_empty_lines(output)
-    with open('publish/index.html', 'w', encoding='utf-8') as f:
-        print(output, file=f)
+    # current_page = pagination_list[0]
+    # current_page.current = True
+    # output = template.render(
+    #     chunk_of_thumbnails = thumbnail_chunks[0],
+    #     paginated_pages = pagination_list,
+    #     previous_page = pagination_list[-1],
+    #     next_page = pagination_list[1],
+    #     path_to_base='.',
+    #     recipes_path='all/page-1.html',
+    #     all_recipes_overview_path='all-recipes-overview.html',
+    #     dilution_calculator_path='dilution_calculator.html',
+    #     sous_vide_temperature_path='sous_vide_temperatures.html',
+    #     sause_thickening_calculator_path='sause-thickening-calculator.html',
+    #     about_path='about.html'
+    # )
+    # output = remove_empty_lines(output)
+    # with open('publish/index.html', 'w', encoding='utf-8') as f:
+    #     print(output, file=f)
 
     for i in range(0,len(pagination_list)):
         thumbnails = thumbnail_chunks[i]
@@ -205,6 +205,8 @@ def generate_all_recipes_overview_page(thumbnails):
         about_path='about.html'
     )
     output = remove_empty_lines(output)
+    with open('publish/index.html', 'w', encoding='utf-8') as f:
+        print(output, file=f)
     with open('publish/all-recipes-overview.html', 'w', encoding='utf-8') as f:
         print(output, file=f)
 
