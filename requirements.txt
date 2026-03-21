@@ -6,7 +6,7 @@
 # pip 20.0.2
 
 # Library for parsing the yaml files with the recipes and so on
-PyYAML==6.0
+PyYAML==6.0.1
 
 # Library for producing html files from the jinja-templates (.html files) in the `templates/` folder
 Jinja2==3.0.2
@@ -15,7 +15,7 @@ Jinja2==3.0.2
 lesscpy==0.15.0
 
 # Library for resizing and producing thumbnails from the recipe images.
-Pillow==8.4.0
+pillow==12.1.1
 
 # Not sure where these came from, but `pip freeze` outputted them in a venv, so I guess they should be included
 MarkupSafe==2.0.1
