@@ -303,6 +303,7 @@ if __name__ == "__main__":
     print("Copying JS")
     if not os.path.isdir('publish/js'):
         os.makedirs('publish/js')
+    shutil.copy('templates/base.js', 'publish/js/')
     shutil.copy('templates/recipe-scaling.js', 'publish/js/')
     shutil.copy('templates/ingredient-list-shopping-list-mode-enhancements.js', 'publish/js/')
 
