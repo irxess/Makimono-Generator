@@ -31,7 +31,7 @@ steps:
     ingredients: [
       {name: 'white chocolate', amount: 100, unit: g, comment: ''},
       {name: 'dark rum', amount: 60, unit: g, comment: 'can be substituted with cognac'},
-      {name: 'vanilla extract', amount: 1.25, unit: ml, comment: '1.25 ml is about 1/4 teaspoon'},
+      {name: 'vanilla extract', amount: 1.25, unit: ml, comment: '1/4 teaspoon is ≈ 1.25 ml'},
     ],
     active-time: 5,
     passive-time: 0,
@@ -43,7 +43,7 @@ steps:
     long: "Still over the water bath/low heat, stir inn egg yolks until completely combined",
     dependencies: [-1],
     ingredients: [
-      {name: 'egg yolk', amount: 30, unit: g, comment: '2 egg yolks are approximately 30 g'},
+      {name: 'egg yolk', amount: 30, unit: g, comment: '2 egg yolks are ≈ 30 g'},
     ],
     active-time: 2,
     passive-time: 0,

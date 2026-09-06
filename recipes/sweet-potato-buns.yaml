@@ -74,7 +74,7 @@ steps:
     short: "Combine yeast, water, and flour",
     long: "Because you will shortly have to add the sweet potato mash, wait with this step until the mash has reached a satisfactory temperature. When combined, wait for 5 minutes to see if the yeast activates (starts to bubble).",
     ingredients: [
-      {name: active dry yeast, amount: 12, unit: g, comment: '12g is approximately 1 package, which should be equivalent to 55g normal yeast.'},
+      {name: active dry yeast, amount: 12, unit: g, comment: '1 package is ≈ 12 g, which should be equivalent to 55g fresh yeast.'},
       {name: water, amount: 120, unit: g, comment: ''},
       {name: flour, amount: 75, unit: g, comment: ''},
     ],
@@ -89,8 +89,8 @@ steps:
     long: "Take the sweet potato mash you previously prepared, the melted butter, and add it to the yeast/water/flour sponge you just made, together with some honey, salt, egg, and flour. Note that you might not need all of the flour. When you've added about 450 g (85%), you should start considering whether you actually need more. You should add just enough flour so that it's no longer stick/you're comfortable with rolling it into buns.",
     ingredients: [
       {name: honey, amount: 18, unit: g, comment: ''},
-      {name: salt, amount: 6, unit: g, comment: '6 g is approximately 1 tsp.'},
-      {name: egg, amount: 50, unit: g, comment: '50 g is approximately 1 medium sized egg.'},
+      {name: salt, amount: 6, unit: g, comment: '1 tsp is ≈ 6 g.'},
+      {name: egg, amount: 50, unit: g, comment: '1 medium sized egg is ≈ 50 g.'},
       {name: flour, amount: 525, unit: g, comment: ''},
     ],
     dependencies: [-1, -2],
@@ -131,7 +131,7 @@ steps:
     long: "Optionally egg was and sprinkle the buns with sesame seeds before they go into the oven.",
     ingredients: [
       {name: egg, amount: 50, unit: g, comment: ''},
-      {name: sesame seeds, amount: 10, unit: g, comment: '10 g is approximately 1 tbsp.'},
+      {name: sesame seeds, amount: 10, unit: g, comment: '1 tbsp is ≈ 10 g.'},
     ],
     dependencies: [-1],
     active-time: 5,

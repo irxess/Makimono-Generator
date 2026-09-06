@@ -24,10 +24,10 @@ source: {
 steps:
   - {
     short: "Chop vegetables",
-    long: "Finely chop the onion and garlic.",
+    long: "Finely chop the onion and garlic. Note that the shaping can become easier if you grate the onions.",
     ingredients: [
-      {name: onion, amount: 150, unit: g, comment: '150 g is about 1 medium sized onion.'},
-      {name: garlic, amount: 7, unit: g, comment: '7 g is about 1 clove of garlic'},
+      {name: onion, amount: 150, unit: g, comment: '1 medium sized onion is ≈ 150 g.'},
+      {name: garlic, amount: 7, unit: g, comment: '1 clove of garlic is ≈ 7 g'},
     ],
     active-time: 1,
     passive-time: 0,
@@ -51,7 +51,7 @@ steps:
     long: "Mix the onion and garlic you previously chopped up in with the meat together with some breadcrumbs and the egg.",
     ingredients: [
       {name: breadcrumbs, amount: 100, unit: g, comment: ''},
-      {name: egg, amount: 50, unit: g, comment: '1 mid sized egg is about 50 g.'},
+      {name: egg, amount: 50, unit: g, comment: '1 mid sized egg is ≈ 50 g.'},
     ],
     dependencies: [-1, -2],
     active-time: 3,
@@ -63,9 +63,9 @@ steps:
     short: "Add milk, salt, and pepper.",
     long: "Mix in the milk and generous amounts of salt and pepper.",
     ingredients: [
-      {name: whole milk, amount: 85, unit: g, comment: 'Approximately 3.5 % fat. 1 tbsp is about 17 g.'},
-      {name: salt, amount: 15, unit: g, comment: '1 tsp is about 5 g.'},
-      {name: pepper, amount: 5, unit: g, comment: 'Black. 1 tsp is about 2.5 g.'},
+      {name: whole milk, amount: 85, unit: g, comment: 'Approximately 3.5 % fat. 1 tbsp is ≈ 17 g.'},
+      {name: salt, amount: 15, unit: g, comment: '1 tsp is ≈ 5 g.'},
+      {name: pepper, amount: 5, unit: g, comment: 'Black. 1 tsp is ≈ 2.5 g.'},
     ],
     dependencies: [-1],
     active-time: 1,
@@ -102,7 +102,7 @@ steps:
   - {
     short: "Heat oil on medium heat",
     long: "Get out the frying pan and pre-heat some oil in it.",
-    ingredients: [ {name: frying oil, amount: 30, unit: ml, comment: '1 tbsp is about 15 ml.'} ],
+    ingredients: [ {name: frying oil, amount: 30, unit: ml, comment: '1 tbsp is ≈ 15 ml.'} ],
     dependencies: [-2],
     active-time: 2,
     passive-time: 0,

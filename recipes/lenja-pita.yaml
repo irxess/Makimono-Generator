@@ -14,7 +14,7 @@ steps:
   - {
     short: "Peel and cut apples",
     long: "The apples will go into the filling. If you want a more chunky filling, cut them up roughly. If you want a really smooth apple filling, consider shredding the apples.",
-    ingredients: [ {name: apples, amount: 1000, unit: g, comment: 'About 8 apples'} ],
+    ingredients: [ {name: apples, amount: 1000, unit: g, comment: '8 apples is ≈ 1000 g'} ],
     active-time: 5,
     passive-time: 0,
     type: cut,
@@ -23,9 +23,9 @@ steps:
   - {
     short: "Put apples in frying pan and season them",
     ingredients: [
-      {name: sugar, amount: 25, unit: g, comment: 'About 2 tablespoons'},
-      {name: vanilla powder, amount: 4, unit: g, comment: 'Optional, about one teaspoon'},
-      {name: cinnamon, amount: 3.5, unit: g, comment: 'Optional, about one teaspoon'},
+      {name: sugar, amount: 25, unit: g, comment: '2 tablespoons is ≈ 25 g'},
+      {name: vanilla powder, amount: 4, unit: g, comment: 'Optional, 1 teaspoon is ≈ 4 g'},
+      {name: cinnamon, amount: 3.5, unit: g, comment: 'Optional, 1 teaspoon is ≈ 3.5 g'},
     ],
     active-time: 1,
     passive-time: 0,
@@ -55,7 +55,7 @@ steps:
   - {
     short: "Split eggs",
     long: "Save the eggwhites for later, and put the egg yolks in a larger bowl you will use for mixing the rest of the ingredients",
-    ingredients: [ {name: egg, amount: 200, unit: g, comment: 'About 4 medium sized eggs of 50g each'} ],
+    ingredients: [ {name: egg, amount: 200, unit: g, comment: '1 medium sized eggs is ≈ 50 g'} ],
     active-time: 3,
     passive-time: 0,
     type: bowl,

@@ -26,7 +26,7 @@ steps:
     long: "Add oats and a pinch of salt. Stir and let thicken until you reach a consistency you like.",
     ingredients: [
       {name: oats, amount: 150, unit: g, comment: 'Rolled or instant oats. Use instant oats if you want a more mushy result, or rolled oats if you want the resulting porridge to have more texture/be more chewy.'},
-      {name: salt, amount: 3, unit: g, comment: '1.5 g is about a half teaspoon (assuming 1 tsp ≈ 6 g).'},
+      {name: salt, amount: 3, unit: g, comment: '1 tsp salt is ≈ 6 g.'},
     ],
     dependencies: [-1],
     active-time: 5,

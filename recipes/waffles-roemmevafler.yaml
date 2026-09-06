@@ -1,6 +1,6 @@
 recipe: "Waffles – Rømmevafler"
 
-description: "The alternative Norwegian style of waffles where you use rømme (cultured sour cream) as the main liquid for the dough. Beware that you can get several varietes of rømme these days, and although they are similar in texture and taste, the reduced fat version tend to have a more sour after-taste and less smooth texture the lower the fat content."
+description: "The alternative Norwegian style of waffles where you use rømme (cultured sour cream) as the main liquid for the dough. Beware that you can get several varieties of rømme these days, and although they are similar in texture and taste, the reduced fat version tend to have a more sour after-taste and less smooth texture the lower the fat content."
 date_created: 2023-08-13
 last_updated: 2023-08-13
 image: ''
@@ -57,7 +57,7 @@ steps:
 }
 - {
   short: "Fry waffles in waffle iron",
-  long: "Note that this assumes a Norwegian (Scandinavian?) style waffle iron, which makes signifficantly thinner (about 1 cm at the thickest, and heart shaped) waffles compared to the beligain ones, but not the extremely thin kind of iron used for making leaf thick pastries like krumkaker.",
+  long: "Note that this assumes a Norwegian (Scandinavian?) style waffle iron, which makes significantly thinner (about 1 cm at the thickest, and heart shaped) waffles compared to the Belgian ones, but not the extremely thin kind of iron used for making leaf thick pastries like krumkaker.",
   dependencies: [-1],
   active-time: 30,
   passive-time: 0,

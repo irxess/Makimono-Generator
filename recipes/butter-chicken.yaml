@@ -30,7 +30,7 @@ steps:
     short: "Prepare rub for chicken",
     long: "Finely chop garlic, shred ginger, and combine with lemon juice.",
     ingredients: [
-      {name: garlic, amount: 28, unit: g, comment: '1 clove of garlic is about 7 g.'},
+      {name: garlic, amount: 28, unit: g, comment: '1 clove of garlic is ≈ 7 g.'},
       {name: ginger, amount: 7.5, unit: ml, comment: ''},
       {name: 'lemon juice', amount: 30, unit: ml, comment: '30 ml is approximately 2 tablespoons'},
     ],
@@ -132,7 +132,7 @@ steps:
     long: "Roughly chop the tomatoes, finely chop the garlic, shred the ginger, and chop the fenugreek",
     ingredients: [
       {name: 'tomato', amount: 600, unit: g, comment: '1 tomato is approximately 150 g'},
-      {name: garlic, amount: 28, unit: g, comment: '1 clove of garlic is about 7 g.'},
+      {name: garlic, amount: 28, unit: g, comment: '1 clove of garlic is ≈ 7 g.'},
       {name: ginger, amount: 7.5, unit: ml, comment: ''},
       {name: 'fenugreek greens', amount: 1, unit: tsp, comment: 'Can be substituted with fennel seeds'},
     ],
@@ -191,7 +191,7 @@ steps:
       {name: 'honey', amount: 21.6, unit: g, comment: '21.6 g is approximately 1 tablespoon'},
       {name: 'salt', amount: 5, unit: ml, comment: '5 ml is approximately 1 teaspoon'},
       {name: 'pepper', amount: 5, unit: ml, comment: '5 ml is approximately 1 teaspoon'},
-      {name: 'cream', amount: 55, unit: g, comment: 'approximately 37 % fat, 50 ml is about 55 g.'},
+      {name: 'cream', amount: 55, unit: g, comment: 'approximately 37 % fat, 50 ml is ≈ 55 g.'},
       {name: 'butter', amount: 15, unit: g, comment: '15 g is approximately 1 tablespoon'},
     ],
     dependencies: [-1, -2],

@@ -15,7 +15,7 @@ steps:
   - {
     short: "Chop onion",
     long: "",
-    ingredients: [ {name: onion, amount: 200, unit: 'g', comment: 'about 1 large one'}],
+    ingredients: [ {name: onion, amount: 200, unit: 'g', comment: '1 large onion is ≈ 200 g'}],
     active-time: 1,
     passive-time: 0,
     type: bowl,
@@ -26,7 +26,7 @@ steps:
     long: "Get a large pot and fill it up with water so that the sausages have plenty of room later. Don't make it too full though, to avoid splashing while boiling up and so that there is also room left for the sausages. For this recipe I usually use 3 liters of water in a pot that fits 5 liters (if filled to the brim). I'd also recommend using a pot that you have a lid for, as it makes the simmering later go smoother. When you got the pot ready and filled with water add the chopped onion and other seasonings. Then turn the heat up and wait for it to start boiling.",
     ingredients: [
       {name: water, amount: 3, unit: l},
-      {name: beef bouillon, amount: 30, unit: g, comment: 'or use 3 cubes if you have bouillon in cubes of 10g each'},
+      {name: beef bouillon, amount: 30, unit: g, comment: '1 bouillon cubes is ≈ 10 g'},
       {name: bay leaves, amount: 5, unit: leaves, comment: ''},
       {name: black pepper, amount: 2, unit: tbsp, comment: 'I like using a mixture of both whole peppercorns and crushed/powdered'},
       {name: rosemary, amount: 2, unit: tsp, comment: 'optional, can also be used as a substitute the bay leaves'},

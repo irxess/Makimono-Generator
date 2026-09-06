@@ -22,7 +22,7 @@ steps:
     short: "Grease the cake pan",
     long: "You can also use neutral cooking oil, but I prefer the taste of butter. The base amount of this recipe should fill a sheet pan, but if you want to use a taller pan (or more smaller pans) you can do that as well. Just remember, the thicker you make it, the longer it will take to cook all the way through.",
     # 6 cm x 20 cm x 25 cm = 3L was too large, layers got too thin.
-    ingredients: [ {name: butter, amount: 15, unit: g, comment: 'About 1 tbsp, replaceble with vegetable oil'} ],
+    ingredients: [ {name: butter, amount: 15, unit: g, comment: '1 tbsp is ≈ 15 g, replaceble with vegetable oil'} ],
     active-time: 3,
     passive-time: 0,
     type: bowl,

@@ -78,7 +78,7 @@ steps:
   - {
     short: "Cut tofu in cubes",
     long: "Cut the tofu into square cubes, the sides can be about 2cm.",
-    ingredients: [ {name: tofu, amount: 300, unit: g, comment: "Silken tofu is recommended, what's most important is that it is firm so that it doesn't disintegreate into a mush while working with it." } ],
+    ingredients: [ {name: tofu, amount: 300, unit: g, comment: "Silken tofu is recommended, what's most important is that it is firm so that it doesn't disintegrate into a mush while working with it." } ],
     active-time: 1,
     passive-time: 0,
     type: cut,
@@ -99,7 +99,7 @@ steps:
   }
   - {
     short: "Fry the meat",
-    long: "Heat up som oil in a (prefferably wok?) pan. Fry the minced meat until it is crispy. Once done, take the meat out, and leave the oil in the pan for the next step.",
+    long: "Heat up some oil in a (preferably wok?) pan. Fry the minced meat until it is crispy. Once done, take the meat out, and leave the oil in the pan for the next step.",
     ingredients: [ {name: oil, amount: 2, unit: tbsp, comment: ''} ],
     dependencies: [-4],
     active-time: 5,
@@ -151,7 +151,7 @@ steps:
   }
   - {
     short: "Add greens and starchy water",
-    long: "Add the greens (if you also want to use the greens for garnish save some of them though), and half the starchy water. As it has maybe been sitting for a while now, it might be a good idea to give the starch mixture a stir before adding it. After abot 30 seconds, add the rest of the starch. At this point, if you want to adjust the direction of the dish, you could give it a taste, and add some sugar if you feel it's getting to spicy, or salt if you feel it needs that. Cook unitl the sauce and most of the other ingredients stick to the tofu.",
+    long: "Add the greens (if you also want to use the greens for garnish save some of them though), and half the starchy water. As it has maybe been sitting for a while now, it might be a good idea to give the starch mixture a stir before adding it. After about 30 seconds, add the rest of the starch. At this point, if you want to adjust the direction of the dish, you could give it a taste, and add some sugar if you feel it's getting to spicy, or salt if you feel it needs that. Cook until the sauce and most of the other ingredients stick to the tofu.",
     dependencies: [-1, -8, -10],
     active-time: 1,
     passive-time: 2,

@@ -26,7 +26,7 @@ steps:
     long: "Dice the onion, and finely chop the chili peppers and ginger.",
     ingredients: [
       {name: chili pepper, amount: 2, unit: pieces, comment: ''},
-      {name: onion, amount: 75, unit: g, comment: '1 medium onion is about 150 g.'},
+      {name: onion, amount: 75, unit: g, comment: '1 medium onion is ≈ 150 g.'},
       {name: ginger, amount: 10, unit: g, comment: ''},
     ],
     active-time: 5,

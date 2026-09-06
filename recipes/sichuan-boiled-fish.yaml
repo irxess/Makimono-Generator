@@ -31,9 +31,9 @@ steps:
     short: "Coat fish slices",
     long: "In a bowl, coat the fish slices with som salt, pepper, and cornstarch. Make sure to mix it all together well, so that the fish is evenly covered. Set aside, and let it rest for at least 10 minutes while you proceed with the rest of the steps.",
     ingredients: [
-      {name: cornstarch, amount: 7.5, unit: g, comment: '7.5g is about 1 tbsp'},
-      {name: salt, amount: 2.8, unit: g, comment: '5.7g is about 1 tsp'},
-      {name: white pepper, amount: 1.2, unit: g, comment: '2.3g is about 1 tsp'},
+      {name: cornstarch, amount: 7.5, unit: g, comment: '1 tbsp is ≈ 7.5 g'},
+      {name: salt, amount: 2.8, unit: g, comment: '1 tsp is ≈ 5.7 g'},
+      {name: white pepper, amount: 1.2, unit: g, comment: '1 tsp is ≈ 2.3 g'},
     ],
     dependencies: [-1],
     active-time: 2,
@@ -114,7 +114,7 @@ steps:
     short: "Prepare the soup base",
     long: "Add sichuan chili oil to the wok pan, while the pan is still hot. Add the bean paste, and fry it for about 30 seconds. Then add the chicken broth, and bring it to a boil.",
     ingredients: [
-      {name: hot bean paste, amount: 50, unit: g, comment: '50 g is approximately 1 tbsp. Often used in Chinese cooking. Can usually be found in jars, is red-ish in color, and can also be found with other names such as «hot bean paste» or «chili bean sauce».'},
+      {name: hot bean paste, amount: 50, unit: g, comment: '1 tbsp is ≈ 50 g. Often used in Chinese cooking. Can usually be found in jars, is red-ish in color, and can also be found with other names such as «hot bean paste» or «chili bean sauce».'},
       {name: sichuan chili oil, amount: 1, unit: tbsp, comment: '', recipe-link: sichuan-chili-oil},
     ],
     dependencies: [-1, -3],

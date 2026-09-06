@@ -12,7 +12,7 @@ steps:
     short: "Fry chickpeas",
     long: "Fry chickpeas over medium to medium-high heat with some oil until they are nice and soft.",
     ingredients: [
-      {name: chickpeas, amount: 250, unit: g, comment: '1 can of 400 g should be about 250 g actual chickpeas'},
+      {name: chickpeas, amount: 250, unit: g, comment: '1 can of 400 g should be ≈ 250 g actual chickpeas'},
       {name: oil, amount: 2, unit: tbsp, comment: 'for frying the chickpeas, should be capable of sustaining high heat'},
     ],
     active-time: 5,
@@ -41,7 +41,7 @@ steps:
       {name: tomato beans, amount: 400, unit: g, comment: ''},
       {name: sweet corn, amount: 150, unit: g, comment: ''},
       {name: paprika, amount: 0.5, unit: pieces, comment: ''},
-      {name: onion, amount: 75, unit: g, comment: '1 medium sized onion is about 150 g'},
+      {name: onion, amount: 75, unit: g, comment: '1 medium sized onion is ≈ 150 g'},
       {name: garlic, amount: 2, unit: cloves, comment: ''},
       {name: cayenne pepper, amount: 0.5, unit: tsp, comment: ''}
     ],

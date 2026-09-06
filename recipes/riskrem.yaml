@@ -34,7 +34,7 @@ steps:
     ingredients: [
       {name: cream, amount: 6, unit: dl, comment: 'The one we use is about 37% fat.'},
       {name: sugar, amount: 100, unit: g, comment: ''},
-      {name: vanilla sugar, amount: 5, unit: g, comment: '1 teaspoon of vanilla sugar (basically powdered sugar with vanilla taste) is aobut 2.6 g.'},
+      {name: vanilla sugar, amount: 5, unit: g, comment: '1 teaspoon of vanilla sugar (basically powdered sugar with vanilla taste) is ≈ 2.6 g.'},
     ],
     active-time: 5,
     passive-time: 0,

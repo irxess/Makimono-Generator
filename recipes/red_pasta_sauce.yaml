@@ -22,7 +22,7 @@ steps:
     short: 'Chop garlic and chili',
     long: "Finely chop the garlic (peel it first?) and chili. You can put them aside in the frying pan and let them wait there.",
     ingredients: [
-      {name: garlic, amount: 14, unit: g, comment: '1 clove of garlic is about 7 g.'},
+      {name: garlic, amount: 14, unit: g, comment: '1 clove of garlic is ≈ 7 g.'},
       {name: chili pepper, amount: 1, unit: 'piece', comment: 'optional'}
     ],
     active-time: 4,
@@ -38,8 +38,8 @@ steps:
   }
   - {
     short: 'Chop the onion',
-    long: "Peel and chop the onion. I like using fairly large chunks so that it stands out as sweeter chunks in the result, but if you'd like it to almost dissappear and only add a tone of savory then chop it as finely as possible.",
-    ingredients: [ {name: onion, amount: 200, unit: 'g', comment: 'about 1 large one'}],
+    long: "Peel and chop the onion. I like using fairly large chunks so that it stands out as sweeter chunks in the result, but if you'd like it to almost disappear and only add a tone of savory then chop it as finely as possible.",
+    ingredients: [ {name: onion, amount: 200, unit: 'g', comment: '1 large is ≈ 200 g'}],
     active-time: 3,
     type: cut,
     temp: room,
@@ -71,10 +71,10 @@ steps:
   }
   - {
     short: 'Add the chopped tomatoes and paste',
-    long: "Stir it in",
+    long: "Stir it in. The tomato paste can be adjusted to taste, for the base amount about 2 to 4 table spoons should work well.",
     ingredients: [
       {name: chopped tomatoes, amount: 400, unit: 'g'},
-      {name: tomato paste, amount: 140, unit: 'g', comment: 'about 2 to 4 table spoons, to taste'},
+      {name: tomato paste, amount: 140, unit: 'g', comment: 'to taste'},
     ],
     active-time: 2,
     type: fry,

@@ -25,7 +25,7 @@ steps:
   - {
     short: "Grate carrots",
     long: "Peel or wash the carrots, and chop off the top. Then grate the carrots, either using a kitchen machine attachment, a grater or a peeler. Don't squeeze the juice out of the grated carrots, because we want the carrot juice in the cake as well.",
-    ingredients: [ {name: carrots, amount: 450, unit: g, comment: '450 g is about 7 carrots'} ],
+    ingredients: [ {name: carrots, amount: 450, unit: g, comment: '7 carrots is ≈ 450 g'} ],
     active-time: 12,
     passive-time: 0,
     type: km,

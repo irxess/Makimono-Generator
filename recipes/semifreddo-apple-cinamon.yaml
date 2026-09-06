@@ -23,7 +23,7 @@ steps:
   - {
     short: "Peel and dice apples",
     long: "We are currently debating whether using fresh apples leads to too much crystalization in the result, and that it might be better to try using dried apples instead.",
-    ingredients: [ {name: apple, amount: 300, unit: g, comment: '150 g is approximately 1 apple.'} ],
+    ingredients: [ {name: apple, amount: 300, unit: g, comment: '1 apple is ≈ 150 g.'} ],
     active-time: 5,
     passive-time: 0,
     type: cut,
@@ -31,7 +31,7 @@ steps:
   }
   - {
     short: "Fry apples",
-    long: "Over medium heat until soft. If neccessary to grease the pan, butter should yield the best results?",
+    long: "Over medium heat until soft. If necessary to grease the pan, butter should yield the best results?",
     dependencies: [-1],
     active-time: 2,
     passive-time: 3,
@@ -42,10 +42,10 @@ steps:
     short: "Mix eggs and sugar",
     long: "Whip the egg yolks, egg, sugar, and a pinch of salt until they become fluffy and you can draw an \"8\".",
     ingredients: [
-      {name: egg yolk, amount: 36, unit: g, comment: '18 g is approximately 1 egg yolk.'},
-      {name: egg, amount: 150, unit: g, comment: '50g is approximately 1 egg.'},
+      {name: egg yolk, amount: 36, unit: g, comment: '1 egg yolk is ≈ 18 g.'},
+      {name: egg, amount: 150, unit: g, comment: '1 medium sized egg is ≈ 50 g.'},
       {name: sugar, amount: 140, unit: g, comment: ''},
-      {name: salt, amount: 3, unit: g, comment: '5.9 g is approximately 1 tsp.'},
+      {name: salt, amount: 3, unit: g, comment: '1 tsp is ≈ 5.9 g.'},
     ],
     active-time: 5,
     passive-time: 0,
@@ -75,7 +75,7 @@ steps:
     long: "Combine brown sugar (muscovado) with water until it's almost dissolved. Heat it up gently so that it doesn't burn. While it's hot, stir in the cinnamon. You might want to stop at 23.7 g (75%) and taste it to chekc whether you want to add the rest or if it's too much for you. Set aside to cool.",
     ingredients: [
       {name: brown sugar (muscovado), amount: 50, unit: g, comment: ''},
-      {name: cinnamon, amount: 31.6, unit: g, comment: '7.9 g is approximately 1 tbsp.'}
+      {name: cinnamon, amount: 31.6, unit: g, comment: '1 tbsp is ≈ 7.9 g.'}
     ],
     active-time: 5,
     passive-time: 10,
@@ -86,8 +86,8 @@ steps:
     short: "Whip cream",
     long: "Whip it until it's fluffy, but not so much that it starts forming butter.",
     ingredients: [
-      {name: heavy cream, amount: 660, unit: g, comment: 'approximately 37 % fat, 660 g is approximately 6dl.'},
-      {name: vanilla powder, amount: 8.4, unit: g, comment: '4.20 g is approximately 1 tsp.'}
+      {name: heavy cream, amount: 660, unit: g, comment: 'approximately 37 % fat, 6dl is ≈ 660 g.'},
+      {name: vanilla powder, amount: 8.4, unit: g, comment: '1 tsp is ≈ 4.20 g.'}
     ],
     active-time: 5,
     passive-time: 0,
